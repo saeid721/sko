@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কমিটি ডিরেক্টরি - SKO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="page-header reveal">
+        <div class="container">
+            <h1 class="display-6 fw-bold mb-2">কমিটি ডিরেক্টরি (Committee Directory)</h1>
+            <p class="lead mb-0">SKO এর অনুমোদিত সকল কমিটির তালিকা</p>
+        </div>
+    </header>
+    <main class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-3 reveal">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-sko-primary text-white fw-bold">ফিল্টার</div>
+                    <div class="card-body">
+                        <label class="form-label fw-semibold">সহযোগী সংগঠন</label>
+                        <select class="form-select mb-3"><option>সব</option><option>BCTA</option></select>
+                        <label class="form-label fw-semibold">কমিটির ধরন</label>
+                        <select class="form-select mb-3"><option>সব</option><option>কেন্দ্রীয়</option></select>
+                        <button class="btn btn-sko-green w-100">অনুসন্ধান করুন</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 reveal">
+                <div class="card border-0 shadow-sm">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="bg-light">
+                                <tr><th>কমিটির নাম</th><th>ধরন</th><th>এলাকা</th><th>মেয়াদ</th><th>অবস্থা</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>কেন্দ্রীয় কার্যনির্বাহী কমিটি</td><td><span class="badge bg-primary">কেন্দ্রীয়</span></td><td>বাংলাদেশ</td><td>২০২৫-২০২৮</td><td><span class="badge bg-success">অনুমোদিত</span></td></tr>
+                                <tr><td>ঢাকা মহানগর কমিটি</td><td><span class="badge bg-info">মহানগর</span></td><td>ঢাকা</td><td>২০২৫-২০২৭</td><td><span class="badge bg-success">অনুমোদিত</span></td></tr>
+                                <tr><td>চট্টগ্রাম বিভাগীয় কমিটি</td><td><span class="badge bg-warning text-dark">বিভাগীয়</span></td><td>চট্টগ্রাম</td><td>২০২৬-২০২৮</td><td><span class="badge bg-success">অনুমোদিত</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script><script src="js/main.js"></script>
+</body>
+</html>
