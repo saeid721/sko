@@ -2534,3 +2534,355 @@ html.translated-ltr .brand-copy small {
 .campaign-card .inline-player {
     z-index: 10;
 }
+
+
+/* =========================================================
+   CUSTOM VIDEO PLAYER (hides YouTube UI)
+   ========================================================= */
+
+.inline-player {
+    --cp-accent: #ffd21f;
+    --cp-red: #e52631;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* YouTube iframe stage: scaled up a little so edge branding is cropped */
+
+.cp-stage {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.cp-yt,
+.cp-stage iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.14);
+    border: 0;
+    pointer-events: none;
+}
+
+
+/* Transparent shield: blocks title, share, "watch on YouTube", related clicks */
+
+.cp-shield {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+/* gradient for readable controls */
+
+.inline-player::before,
+.inline-player::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    height: 70px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.inline-player::before {
+    top: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .55), transparent);
+}
+
+.inline-player::after {
+    bottom: 0;
+    height: 96px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .75), transparent);
+}
+
+.inline-player.show-ui::before,
+.inline-player.show-ui::after {
+    opacity: 1;
+}
+
+
+/* close button above shield */
+
+.inline-player__close {
+    z-index: 8;
+    opacity: 0;
+    transition: opacity .3s ease, background .25s ease, transform .25s ease;
+}
+
+.inline-player.show-ui .inline-player__close {
+    opacity: 1;
+}
+
+.inline-player__spinner {
+    z-index: 4;
+}
+
+
+/* center play / pause button */
+
+.cp-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 6;
+    width: 56px;
+    height: 56px;
+    transform: translate(-50%, -50%) scale(.9);
+    border: 2px solid rgba(255, 255, 255, .85);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: opacity .25s ease, transform .25s ease, background .25s ease;
+}
+
+.cp-center i {
+    line-height: 1;
+}
+
+.cp-center .fa-play {
+    margin-left: 3px;
+}
+
+.inline-player.is-paused .cp-center {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cp-center:hover {
+    background: var(--cp-red);
+    border-color: var(--cp-red);
+}
+
+
+/* bottom controls */
+
+.cp-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 7;
+    padding: 0 12px 8px;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.inline-player.show-ui .cp-controls {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+/* progress bar */
+
+.cp-progress {
+    position: relative;
+    height: 16px;
+    cursor: pointer;
+    touch-action: none;
+    outline: none;
+}
+
+.cp-progress::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .28);
+    transition: height .2s ease, margin-top .2s ease;
+}
+
+.cp-progress:hover::before,
+.cp-progress:focus-visible::before {
+    height: 6px;
+    margin-top: -3px;
+}
+
+.cp-buffer,
+.cp-fill {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 4px;
+    width: 0;
+    transition: height .2s ease, margin-top .2s ease;
+}
+
+.cp-buffer {
+    background: rgba(255, 255, 255, .35);
+}
+
+.cp-fill {
+    background: var(--cp-red);
+}
+
+.cp-progress:hover .cp-buffer,
+.cp-progress:hover .cp-fill {
+    height: 6px;
+    margin-top: -3px;
+}
+
+.cp-knob {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    margin: -6.5px 0 0 -6.5px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(229, 38, 49, .35);
+    transform: scale(0);
+    transition: transform .2s ease;
+}
+
+.cp-progress:hover .cp-knob,
+.cp-progress:focus-visible .cp-knob {
+    transform: scale(1);
+}
+
+
+/* buttons row */
+
+.cp-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+}
+
+.cp-btn {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font-size: 15px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.cp-btn:hover {
+    background: rgba(255, 255, 255, .18);
+}
+
+.cp-btn:focus-visible {
+    outline: 2px solid var(--cp-accent);
+    outline-offset: 1px;
+}
+
+.cp-time {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 4px;
+    color: rgba(255, 255, 255, .85);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.cp-time b {
+    color: #fff;
+}
+
+.cp-spacer {
+    flex: 1;
+}
+
+
+/* fullscreen mode */
+
+.inline-player:fullscreen {
+    border-radius: 0;
+    inset: 0;
+}
+
+.inline-player:-webkit-full-screen {
+    border-radius: 0;
+}
+
+.inline-player:fullscreen .cp-controls {
+    padding: 0 20px 16px;
+}
+
+.inline-player:fullscreen .cp-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+}
+
+.inline-player:fullscreen .cp-time {
+    font-size: 14px;
+}
+
+
+/* mobile */
+
+@media (max-width: 767.98px) {
+    .cp-center {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    .cp-controls {
+        padding: 0 8px 4px;
+    }
+    .cp-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    .cp-time {
+        font-size: 11px;
+    }
+    .cp-progress {
+        height: 20px;
+        /* easier thumb target */
+    }
+    .cp-knob {
+        transform: scale(1);
+        /* touch-e always dekhabe */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cp-center,
+    .cp-controls,
+    .inline-player::before,
+    .inline-player::after {
+        transition: none;
+    }
+}

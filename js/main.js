@@ -200,9 +200,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const stopVideo = (card) => {
         if (!card) return;
         const player = card.querySelector(".inline-player");
-        if (player) player.remove(); // removing iframe stops the video
+        if (player) {
+            if (typeof player._cleanup === "function") player._cleanup();
+            player.remove(); // removing iframe stops the video
+        }
         card.classList.remove("is-playing");
         if (activeVideoCard === card) activeVideoCard = null;
+    };
+
+    // ---- YouTube IFrame API loader (loads once) ----
+    let ytApiPromise = null;
+    const loadYouTubeApi = () => {
+        if (ytApiPromise) return ytApiPromise;
+        ytApiPromise = new Promise((resolve, reject) => {
+            if (window.YT && window.YT.Player) return resolve(window.YT);
+            const prev = window.onYouTubeIframeAPIReady;
+            window.onYouTubeIframeAPIReady = () => {
+                if (typeof prev === "function") prev();
+                resolve(window.YT);
+            };
+            const s = document.createElement("script");
+            s.src = "https://www.youtube.com/iframe_api";
+            s.async = true;
+            s.onerror = () => reject(new Error("YT API failed"));
+            document.head.appendChild(s);
+        });
+        return ytApiPromise;
+    };
+
+    const fmtTime = (sec) => {
+        sec = Math.max(0, Math.floor(sec || 0));
+        const h = Math.floor(sec / 3600);
+        const m = Math.floor((sec % 3600) / 60);
+        const s = sec % 60;
+        const mm = h ? String(m).padStart(2, "0") : String(m);
+        return (h ? h + ":" : "") + mm + ":" + String(s).padStart(2, "0");
     };
 
     const playVideo = (card) => {
@@ -220,22 +252,241 @@ document.addEventListener("DOMContentLoaded", () => {
         player.className = "inline-player is-loading notranslate";
         player.setAttribute("translate", "no");
         player.innerHTML =
+            '<div class="cp-stage"><div class="cp-yt"></div></div>' +
+            '<div class="cp-shield"></div>' +
             '<span class="inline-player__spinner" aria-hidden="true"></span>' +
-            '<button type="button" class="inline-player__close" aria-label="' +
-            (isEn ? "Close video" : "ভিডিও বন্ধ করুন") +
-            '"><i class="fa-solid fa-xmark"></i></button>';
-
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
-        iframe.title = title;
-        iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-        iframe.allowFullscreen = true;
-        iframe.addEventListener("load", () => player.classList.remove("is-loading"));
-        player.appendChild(iframe);
+            '<button type="button" class="inline-player__close" aria-label="' + (isEn ? "Close video" : "ভিডিও বন্ধ করুন") + '"><i class="fa-solid fa-xmark"></i></button>' +
+            '<button type="button" class="cp-center" aria-label="' + (isEn ? "Play / Pause" : "চালু / বিরতি") + '"><i class="fa-solid fa-pause"></i></button>' +
+            '<div class="cp-controls">' +
+            '<div class="cp-progress" role="slider" tabindex="0" aria-label="' + (isEn ? "Seek" : "সময় নির্বাচন") + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">' +
+            '<div class="cp-buffer"></div><div class="cp-fill"></div><div class="cp-knob"></div></div>' +
+            '<div class="cp-row">' +
+            '<button type="button" class="cp-btn cp-toggle" aria-label="' + (isEn ? "Play / Pause" : "চালু / বিরতি") + '"><i class="fa-solid fa-pause"></i></button>' +
+            '<button type="button" class="cp-btn cp-mute" aria-label="' + (isEn ? "Mute" : "মিউট") + '"><i class="fa-solid fa-volume-high"></i></button>' +
+            '<span class="cp-time"><b class="cp-cur">0:00</b> / <span class="cp-dur">0:00</span></span>' +
+            '<span class="cp-spacer"></span>' +
+            '<button type="button" class="cp-btn cp-full" aria-label="' + (isEn ? "Fullscreen" : "ফুলস্ক্রিন") + '"><i class="fa-solid fa-expand"></i></button>' +
+            '</div></div>';
 
         card.appendChild(player);
         card.classList.add("is-playing");
         activeVideoCard = card;
+
+        const $ = (sel) => player.querySelector(sel);
+        const mount = $(".cp-yt");
+        const centerBtn = $(".cp-center");
+        const toggleBtn = $(".cp-toggle");
+        const muteBtn = $(".cp-mute");
+        const fullBtn = $(".cp-full");
+        const bar = $(".cp-progress");
+        const fill = $(".cp-fill");
+        const buffer = $(".cp-buffer");
+        const knob = $(".cp-knob");
+        const curEl = $(".cp-cur");
+        const durEl = $(".cp-dur");
+        const shield = $(".cp-shield");
+
+        let yt = null;
+        let tick = null;
+        let hideTimer = null;
+        let dragging = false;
+
+        const setPlayIcons = (playing) => {
+            const cls = playing ? "fa-pause" : "fa-play";
+            centerBtn.innerHTML = '<i class="fa-solid ' + cls + '"></i>';
+            toggleBtn.innerHTML = '<i class="fa-solid ' + cls + '"></i>';
+            player.classList.toggle("is-paused", !playing);
+        };
+
+        const showUi = () => {
+            player.classList.add("show-ui");
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                if (yt && yt.getPlayerState && yt.getPlayerState() === 1 && !dragging) {
+                    player.classList.remove("show-ui");
+                }
+            }, 2500);
+        };
+
+        const update = () => {
+            if (!yt || !yt.getDuration) return;
+            const d = yt.getDuration() || 0;
+            const t = yt.getCurrentTime() || 0;
+            const pct = d ? (t / d) * 100 : 0;
+            if (!dragging) {
+                fill.style.width = pct + "%";
+                knob.style.left = pct + "%";
+                curEl.textContent = fmtTime(t);
+            }
+            durEl.textContent = fmtTime(d);
+            buffer.style.width = ((yt.getVideoLoadedFraction ? yt.getVideoLoadedFraction() : 0) * 100) + "%";
+            bar.setAttribute("aria-valuenow", Math.round(pct));
+        };
+
+        const togglePlay = () => {
+            if (!yt || !yt.getPlayerState) return;
+            const st = yt.getPlayerState();
+            if (st === 1) yt.pauseVideo();
+            else yt.playVideo();
+            showUi();
+        };
+
+        const seekFromEvent = (e) => {
+            const rect = bar.getBoundingClientRect();
+            const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            const ratio = Math.min(1, Math.max(0, x / rect.width));
+            const d = yt.getDuration() || 0;
+            fill.style.width = ratio * 100 + "%";
+            knob.style.left = ratio * 100 + "%";
+            curEl.textContent = fmtTime(ratio * d);
+            return ratio * d;
+        };
+
+        // controls
+        shield.addEventListener("click", (e) => {
+            e.stopPropagation();
+            togglePlay();
+        });
+        centerBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            togglePlay();
+        });
+        toggleBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            togglePlay();
+        });
+
+        muteBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (!yt) return;
+            if (yt.isMuted()) {
+                yt.unMute();
+                muteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+            } else {
+                yt.mute();
+                muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+            }
+            showUi();
+        });
+
+        fullBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const el = player;
+            const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFs) {
+                (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+            } else if (el.requestFullscreen) {
+                el.requestFullscreen();
+            } else if (el.webkitRequestFullscreen) {
+                el.webkitRequestFullscreen();
+            }
+            showUi();
+        });
+
+        // seek (mouse + touch)
+        const startDrag = (e) => {
+            if (!yt) return;
+            e.stopPropagation();
+            dragging = true;
+            player.classList.add("show-ui");
+            seekFromEvent(e);
+            const move = (ev) => seekFromEvent(ev);
+            const end = (ev) => {
+                const t = seekFromEvent(ev.changedTouches ? { touches: ev.changedTouches } : ev);
+                yt.seekTo(t, true);
+                dragging = false;
+                document.removeEventListener("mousemove", move);
+                document.removeEventListener("mouseup", end);
+                document.removeEventListener("touchmove", move);
+                document.removeEventListener("touchend", end);
+                showUi();
+            };
+            document.addEventListener("mousemove", move);
+            document.addEventListener("mouseup", end);
+            document.addEventListener("touchmove", move, { passive: true });
+            document.addEventListener("touchend", end);
+        };
+        bar.addEventListener("mousedown", startDrag);
+        bar.addEventListener("touchstart", startDrag, { passive: true });
+
+        bar.addEventListener("keydown", (e) => {
+            if (!yt) return;
+            if (e.key === "ArrowRight") {
+                yt.seekTo(yt.getCurrentTime() + 5, true);
+                e.preventDefault();
+            }
+            if (e.key === "ArrowLeft") {
+                yt.seekTo(yt.getCurrentTime() - 5, true);
+                e.preventDefault();
+            }
+        });
+
+        player.addEventListener("mousemove", showUi);
+        player.addEventListener("touchstart", showUi, { passive: true });
+
+        // cleanup hook used by stopVideo
+        player._cleanup = () => {
+            clearInterval(tick);
+            clearTimeout(hideTimer);
+            try { if (yt && yt.destroy) yt.destroy(); } catch (err) {}
+            const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFs) {
+                try {
+                    (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+                } catch (err) {}
+            }
+        };
+
+        // build the hidden YouTube player
+        loadYouTubeApi().then((YT) => {
+            if (!player.isConnected) return; // closed before API loaded
+            yt = new YT.Player(mount, {
+                videoId: id,
+                host: "https://www.youtube-nocookie.com",
+                playerVars: {
+                    autoplay: 1,
+                    controls: 0,
+                    rel: 0,
+                    modestbranding: 1,
+                    playsinline: 1,
+                    fs: 0,
+                    disablekb: 1,
+                    iv_load_policy: 3,
+                    cc_load_policy: 0,
+                    origin: location.origin
+                },
+                events: {
+                    onReady: (ev) => {
+                        player.classList.remove("is-loading");
+                        ev.target.playVideo();
+                        update();
+                        tick = setInterval(update, 250);
+                        showUi();
+                    },
+                    onStateChange: (ev) => {
+                        const st = ev.data;
+                        setPlayIcons(st === 1 || st === 3);
+                        if (st === 1) showUi();
+                        if (st === 2 || st === 0) {
+                            clearTimeout(hideTimer);
+                            player.classList.add("show-ui");
+                        }
+                        if (st === 0) { // ended
+                            ev.target.seekTo(0, true);
+                            ev.target.pauseVideo();
+                        }
+                    },
+                    onError: () => {
+                        // fallback: open on YouTube in new tab
+                        stopVideo(card);
+                        window.open(card.getAttribute("href"), "_blank", "noopener");
+                    }
+                }
+            });
+        }).catch(() => {
+            stopVideo(card);
+            window.open(card.getAttribute("href"), "_blank", "noopener");
+        });
     };
 
     videoCards.forEach((card) => {
@@ -246,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 stopVideo(card);
                 return;
             }
-            if (card.classList.contains("is-playing")) return;
+            if (card.classList.contains("is-playing")) return; // player-er bhitorer click ignore
 
             playVideo(card);
         });
