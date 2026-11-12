@@ -2886,3 +2886,182 @@ html.translated-ltr .brand-copy small {
         transition: none;
     }
 }
+
+
+/* =========================================================
+   VIDEO CARD: YouTube 16:9 RATIO (responsive)
+   ========================================================= */
+
+
+/* Card height ekhon image-er 16:9 theke ashe, fixed px na */
+
+.campaign-card {
+    height: auto;
+}
+
+.campaign-card>img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+
+/* Text size boro card-er sathe scale hobe */
+
+.campaign-copy {
+    font-size: clamp(15px, 1.9vw, 25px);
+}
+
+
+/* Leadership panel boro card-er height-er sathe mile jabe (desktop) */
+
+@media (min-width: 992px) {
+    .leadership-panel {
+        display: flex;
+        flex-direction: column;
+    }
+    .leadership-panel>.row {
+        flex: 1 1 auto;
+    }
+    .leadership-panel>.row>[class*="col-"] {
+        display: flex;
+    }
+    .leader-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .leader-card img {
+        flex: 1 1 auto;
+        height: auto;
+        min-height: 109px;
+    }
+    .leader-card div {
+        flex: 0 0 auto;
+    }
+}
+
+
+/* Mobile: text ar play button card-er 16:9 e thik thakbe */
+
+@media (max-width: 767.98px) {
+    .campaign-copy {
+        font-size: clamp(14px, 4.4vw, 19px);
+        width: calc(100% - 110px);
+    }
+    .campaign-play {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+
+/* =========================================================
+   FEATURE VIDEO CARD: YouTube 16:9 RATIO (responsive)
+   ========================================================= */
+
+
+/* Fixed height (232px / 220px) remove, image-er 16:9 theke height ashbe */
+
+.feature-video-card,
+.feature-video-card.is-playing {
+    height: auto;
+}
+
+.feature-video-card>img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+
+/* Mobile-er fixed height override (220px) bondho */
+
+@media (max-width: 767.98px) {
+    .feature-video-card {
+        height: auto;
+    }
+}
+
+
+/* Desktop: 3 column-er card shoman height e thakbe */
+
+@media (min-width: 992px) {
+    .news-events-section .row>.col-lg-4:first-child {
+        align-self: flex-start;
+    }
+}
+
+
+/* =========================================================
+   NEWS / EVENTS: 3 card EKI HEIGHT (video card = master)
+   ========================================================= */
+
+
+/* Desktop: video card-er 16:9 height-i row-er height, panel duto match korbe */
+
+@media (min-width: 992px) {
+    /* age-r flex-start override cancel */
+    .news-events-section .row>.col-lg-4:first-child {
+        align-self: stretch;
+    }
+    /* Video card column: row-er sathe stretch */
+    .news-events-section .row>.col-lg-4:first-child .feature-video-card {
+        height: auto;
+    }
+    /* Panel duto-r column-er height video card-er height-er ceye boro hote parbe na */
+    .news-events-section .row>.col-lg-4:not(:first-child) {
+        position: relative;
+        min-height: 0;
+    }
+    .news-events-section .row>.col-lg-4:not(:first-child)>.content-panel {
+        position: absolute;
+        top: calc(var(--bs-gutter-y, 1rem) * 0);
+        right: calc(var(--bs-gutter-x, 1rem) * .5);
+        bottom: 0;
+        left: calc(var(--bs-gutter-x, 1rem) * .5);
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    /* Heading fixed, baki content scroll hobe (jodi beshi hoy) */
+    .news-events-section .content-panel>.panel-heading {
+        flex: 0 0 auto;
+    }
+    .news-events-section .content-panel>.news-item,
+    .news-events-section .content-panel>.event-item,
+    .news-events-section .content-panel>.all-events {
+        flex: 0 0 auto;
+    }
+    .news-events-section .content-panel {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #b8d2f1 transparent;
+    }
+    .news-events-section .content-panel::-webkit-scrollbar {
+        width: 6px;
+    }
+    .news-events-section .content-panel::-webkit-scrollbar-thumb {
+        background: #b8d2f1;
+        border-radius: 6px;
+    }
+    /* Events panel: button niche-e thakbe */
+    .news-events-section .events-panel .all-events {
+        margin-top: auto;
+    }
+}
+
+
+/* Tablet / Mobile: card gulo ek column-e, natural height */
+
+@media (max-width: 991.98px) {
+    .news-events-section .row>.col-lg-4>.content-panel {
+        position: static;
+        height: auto !important;
+    }
+}
