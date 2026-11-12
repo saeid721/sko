@@ -1064,14 +1064,8 @@ a {
 }
 
 .footer-logo img {
-    width: 42px;
-    height: 39px;
+    height: 40px;
     object-fit: contain;
-}
-
-.footer-logo strong {
-    font-size: 31px;
-    line-height: 1;
 }
 
 .footer-brand h2 {
@@ -3878,4 +3872,40 @@ html[lang="en"] .sko-tag,
 html.translated-ltr .sko-tag,
 html.translated-rtl .sko-tag {
     display: none !important;
+}
+
+
+/* =========================================================
+   WIDER CONTAINER (laptop / desktop) - fluid, capped
+   Paste at the VERY END of style.css
+   ========================================================= */
+
+@media (min-width: 992px) {
+    .container {
+        width: 100%;
+        max-width: min(1500px, calc(100% - 2rem));
+    }
+}
+
+
+/* Laptop (1200px - 1399px): slightly tighter nav so the wider bar stays balanced */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .navbar-nav .nav-link {
+        font-size: 13px;
+        padding: .65rem .5rem !important;
+    }
+}
+
+
+/* Large laptop / desktop (1400px+): more breathing room in the nav */
+
+@media (min-width: 1400px) {
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: .65rem .6rem !important;
+    }
+    .hero-copy {
+        max-width: min(56%, 820px);
+    }
 }
