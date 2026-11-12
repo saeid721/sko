@@ -3073,3 +3073,81 @@ html.translated-ltr .brand-copy small {
         height: auto !important;
     }
 }
+
+
+/* =========================================================
+   HERO TITLE: SINGLE LINE ON ALL SCREENS
+   ========================================================= */
+
+
+/* Title single line, copy area-r width title onujayi barbe */
+
+.hero-copy h1 {
+    white-space: nowrap;
+    font-size: clamp(18px, 2.6vw, 44px);
+    line-height: 1.25;
+    letter-spacing: -.2px;
+}
+
+.hero-headline>div {
+    min-width: 0;
+}
+
+
+/* Desktop / Tablet: hero-copy-ke title-er jonno beshi jayga */
+
+@media (min-width: 768px) {
+    .hero-copy {
+        max-width: min(56%, 760px);
+    }
+    .hero-copy h1 {
+        font-size: clamp(22px, 2.9vw, 44px);
+    }
+}
+
+
+/* Tablet: ektu choto */
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .hero-copy {
+        max-width: 58%;
+    }
+    .hero-copy h1 {
+        font-size: clamp(20px, 3.1vw, 36px);
+    }
+}
+
+
+/* Mobile: full width, font screen-er sathe scale hobe */
+
+@media (max-width: 767.98px) {
+    .hero-copy h1 {
+        font-size: clamp(15px, 5vw, 26px);
+        letter-spacing: -.3px;
+    }
+}
+
+
+/* Choto mobile (<= 380px) */
+
+@media (max-width: 380px) {
+    .hero-copy h1 {
+        font-size: clamp(14px, 4.7vw, 18px);
+    }
+}
+
+
+/* English version (Google Translate) o single line */
+
+html[lang="en"] .hero-copy h1,
+html.translated-ltr .hero-copy h1 {
+    white-space: nowrap;
+    font-size: clamp(16px, 2.4vw, 38px);
+}
+
+@media (max-width: 767.98px) {
+    html[lang="en"] .hero-copy h1,
+    html.translated-ltr .hero-copy h1 {
+        font-size: clamp(14px, 4.6vw, 24px);
+    }
+}
