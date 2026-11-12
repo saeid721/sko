@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ============================================
 
     const hero = document.querySelector(".hero-section");
-    const heroImg = hero ? .querySelector(".hero-photo img");
+    const heroImg = hero ? hero.querySelector(".hero-photo img") : null;
     const dots = [...document.querySelectorAll(".hero-dots button")];
 
     const slides = [
@@ -133,10 +133,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Partner card horizontal movement on smaller screens.
     const track = document.getElementById("partnerTrack");
-    document.querySelector(".partner-next") ? .addEventListener("click", () => {
+    const partnerNext = document.querySelector(".partner-next");
+    if (partnerNext) partnerNext.addEventListener("click", () => {
         if (track) track.scrollBy({ left: track.clientWidth * .8, behavior: "smooth" });
     });
-    document.querySelector(".partner-prev") ? .addEventListener("click", () => {
+    const partnerPrev = document.querySelector(".partner-prev");
+    if (partnerPrev) partnerPrev.addEventListener("click", () => {
         if (track) track.scrollBy({ left: -track.clientWidth * .8, behavior: "smooth" });
     });
 
@@ -158,7 +160,8 @@ document.addEventListener("DOMContentLoaded", () => {
     topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
     // Newsletter demo validation. Connect this form to a backend endpoint later.
-    document.querySelector(".newsletter") ? .addEventListener("submit", event => {
+    const newsletterForm = document.querySelector(".newsletter");
+    if (newsletterForm) newsletterForm.addEventListener("submit", event => {
         event.preventDefault();
         const input = event.currentTarget.querySelector("input");
         if (input.checkValidity()) {
@@ -181,262 +184,139 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 // ============================================
-// LANGUAGE SWITCHER  (বাংলা default  <->  English)
+// LANGUAGE SWITCHER — Bangla default <-> English (Google Translate)
 // ============================================
-const DICT = {
-    // topbar / brand
-    "সদস্য যাচাই": "Verify Member",
-    "QR যাচাই": "QR Verify",
-    "ডাউনলোড": "Downloads",
-    "সাহায্য/FAQ": "Help / FAQ",
-    "SKO লোগো": "SKO logo",
-    "শিক্ষক কর্মচারী ঐক্য জোট (SKO)": "Teachers & Employees Unity Alliance (SKO)",
-    "কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা": "Central Organization & Integrated Management",
-    "মেনু খুলুন": "Open menu",
+(() => {
+    const langBox = document.querySelector(".language");
+    const langBtns = [...document.querySelectorAll(".lang-btn")];
+    let scriptRequested = false;
 
-    // nav
-    "হোম": "Home",
-    "SKO পরিচিতি": "About SKO",
-    "আমাদের সম্পর্কে": "About Us",
-    "লক্ষ্য ও উদ্দেশ্য": "Aims & Objectives",
-    "গঠনতন্ত্র": "Constitution",
-    "সংগঠন": "Organization",
-    "সহযোগী সংগঠন": "Affiliated Organizations",
-    "জেলা কমিটি": "District Committees",
-    "উপজেলা কমিটি": "Upazila Committees",
-    "কমিটি": "Committees",
-    "কেন্দ্রীয় কমিটি": "Central Committee",
-    "বিভাগীয় কমিটি": "Divisional Committees",
-    "সদস্য": "Members",
-    "সদস্য নিবন্ধন": "Member Registration",
-    "মতামত ও নোটিশ": "Notices & Views",
-    "নোটিশ": "Notices",
-    "মতামত": "Opinions",
-    "অনুষ্ঠান": "Events",
-    "আসন্ন অনুষ্ঠান": "Upcoming Events",
-    "অনুষ্ঠান আর্কাইভ": "Event Archive",
-    "সেবা": "Services",
-    "সদস্য সেবাসমূহ": "Member Services",
-    "কল্যাণ সুবিধা": "Welfare Benefits",
-    "যোগাযোগ": "Contact",
-    "সদস্য লগইন": "Member Login",
+    // ---- cookie helpers -------------------------------------------------
+    const getCookie = (name) => {
+        const m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+        return m ? decodeURIComponent(m[1]) : "";
+    };
 
-    // hero
-    "SKO শিক্ষক কর্মচারী সমাবেশ": "SKO teachers and employees gathering",
-    "শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের": "For teachers, employees and educational institutions,",
-    "অধিকার, মর্যাদা ও কল্যাণে ঐক্যবদ্ধ প্ল্যাটফর্ম": "a united platform for rights, dignity and welfare",
-    "অধিকার রক্ষা": "Protecting Rights",
-    "পেশাগত উন্নয়ন": "Professional Development",
-    "কল্যাণ ও সহায়তা": "Welfare & Support",
-    "সদস্য নিবন্ধন করুন": "Register as Member",
-    "স্লাইড নির্বাচন": "Select slide",
+    const rootHost = () => location.hostname.replace(/^www\./, "");
 
-    // quick cards
-    "অনলাইনে আবেদন": "Apply online",
-    "সদস্য নম্বর দিয়ে": "By member number",
-    "পরিচয়পত্র যাচাই": "Verify ID card",
-    "নবায়ন": "Renewal",
-    "সদস্যপদ নবায়ন": "Renew membership",
-    "সনদ ও প্রত্যয়ন": "Certificates",
-    "সদস্য সহায়তা": "Member Support",
-    "জিজ্ঞাসা ও অভিযোগ": "Queries & complaints",
+    const setCookie = (value) => {
+        document.cookie = `googtrans=${value};path=/`;
+        const root = rootHost();
+        if (root.includes(".")) {
+            document.cookie = `googtrans=${value};path=/;domain=${location.hostname}`;
+            document.cookie = `googtrans=${value};path=/;domain=.${root}`;
+        }
+    };
 
-    // partners
-    "সহযোগী সংগঠনসমূহ": "Affiliated Organizations",
-    "সকলটা দেখুন": "View all",
-    "আগের সংগঠন": "Previous organization",
-    "পরের সংগঠন": "Next organization",
-    "বাংলাদেশ কলেজ": "Bangladesh College",
-    "বাংলাদেশ মাদ্রাসা": "Bangladesh Madrasa",
-    "বাংলাদেশ কারিগরি": "Bangladesh Technical",
-    "বাংলাদেশ": "Bangladesh",
-    "শিক্ষক সমিতি": "Teachers' Association",
-    "শিক্ষাপ্রতিষ্ঠান কর্মচারী": "Educational Institution Employees",
-    "ঐক্য ফেডারেশন": "Unity Federation",
-    "অধ্যক্ষ সমিতি": "Principals' Association",
+    const clearCookie = () => {
+        const past = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        const host = location.hostname;
+        const root = rootHost();
+        document.cookie = `googtrans=;path=/;${past}`;
+        document.cookie = `googtrans=;path=/;domain=${host};${past}`;
+        document.cookie = `googtrans=;path=/;domain=.${host};${past}`;
+        document.cookie = `googtrans=;path=/;domain=${root};${past}`;
+        document.cookie = `googtrans=;path=/;domain=.${root};${past}`;
+    };
 
-    // news / events
-    "SKO কেন্দ্রীয় সাধারণ সভা ২০২৬": "SKO Central General Meeting 2026",
-    "ভিডিও দেখুন: কেন্দ্রীয় সাধারণ সভা ২০২৬": "Watch video: Central General Meeting 2026",
-    "সাম্প্রতিক সংবাদ": "Latest News",
-    "সব দেখুন": "View all",
-    "কেন্দ্রীয় সাধারণ সভা": "Central general meeting",
-    "শিক্ষক কল্যাণ নীতিমালা আলোচনা": "Teachers' welfare policy discussion",
-    "নতুন সদস্য নিবন্ধন": "New member registration",
-    "SKO-এর কেন্দ্রীয় সাধারণ সভা ২০২৬ সফলভাবে অনুষ্ঠিত": "SKO Central General Meeting 2026 held successfully",
-    "শিক্ষক কল্যাণ নীতিমালা বিষয়ে আলোচনা সভা": "Discussion meeting on teachers' welfare policy",
-    "নতুন সদস্য নিবন্ধন প্রক্রিয়া শুরু": "New member registration begins",
-    "আসন্ন অনুষ্ঠান ও কর্মসূচি": "Upcoming Events & Programs",
-    "কেন্দ্রীয় কর্মশালা": "Central Workshop",
-    "শিক্ষার মান উন্নয়ন ও পেশাগত বিকাশ": "Improving education quality & professional growth",
-    "জাতীয় শিক্ষক ভবন, ঢাকা": "National Teachers' Building, Dhaka",
-    "বিভাগীয় সমন্বয় সভা": "Divisional Coordination Meeting",
-    "ঢাকা বিভাগ": "Dhaka Division",
-    "ঢাকার প্রধান ইউনিট, ঢাকা": "Dhaka Main Unit, Dhaka",
-    "সব অনুষ্ঠান দেখুন": "View all events",
+    const isEnglishCookie = () => /^\/[^\/]*\/en$/.test(getCookie("googtrans"));
 
-    // stats
-    "৫,০০,০০০+": "500,000+",
-    "মোট সদস্য": "Total Members",
-    "উপজেলা/থানা কমিটি": "Upazila/Thana Committees",
+    // source of truth: sessionStorage (cookie is only a fallback)
+    const getLang = () => {
+        try {
+            return sessionStorage.getItem("sko-lang") === "en" ? "en" : "bn";
+        } catch (e) {
+            return isEnglishCookie() ? "en" : "bn";
+        }
+    };
 
-    // services
-    "প্রশিক্ষণ ও উন্নয়ন": "Training & Development",
-    "চাকরি ও সুযোগ": "Jobs & Opportunities",
-    "গবেষণা ও প্রকাশনা": "Research & Publications",
-    "ফরম ও ডকুমেন্ট": "Forms & Documents",
+    const saveLang = (lang) => {
+        try { sessionStorage.setItem("sko-lang", lang); } catch (e) {}
+    };
 
-    // leadership / campaign
-    "কেন্দ্রীয় নেতৃত্ব": "Central Leadership",
-    "সবাই দেখুন": "View all",
-    "অধ্যাপক ড. মো. আব্দুল করিম": "Prof. Dr. Md. Abdul Karim",
-    "চেয়ারম্যান": "Chairman",
-    "মো. কামরুজ্জামান ইসলাম": "Md. Kamruzzaman Islam",
-    "মহাসচিব": "Secretary General",
-    "শিক্ষার মান উন্নয়ন ও শিক্ষক-সম্পদের অধিকার নিয়ে আমাদের পথচলা": "Our journey for better education and teachers' rights",
-    "শিক্ষার মান উন্নয়ন ও": "Our journey for better education",
-    "শিক্ষক-সম্পদের অধিকার": "and teachers' rights",
-    "নিয়ে আমাদের পথচলা": "and welfare",
-
-    // footer
-    "শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা, পেশাগত উন্নয়ন ও কল্যাণে ঐক্যবদ্ধ একটি প্ল্যাটফর্ম।": "A united platform for the rights, dignity, professional development and welfare of teachers, employees and educational institutions.",
-    "দ্রুত লিংক": "Quick Links",
-    "গুরুত্বপূর্ণ": "Important",
-    "নীতিমালা": "Policies",
-    "প্রেস রিলিজ": "Press Releases",
-    "সেবা সমূহ": "Services",
-    "কেন্দ্রীয় কার্যালয়, ঢাকা, বাংলাদেশ": "Central Office, Dhaka, Bangladesh",
-    "আমাদের সঙ্গে থাকুন": "Stay Connected",
-    "আপনার ইমেইল লিখুন": "Enter your email",
-    "সাবস্ক্রাইব করুন": "Subscribe",
-    "© ২০২৬ শিক্ষক কর্মচারী ঐক্য জোট (SKO). সর্বস্বত্ব সংরক্ষিত।": "© 2026 Teachers & Employees Unity Alliance (SKO). All rights reserved.",
-    "গোপনীয়তা নীতি": "Privacy Policy",
-    "শর্তাবলি": "Terms",
-    "সাইটম্যাপ": "Sitemap",
-    "উপরে যান": "Back to top"
-};
-
-const MONTHS = {
-    "জানুয়ারি": "January",
-    "ফেব্রুয়ারি": "February",
-    "মার্চ": "March",
-    "এপ্রিল": "April",
-    "মে": "May",
-    "জুন": "June",
-    "জুলাই": "July",
-    "আগস্ট": "August",
-    "সেপ্টেম্বর": "September",
-    "অক্টোবর": "October",
-    "নভেম্বর": "November",
-    "ডিসেম্বর": "December"
-};
-
-const BN_DIGITS = "০১২৩৪৫৬৭৮৯";
-const HAS_BN = /[\u0980-\u09FF]/;
-const ATTRS = ["alt", "placeholder", "aria-label", "title"];
-const SKIP = "script, style, noscript, .language";
-
-const ORIG_TITLE = document.title;
-const TITLE_EN = "SKO - Teachers & Employees Unity Alliance | Home";
-const META_EN = [
-    ['meta[name="description"]', "A united SKO platform for the rights, dignity and welfare of teachers, employees and educational institutions."],
-    ['meta[property="og:title"]', "SKO - Teachers & Employees Unity Alliance"],
-    ['meta[property="og:description"]', "A united SKO platform for the rights, dignity and welfare of teachers, employees and educational institutions."],
-    ['meta[property="og:locale"]', "en_US"],
-    ['meta[name="twitter:title"]', "SKO - Teachers & Employees Unity Alliance"],
-    ['meta[name="twitter:description"]', "A united SKO platform for the rights, dignity and welfare of teachers, employees and educational institutions."]
-];
-
-const textOrig = new WeakMap();
-const attrOrig = new WeakMap();
-const metaOrig = new Map();
-const langBtns = [...document.querySelectorAll(".lang-btn")];
-
-// Bangla -> English (keeps leading/trailing spaces of the text node)
-const toEn = (str) => {
-    const m = str.match(/^(\s*)([\s\S]*?)(\s*)$/);
-    const core = m[2].replace(/\s+/g, " ");
-    if (!core || !HAS_BN.test(core)) return str;
-
-    let out = DICT[core];
-    if (!out) {
-        // fallback: dates & numbers (e.g. "২২ নভেম্বর ২০২৬")
-        out = core
-            .split(" ")
-            .map((t) => MONTHS[t] || t)
-            .join(" ")
-            .replace(/[০-৯]/g, (d) => BN_DIGITS.indexOf(d));
-        if (HAS_BN.test(out)) return str; // unknown text: keep Bangla
-    }
-    return m[1] + out + m[3];
-};
-
-const applyLang = (lang) => {
-    const en = lang === "en";
-
-    // 1) text nodes
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-        acceptNode: (n) =>
-            n.parentElement && !n.parentElement.closest(SKIP) ?
-            NodeFilter.FILTER_ACCEPT :
-            NodeFilter.FILTER_REJECT
-    });
-    let node;
-    while ((node = walker.nextNode())) {
-        if (!textOrig.has(node)) textOrig.set(node, node.nodeValue);
-        const bn = textOrig.get(node);
-        node.nodeValue = en ? toEn(bn) : bn;
-    }
-
-    // 2) attributes (alt, aria-label, placeholder, title)
-    document.body.querySelectorAll("[alt],[placeholder],[aria-label],[title]").forEach((el) => {
-        if (el.closest(".language") || el.matches(".hero-dots button")) return;
-        let store = attrOrig.get(el);
-        if (!store) { store = {};
-            attrOrig.set(el, store); }
-        ATTRS.forEach((a) => {
-            if (!el.hasAttribute(a)) return;
-            if (!(a in store)) store[a] = el.getAttribute(a);
-            el.setAttribute(a, en ? toEn(store[a]) : store[a]);
+    // ---- UI state -------------------------------------------------------
+    const setActive = (lang) => {
+        langBtns.forEach((b) => {
+            const on = b.dataset.lang === lang;
+            b.classList.toggle("active", on);
+            b.setAttribute("aria-pressed", on ? "true" : "false");
         });
-    });
+    };
 
-    // 3) <title> + SEO meta
-    document.title = en ? TITLE_EN : ORIG_TITLE;
-    META_EN.forEach(([sel, val]) => {
-        const el = document.querySelector(sel);
-        if (!el) return;
-        if (!metaOrig.has(el)) metaOrig.set(el, el.getAttribute("content"));
-        el.setAttribute("content", en ? val : metaOrig.get(el));
-    });
+    const setLoading = (on) => {
+        if (langBox) langBox.classList.toggle("is-loading", on);
+    };
 
-    // 4) html lang + button state
-    document.documentElement.lang = en ? "en" : "bn";
-    langBtns.forEach((b) => {
-        const on = b.dataset.lang === lang;
-        b.classList.toggle("active", on);
-        b.setAttribute("aria-pressed", on ? "true" : "false");
-    });
+    // ---- Google Translate loader ---------------------------------------
+    window.googleTranslateElementInit = () => {
+        new google.translate.TranslateElement({ pageLanguage: "bn", includedLanguages: "en,bn", autoDisplay: false },
+            "google_translate_element"
+        );
+    };
 
-    // 5) keep the slider dot labels in the right language
-    if (typeof goTo === "function" && typeof current === "number") goTo(current);
+    const loadGoogle = () => {
+        if (scriptRequested) return;
+        scriptRequested = true;
+        const s = document.createElement("script");
+        s.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        s.async = true;
+        s.onerror = () => {
+            setLoading(false);
+            setActive("bn");
+            clearCookie();
+        };
+        document.head.appendChild(s);
+    };
 
-    try { sessionStorage.setItem("sko-lang", lang); } catch (e) {}
-};
+    // wait until Google's hidden <select> exists, then switch language live
+    const waitForCombo = (tries = 0) => {
+        const combo = document.querySelector("select.goog-te-combo");
+        if (combo && combo.querySelector('option[value="en"]')) {
+            combo.value = "en";
+            combo.dispatchEvent(new Event("change"));
+            setActive("en");
+            setLoading(false);
+            return;
+        }
+        if (tries > 40) { location.reload(); return; } // fallback: cookie is set, reload translates
+        setTimeout(() => waitForCombo(tries + 1), 150);
+    };
 
-const setLang = (lang) => {
-    if (lang === document.documentElement.lang) return;
-    document.body.classList.add("lang-switching");
-    setTimeout(() => {
-        applyLang(lang);
-        document.body.classList.remove("lang-switching");
-    }, 160);
-};
+    // ---- actions --------------------------------------------------------
+    const toEnglish = () => {
+        setLoading(true);
+        saveLang("en");
+        setCookie("/bn/en");
+        setActive("en");
+        loadGoogle();
+        waitForCombo();
+    };
 
-langBtns.forEach((btn) => btn.addEventListener("click", () => setLang(btn.dataset.lang)));
+    const toBangla = () => {
+        setLoading(true);
+        saveLang("bn");
+        clearCookie();
+        setActive("bn");
+        location.reload(); // reload = guaranteed clean original Bangla
+    };
 
-// Bangla is always the default for a new visit
-let savedLang = "bn";
-try { savedLang = sessionStorage.getItem("sko-lang") === "en" ? "en" : "bn"; } catch (e) {}
-if (savedLang === "en") applyLang("en");
+    langBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+            const lang = btn.dataset.lang;
+            if (lang === getLang()) return;
+            lang === "en" ? toEnglish() : toBangla();
+        })
+    );
+
+    // ---- initial state: Bangla unless English was chosen this session ----
+    if (getLang() === "en") {
+        setActive("en");
+        setCookie("/bn/en");
+        loadGoogle(); // Google translates automatically on load
+    } else {
+        setActive("bn");
+        clearCookie(); // remove any stale cookie; translator is NOT loaded
+    }
+})();

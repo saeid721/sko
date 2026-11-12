@@ -2066,3 +2066,85 @@ html[lang="en"] .quick-card strong {
         font-size: 10px;
     }
 }
+
+
+/* =========================================================
+   GOOGLE TRANSLATE — hide default UI, keep the page clean
+   ========================================================= */
+
+#google_translate_element {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/* remove Google's top banner + body offset */
+
+body {
+    top: 0 !important;
+    position: static !important;
+}
+
+body>.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+font {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+
+/* loading state on the language pill */
+
+.language.is-loading {
+    pointer-events: none;
+    opacity: .75;
+    position: relative;
+}
+
+.language.is-loading::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: langSpin .7s linear infinite;
+}
+
+@keyframes langSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* mobile: keep the pill from wrapping */
+
+@media (max-width: 767.98px) {
+    .language {
+        margin-right: 22px;
+    }
+}
