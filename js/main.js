@@ -154,10 +154,17 @@ document.addEventListener("DOMContentLoaded", () => {
         animated.forEach(el => observer.observe(el));
     }
 
-    // Back to top.
+    // Back to top (null-safe)
     const topButton = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => topButton.classList.toggle("show", window.scrollY > 450), { passive: true });
-    topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    if (topButton) {
+        window.addEventListener("scroll", () => {
+            topButton.classList.toggle("show", window.scrollY > 450);
+        }, { passive: true });
+
+        topButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 
     // Newsletter demo validation. Connect this form to a backend endpoint later.
     const newsletterForm = document.querySelector(".newsletter");

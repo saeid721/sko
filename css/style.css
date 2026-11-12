@@ -2512,3 +2512,25 @@ html.translated-ltr .brand-copy small {
         transition: none;
     }
 }
+
+
+/* Play icon centering (Font Awesome <i>) */
+
+.video-play i,
+.campaign-play i {
+    font-size: 16px;
+    margin-left: 3px;
+    line-height: 1;
+}
+
+.campaign-play i {
+    font-size: 20px;
+}
+
+
+/* Player must always sit above the play button + overlay */
+
+.feature-video-card .inline-player,
+.campaign-card .inline-player {
+    z-index: 10;
+}
