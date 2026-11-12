@@ -2148,3 +2148,190 @@ font {
         margin-right: 22px;
     }
 }
+
+
+/* =========================================================
+   LANGUAGE-PROOF LAYOUT FIX (BN <-> EN)
+   Paste at the VERY END of style.css
+   ========================================================= */
+
+
+/* ---------- 1. HEADER ---------- */
+
+.navbar-brand {
+    white-space: normal;
+    max-width: calc(100% - 64px);
+}
+
+.brand-copy {
+    min-width: 0;
+}
+
+.brand-copy small {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.member-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+html[lang="en"] .brand-copy small,
+html.translated-ltr .brand-copy small {
+    max-width: 290px;
+    line-height: 1.3;
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    html[lang="en"] .navbar-nav .nav-link,
+    html.translated-ltr .navbar-nav .nav-link {
+        font-size: 11.5px;
+        padding: .5rem .28rem !important;
+    }
+    html[lang="en"] .brand-copy small,
+    html.translated-ltr .brand-copy small {
+        max-width: 210px;
+        font-size: 11px;
+    }
+}
+
+
+/* ---------- 2. HERO (desktop / tablet) ---------- */
+
+@media (min-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: clamp(300px, 26vw, 400px);
+    }
+    .hero-content {
+        height: auto;
+        min-height: clamp(300px, 26vw, 400px);
+        padding-top: 28px;
+        padding-bottom: 52px;
+    }
+    .hero-copy {
+        max-width: min(46%, calc(44vw - 90px));
+    }
+}
+
+
+/* ---------- 3. CARDS: fixed height -> flexible height ---------- */
+
+.quick-card {
+    height: auto;
+    min-height: 87px;
+    padding: 8px 6px;
+}
+
+.partner-card {
+    height: auto;
+    min-height: 99px;
+}
+
+.partner-card strong {
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.service-card {
+    height: auto;
+    min-height: 74px;
+    padding: 8px 6px;
+    text-align: center;
+}
+
+.service-card strong {
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.leader-card {
+    height: auto;
+    min-height: 174px;
+}
+
+.leader-card div {
+    padding: 6px 6px 8px;
+}
+
+.leader-card h3,
+.leader-card p,
+.leader-card small {
+    overflow-wrap: anywhere;
+}
+
+
+/* ---------- 4. NEWS / EVENTS ---------- */
+
+.news-item>div,
+.event-item>div:last-child {
+    min-width: 0;
+}
+
+.news-item h3,
+.event-item h3,
+.event-item p {
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.event-date {
+    width: 66px;
+    min-width: 66px;
+    height: auto;
+    min-height: 54px;
+    padding: 4px 2px;
+}
+
+.section-heading,
+.panel-heading {
+    flex-wrap: wrap;
+}
+
+
+/* ---------- 5. CAMPAIGN VIDEO: text must not touch play button ---------- */
+
+.campaign-copy {
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(50% - 60px);
+    font-size: clamp(15px, 2vw, 23px);
+    overflow-wrap: anywhere;
+}
+
+
+/* ---------- 6. MOBILE ---------- */
+
+@media (max-width: 767.98px) {
+    .hero-actions .hero-btn {
+        white-space: normal;
+        line-height: 1.2;
+        text-align: center;
+    }
+    .campaign-play {
+        left: auto;
+        right: 14px;
+        transform: translateY(-50%);
+    }
+    .campaign-copy {
+        width: calc(100% - 110px);
+        font-size: clamp(15px, 4.6vw, 19px);
+    }
+    .stat-item {
+        min-width: 0;
+    }
+    .stat-item span {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 479.98px) {
+    html[lang="en"] .hero-actions,
+    html.translated-ltr .hero-actions {
+        grid-template-columns: 1fr;
+    }
+}
