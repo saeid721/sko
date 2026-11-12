@@ -3864,3 +3864,18 @@ html.translated-ltr .hero-copy h1 {
         font-size: 9.5px;
     }
 }
+
+
+/* =========================================================
+   "(SKO)" TAG: hidden in English, visible in Bangla
+   ========================================================= */
+
+.sko-tag {
+    white-space: inherit;
+}
+
+html[lang="en"] .sko-tag,
+html.translated-ltr .sko-tag,
+html.translated-rtl .sko-tag {
+    display: none !important;
+}
