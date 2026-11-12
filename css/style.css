@@ -2,6 +2,14 @@
    ROOT / BASE
    ============================================ */
 
+@font-face {
+    font-family: "Noto Sans Bengali";
+    src: url("../assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 :root {
     --navy: #062d68;
     --blue: #0754a5;
@@ -23,7 +31,7 @@ html {
 }
 
 body {
-    font-family: "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+    font-family: "Noto Sans Bengali", sans-serif;
     color: var(--ink);
     background: #fff;
     overflow-x: hidden;
@@ -2023,7 +2031,7 @@ body.lang-switching .site-footer {
 /* English typography + longer-text fit */
 
 html[lang="en"] body {
-    font-family: "Inter", "Hind Siliguri", sans-serif;
+    font-family: "Inter", "Noto Sans Bengali", sans-serif;
 }
 
 html[lang="en"] .navbar-brand {
