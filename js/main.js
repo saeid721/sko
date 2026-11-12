@@ -658,3 +658,85 @@ document.addEventListener("DOMContentLoaded", () => {
         clearCookie(); // remove any stale cookie; translator is NOT loaded
     }
 })();
+
+// ============================================
+// MOBILE BOTTOM NAVIGATION
+// Home default + active menu gets the raised design + moving notch
+// ============================================
+(() => {
+    const nav = document.getElementById("bottomNav");
+    if (!nav) return;
+
+    const items = [...nav.querySelectorAll(".bn-item")];
+    const homeItem = nav.querySelector('[data-nav="home"]') || items[0];
+
+    // move the white notch under the given item
+    const moveNotch = (item) => {
+        if (!item) return;
+        const navBox = nav.getBoundingClientRect();
+        const itemBox = item.getBoundingClientRect();
+        if (!navBox.width) return; // hidden (desktop)
+        const x = itemBox.left - navBox.left + itemBox.width / 2;
+        nav.style.setProperty("--bn-x", x + "px");
+    };
+
+    const getActive = () => items.find((i) => i.classList.contains("active")) || homeItem;
+
+    const setActive = (target) => {
+        items.forEach((item) => {
+            const on = item === target;
+            item.classList.toggle("active", on);
+            if (on) item.setAttribute("aria-current", "page");
+            else item.removeAttribute("aria-current");
+        });
+        moveNotch(target);
+    };
+
+    // If real page links are added later, highlight the current page automatically
+    const currentPage = location.pathname.split("/").pop() || "index.html";
+    const matched = items.find((item) => {
+        const href = item.getAttribute("href") || "";
+        return href && href !== "#" && href.split("#")[0].split("/").pop() === currentPage;
+    });
+
+    // default = Home (or the matching page)
+    setActive(matched || homeItem);
+
+    items.forEach((item) => {
+        item.addEventListener("click", (event) => {
+            const href = item.getAttribute("href");
+
+            // placeholder links: stay on the page
+            if (!href || href === "#") event.preventDefault();
+
+            if (item.dataset.nav === "home") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+
+            if (item !== getActive() && navigator.vibrate) navigator.vibrate(8);
+            setActive(item);
+        });
+    });
+
+    // keep the notch exactly under the active item on resize / rotate / font load
+    const realign = () => moveNotch(getActive());
+    window.addEventListener("resize", realign);
+    window.addEventListener("orientationchange", realign);
+    window.addEventListener("load", realign);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(realign);
+
+    // Hide the bar while typing (newsletter email field), so the keyboard never overlaps it
+    const isField = (el) => el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName);
+
+    document.addEventListener("focusin", (event) => {
+        if (isField(event.target)) nav.classList.add("bn-hide");
+    });
+
+    document.addEventListener("focusout", (event) => {
+        if (isField(event.target)) {
+            setTimeout(() => {
+                if (!isField(document.activeElement)) nav.classList.remove("bn-hide");
+            }, 120);
+        }
+    });
+})();

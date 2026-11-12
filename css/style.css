@@ -3151,3 +3151,176 @@ html.translated-ltr .hero-copy h1 {
         font-size: clamp(14px, 4.6vw, 24px);
     }
 }
+
+
+/* =========================================================
+   MOBILE BOTTOM NAVIGATION (moving active notch)
+   ========================================================= */
+
+
+/* lets the white notch glide smoothly to the active item */
+
+@property --bn-x {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 195px;
+}
+
+
+/* hidden on tablet / desktop */
+
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    body {
+        padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+    }
+    .bottom-nav {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1010;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        filter: drop-shadow(0 -4px 14px rgba(8, 45, 100, .16));
+        transition: transform .3s ease, --bn-x .4s cubic-bezier(.4, 0, .2, 1);
+        -webkit-tap-highlight-color: transparent;
+    }
+    .bottom-nav.bn-hide {
+        transform: translateY(130%);
+    }
+    /* white bar, round notch follows the active item */
+    .bn-bar {
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        border-radius: 22px 22px 0 0;
+        -webkit-mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, #000 33.5px);
+        mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, #000 33.5px);
+    }
+    .bn-list {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        height: 64px;
+        padding: 0 4px;
+    }
+    .bn-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3px;
+        min-width: 0;
+        padding: 8px 1px 0;
+        color: #64748b;
+        text-align: center;
+        transition: color .25s ease;
+    }
+    .bn-item:focus-visible {
+        outline: 2px solid #0754a5;
+        outline-offset: -2px;
+        border-radius: 10px;
+    }
+    /* icon box (the blue circle is drawn behind it) */
+    .bn-ico {
+        position: relative;
+        z-index: 1;
+        width: 26px;
+        height: 26px;
+        display: grid;
+        place-items: center;
+        transition: transform .35s cubic-bezier(.34, 1.4, .5, 1), color .25s ease;
+    }
+    .bn-ico i {
+        font-size: 19px;
+        line-height: 1;
+        transition: font-size .25s ease;
+    }
+    .bn-ico::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        width: 54px;
+        height: 54px;
+        margin: -27px 0 0 -27px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #0a66c8, #063a82);
+        box-shadow: 0 6px 16px rgba(7, 84, 165, .4);
+        opacity: 0;
+        transform: scale(.4);
+        transition: transform .35s cubic-bezier(.34, 1.4, .5, 1), opacity .2s ease;
+    }
+    /* label: word-per-line (set with <br> in HTML), never wraps on its own */
+    .bn-label {
+        display: block;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+    .bn-item:active .bn-ico {
+        transform: scale(.88);
+    }
+    /* ACTIVE ITEM = raised circle (default: Home) */
+    .bn-item.active {
+        color: #0754a5;
+    }
+    .bn-item.active .bn-label {
+        font-weight: 700;
+    }
+    .bn-item.active .bn-ico {
+        color: #fff;
+        transform: translateY(-18px);
+    }
+    .bn-item.active .bn-ico i {
+        font-size: 21px;
+    }
+    .bn-item.active .bn-ico::before {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .bn-item.active:active .bn-ico {
+        transform: translateY(-18px) scale(.93);
+    }
+    /* English (Google Translate): longer words need a bit smaller text */
+    html[lang="en"] .bn-label,
+    html.translated-ltr .bn-label {
+        font-size: 9px;
+        letter-spacing: -.1px;
+    }
+    /* back-to-top sits above the bar */
+    .back-to-top {
+        bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+        right: 14px;
+        z-index: 1011;
+    }
+}
+
+@media (max-width: 359.98px) {
+    .bn-list {
+        padding: 0 2px;
+    }
+    .bn-label {
+        font-size: 9px;
+    }
+    .bn-ico i {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bottom-nav,
+    .bn-item,
+    .bn-ico,
+    .bn-ico i,
+    .bn-ico::before {
+        transition: none;
+    }
+}
