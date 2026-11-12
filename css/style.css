@@ -3324,3 +3324,484 @@ html.translated-ltr .hero-copy h1 {
         transition: none;
     }
 }
+
+
+/* =========================================================
+   MOBILE TOPBAR + NAVBAR (premium, mobile only)
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+    /* ---------- TOPBAR: email + phone + language in ONE line ---------- */
+    .topbar {
+        padding: 5px 0;
+        font-size: 11px;
+    }
+    .topbar .container {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .top-contact {
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+        min-width: 0;
+    }
+    .top-contact a {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+    .top-contact a i {
+        font-size: 11px;
+        color: #ffd21f;
+    }
+    .top-links {
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+        flex-shrink: 0;
+    }
+    /* hide: সদস্য যাচাই / QR যাচাই / ডাউনলোড / সাহায্য-FAQ (language switch stays) */
+    .top-links>a {
+        display: none;
+    }
+    .language {
+        margin-right: 0;
+    }
+    .lang-btn {
+        min-width: 38px;
+        height: 24px;
+        padding: 0 9px;
+        font-size: 11px;
+    }
+    .language.is-loading::after {
+        right: auto;
+        left: -20px;
+    }
+    /* ---------- HEADER / NAVBAR ---------- */
+    .site-header {
+        border-bottom: 1px solid #e8eff7;
+        box-shadow: 0 4px 18px rgba(8, 45, 100, .10);
+    }
+    .site-header .navbar {
+        padding: 9px 16px;
+    }
+    .navbar-brand {
+        gap: 10px !important;
+        margin: 0;
+        padding: 0;
+        max-width: calc(100% - 58px);
+    }
+    .brand-mark {
+        width: auto;
+        height: 50px;
+        max-width: 66px;
+        object-fit: contain;
+    }
+    .brand-copy small {
+        display: block;
+        padding-left: 10px;
+        border-left: 2px solid #ffd21f;
+        font-size: 11.5px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+    /* menu (hamburger) button */
+    .navbar-toggler {
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border: 1px solid #d6e3f3;
+        border-radius: 12px;
+        background: #f2f7fe;
+        box-shadow: none;
+        transition: background .25s ease, box-shadow .25s ease;
+    }
+    .navbar-toggler:active {
+        background: #e4eefb;
+    }
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 3px rgba(7, 84, 165, .18);
+    }
+    .navbar-toggler-icon {
+        width: 22px;
+        height: 22px;
+    }
+    /* opened menu */
+    .navbar-collapse {
+        max-height: calc(100dvh - 140px);
+        margin-top: 8px;
+        padding-top: 4px;
+        border-top: 1px solid #e6eef7;
+        overflow-y: auto;
+    }
+    .navbar-nav {
+        padding: 4px 0;
+    }
+    .navbar-nav .nav-item {
+        border-bottom: 1px solid #f0f4f9;
+    }
+    .navbar-nav .nav-item:last-child {
+        padding-top: 10px;
+        border-bottom: 0;
+    }
+    .navbar-nav .nav-link {
+        padding: .7rem .25rem !important;
+        font-size: 14px;
+    }
+    .navbar-nav .dropdown-menu {
+        margin: 0 0 8px;
+        background: #f6f9fd;
+        box-shadow: none;
+    }
+    .member-login {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 11px 14px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}
+
+
+/* very small phones (≤359px): keep topbar on one line */
+
+@media (max-width: 359.98px) {
+    .topbar .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 6px !important;
+    }
+    .top-contact {
+        gap: 8px !important;
+    }
+    .top-contact a {
+        font-size: 10.5px;
+    }
+    .top-contact a i {
+        display: none;
+    }
+    .lang-btn {
+        min-width: 34px;
+        padding: 0 7px;
+    }
+    .site-header .navbar {
+        padding: 8px 12px;
+    }
+    .brand-mark {
+        height: 44px;
+        max-width: 58px;
+    }
+    .brand-copy small {
+        font-size: 10.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar-toggler {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR: COMPACT HEIGHT (Bangla + English)
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+    /* tighter top / bottom space */
+    .site-header .navbar {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 16px;
+        padding-right: 16px;
+        min-height: 0;
+    }
+    /* logo: still large, but no extra height */
+    .brand-mark {
+        height: 44px;
+        max-width: 60px;
+        display: block;
+    }
+    /* brand text: tight line-height, no extra gaps */
+    .navbar-brand {
+        gap: 9px !important;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        align-items: center;
+    }
+    .brand-copy {
+        align-items: center;
+    }
+    .brand-copy small {
+        display: block;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 11.5px;
+        line-height: 1.3;
+    }
+    /* menu button: smaller so it does not stretch the bar */
+    .navbar-toggler {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        border-radius: 10px;
+    }
+    .navbar-toggler-icon {
+        width: 20px;
+        height: 20px;
+    }
+    /* opened menu spacing */
+    .navbar-collapse {
+        margin-top: 4px;
+        padding-top: 0;
+    }
+    /* ---------- English (Google Translate): longer text, keep bar compact ---------- */
+    html[lang="en"] .brand-copy small,
+    html.translated-ltr .brand-copy small {
+        max-width: 100%;
+        font-size: 10.5px;
+        line-height: 1.25;
+        letter-spacing: -.1px;
+    }
+    html[lang="en"] .navbar-brand,
+    html.translated-ltr .navbar-brand {
+        max-width: calc(100% - 50px);
+    }
+}
+
+
+/* very small phones (≤359px) */
+
+@media (max-width: 359.98px) {
+    .site-header .navbar {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .brand-mark {
+        height: 40px;
+        max-width: 54px;
+    }
+    .navbar-toggler {
+        width: 38px;
+        height: 38px;
+    }
+    html[lang="en"] .brand-copy small,
+    html.translated-ltr .brand-copy small {
+        font-size: 10px;
+    }
+}
+
+
+/* very small phones (≤359px) */
+
+@media (max-width: 359.98px) {
+    .site-header .navbar {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .brand-mark {
+        height: 40px;
+        max-width: 54px;
+    }
+    .navbar-toggler {
+        width: 38px;
+        height: 38px;
+    }
+    html[lang="en"] .brand-copy small,
+    html.translated-ltr .brand-copy small {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   QUICK SECTION: BLUE ICONS + 3 CARDS PER ROW ON MOBILE
+   ========================================================= */
+
+
+/* blue icons (all screens) */
+
+.quick-card i {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 26px;
+    line-height: 1;
+    color: #0646b5;
+    transition: transform .25s ease, color .25s ease;
+}
+
+.quick-card:hover i {
+    color: #0754a5;
+    transform: scale(1.1);
+}
+
+
+/* equal card height inside each row */
+
+.quick-section .row>.col {
+    display: flex;
+}
+
+.quick-section .quick-card {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767.98px) {
+    /* exactly 3 cards per row (overrides Bootstrap row-cols-2) */
+    .quick-section .row>.col {
+        flex: 0 0 auto;
+        width: 33.33333%;
+    }
+    .quick-section .row {
+        --bs-gutter-x: .6rem;
+        --bs-gutter-y: .6rem;
+    }
+    .quick-section {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    /* compact, balanced card */
+    .quick-section .quick-card {
+        min-height: 98px;
+        padding: 10px 4px;
+        border-radius: 14px;
+        justify-content: center;
+        background: linear-gradient(145deg, #f1f8ff, #e4effc);
+        border: 1px solid #d6e6f8;
+        box-shadow: 0 2px 8px rgba(8, 45, 100, .06);
+    }
+    .quick-section .quick-card:active {
+        transform: scale(.96);
+        background: #fff;
+    }
+    .quick-card i {
+        margin-bottom: 6px;
+        font-size: 24px;
+    }
+    .quick-card strong {
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+    .quick-card span {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-top: 2px;
+        font-size: 10px;
+        line-height: 1.25;
+        color: #475569;
+        overflow-wrap: anywhere;
+    }
+    /* English (Google Translate): longer words */
+    html[lang="en"] .quick-card strong,
+    html.translated-ltr .quick-card strong {
+        font-size: 11.5px;
+    }
+    html[lang="en"] .quick-card span,
+    html.translated-ltr .quick-card span {
+        font-size: 9.5px;
+    }
+}
+
+
+/* very small phones (≤359px) */
+
+@media (max-width: 359.98px) {
+    .quick-section .row {
+        --bs-gutter-x: .45rem;
+        --bs-gutter-y: .45rem;
+    }
+    .quick-section .quick-card {
+        min-height: 92px;
+        padding: 8px 3px;
+    }
+    .quick-card i {
+        font-size: 22px;
+    }
+    .quick-card strong {
+        font-size: 11.5px;
+    }
+    .quick-card span {
+        font-size: 9.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quick-card i {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   QUICK SECTION: COMPACT CARDS ON MOBILE (less top/bottom space)
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+    /* tighter space between the two rows */
+    .quick-section .row {
+        --bs-gutter-y: .45rem;
+        --bs-gutter-x: .5rem;
+    }
+    .quick-section {
+        padding-top: 10px;
+        padding-bottom: 8px;
+    }
+    /* card height follows its content (no extra empty space) */
+    .quick-section .quick-card {
+        min-height: 0;
+        height: 100%;
+        padding: 7px 4px;
+        gap: 0;
+        justify-content: center;
+    }
+    /* icon, title, subtitle: tight vertical rhythm */
+    .quick-card i {
+        margin-bottom: 3px;
+        font-size: 22px;
+    }
+    .quick-card strong {
+        line-height: 1.2;
+    }
+    .quick-card span {
+        margin-top: 1px;
+        line-height: 1.2;
+    }
+}
+
+
+/* very small phones (≤359px) */
+
+@media (max-width: 359.98px) {
+    .quick-section .row {
+        --bs-gutter-y: .4rem;
+        --bs-gutter-x: .4rem;
+    }
+    .quick-section .quick-card {
+        min-height: 0;
+        padding: 6px 3px;
+    }
+    .quick-card i {
+        margin-bottom: 2px;
+        font-size: 20px;
+    }
+}
