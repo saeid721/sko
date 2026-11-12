@@ -2335,3 +2335,180 @@ html.translated-ltr .brand-copy small {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================================
+   INLINE VIDEO PLAYER
+   ========================================================= */
+
+.feature-video-card.is-playing,
+.campaign-card.is-playing {
+    cursor: default;
+    transform: none;
+}
+
+.inline-player {
+    position: absolute;
+    inset: 8px;
+    z-index: 6;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #000;
+    animation: playerIn .35s ease both;
+}
+
+.inline-player iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.inline-player__spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid rgba(255, 255, 255, .25);
+    border-top-color: #ffd21f;
+    border-radius: 50%;
+    animation: langSpin .8s linear infinite;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.inline-player.is-loading .inline-player__spinner {
+    opacity: 1;
+}
+
+.inline-player__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(255, 255, 255, .7);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    font-size: 15px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background .25s ease, transform .25s ease;
+}
+
+.inline-player__close:hover {
+    background: #e52631;
+    border-color: #e52631;
+    transform: rotate(90deg);
+}
+
+.inline-player__close:focus-visible {
+    outline: 2px solid #ffd21f;
+    outline-offset: 2px;
+}
+
+@keyframes playerIn {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .inline-player__close {
+        top: 6px;
+        right: 6px;
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .inline-player {
+        animation: none;
+    }
+}
+
+
+/* play button pulse (makes the cards feel clickable) */
+
+.video-play::before,
+.campaign-play::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, .65);
+    animation: playPulse 1.8s ease-out infinite;
+}
+
+@keyframes playPulse {
+    0% {
+        transform: scale(.85);
+        opacity: .9;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+.feature-video-card:hover .video-play,
+.campaign-card:hover .campaign-play {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play,
+.campaign-play {
+    transition: transform .25s ease;
+    cursor: pointer;
+}
+
+
+/* mobile */
+
+@media (max-width: 767.98px) {
+    .video-modal {
+        padding: 12px;
+    }
+    .video-modal__dialog {
+        width: min(100%, calc((100dvh - 110px) * 16 / 9));
+    }
+    .video-modal__frame {
+        border-radius: 10px;
+    }
+    .video-modal__yt {
+        width: 100%;
+        justify-content: center;
+    }
+    /* mobile campaign card keeps play button on the right (existing rule) */
+    .campaign-play:hover {
+        transform: translateY(-50%);
+    }
+    .campaign-card:hover .campaign-play {
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .video-play::before,
+    .campaign-play::before {
+        animation: none;
+    }
+    .video-modal,
+    .video-modal__dialog {
+        transition: none;
+    }
+}

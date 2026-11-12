@@ -172,15 +172,95 @@ document.addEventListener("DOMContentLoaded", () => {
         } else input.reportValidity();
     });
 
-    // Demo video click feedback; replace with the actual video URL/modal when available.
-    document.querySelectorAll(".feature-video-card,.campaign-card").forEach(card => {
-        card.addEventListener("click", event => {
+    // ============================================
+    // INLINE VIDEO PLAYER (plays inside the same card)
+    // ============================================
+    const videoCards = document.querySelectorAll(".feature-video-card,.campaign-card");
+    let activeVideoCard = null;
+
+    const getYouTubeId = (url) => {
+        try {
+            const u = new URL(url, location.href);
+            if (u.hostname.includes("youtu.be")) return u.pathname.slice(1);
+            if (u.searchParams.get("v")) return u.searchParams.get("v");
+            const m = u.pathname.match(/\/(embed|shorts)\/([\w-]{11})/);
+            return m ? m[2] : "";
+        } catch (e) {
+            return "";
+        }
+    };
+
+    const stopVideo = (card) => {
+        if (!card) return;
+        const player = card.querySelector(".inline-player");
+        if (player) player.remove(); // removing iframe stops the video
+        card.classList.remove("is-playing");
+        if (activeVideoCard === card) activeVideoCard = null;
+    };
+
+    const playVideo = (card) => {
+        const id = getYouTubeId(card.getAttribute("href"));
+        if (!id) return;
+
+        // only one video at a time
+        if (activeVideoCard && activeVideoCard !== card) stopVideo(activeVideoCard);
+
+        const isEn = document.documentElement.lang === "en";
+        const img = card.querySelector("img");
+        const title = img ? img.alt : "Video";
+
+        const player = document.createElement("div");
+        player.className = "inline-player is-loading notranslate";
+        player.setAttribute("translate", "no");
+        player.innerHTML =
+            '<span class="inline-player__spinner" aria-hidden="true"></span>' +
+            '<button type="button" class="inline-player__close" aria-label="' +
+            (isEn ? "Close video" : "ভিডিও বন্ধ করুন") +
+            '"><i class="fa-solid fa-xmark"></i></button>';
+
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+        iframe.title = title;
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        iframe.allowFullscreen = true;
+        iframe.addEventListener("load", () => player.classList.remove("is-loading"));
+        player.appendChild(iframe);
+
+        card.appendChild(player);
+        card.classList.add("is-playing");
+        activeVideoCard = card;
+    };
+
+    videoCards.forEach((card) => {
+        card.addEventListener("click", (event) => {
             event.preventDefault();
-            alert(document.documentElement.lang === "en" ?
-                "The video will play here once the link is added." :
-                "ভিডিও লিংক যুক্ত হলে এখানে ভিডিও চালু হবে।");
+
+            if (event.target.closest(".inline-player__close")) {
+                stopVideo(card);
+                return;
+            }
+            if (card.classList.contains("is-playing")) return;
+
+            playVideo(card);
         });
     });
+
+    // ESC key closes the playing video
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") stopVideo(activeVideoCard);
+    });
+
+    // Auto stop when the card scrolls out of the screen
+    if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting && entry.target === activeVideoCard) {
+                    stopVideo(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        videoCards.forEach((card) => videoObserver.observe(card));
+    }
 });
 
 
