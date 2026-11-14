@@ -246,6 +246,63 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
 
     // ============================================
+    // MOBILE / TABLET SIDEBAR (offcanvas)
+    // Moves the menu to <body> below 1200px so it
+    // always sits above the dim overlay and the sticky header
+    // ============================================
+    (() => {
+        const panel = document.getElementById("mainNav");
+        if (!panel || !window.bootstrap) return;
+
+        const mq = window.matchMedia("(max-width: 1199.98px)");
+        const anchor = document.createComment("mainNav-home");
+        panel.parentNode.insertBefore(anchor, panel);
+
+        // dropdowns inside the sidebar must stay in normal flow (no Popper)
+        panel.querySelectorAll('[data-bs-toggle="dropdown"]').forEach((t) => {
+            t.setAttribute("data-bs-display", "static");
+        });
+
+        const hide = () => {
+            const inst = bootstrap.Offcanvas.getInstance(panel);
+            if (inst) inst.hide();
+        };
+
+        const place = () => {
+            if (mq.matches) {
+                if (panel.parentNode !== document.body) document.body.appendChild(panel);
+            } else if (panel.parentNode === document.body && anchor.parentNode) {
+                hide();
+                anchor.parentNode.insertBefore(panel, anchor.nextSibling);
+            }
+        };
+
+        place();
+        mq.addEventListener("change", place);
+
+        // close after tapping a normal link (not a dropdown title)
+        panel.addEventListener("click", (event) => {
+            if (!mq.matches) return;
+            const link = event.target.closest("a");
+            if (!link || link.classList.contains("dropdown-toggle")) return;
+            hide();
+        });
+
+        // swipe left to close (app feel)
+        let sx = 0;
+        let sy = 0;
+        panel.addEventListener("touchstart", (event) => {
+            sx = event.touches[0].clientX;
+            sy = event.touches[0].clientY;
+        }, { passive: true });
+        panel.addEventListener("touchend", (event) => {
+            const dx = event.changedTouches[0].clientX - sx;
+            const dy = event.changedTouches[0].clientY - sy;
+            if (dx < -70 && Math.abs(dy) < 60) hide();
+        }, { passive: true });
+    })();
+
+    // ============================================
     // NAVBAR: DROPDOWN OPENS ON HOVER (desktop only)
     // Mobile / tablet keeps normal click behaviour
     // ============================================

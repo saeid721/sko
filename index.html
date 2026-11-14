@@ -99,59 +99,72 @@
                 <span class="brand-copy"><small><span class="brand-title">শিক্ষক কর্মচারী ঐক্য জোট<span class="sko-tag notranslate" translate="no"> (SKO)</span></span><span class="brand-sub">কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা</span></small>
                 </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="মেনু খুলুন">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-1">
-                    <li class="nav-item"><a class="nav-link active" href="#">হোম</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SKO পরিচিতি</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">আমাদের সম্পর্কে</a></li>
-                            <li><a class="dropdown-item" href="#">লক্ষ্য ও উদ্দেশ্য</a></li>
-                            <li><a class="dropdown-item" href="#">গঠনতন্ত্র</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সংগঠন</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">সহযোগী সংগঠন</a></li>
-                            <li><a class="dropdown-item" href="#">জেলা কমিটি</a></li>
-                            <li><a class="dropdown-item" href="#">উপজেলা কমিটি</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">কমিটি</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">কেন্দ্রীয় কমিটি</a></li>
-                            <li><a class="dropdown-item" href="#">বিভাগীয় কমিটি</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সদস্য</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">সদস্য নিবন্ধন</a></li>
-                            <li><a class="dropdown-item" href="#">সদস্য যাচাই</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">মতামত ও নোটিশ</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">নোটিশ</a></li>
-                            <li><a class="dropdown-item" href="#">মতামত</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অনুষ্ঠান</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">আসন্ন অনুষ্ঠান</a></li>
-                            <li><a class="dropdown-item" href="#">অনুষ্ঠান আর্কাইভ</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সেবা</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">সদস্য সেবাসমূহ</a></li>
-                            <li><a class="dropdown-item" href="#">কল্যাণ সুবিধা</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">যোগাযোগ</a></li>
-                    <li class="nav-item ms-xl-2"><a class="btn btn-success btn-sm member-login" href="#"><i class="fa-solid fa-user"></i> সদস্য লগইন</a></li>
-                </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="মেনু খুলুন">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start sko-sidebar" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+                <div class="offcanvas-header sko-side-head">
+                    <a class="side-brand" href="#">
+                        <img src="assets/images/logo.png" alt="SKO লোগো">
+                        <span id="mainNavLabel">শিক্ষক কর্মচারী ঐক্য জোট<small>কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা</small></span>
+                    </a>
+                    <button type="button" class="side-close" data-bs-dismiss="offcanvas" aria-label="মেনু বন্ধ করুন"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="offcanvas-body sko-side-body">
+                    <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-1">
+                        <li class="nav-item"><a class="nav-link active" href="#">হোম</a></li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SKO পরিচিতি</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">আমাদের সম্পর্কে</a></li>
+                                <li><a class="dropdown-item" href="#">লক্ষ্য ও উদ্দেশ্য</a></li>
+                                <li><a class="dropdown-item" href="#">গঠনতন্ত্র</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সংগঠন</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">সহযোগী সংগঠন</a></li>
+                                <li><a class="dropdown-item" href="#">জেলা কমিটি</a></li>
+                                <li><a class="dropdown-item" href="#">উপজেলা কমিটি</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">কমিটি</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">কেন্দ্রীয় কমিটি</a></li>
+                                <li><a class="dropdown-item" href="#">বিভাগীয় কমিটি</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সদস্য</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">সদস্য নিবন্ধন</a></li>
+                                <li><a class="dropdown-item" href="#">সদস্য যাচাই</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">মতামত ও নোটিশ</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">নোটিশ</a></li>
+                                <li><a class="dropdown-item" href="#">মতামত</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অনুষ্ঠান</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">আসন্ন অনুষ্ঠান</a></li>
+                                <li><a class="dropdown-item" href="#">অনুষ্ঠান আর্কাইভ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সেবা</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">সদস্য সেবাসমূহ</a></li>
+                                <li><a class="dropdown-item" href="#">কল্যাণ সুবিধা</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">যোগাযোগ</a></li>
+                        <li class="nav-item ms-xl-2"><a class="btn btn-success btn-sm member-login" href="#"><i class="fa-solid fa-user"></i> সদস্য লগইন</a></li>
+                    </ul>
+                </div>
+                <div class="side-foot">
+                    <a href="mailto:info@sko.org.bd"><i class="fa-solid fa-envelope"></i> info@sko.org.bd</a>
+                    <a href="tel:+8801700000000"><i class="fa-solid fa-phone"></i> +880 1700-000000</a>
+                </div>
             </div>
         </nav>
     </header>
