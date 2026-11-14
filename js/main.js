@@ -246,6 +246,30 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
 
     // ============================================
+    // MENU: highlight the current page automatically
+    // ============================================
+    (() => {
+        const page = location.pathname.split("/").pop() || "index.html";
+        const links = document.querySelectorAll("#mainNav .nav-link[href], #mainNav .dropdown-item[href]");
+
+        links.forEach((a) => {
+            const href = a.getAttribute("href") || "";
+            if (!href || href === "#") return;
+            const file = href.split("#")[0].split("?")[0];
+            if (file !== page) return;
+
+            if (a.classList.contains("nav-link")) {
+                a.classList.add("active");
+            } else {
+                const parent = a.closest(".dropdown");
+                const title = parent && parent.querySelector(".nav-link");
+                if (title) title.classList.add("active");
+                a.classList.add("active");
+            }
+        });
+    })();
+
+    // ============================================
     // MOBILE / TABLET SIDEBAR (offcanvas)
     // Moves the menu to <body> below 1200px so it
     // always sits above the dim overlay and the sticky header
@@ -915,7 +939,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // placeholder links: stay on the page
             if (!href || href === "#") event.preventDefault();
 
-            if (item.dataset.nav === "home") {
+            // Home on the home page: just scroll up, do not reload
+            if (item.dataset.nav === "home" && (currentPage === "index.html" || currentPage === "")) {
+                event.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
 
