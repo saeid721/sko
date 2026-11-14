@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hero = document.querySelector(".hero-section");
     const heroImg = hero ? hero.querySelector(".hero-photo img") : null;
+    const heroSlides = hero ? [...hero.querySelectorAll(".hero-photo .hero-slide")] : [];
     const dots = [...document.querySelectorAll(".hero-dots button")];
 
     const slides = [
@@ -44,8 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         });
 
-        heroImg.style.objectPosition = slides[current].position;
-        heroImg.style.transform = `scale(${slides[current].zoom})`;
+        heroSlides.forEach((img, i) => img.classList.toggle("active", i === current));
     };
 
     // Stop autoplay
