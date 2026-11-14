@@ -131,16 +131,111 @@ document.addEventListener("DOMContentLoaded", () => {
         play();
     }
 
-    // Partner card horizontal movement on smaller screens.
-    const track = document.getElementById("partnerTrack");
-    const partnerNext = document.querySelector(".partner-next");
-    if (partnerNext) partnerNext.addEventListener("click", () => {
-        if (track) track.scrollBy({ left: track.clientWidth * .8, behavior: "smooth" });
-    });
-    const partnerPrev = document.querySelector(".partner-prev");
-    if (partnerPrev) partnerPrev.addEventListener("click", () => {
-        if (track) track.scrollBy({ left: -track.clientWidth * .8, behavior: "smooth" });
-    });
+    // ============================================
+    // PARTNER AUTO SLIDER
+    // Auto play + loop + arrows + dots + swipe + pause on hover/touch
+    // ============================================
+    (() => {
+        const track = document.getElementById("partnerTrack");
+        if (!track) return;
+
+        const wrap = track.closest(".partner-wrap");
+        const prevBtn = wrap.querySelector(".partner-prev");
+        const nextBtn = wrap.querySelector(".partner-next");
+        const pipBox = document.querySelector(".partner-section .slider-pips");
+        const cards = [...track.children];
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const DELAY = 3200;
+
+        let index = 0;
+        let timer = null;
+        let pips = [];
+        let scrollTimer = null;
+
+        const perView = () => parseInt(getComputedStyle(wrap).getPropertyValue("--pv"), 10) || 1;
+        const maxIndex = () => Math.max(0, cards.length - perView());
+        const step = () => (cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth);
+
+        const syncPips = () => {
+            pips.forEach((p, i) => {
+                p.classList.toggle("active", i === index);
+                p.setAttribute("aria-current", i === index ? "true" : "false");
+            });
+        };
+
+        const goTo = (i, smooth = true) => {
+            index = Math.min(Math.max(i, 0), maxIndex());
+            track.scrollTo({ left: index * step(), behavior: smooth ? "smooth" : "instant" });
+            syncPips();
+        };
+
+        const stop = () => {
+            clearInterval(timer);
+            timer = null;
+        };
+
+        const play = () => {
+            stop();
+            if (reduced.matches || maxIndex() === 0) return;
+            timer = setInterval(() => goTo(index >= maxIndex() ? 0 : index + 1), DELAY);
+        };
+
+        const buildPips = () => {
+            if (!pipBox) return;
+            pipBox.innerHTML = "";
+            pips = [];
+            for (let i = 0; i <= maxIndex(); i++) {
+                const b = document.createElement("button");
+                b.type = "button";
+                b.setAttribute("aria-label", (document.documentElement.lang === "en" ? "Go to slide " : "স্লাইড ") + (i + 1));
+                b.addEventListener("click", () => { goTo(i);
+                    play(); });
+                pipBox.appendChild(b);
+                pips.push(b);
+            }
+            pipBox.hidden = maxIndex() === 0;
+            syncPips();
+        };
+
+        // arrows (loop)
+        if (nextBtn) nextBtn.addEventListener("click", () => { goTo(index >= maxIndex() ? 0 : index + 1);
+            play(); });
+        if (prevBtn) prevBtn.addEventListener("click", () => { goTo(index <= 0 ? maxIndex() : index - 1);
+            play(); });
+
+        // keep dots in sync when the user swipes by hand
+        track.addEventListener("scroll", () => {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(() => {
+                const i = Math.min(Math.round(track.scrollLeft / step()), maxIndex());
+                if (i !== index) { index = i;
+                    syncPips(); }
+            }, 80);
+        }, { passive: true });
+
+        // pause on hover / touch / keyboard focus / hidden tab
+        wrap.addEventListener("mouseenter", stop);
+        wrap.addEventListener("mouseleave", play);
+        wrap.addEventListener("touchstart", stop, { passive: true });
+        wrap.addEventListener("touchend", play, { passive: true });
+        wrap.addEventListener("focusin", stop);
+        wrap.addEventListener("focusout", play);
+        document.addEventListener("visibilitychange", () => (document.hidden ? stop() : play()));
+        reduced.addEventListener("change", play);
+
+        // re-calc on resize / rotate
+        let rz;
+        window.addEventListener("resize", () => {
+            clearTimeout(rz);
+            rz = setTimeout(() => {
+                buildPips();
+                goTo(index, false);
+            }, 150);
+        });
+
+        buildPips();
+        play();
+    })();
 
     // Reveal-on-scroll animation.
     const animated = document.querySelectorAll(".quick-card,.partner-card,.service-card,.content-panel,.feature-video-card,.campaign-card");
