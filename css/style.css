@@ -967,7 +967,7 @@ a {
 }
 
 .leader-card h3 {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     margin: 0;
     line-height: 1.15;
@@ -4424,5 +4424,363 @@ html.translated-rtl .sko-tag {
     }
     .sko-sidebar .dropdown-menu.show {
         animation: none;
+    }
+}
+
+
+/* =========================================================
+   PREMIUM MOTION (light, GPU-only: transform + opacity)
+   Paste at the VERY END of style.css
+   ========================================================= */
+
+
+/* stop the old load animation (it also blocked the hover lift) */
+
+.quick-card,
+.partner-card,
+.service-card,
+.content-panel,
+.feature-video-card,
+.campaign-card {
+    animation: none;
+}
+
+@keyframes rvIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* below the fold: hidden until scrolled into view */
+
+.rv {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition: opacity .6s ease var(--d, 0s), transform .6s cubic-bezier(.22, .7, .2, 1) var(--d, 0s);
+    will-change: opacity, transform;
+}
+
+.rv.in {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* already on screen: short entrance on load */
+
+.rv-load {
+    animation: rvIn .6s cubic-bezier(.22, .7, .2, 1) var(--d, 0s) backwards;
+}
+
+
+/* hero: headline shows instantly, the rest glides in */
+
+.hero-copy.reveal {
+    animation: none;
+}
+
+.hero-benefits {
+    animation: rvIn .65s cubic-bezier(.22, .7, .2, 1) .12s backwards;
+}
+
+.hero-actions {
+    animation: rvIn .65s cubic-bezier(.22, .7, .2, 1) .24s backwards;
+}
+
+
+/* scroll progress bar */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 1100;
+    background: linear-gradient(90deg, #ffd21f, #0a66c8);
+    transform: scaleX(0);
+    transform-origin: left;
+    pointer-events: none;
+}
+
+
+/* header shadow after scroll */
+
+.site-header {
+    transition: box-shadow .3s ease;
+}
+
+.site-header.is-stuck {
+    box-shadow: 0 8px 26px rgba(8, 45, 100, .14);
+}
+
+
+/* button shine */
+
+.hero-btn,
+.member-login {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero-btn::after,
+.member-login::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .35), transparent);
+    transform: translateX(-130%) skewX(-18deg);
+    transition: transform .7s ease;
+    pointer-events: none;
+}
+
+.hero-btn:hover::after,
+.member-login:hover::after {
+    transform: translateX(260%) skewX(-18deg);
+}
+
+
+/* "view all" pills */
+
+.view-link {
+    transition: background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.view-link:hover {
+    background: #0754a5;
+    border-color: #0754a5;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(7, 84, 165, .25);
+}
+
+.view-link i {
+    display: inline-block;
+    transition: transform .25s ease;
+}
+
+.view-link:hover i {
+    transform: translateX(4px);
+}
+
+
+/* service cards: icon lift */
+
+.service-card i {
+    display: inline-block;
+    transition: transform .3s cubic-bezier(.34, 1.4, .5, 1);
+}
+
+.service-card:hover i {
+    transform: translateY(-3px) scale(1.15);
+}
+
+
+/* leader cards */
+
+.leader-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(8, 45, 100, .16);
+}
+
+.leader-card img {
+    transition: transform .6s ease;
+}
+
+.leader-card:hover img {
+    transform: scale(1.06);
+}
+
+
+/* news thumbnails */
+
+.news-item img {
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.news-item:hover img {
+    transform: scale(1.04);
+    box-shadow: 0 6px 14px rgba(8, 45, 100, .2);
+}
+
+
+/* footer micro-interactions */
+
+.footer-links a,
+.contact-list a {
+    display: inline-block;
+    transition: transform .2s ease, color .2s ease;
+}
+
+.footer-links a:hover {
+    transform: translateX(4px);
+}
+
+.social-links a {
+    transition: transform .25s cubic-bezier(.34, 1.4, .5, 1), box-shadow .25s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .25);
+}
+
+
+/* render the footer only when it is near the screen (faster first load) */
+
+.site-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 320px;
+}
+
+
+/* respect "reduce motion" */
+
+@media (prefers-reduced-motion: reduce) {
+    .rv,
+    .rv-load {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    .hero-benefits,
+    .hero-actions {
+        animation: none;
+    }
+    .hero-btn::after,
+    .member-login::after {
+        display: none;
+    }
+    .leader-card,
+    .leader-card img,
+    .news-item img,
+    .service-card i,
+    .view-link i,
+    .footer-links a,
+    .social-links a {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   LEADERSHIP CARD: fix hover zoom covering the name
+   Paste at the VERY END of style.css
+   ========================================================= */
+
+
+/* the card clips everything inside it and stacks image first, text on top */
+
+.leader-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    transform: translateZ(0);
+}
+
+
+/* photo stays inside its own frame, zoom can never leave it */
+
+.leader-card img {
+    position: relative;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 109px;
+    object-fit: cover;
+    object-position: center 20%;
+    transform-origin: center top;
+    transition: transform .6s cubic-bezier(.22, .7, .2, 1);
+    will-change: transform;
+}
+
+
+/* name block always sits above the photo with a solid background */
+
+.leader-card>div {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    padding: 8px 8px 10px;
+    background: #f3f6fa;
+    border-top: 3px solid #0754a5;
+    box-shadow: 0 -10px 14px -8px rgba(8, 45, 100, .12);
+}
+
+.leader-card h3 {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.leader-card p {
+    margin: 2px 0 1px;
+    color: #0754a5;
+}
+
+
+/* softer zoom + no card jump, so nothing overlaps */
+
+.leader-card:hover {
+    transform: translateY(-3px);
+}
+
+.leader-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* tablet / mobile: fixed photo frame so both cards stay equal height */
+
+@media (max-width: 991.98px) {
+    .leader-card img {
+        flex: none;
+        height: 190px;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .leader-card img {
+        height: 165px;
+    }
+    .leader-card>div {
+        padding: 7px 6px 9px;
+    }
+    .leader-card h3 {
+        font-size: 12.5px;
+    }
+    /* touch screens: no hover jump */
+    .leader-card:hover,
+    .leader-card:hover img {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .leader-card,
+    .leader-card img {
+        transition: none;
+    }
+    .leader-card:hover,
+    .leader-card:hover img {
+        transform: none;
     }
 }
