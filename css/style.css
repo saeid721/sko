@@ -4090,3 +4090,80 @@ html.translated-rtl .sko-tag {
         transition: none;
     }
 }
+
+
+/* =========================================================
+   NAVBAR DROPDOWN: HOVER OPEN (premium, desktop only)
+   Paste at the VERY END of style.css
+   ========================================================= */
+
+@media (min-width: 1200px) {
+    /* invisible bridge so the menu never closes while the mouse travels down */
+    .navbar-nav .dropdown {
+        position: relative;
+    }
+    .navbar-nav .dropdown::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 12px;
+    }
+    /* smooth fade + slide animation */
+    .navbar-nav .dropdown-menu {
+        display: block;
+        margin-top: 8px;
+        min-width: 210px;
+        border: 1px solid #e6eef7;
+        border-top: 3px solid #0754a5;
+        border-radius: 12px;
+        padding: 8px;
+        box-shadow: 0 14px 34px rgba(8, 45, 100, .16);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity .22s ease, transform .22s ease, visibility .22s;
+    }
+    .navbar-nav .dropdown-menu.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    /* items */
+    .navbar-nav .dropdown-item {
+        padding: 9px 12px;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #151b27;
+        border-radius: 8px;
+        transition: background .2s ease, color .2s ease, padding-left .2s ease;
+    }
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:focus {
+        background: #eaf4ff;
+        color: #0754a5;
+        padding-left: 17px;
+    }
+    /* arrow rotates when open */
+    .navbar-nav .dropdown-toggle::after {
+        transition: transform .25s ease;
+    }
+    .navbar-nav .dropdown-toggle.show::after {
+        transform: rotate(180deg);
+    }
+    /* active underline on the opened menu title */
+    .navbar-nav .dropdown-toggle.show {
+        color: #064bb2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar-nav .dropdown-menu,
+    .navbar-nav .dropdown-item,
+    .navbar-nav .dropdown-toggle::after {
+        transition: none;
+    }
+}

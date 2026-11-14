@@ -188,8 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 const b = document.createElement("button");
                 b.type = "button";
                 b.setAttribute("aria-label", (document.documentElement.lang === "en" ? "Go to slide " : "স্লাইড ") + (i + 1));
-                b.addEventListener("click", () => { goTo(i);
-                    play(); });
+                b.addEventListener("click", () => {
+                    goTo(i);
+                    play();
+                });
                 pipBox.appendChild(b);
                 pips.push(b);
             }
@@ -198,18 +200,24 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // arrows (loop)
-        if (nextBtn) nextBtn.addEventListener("click", () => { goTo(index >= maxIndex() ? 0 : index + 1);
-            play(); });
-        if (prevBtn) prevBtn.addEventListener("click", () => { goTo(index <= 0 ? maxIndex() : index - 1);
-            play(); });
+        if (nextBtn) nextBtn.addEventListener("click", () => {
+            goTo(index >= maxIndex() ? 0 : index + 1);
+            play();
+        });
+        if (prevBtn) prevBtn.addEventListener("click", () => {
+            goTo(index <= 0 ? maxIndex() : index - 1);
+            play();
+        });
 
         // keep dots in sync when the user swipes by hand
         track.addEventListener("scroll", () => {
             clearTimeout(scrollTimer);
             scrollTimer = setTimeout(() => {
                 const i = Math.min(Math.round(track.scrollLeft / step()), maxIndex());
-                if (i !== index) { index = i;
-                    syncPips(); }
+                if (i !== index) {
+                    index = i;
+                    syncPips();
+                }
             }, 80);
         }, { passive: true });
 
@@ -235,6 +243,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
         buildPips();
         play();
+    })();
+
+    // ============================================
+    // NAVBAR: DROPDOWN OPENS ON HOVER (desktop only)
+    // Mobile / tablet keeps normal click behaviour
+    // ============================================
+    (() => {
+        const desktop = window.matchMedia("(min-width: 1200px) and (hover: hover)");
+        const items = document.querySelectorAll(".navbar-nav .dropdown");
+        const CLOSE_DELAY = 140;
+
+        items.forEach((item) => {
+            const toggle = item.querySelector('[data-bs-toggle="dropdown"]');
+            if (!toggle || !window.bootstrap) return;
+
+            const dd = bootstrap.Dropdown.getOrCreateInstance(toggle);
+            let closeTimer = null;
+
+            item.addEventListener("mouseenter", () => {
+                if (!desktop.matches) return;
+                clearTimeout(closeTimer);
+
+                // close any other open dropdown first
+                items.forEach((other) => {
+                    if (other === item) return;
+                    const t = other.querySelector('[data-bs-toggle="dropdown"]');
+                    if (t && t.classList.contains("show")) bootstrap.Dropdown.getOrCreateInstance(t).hide();
+                });
+
+                dd.show();
+            });
+
+            item.addEventListener("mouseleave", () => {
+                if (!desktop.matches) return;
+                clearTimeout(closeTimer);
+                closeTimer = setTimeout(() => dd.hide(), CLOSE_DELAY);
+            });
+
+            // on desktop, clicking the title should not toggle it closed after hover opened it
+            toggle.addEventListener("click", (event) => {
+                if (!desktop.matches) return;
+                if (toggle.getAttribute("href") === "#") event.preventDefault();
+                event.stopPropagation();
+                dd.show();
+            });
+        });
     })();
 
     // Reveal-on-scroll animation.
