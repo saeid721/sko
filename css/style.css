@@ -14,257 +14,53 @@
 /* Global color and font tokens */
 
 :root {
-    --color-062d68: #062d68;
-    --color-0754a5: #0754a5;
-    --color-eaf4ff: #eaf4ff;
-    --color-07852e: #07852e;
-    --color-111827: #111827;
-    --color-64748b: #64748b;
-    --color-rgba-8-45-100-08: rgba(8, 45, 100, .08);
-    --color-fff: #fff;
-    --color-05275f: #05275f;
-    --color-0756a7: #0756a7;
-    --color-cce5ff: #cce5ff;
-    --color-ffffff55: #ffffff55;
-    --color-092c5c16: #092c5c16;
-    --color-092e87: #092e87;
-    --color-b8c7d9: #b8c7d9;
-    --color-101827: #101827;
-    --color-151b27: #151b27;
-    --color-064bb2: #064bb2;
-    --color-062f7a: #062f7a;
-    --color-0a56b8: #0a56b8;
-    --color-0b4aa3: #0b4aa3;
-    --color-052a69: #052a69;
-    --color-rgba-46-140-240-55: rgba(46, 140, 240, .55);
-    --color-rgba-0-24-80-75: rgba(0, 24, 80, .75);
-    --color-rgba-255-255-255-10: rgba(255, 255, 255, .10);
-    --color-rgba-6-63-129-6: rgba(6, 63, 129, .6);
-    --color-rgba-6-63-129-0: rgba(6, 63, 129, 0);
-    --color-ffd21f: #ffd21f;
-    --color-ffb800: #ffb800;
-    --color-rgba-255-200-0-35: rgba(255, 200, 0, .35);
-    --color-rgba-0-20-70-35: rgba(0, 20, 70, .35);
-    --color-rgba-255-255-255-95: rgba(255, 255, 255, .95);
-    --color-0a8a32: #0a8a32;
-    --color-rgba-255-255-255-85: rgba(255, 255, 255, .85);
-    --color-rgba-0-0-0-22: rgba(0, 0, 0, .22);
-    --color-rgba-255-255-255-06: rgba(255, 255, 255, .06);
-    --color-rgba-0-0-0-28: rgba(0, 0, 0, .28);
-    --color-rgba-0-20-60-35: rgba(0, 20, 60, .35);
-    --color-rgba-255-255-255-55: rgba(255, 255, 255, .55);
-    --color-eef7ff: #eef7ff;
-    --color-e7f1fc: #e7f1fc;
-    --color-0646b5: #0646b5;
-    --color-b9d8ff: #b9d8ff;
-    --color-062e91: #062e91;
-    --color-0755c6: #0755c6;
-    --color-0645a4: #0645a4;
-    --color-8db8ef: #8db8ef;
-    --color-e1e7ef: #e1e7ef;
-    --color-fafcff: #fafcff;
-    --color-0a2c5c12: #0a2c5c12;
-    --color-b8d2f1: #b8d2f1;
-    --color-b50000: #b50000;
-    --color-07572b: #07572b;
-    --color-087b34: #087b34;
-    --color-0747b3: #0747b3;
-    --color-c51d2a: #c51d2a;
-    --color-0870aa: #0870aa;
-    --color-dce4ef: #dce4ef;
-    --color-00000012: #00000012;
-    --color-15233a: #15233a;
-    --color-c9cdd3: #c9cdd3;
-    --color-0757c7: #0757c7;
-    --color-dce7f4: #dce7f4;
-    --color-000b: #000b;
-    --color-e0eaf6: #e0eaf6;
-    --color-e5ebf2: #e5ebf2;
-    --color-0754b5: #0754b5;
-    --color-5c6675: #5c6675;
-    --color-e7edf4: #e7edf4;
-    --color-ffe8ef: #ffe8ef;
-    --color-a31649: #a31649;
-    --color-e5f3ff: #e5f3ff;
-    --color-07539a: #07539a;
-    --color-5b6472: #5b6472;
-    --color-064276: #064276;
-    --color-0b5a9d: #0b5a9d;
-    --color-073b73: #073b73;
-    --color-ffffff8a: #ffffff8a;
-    --color-d2e1f3: #d2e1f3;
-    --color-e9f8ef: #e9f8ef;
-    --color-087046: #087046;
-    --color-fff0ef: #fff0ef;
-    --color-d32937: #d32937;
-    --color-e7f6ff: #e7f6ff;
-    --color-08629a: #08629a;
-    --color-f0eaff: #f0eaff;
-    --color-3030b8: #3030b8;
-    --color-e9edff: #e9edff;
-    --color-111f91: #111f91;
-    --color-e8f8eb: #e8f8eb;
-    --color-087243: #087243;
-    --color-f3f6fa: #f3f6fa;
-    --color-0b2e5d12: #0b2e5d12;
-    --color-e5edf6: #e5edf6;
-    --color-dfe9f4: #dfe9f4;
-    --color-00182ac9: #00182ac9;
-    --color-000: #000;
-    --color-e52631: #e52631;
-    --color-000c: #000c;
-    --color-03275e: #03275e;
-    --color-062c69: #062c69;
-    --color-001d4b: #001d4b;
-    --color-a9d7ff: #a9d7ff;
-    --color-0752a0: #0752a0;
-    --color-f21d2f: #f21d2f;
-    --color-111: #111;
-    --color-05b94e: #05b94e;
-    --color-064a9b: #064a9b;
-    --color-1c7cc4: #1c7cc4;
-    --color-0753a5: #0753a5;
-    --color-rgba-0-51-111-0: rgba(0, 51, 111, 0);
-    --color-rgba-0-51-111-55: rgba(0, 51, 111, .55);
-    --color-rgba-17-112-209-85: rgba(17, 112, 209, .85);
-    --color-052d70: #052d70;
-    --color-0754a9: #0754a9;
-    --color-063b83: #063b83;
-    --color-rgba-0-21-76-16: rgba(0, 21, 76, .16);
-    --color-rgba-0-20-75-35: rgba(0, 20, 75, .35);
-    --color-rgba-4-48-111-25: rgba(4, 48, 111, .25);
-    --color-rgba-255-200-0-3: rgba(255, 200, 0, .3);
-    --color-rgba-0-20-70-3: rgba(0, 20, 70, .3);
-    --color-rgba-255-255-255-96: rgba(255, 255, 255, .96);
-    --color-rgba-0-0-0-2: rgba(0, 0, 0, .2);
-    --color-rgba-255-255-255-05: rgba(255, 255, 255, .05);
-    --color-rgba-255-255-255-9: rgba(255, 255, 255, .9);
-    --color-rgba-0-0-0-25: rgba(0, 0, 0, .25);
-    --color-rgba-0-20-60-25: rgba(0, 20, 60, .25);
-    --color-rgba-255-255-255-65: rgba(255, 255, 255, .65);
-    --color-rgba-0-42-100-4: rgba(0, 42, 100, .4);
-    --color-rgba-255-255-255-35: rgba(255, 255, 255, .35);
-    --color-rgba-255-255-255-08: rgba(255, 255, 255, .08);
-    --color-rgba-255-255-255-18: rgba(255, 255, 255, .18);
-    --color-rgba-255-255-255-4: rgba(255, 255, 255, .4);
-    --color-rgba-255-255-255-25: rgba(255, 255, 255, .25);
-    --color-rgba-255-255-255-7: rgba(255, 255, 255, .7);
-    --color-rgba-0-0-0-55: rgba(0, 0, 0, .55);
-    --color-rgba-0-0-0-75: rgba(0, 0, 0, .75);
-    --color-rgba-255-255-255-28: rgba(255, 255, 255, .28);
-    --color-rgba-229-38-49-35: rgba(229, 38, 49, .35);
-    --color-rgba-8-45-100-16: rgba(8, 45, 100, .16);
-    --color-0a66c8: #0a66c8;
-    --color-063a82: #063a82;
-    --color-rgba-7-84-165-4: rgba(7, 84, 165, .4);
-    --color-e8eff7: #e8eff7;
-    --color-rgba-8-45-100-10: rgba(8, 45, 100, .10);
-    --color-d6e3f3: #d6e3f3;
-    --color-f2f7fe: #f2f7fe;
-    --color-e4eefb: #e4eefb;
-    --color-rgba-7-84-165-18: rgba(7, 84, 165, .18);
-    --color-e6eef7: #e6eef7;
-    --color-f0f4f9: #f0f4f9;
-    --color-f6f9fd: #f6f9fd;
-    --color-f1f8ff: #f1f8ff;
-    --color-e4effc: #e4effc;
-    --color-d6e6f8: #d6e6f8;
-    --color-rgba-8-45-100-06: rgba(8, 45, 100, .06);
-    --color-475569: #475569;
-    --color-334155: #334155;
-    --color-f6faff: #f6faff;
-    --color-rgba-10-44-92-07: rgba(10, 44, 92, .07);
-    --color-rgba-8-45-100-14: rgba(8, 45, 100, .14);
-    --color-rgba-7-84-165-3: rgba(7, 84, 165, .3);
-    --color-rgba-5-30-80-35: rgba(5, 30, 80, .35);
-    --color-04163d: #04163d;
-    --color-eef5fd: #eef5fd;
-    --color-rgba-7-133-46-25: rgba(7, 133, 46, .25);
-    --color-rgba-7-84-165-25: rgba(7, 84, 165, .25);
-    --color-rgba-8-45-100-2: rgba(8, 45, 100, .2);
-    --color-rgba-8-45-100-12: rgba(8, 45, 100, .12);
-    --color-rgba-4-32-84-80: rgba(4, 32, 84, .80);
-    --color-rgba-4-32-84-55: rgba(4, 32, 84, .55);
-    --color-rgba-4-32-84-08: rgba(4, 32, 84, .08);
-    --color-rgba-0-20-70-45: rgba(0, 20, 70, .45);
-    --color-rgba-4-32-84-58: rgba(4, 32, 84, .58);
-    --color-rgba-4-32-84-22: rgba(4, 32, 84, .22);
-    --color-06407a: #06407a;
-    --color-0a579b: #0a579b;
-    --color-05376c: #05376c;
-    --color-rgba-255-210-31-20: rgba(255, 210, 31, .20);
-    --color-rgba-90-175-255-28: rgba(90, 175, 255, .28);
-    --color-rgba-255-255-255-15: rgba(255, 255, 255, .15);
-    --color-rgba-0-20-60-22: rgba(0, 20, 60, .22);
-    --color-rgba-255-255-255-14: rgba(255, 255, 255, .14);
-    --color-rgba-255-255-255-16: rgba(255, 255, 255, .16);
-    --color-rgba-255-255-255-88: rgba(255, 255, 255, .88);
-    --color-e3ecf7: #e3ecf7;
-    --color-rgba-8-45-100-07: rgba(8, 45, 100, .07);
-    --color-0b4fc2: #0b4fc2;
-    --color-0a7a3d: #0a7a3d;
-    --color-5b3bd1: #5b3bd1;
-    --color-d97706: #d97706;
-    --color-0b7a99: #0b7a99;
-    --color-d4244f: #d4244f;
-    --color-0f1f3d: #0f1f3d;
-    --color-eaf2ff: #eaf2ff;
-    --color-eef5ff: #eef5ff;
-    --color-e4edf8: #e4edf8;
-    --color-f5f9ff: #f5f9ff;
-    --color-14233f: #14233f;
-    --color-0a7aa8: #0a7aa8;
-    --color-6a3fd0: #6a3fd0;
-    --color-2748c9: #2748c9;
-    --color-e6edf6: #e6edf6;
-    --color-dbe7f5: #dbe7f5;
-    --color-rgba-0-20-60-45: rgba(0, 20, 60, .45);
-    --color-rgba-229-38-49-92: rgba(229, 38, 49, .92);
-    --color-rgba-0-0-0-35: rgba(0, 0, 0, .35);
-    --color-e1eaf6: #e1eaf6;
-    --color-rgba-8-45-100-09: rgba(8, 45, 100, .09);
-    --color-edf2f8: #edf2f8;
-    --color-f3f8fe: #f3f8fe;
-    --color-e3edf8: #e3edf8;
-    --color-rgba-255-255-255-6: rgba(255, 255, 255, .6);
-    --color-ffe6ee: #ffe6ee;
-    --color-ffd0df: #ffd0df;
-    --color-e2f1ff: #e2f1ff;
-    --color-c9e2ff: #c9e2ff;
-    --color-e1ebf6: #e1ebf6;
-    --color-rgba-7-84-165-28: rgba(7, 84, 165, .28);
-    --color-rgba-255-210-31-16: rgba(255, 210, 31, .16);
-    --color-rgba-90-175-255-22: rgba(90, 175, 255, .22);
-    --color-rgba-255-255-255-04: rgba(255, 255, 255, .04);
-    --color-rgba-0-12-40-22: rgba(0, 12, 40, .22);
-    --color-rgba-255-255-255-12: rgba(255, 255, 255, .12);
-    --color-rgba-255-255-255-86: rgba(255, 255, 255, .86);
-    --color-1877f2: #1877f2;
-    --color-0a66c2: #0a66c2;
-    --color-rgba-0-12-40-28: rgba(0, 12, 40, .28);
-    --color-8493a8: #8493a8;
-    --color-052b5c: #052b5c;
-    --color-06386f: #06386f;
-    --color-rgba-90-175-255-26: rgba(90, 175, 255, .26);
-    --color-rgba-0-18-56-24: rgba(0, 18, 56, .24);
-    --color-rgba-255-210-31-26: rgba(255, 210, 31, .26);
-    --color-rgba-255-210-31-38: rgba(255, 210, 31, .38);
-    --color-rgba-0-18-56-28: rgba(0, 18, 56, .28);
-    --color-rgba-255-255-255-84: rgba(255, 255, 255, .84);
-    --color-rgba-255-210-31-5: rgba(255, 210, 31, .5);
-    --color-rgba-255-255-255-2: rgba(255, 255, 255, .2);
-    --color-rgba-255-255-255-07: rgba(255, 255, 255, .07);
-    --color-rgba-0-16-50-36: rgba(0, 16, 50, .36);
-    --color-rgba-255-255-255-22: rgba(255, 255, 255, .22);
-    --color-rgba-8-45-100-04: rgba(8, 45, 100, .04);
-    --color-rgba-229-38-49-94: rgba(229, 38, 49, .94);
-    --color-rgba-0-0-0-38: rgba(0, 0, 0, .38);
-    --color-rgba-0-20-48-88: rgba(0, 20, 48, .88);
-    --color-rgba-0-20-48-45: rgba(0, 20, 48, .45);
-    --color-rgba-0-20-48-08: rgba(0, 20, 48, .08);
-    --color-rgba-0-0-0-7: rgba(0, 0, 0, .7);
-    --color-rgba-4-22-61-38: rgba(4, 22, 61, .38);
-    --color-rgba-4-22-61-55: rgba(4, 22, 61, .55);
+    /* ============================================
+       COLOR TOKENS  (only 3 formats per colour)
+       --color-{name}        = main
+       --color-{name}-dark   = dark
+       --color-{name}-light  = light
+       Need another shade? Don't add a new token -
+       mix it in the class:
+         color-mix(in srgb, var(--color-blue) 40%, transparent)   -> 40% opacity
+         color-mix(in srgb, var(--color-blue) 10%, var(--color-white)) -> lighter tint
+         color-mix(in hsl,  var(--color-blue) 80%, var(--color-blue-light)) -> brighter tint
+       ============================================ */
+    /* Blue (brand) */
+    --color-blue: #0754a5;
+    --color-blue-dark: #062d68;
+    --color-blue-light: #eaf4ff;
+    /* Green */
+    --color-green: #07852e;
+    --color-green-dark: #07572b;
+    --color-green-light: #e9f8ef;
+    /* Yellow (accent) */
+    --color-yellow: #ffd21f;
+    --color-yellow-dark: #ffb800;
+    --color-yellow-light: #fff4c2;
+    /* Red */
+    --color-red: #e52631;
+    --color-red-dark: #b50000;
+    --color-red-light: #ffe8ef;
+    /* Gray / Ink / Slate */
+    --color-gray: #64748b;
+    --color-gray-dark: #111827;
+    --color-gray-light: #f3f6fa;
+    /* Purple */
+    --color-purple: #5b3bd1;
+    --color-purple-dark: #3030b8;
+    --color-purple-light: #f0eaff;
+    /* Orange */
+    --color-orange: #d97706;
+    --color-orange-dark: #a85a00;
+    --color-orange-light: #fff1dc;
+    /* Teal / Cyan */
+    --color-teal: #0a7aa8;
+    --color-teal-dark: #08629a;
+    --color-teal-light: #e7f6ff;
+    /* Base */
+    --color-white: #fff;
+    --color-black: #000;
+    /* Fonts */
     --font-family-1: "Noto Sans Bengali";
     --font-family-2: "Noto Sans Bengali", sans-serif;
     --font-family-3: Arial, sans-serif;
@@ -283,7 +79,7 @@ html {
 body {
     font-family: var(--font-family-2);
     color: var(--ink);
-    background: var(--color-fff);
+    background: var(--color-white);
     overflow-x: hidden;
 }
 
@@ -298,19 +94,19 @@ a {
    ============================================ */
 
 .topbar {
-    background: linear-gradient(90deg, var(--color-05275f), var(--color-0756a7), var(--color-05275f));
-    color: var(--color-fff);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-blue-dark) 90%, var(--color-black)), var(--color-blue), color-mix(in srgb, var(--color-blue-dark) 90%, var(--color-black)));
+    color: var(--color-white);
     font-size: 13px;
     padding: 6px 0;
 }
 
 .topbar a {
-    color: var(--color-fff);
+    color: var(--color-white);
     white-space: nowrap;
 }
 
 .topbar a:hover {
-    color: var(--color-cce5ff);
+    color: color-mix(in hsl, var(--color-blue-dark) 8%, var(--color-blue-light));
 }
 
 .topbar svg {
@@ -321,7 +117,7 @@ a {
 }
 
 .language {
-    border-left: 1px solid var(--color-ffffff55);
+    border-left: 1px solid color-mix(in srgb, var(--color-white) 33.3%, transparent);
     padding-left: 10px;
 }
 
@@ -335,8 +131,8 @@ a {
    ============================================ */
 
 .site-header {
-    background: var(--color-fff);
-    box-shadow: 0 3px 12px var(--color-092c5c16);
+    background: var(--color-white);
+    box-shadow: 0 3px 12px color-mix(in srgb, var(--color-blue-dark) 8.6%, transparent);
     z-index: 1000;
 }
 
@@ -357,30 +153,30 @@ a {
 
 .brand-copy strong {
     font-size: 29px;
-    color: var(--color-092e87);
+    color: color-mix(in hsl, var(--color-blue-dark) 78%, var(--color-purple));
     letter-spacing: -1px;
 }
 
 .brand-copy small {
-    border-left: 1px solid var(--color-b8c7d9);
+    border-left: 1px solid color-mix(in hsl, var(--color-gray) 36%, var(--color-gray-light));
     padding-left: 10px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.35;
-    color: var(--color-101827);
+    color: var(--color-gray-dark);
 }
 
 .navbar-nav .nav-link {
     font-size: 13px;
     font-weight: 700;
-    color: var(--color-151b27);
+    color: color-mix(in srgb, var(--color-gray-dark) 99%, var(--color-gray-light));
     padding: .65rem .45rem !important;
     white-space: nowrap;
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-    color: var(--color-064bb2);
+    color: color-mix(in hsl, var(--color-blue-dark) 80%, var(--color-blue-light));
 }
 
 .member-login {
@@ -396,7 +192,7 @@ a {
 
 .dropdown-menu {
     border: 0;
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
     border-radius: 10px;
     padding: 8px;
 }
@@ -418,8 +214,8 @@ a {
     min-height: 580px;
     overflow: hidden;
     isolation: isolate;
-    color: var(--color-fff);
-    background: linear-gradient(115deg, var(--color-062f7a) 0%, var(--color-0a56b8) 48%, var(--color-0b4aa3) 68%, var(--color-052a69) 100%);
+    color: var(--color-white);
+    background: linear-gradient(115deg, color-mix(in hsl, var(--color-blue-dark) 96%, var(--color-blue-light)) 0%, color-mix(in hsl, var(--color-blue-dark) 78%, var(--color-blue-light)) 48%, color-mix(in hsl, var(--color-blue-dark) 84%, var(--color-blue-light)) 68%, color-mix(in srgb, var(--color-blue-dark) 99%, var(--color-black)) 100%);
 }
 
 
@@ -431,7 +227,7 @@ a {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: radial-gradient(620px 380px at 14% 20%, var(--color-rgba-46-140-240-55), transparent 65%), radial-gradient(760px 420px at 40% 105%, var(--color-rgba-0-24-80-75), transparent 65%), radial-gradient(420px 260px at 52% 8%, var(--color-rgba-255-255-255-10), transparent 70%);
+    background: radial-gradient(620px 380px at 14% 20%, color-mix(in srgb, color-mix(in hsl, var(--color-blue-dark) 52%, var(--color-blue-light)) 55%, transparent), transparent 65%), radial-gradient(760px 420px at 40% 105%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 70%, var(--color-black)) 75%, transparent), transparent 65%), radial-gradient(420px 260px at 52% 8%, color-mix(in srgb, var(--color-white) 10%, transparent), transparent 70%);
 }
 
 .hero-photo {
@@ -461,7 +257,7 @@ a {
     right: 0;
     width: 56%;
     height: 100%;
-    background: linear-gradient(90deg, var(--color-rgba-6-63-129-6) 0%, var(--color-rgba-6-63-129-0) 34%);
+    background: linear-gradient(90deg, color-mix(in srgb, color-mix(in srgb, var(--color-blue) 43%, var(--color-blue-dark)) 60%, transparent) 0%, transparent 34%);
     pointer-events: none;
 }
 
@@ -483,12 +279,12 @@ a {
 }
 
 .hero-shape::before {
-    background: linear-gradient(180deg, var(--color-ffd21f), var(--color-ffb800));
+    background: linear-gradient(180deg, var(--color-yellow), var(--color-yellow-dark));
     clip-path: polygon( calc(var(--cut-top) - 1.5%) 0, calc(var(--cut-top) - .45%) 0, calc(var(--cut-bottom) - .45%) 100%, calc(var(--cut-bottom) - 1.1%) 100%);
 }
 
 .hero-shape::after {
-    background: var(--color-fff);
+    background: var(--color-white);
     clip-path: polygon( calc(var(--cut-top) - .45%) 0, var(--cut-top) 0, var(--cut-bottom) 100%, calc(var(--cut-bottom) - .45%) 100%);
 }
 
@@ -523,8 +319,8 @@ a {
     width: 8px;
     min-width: 8px;
     border-radius: 4px;
-    background: linear-gradient(180deg, var(--color-ffd21f), var(--color-ffb800));
-    box-shadow: 0 0 14px var(--color-rgba-255-200-0-35);
+    background: linear-gradient(180deg, var(--color-yellow), var(--color-yellow-dark));
+    box-shadow: 0 0 14px color-mix(in srgb, color-mix(in srgb, var(--color-yellow) 28%, var(--color-yellow-dark)) 35%, transparent);
 }
 
 .hero-actions {
@@ -538,14 +334,14 @@ a {
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 8px;
-    text-shadow: 0 2px 10px var(--color-rgba-0-20-70-35);
+    text-shadow: 0 2px 10px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 61%, var(--color-black)) 35%, transparent);
 }
 
 .hero-lead {
     font-size: clamp(16px, 1.6vw, 22px);
     line-height: 1.45;
     margin: 0;
-    color: var(--color-rgba-255-255-255-95);
+    color: color-mix(in srgb, var(--color-white) 95%, transparent);
 }
 
 .hero-benefits {
@@ -580,19 +376,19 @@ a {
 }
 
 .hero-btn.btn-success {
-    background: var(--color-0a8a32);
-    border: 1.5px solid var(--color-rgba-255-255-255-85);
-    box-shadow: 0 6px 16px var(--color-rgba-0-0-0-22);
+    background: color-mix(in hsl, var(--color-green) 98%, var(--color-white));
+    border: 1.5px solid color-mix(in srgb, var(--color-white) 85%, transparent);
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--color-black) 22%, transparent);
 }
 
 .hero-btn.btn-outline-light {
-    border: 1.5px solid var(--color-rgba-255-255-255-85);
-    background: var(--color-rgba-255-255-255-06);
+    border: 1.5px solid color-mix(in srgb, var(--color-white) 85%, transparent);
+    background: color-mix(in srgb, var(--color-white) 6%, transparent);
 }
 
 .hero-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px var(--color-rgba-0-0-0-28);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--color-black) 28%, transparent);
 }
 
 .hero-btn svg {
@@ -611,7 +407,7 @@ a {
     gap: 8px;
     padding: 6px 11px;
     border-radius: 20px;
-    background: var(--color-rgba-0-20-60-35);
+    background: color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 54%, var(--color-black)) 35%, transparent);
     backdrop-filter: blur(4px);
 }
 
@@ -621,7 +417,7 @@ a {
     height: 9px;
     border: 0;
     border-radius: 20px;
-    background: var(--color-rgba-255-255-255-55);
+    background: color-mix(in srgb, var(--color-white) 55%, transparent);
     padding: 0;
     cursor: pointer;
     transition: width .3s ease, background .3s ease;
@@ -635,7 +431,7 @@ a {
 
 .hero-dots button.active {
     width: 26px;
-    background: var(--color-fff);
+    background: var(--color-white);
 }
 
 
@@ -651,14 +447,14 @@ a {
 .quick-card {
     height: 87px;
     border-radius: 12px;
-    background: linear-gradient(145deg, var(--color-eef7ff), var(--color-e7f1fc));
+    background: linear-gradient(145deg, color-mix(in srgb, var(--color-blue-light) 78%, var(--color-white)), color-mix(in srgb, var(--color-blue-light) 99%, var(--color-black)));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 0;
-    color: var(--color-101827);
+    color: var(--color-gray-dark);
     transition: .25s ease;
     border: 1px solid transparent;
 }
@@ -666,7 +462,7 @@ a {
 .quick-card svg {
     width: 35px;
     height: 35px;
-    color: var(--color-0646b5);
+    color: color-mix(in hsl, var(--color-blue-light) 19%, var(--color-blue-dark));
     stroke-width: 1.9;
     margin-bottom: 3px;
 }
@@ -683,9 +479,9 @@ a {
 
 .quick-card:hover {
     transform: translateY(-5px);
-    border-color: var(--color-b9d8ff);
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
-    background: var(--color-fff);
+    border-color: color-mix(in hsl, var(--color-blue-dark) 13%, var(--color-blue-light));
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
+    background: var(--color-white);
 }
 
 
@@ -710,7 +506,7 @@ a {
 .panel-heading h2 {
     font-size: 22px;
     font-weight: 800;
-    color: var(--color-062e91);
+    color: color-mix(in hsl, var(--color-blue-dark) 90%, var(--color-purple-light));
     margin: 0;
     display: flex;
     align-items: center;
@@ -721,14 +517,14 @@ a {
 .panel-heading h2 svg {
     width: 29px;
     height: 29px;
-    color: var(--color-0755c6);
+    color: color-mix(in hsl, var(--color-blue-dark) 75%, var(--color-blue-light));
 }
 
 .view-link {
     font-size: 13px;
     font-weight: 700;
-    color: var(--color-0645a4);
-    border: 1px solid var(--color-8db8ef);
+    color: color-mix(in hsl, var(--color-blue-dark) 84%, var(--color-blue-light));
+    border: 1px solid color-mix(in hsl, var(--color-blue-light) 77%, var(--color-black));
     border-radius: 20px;
     padding: 3px 12px;
     white-space: nowrap;
@@ -759,10 +555,10 @@ a {
 
 .partner-card {
     height: 99px;
-    border: 1px solid var(--color-e1e7ef);
+    border: 1px solid color-mix(in srgb, var(--color-blue-dark) 12%, var(--color-white));
     border-radius: 12px;
-    background: linear-gradient(145deg, var(--color-fff), var(--color-fafcff));
-    box-shadow: 0 3px 8px var(--color-0a2c5c12);
+    background: linear-gradient(145deg, var(--color-white), color-mix(in srgb, var(--color-blue-light) 25%, var(--color-white)));
+    box-shadow: 0 3px 8px color-mix(in srgb, var(--color-blue-dark) 7.1%, transparent);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -774,8 +570,8 @@ a {
 
 .partner-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
-    border-color: var(--color-b8d2f1);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
+    border-color: color-mix(in srgb, var(--color-blue) 20%, var(--color-blue-light));
 }
 
 .partner-icon {
@@ -792,27 +588,27 @@ a {
 }
 
 .book-red {
-    color: var(--color-b50000);
+    color: var(--color-red-dark);
 }
 
 .book-green {
-    color: var(--color-07572b);
+    color: var(--color-green-dark);
 }
 
 .mosque {
-    color: var(--color-087b34);
+    color: color-mix(in srgb, var(--color-green) 91%, var(--color-green-dark));
 }
 
 .gear {
-    color: var(--color-0747b3);
+    color: color-mix(in hsl, var(--color-blue-light) 19%, var(--color-blue-dark));
 }
 
 .people {
-    color: var(--color-c51d2a);
+    color: color-mix(in srgb, var(--color-red) 85%, var(--color-black));
 }
 
 .cap {
-    color: var(--color-0870aa);
+    color: color-mix(in hsl, var(--color-teal-light) 6%, var(--color-teal-dark));
 }
 
 .partner-card strong {
@@ -827,12 +623,12 @@ a {
     width: 29px;
     height: 29px;
     border-radius: 50%;
-    border: 1px solid var(--color-dce4ef);
-    background: var(--color-fff);
-    box-shadow: 0 2px 7px var(--color-00000012);
+    border: 1px solid color-mix(in srgb, var(--color-blue-light) 94%, var(--color-black));
+    background: var(--color-white);
+    box-shadow: 0 2px 7px color-mix(in srgb, var(--color-black) 7.1%, transparent);
     display: grid;
     place-items: center;
-    color: var(--color-15233a);
+    color: color-mix(in hsl, var(--color-blue) 45%, var(--color-black));
 }
 
 .round-arrow svg {
@@ -858,11 +654,11 @@ a {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--color-c9cdd3);
+    background: color-mix(in srgb, var(--color-gray-dark) 19%, var(--color-gray-light));
 }
 
 .slider-pips span.active {
-    background: var(--color-0757c7);
+    background: color-mix(in hsl, var(--color-blue-dark) 74%, var(--color-blue-light));
 }
 
 
@@ -879,10 +675,10 @@ a {
     height: 232px;
     display: block;
     position: relative;
-    border: 1px solid var(--color-dce7f4);
+    border: 1px solid color-mix(in srgb, var(--color-blue) 14%, var(--color-white));
     padding: 8px;
     border-radius: 14px;
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
     overflow: hidden;
 }
 
@@ -902,24 +698,24 @@ a {
     width: 43px;
     height: 43px;
     border-radius: 50%;
-    background: var(--color-000b);
-    color: var(--color-fff);
-    border: 2px solid var(--color-fff);
+    background: color-mix(in srgb, var(--color-black) 73.3%, transparent);
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
     display: grid;
     place-items: center;
 }
 
 .video-play svg {
     width: 21px;
-    fill: var(--color-fff);
+    fill: var(--color-white);
 }
 
 .content-panel {
-    border: 1px solid var(--color-e0eaf6);
+    border: 1px solid color-mix(in srgb, var(--color-blue-light) 96%, var(--color-black));
     border-radius: 14px;
     padding: 11px 12px;
-    background: var(--color-fff);
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
+    background: var(--color-white);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
 }
 
 .panel-heading {
@@ -945,7 +741,7 @@ a {
     display: flex;
     gap: 12px;
     padding: 7px 0;
-    border-bottom: 1px solid var(--color-e5ebf2);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-gray) 9%, var(--color-gray-light));
     min-height: 66px;
 }
 
@@ -968,12 +764,12 @@ a {
 }
 
 .news-item h3 a:hover {
-    color: var(--color-0754b5);
+    color: color-mix(in hsl, var(--color-purple-light) 5%, var(--color-blue));
 }
 
 .news-item time {
     font-size: 11px;
-    color: var(--color-5c6675);
+    color: color-mix(in hsl, var(--color-gray) 87%, var(--color-black));
 }
 
 .news-item time svg {
@@ -990,7 +786,7 @@ a {
     display: flex;
     gap: 13px;
     padding: 9px 0;
-    border-bottom: 1px solid var(--color-e7edf4);
+    border-bottom: 1px solid color-mix(in hsl, var(--color-gray) 7%, var(--color-gray-light));
 }
 
 .event-date {
@@ -1014,13 +810,13 @@ a {
 }
 
 .event-date.pink {
-    background: var(--color-ffe8ef);
-    color: var(--color-a31649);
+    background: var(--color-red-light);
+    color: color-mix(in srgb, var(--color-red-dark) 69%, var(--color-purple));
 }
 
 .event-date.blue {
-    background: var(--color-e5f3ff);
-    color: var(--color-07539a);
+    background: color-mix(in srgb, var(--color-teal-light) 99%, var(--color-teal-dark));
+    color: color-mix(in srgb, var(--color-blue) 95%, var(--color-black));
 }
 
 .event-item h3 {
@@ -1036,7 +832,7 @@ a {
 
 .event-item small {
     font-size: 11px;
-    color: var(--color-5b6472);
+    color: color-mix(in srgb, var(--color-gray-dark) 66%, var(--color-gray-light));
 }
 
 .event-item small svg {
@@ -1064,8 +860,8 @@ a {
    ============================================ */
 
 .stats-section {
-    background: linear-gradient(100deg, var(--color-064276), var(--color-0b5a9d), var(--color-073b73));
-    color: var(--color-fff);
+    background: linear-gradient(100deg, color-mix(in srgb, var(--color-blue) 74%, var(--color-black)), color-mix(in srgb, var(--color-purple-dark) 12%, var(--color-teal-dark)), color-mix(in srgb, var(--color-blue) 70%, var(--color-black)));
+    color: var(--color-white);
     padding: 15px 0;
     position: relative;
     overflow: hidden;
@@ -1080,7 +876,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    border-right: 1px solid var(--color-ffffff8a);
+    border-right: 1px solid color-mix(in srgb, var(--color-white) 54.1%, transparent);
     min-height: 52px;
 }
 
@@ -1127,7 +923,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0;
-    color: var(--color-111827);
+    color: var(--color-gray-dark);
     transition: .25s;
     border: 1px solid transparent;
 }
@@ -1144,38 +940,38 @@ a {
 
 .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
-    border-color: var(--color-d2e1f3);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
+    border-color: color-mix(in srgb, var(--color-blue) 11%, var(--color-blue-light));
 }
 
 .service-green {
-    background: var(--color-e9f8ef);
-    color: var(--color-087046);
+    background: var(--color-green-light);
+    color: color-mix(in hsl, var(--color-green-dark) 74%, var(--color-teal));
 }
 
 .service-pink {
-    background: var(--color-fff0ef);
-    color: var(--color-d32937);
+    background: color-mix(in srgb, var(--color-red) 7%, var(--color-white));
+    color: color-mix(in srgb, var(--color-red) 92%, var(--color-purple-dark));
 }
 
 .service-cyan {
-    background: var(--color-e7f6ff);
-    color: var(--color-08629a);
+    background: var(--color-teal-light);
+    color: var(--color-teal-dark);
 }
 
 .service-purple {
-    background: var(--color-f0eaff);
-    color: var(--color-3030b8);
+    background: var(--color-purple-light);
+    color: var(--color-purple-dark);
 }
 
 .service-indigo {
-    background: var(--color-e9edff);
-    color: var(--color-111f91);
+    background: color-mix(in srgb, var(--color-blue-light) 98%, var(--color-blue-dark));
+    color: color-mix(in hsl, var(--color-blue-dark) 61%, var(--color-purple));
 }
 
 .service-mint {
-    background: var(--color-e8f8eb);
-    color: var(--color-087243);
+    background: color-mix(in srgb, var(--color-green-light) 99%, var(--color-green-dark));
+    color: color-mix(in hsl, var(--color-green-dark) 92%, var(--color-teal-light));
 }
 
 
@@ -1197,11 +993,11 @@ a {
 
 .leader-card {
     height: 174px;
-    background: var(--color-f3f6fa);
+    background: var(--color-gray-light);
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 7px var(--color-0b2e5d12);
+    box-shadow: 0 2px 7px color-mix(in srgb, var(--color-blue-dark) 7.1%, transparent);
 }
 
 .leader-card img {
@@ -1209,7 +1005,7 @@ a {
     height: 109px;
     object-fit: cover;
     object-position: center 25%;
-    background: var(--color-e5edf6);
+    background: color-mix(in srgb, var(--color-blue) 10%, var(--color-white));
 }
 
 .leader-card div {
@@ -1237,11 +1033,11 @@ a {
     height: 207px;
     display: block;
     position: relative;
-    border: 1px solid var(--color-dfe9f4);
+    border: 1px solid color-mix(in srgb, var(--color-blue) 13%, var(--color-white));
     padding: 8px;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
 }
 
 .campaign-card>img {
@@ -1254,7 +1050,7 @@ a {
 .campaign-overlay {
     position: absolute;
     inset: 8px;
-    background: linear-gradient(90deg, var(--color-00182ac9), transparent 80%);
+    background: linear-gradient(90deg, color-mix(in srgb, color-mix(in srgb, var(--color-teal-dark) 26%, var(--color-black)) 78.8%, transparent), transparent 80%);
     border-radius: 9px;
 }
 
@@ -1262,22 +1058,22 @@ a {
     position: absolute;
     left: 9%;
     top: 27%;
-    color: var(--color-fff);
+    color: var(--color-white);
     font-size: 23px;
     font-weight: 800;
     line-height: 1.22;
-    text-shadow: 0 2px 5px var(--color-000);
+    text-shadow: 0 2px 5px var(--color-black);
 }
 
 .campaign-play {
     width: 52px;
     height: 52px;
-    background: var(--color-e52631);
-    border-color: var(--color-fff);
+    background: var(--color-red);
+    border-color: var(--color-white);
 }
 
 .campaign-play svg {
-    fill: var(--color-fff);
+    fill: var(--color-white);
     width: 24px;
 }
 
@@ -1285,8 +1081,8 @@ a {
     position: absolute;
     right: 18px;
     bottom: 17px;
-    background: var(--color-000c);
-    color: var(--color-fff);
+    background: color-mix(in srgb, var(--color-black) 80%, transparent);
+    color: var(--color-white);
     border-radius: 5px;
     padding: 2px 7px;
     font-size: 11px;
@@ -1298,8 +1094,8 @@ a {
    ============================================ */
 
 .site-footer {
-    background: linear-gradient(110deg, var(--color-03275e), var(--color-062c69) 60%, var(--color-001d4b));
-    color: var(--color-fff);
+    background: linear-gradient(110deg, color-mix(in srgb, var(--color-blue-dark) 89%, var(--color-black)), var(--color-blue-dark) 60%, color-mix(in srgb, var(--color-blue-dark) 69%, var(--color-black)));
+    color: var(--color-white);
     padding-top: 15px;
 }
 
@@ -1356,7 +1152,7 @@ a {
 
 .footer-links a:hover,
 .contact-list a:hover {
-    color: var(--color-a9d7ff);
+    color: color-mix(in hsl, var(--color-blue) 20%, var(--color-blue-light));
 }
 
 .contact-list li {
@@ -1383,8 +1179,8 @@ a {
     width: 27px;
     height: 27px;
     border-radius: 50%;
-    background: var(--color-fff);
-    color: var(--color-0752a0);
+    background: var(--color-white);
+    color: color-mix(in srgb, var(--color-blue) 97%, var(--color-black));
     display: grid;
     place-items: center;
     font-family: var(--font-family-3);
@@ -1393,26 +1189,26 @@ a {
 }
 
 .social-links a:nth-child(2) {
-    background: var(--color-f21d2f);
-    color: var(--color-fff);
+    background: color-mix(in hsl, var(--color-red) 89%, var(--color-red-dark));
+    color: var(--color-white);
 }
 
 .social-links a:nth-child(4) {
-    background: var(--color-111);
-    color: var(--color-fff);
+    background: color-mix(in srgb, var(--color-gray-light) 7%, var(--color-black));
+    color: var(--color-white);
 }
 
 .social-links a:nth-child(5) {
-    background: var(--color-05b94e);
-    color: var(--color-fff);
+    background: color-mix(in hsl, var(--color-green) 84%, var(--color-green-light));
+    color: var(--color-white);
 }
 
 .newsletter {
     height: 30px;
     display: flex;
-    border: 1px solid var(--color-fff);
+    border: 1px solid var(--color-white);
     border-radius: 20px;
-    background: var(--color-fff);
+    background: var(--color-white);
     padding: 2px;
 }
 
@@ -1429,8 +1225,8 @@ a {
 
 .newsletter button {
     border: 0;
-    background: var(--color-064a9b);
-    color: var(--color-fff);
+    background: color-mix(in srgb, var(--color-blue) 80%, var(--color-blue-dark));
+    color: var(--color-white);
     border-radius: 50%;
     width: 25px;
     min-width: 25px;
@@ -1443,7 +1239,7 @@ a {
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--color-1c7cc4);
+    border-top: 1px solid color-mix(in hsl, var(--color-teal-dark) 84%, var(--color-white));
     margin-top: 14px;
     padding: 7px 0;
     font-size: 11px;
@@ -1466,11 +1262,11 @@ a {
     height: 38px;
     border: 0;
     border-radius: 50%;
-    background: var(--color-0753a5);
-    color: var(--color-fff);
+    background: var(--color-blue);
+    color: var(--color-white);
     display: grid;
     place-items: center;
-    box-shadow: 0 5px 18px var(--color-rgba-8-45-100-08);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
     opacity: 0;
     visibility: hidden;
     transition: .25s;
@@ -1605,7 +1401,7 @@ a {
     }
     .hero-photo::after {
         width: 100%;
-        background: linear-gradient(180deg, var(--color-rgba-0-51-111-0) 45%, var(--color-rgba-0-51-111-55) 100%);
+        background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, color-mix(in srgb, var(--color-blue) 65%, var(--color-black)) 55%, transparent) 100%);
     }
     .hero-shape {
         inset: 0 0 auto 0;
@@ -1830,8 +1626,8 @@ a {
     min-height: 0;
     overflow: hidden;
     isolation: isolate;
-    color: var(--color-fff);
-    background: radial-gradient( ellipse at 25% 20%, var(--color-rgba-17-112-209-85), transparent 60%), linear-gradient( 115deg, var(--color-052d70) 0%, var(--color-0754a9) 55%, var(--color-063b83) 100%);
+    color: var(--color-white);
+    background: radial-gradient( ellipse at 25% 20%, color-mix(in srgb, color-mix(in hsl, var(--color-blue) 82%, var(--color-gray-light)) 85%, transparent), transparent 60%), linear-gradient( 115deg, color-mix(in srgb, var(--color-blue) 8%, var(--color-blue-dark)) 0%, color-mix(in hsl, var(--color-blue) 99%, var(--color-blue-light)) 55%, color-mix(in srgb, var(--color-blue) 41%, var(--color-blue-dark)) 100%);
 }
 
 .hero-section::before {
@@ -1840,7 +1636,7 @@ a {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: linear-gradient( 135deg, transparent 35%, var(--color-rgba-0-21-76-16) 35%, transparent 75%), radial-gradient( ellipse at 15% 85%, var(--color-rgba-0-20-75-35), transparent 65%);
+    background: linear-gradient( 135deg, transparent 35%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 65%, var(--color-black)) 16%, transparent) 35%, transparent 75%), radial-gradient( ellipse at 15% 85%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 64%, var(--color-black)) 35%, transparent), transparent 65%);
 }
 
 
@@ -1872,7 +1668,7 @@ a {
     position: absolute;
     inset: 0 0 0 auto;
     width: 56%;
-    background: linear-gradient( 90deg, var(--color-rgba-4-48-111-25), transparent 28%);
+    background: linear-gradient( 90deg, color-mix(in srgb, var(--color-blue-dark) 25%, transparent), transparent 28%);
     pointer-events: none;
 }
 
@@ -1894,12 +1690,12 @@ a {
 }
 
 .hero-shape::before {
-    background: linear-gradient( 180deg, var(--color-ffd21f), var(--color-ffb800));
+    background: linear-gradient( 180deg, var(--color-yellow), var(--color-yellow-dark));
     clip-path: polygon( 60.5% 0, 63.5% 0, 48.5% 100%, 45.5% 100%);
 }
 
 .hero-shape::after {
-    background: var(--color-fff);
+    background: var(--color-white);
     clip-path: polygon( 63.5% 0, 64.2% 0, 49.2% 100%, 48.5% 100%);
 }
 
@@ -1940,8 +1736,8 @@ a {
     width: 8px;
     min-width: 8px;
     border-radius: 5px;
-    background: linear-gradient( 180deg, var(--color-ffd21f), var(--color-ffb800));
-    box-shadow: 0 0 15px var(--color-rgba-255-200-0-3);
+    background: linear-gradient( 180deg, var(--color-yellow), var(--color-yellow-dark));
+    box-shadow: 0 0 15px color-mix(in srgb, color-mix(in srgb, var(--color-yellow) 28%, var(--color-yellow-dark)) 30%, transparent);
 }
 
 .hero-copy h1 {
@@ -1949,8 +1745,8 @@ a {
     font-size: clamp(28px, 3.4vw, 44px);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--color-fff);
-    text-shadow: 0 2px 10px var(--color-rgba-0-20-70-3);
+    color: var(--color-white);
+    text-shadow: 0 2px 10px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 61%, var(--color-black)) 30%, transparent);
 }
 
 .hero-lead {
@@ -1958,7 +1754,7 @@ a {
     font-size: clamp(16px, 1.8vw, 22px);
     font-weight: 500;
     line-height: 1.35;
-    color: var(--color-rgba-255-255-255-96);
+    color: color-mix(in srgb, var(--color-white) 96%, transparent);
 }
 
 
@@ -2009,19 +1805,19 @@ a {
 }
 
 .hero-btn.btn-success {
-    background: var(--color-07852e);
-    border: 1.5px solid var(--color-fff);
-    box-shadow: 0 5px 14px var(--color-rgba-0-0-0-2);
+    background: var(--color-green);
+    border: 1.5px solid var(--color-white);
+    box-shadow: 0 5px 14px color-mix(in srgb, var(--color-black) 20%, transparent);
 }
 
 .hero-btn.btn-outline-light {
-    background: var(--color-rgba-255-255-255-05);
-    border: 1.5px solid var(--color-rgba-255-255-255-9);
+    background: color-mix(in srgb, var(--color-white) 5%, transparent);
+    border: 1.5px solid color-mix(in srgb, var(--color-white) 90%, transparent);
 }
 
 .hero-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px var(--color-rgba-0-0-0-25);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--color-black) 25%, transparent);
 }
 
 .hero-btn svg {
@@ -2043,7 +1839,7 @@ a {
     transform: translateX(-50%);
     padding: 5px 9px;
     border-radius: 30px;
-    background: var(--color-rgba-0-20-60-25);
+    background: color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 54%, var(--color-black)) 25%, transparent);
     backdrop-filter: blur(5px);
 }
 
@@ -2054,7 +1850,7 @@ a {
     padding: 0;
     border: 0;
     border-radius: 20px;
-    background: var(--color-rgba-255-255-255-65);
+    background: color-mix(in srgb, var(--color-white) 65%, transparent);
     cursor: pointer;
     transition: width .3s ease, background .3s ease;
 }
@@ -2067,7 +1863,7 @@ a {
 
 .hero-dots button.active {
     width: 25px;
-    background: var(--color-fff);
+    background: var(--color-white);
 }
 
 
@@ -2096,7 +1892,7 @@ a {
     }
     .hero-photo::after {
         width: 100%;
-        background: linear-gradient( 180deg, transparent 45%, var(--color-rgba-0-42-100-4) 100%);
+        background: linear-gradient( 180deg, transparent 45%, color-mix(in srgb, var(--color-blue-dark) 40%, transparent) 100%);
     }
     /* Diagonal yellow-white line */
     .hero-shape {
@@ -2220,9 +2016,9 @@ a {
     align-items: center;
     gap: 2px;
     padding: 2px;
-    border: 1px solid var(--color-rgba-255-255-255-35);
+    border: 1px solid color-mix(in srgb, var(--color-white) 35%, transparent);
     border-radius: 999px;
-    background: var(--color-rgba-255-255-255-08);
+    background: color-mix(in srgb, var(--color-white) 8%, transparent);
 }
 
 .lang-btn {
@@ -2232,7 +2028,7 @@ a {
     border: 0;
     border-radius: 999px;
     background: transparent;
-    color: var(--color-fff);
+    color: var(--color-white);
     font: inherit;
     font-size: 12px;
     font-weight: 600;
@@ -2242,17 +2038,17 @@ a {
 }
 
 .lang-btn:hover {
-    background: var(--color-rgba-255-255-255-18);
+    background: color-mix(in srgb, var(--color-white) 18%, transparent);
 }
 
 .lang-btn.active {
-    background: var(--color-fff);
-    color: var(--color-062d68);
+    background: var(--color-white);
+    color: var(--color-blue-dark);
     font-weight: 700;
 }
 
 .lang-btn:focus-visible {
-    outline: 2px solid var(--color-ffd21f);
+    outline: 2px solid var(--color-yellow);
     outline-offset: 2px;
 }
 
@@ -2380,8 +2176,8 @@ font {
     width: 14px;
     height: 14px;
     margin-top: -7px;
-    border: 2px solid var(--color-rgba-255-255-255-4);
-    border-top-color: var(--color-fff);
+    border: 2px solid color-mix(in srgb, var(--color-white) 40%, transparent);
+    border-top-color: var(--color-white);
     border-radius: 50%;
     animation: langSpin .7s linear infinite;
 }
@@ -2605,7 +2401,7 @@ html.translated-ltr .brand-copy small {
     z-index: 6;
     border-radius: 9px;
     overflow: hidden;
-    background: var(--color-000);
+    background: var(--color-black);
     animation: playerIn .35s ease both;
 }
 
@@ -2624,8 +2420,8 @@ html.translated-ltr .brand-copy small {
     width: 40px;
     height: 40px;
     margin: -20px 0 0 -20px;
-    border: 3px solid var(--color-rgba-255-255-255-25);
-    border-top-color: var(--color-ffd21f);
+    border: 3px solid color-mix(in srgb, var(--color-white) 25%, transparent);
+    border-top-color: var(--color-yellow);
     border-radius: 50%;
     animation: langSpin .8s linear infinite;
     opacity: 0;
@@ -2643,10 +2439,10 @@ html.translated-ltr .brand-copy small {
     z-index: 3;
     width: 36px;
     height: 36px;
-    border: 1.5px solid var(--color-rgba-255-255-255-7);
+    border: 1.5px solid color-mix(in srgb, var(--color-white) 70%, transparent);
     border-radius: 50%;
-    background: var(--color-rgba-0-0-0-55);
-    color: var(--color-fff);
+    background: color-mix(in srgb, var(--color-black) 55%, transparent);
+    color: var(--color-white);
     font-size: 15px;
     display: grid;
     place-items: center;
@@ -2657,13 +2453,13 @@ html.translated-ltr .brand-copy small {
 }
 
 .inline-player__close:hover {
-    background: var(--color-e52631);
-    border-color: var(--color-e52631);
+    background: var(--color-red);
+    border-color: var(--color-red);
     transform: rotate(90deg);
 }
 
 .inline-player__close:focus-visible {
-    outline: 2px solid var(--color-ffd21f);
+    outline: 2px solid var(--color-yellow);
     outline-offset: 2px;
 }
 
@@ -2702,7 +2498,7 @@ html.translated-ltr .brand-copy small {
     position: absolute;
     inset: -8px;
     border-radius: 50%;
-    border: 2px solid var(--color-rgba-255-255-255-65);
+    border: 2px solid color-mix(in srgb, var(--color-white) 65%, transparent);
     animation: playPulse 1.8s ease-out infinite;
 }
 
@@ -2793,8 +2589,8 @@ html.translated-ltr .brand-copy small {
    ========================================================= */
 
 .inline-player {
-    --cp-accent: var(--color-ffd21f);
-    --cp-red: var(--color-e52631);
+    --cp-accent: var(--color-yellow);
+    --cp-red: var(--color-red);
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -2807,7 +2603,7 @@ html.translated-ltr .brand-copy small {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    background: var(--color-000);
+    background: var(--color-black);
 }
 
 .cp-yt,
@@ -2851,13 +2647,13 @@ html.translated-ltr .brand-copy small {
 
 .inline-player::before {
     top: 0;
-    background: linear-gradient(180deg, var(--color-rgba-0-0-0-55), transparent);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--color-black) 55%, transparent), transparent);
 }
 
 .inline-player::after {
     bottom: 0;
     height: 96px;
-    background: linear-gradient(0deg, var(--color-rgba-0-0-0-75), transparent);
+    background: linear-gradient(0deg, color-mix(in srgb, var(--color-black) 75%, transparent), transparent);
 }
 
 .inline-player.show-ui::before,
@@ -2893,10 +2689,10 @@ html.translated-ltr .brand-copy small {
     width: 56px;
     height: 56px;
     transform: translate(-50%, -50%) scale(.9);
-    border: 2px solid var(--color-rgba-255-255-255-85);
+    border: 2px solid color-mix(in srgb, var(--color-white) 85%, transparent);
     border-radius: 50%;
-    background: var(--color-rgba-0-0-0-55);
-    color: var(--color-fff);
+    background: color-mix(in srgb, var(--color-black) 55%, transparent);
+    color: var(--color-white);
     font-size: 20px;
     display: grid;
     place-items: center;
@@ -2969,7 +2765,7 @@ html.translated-ltr .brand-copy small {
     height: 4px;
     margin-top: -2px;
     border-radius: 4px;
-    background: var(--color-rgba-255-255-255-28);
+    background: color-mix(in srgb, var(--color-white) 28%, transparent);
     transition: height .2s ease, margin-top .2s ease;
 }
 
@@ -2992,7 +2788,7 @@ html.translated-ltr .brand-copy small {
 }
 
 .cp-buffer {
-    background: var(--color-rgba-255-255-255-35);
+    background: color-mix(in srgb, var(--color-white) 35%, transparent);
 }
 
 .cp-fill {
@@ -3013,8 +2809,8 @@ html.translated-ltr .brand-copy small {
     height: 13px;
     margin: -6.5px 0 0 -6.5px;
     border-radius: 50%;
-    background: var(--color-fff);
-    box-shadow: 0 0 0 3px var(--color-rgba-229-38-49-35);
+    background: var(--color-white);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-red) 35%, transparent);
     transform: scale(0);
     transition: transform .2s ease;
 }
@@ -3031,7 +2827,7 @@ html.translated-ltr .brand-copy small {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: var(--color-fff);
+    color: var(--color-white);
 }
 
 .cp-btn {
@@ -3040,7 +2836,7 @@ html.translated-ltr .brand-copy small {
     border: 0;
     border-radius: 8px;
     background: transparent;
-    color: var(--color-fff);
+    color: var(--color-white);
     font-size: 15px;
     display: grid;
     place-items: center;
@@ -3049,7 +2845,7 @@ html.translated-ltr .brand-copy small {
 }
 
 .cp-btn:hover {
-    background: var(--color-rgba-255-255-255-18);
+    background: color-mix(in srgb, var(--color-white) 18%, transparent);
 }
 
 .cp-btn:focus-visible {
@@ -3061,13 +2857,13 @@ html.translated-ltr .brand-copy small {
     font-size: 12px;
     font-weight: 600;
     margin-left: 4px;
-    color: var(--color-rgba-255-255-255-85);
+    color: color-mix(in srgb, var(--color-white) 85%, transparent);
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
 }
 
 .cp-time b {
-    color: var(--color-fff);
+    color: var(--color-white);
 }
 
 .cp-spacer {
@@ -3293,13 +3089,13 @@ html.translated-ltr .brand-copy small {
     .news-events-section .content-panel {
         overflow-y: auto;
         scrollbar-width: thin;
-        scrollbar-color: var(--color-b8d2f1) transparent;
+        scrollbar-color: color-mix(in srgb, var(--color-blue) 20%, var(--color-blue-light)) transparent;
     }
     .news-events-section .content-panel::-webkit-scrollbar {
         width: 6px;
     }
     .news-events-section .content-panel::-webkit-scrollbar-thumb {
-        background: var(--color-b8d2f1);
+        background: color-mix(in srgb, var(--color-blue) 20%, var(--color-blue-light));
         border-radius: 6px;
     }
     /* Events panel: button niche-e thakbe */
@@ -3429,7 +3225,7 @@ html.translated-ltr .hero-copy h1 {
         bottom: 0;
         z-index: 1010;
         padding-bottom: env(safe-area-inset-bottom, 0px);
-        filter: drop-shadow(0 -4px 14px var(--color-rgba-8-45-100-16));
+        filter: drop-shadow(0 -4px 14px color-mix(in srgb, var(--color-blue-dark) 16%, transparent));
         transition: transform .3s ease, --bn-x .4s cubic-bezier(.4, 0, .2, 1);
         -webkit-tap-highlight-color: transparent;
     }
@@ -3440,10 +3236,10 @@ html.translated-ltr .hero-copy h1 {
     .bn-bar {
         position: absolute;
         inset: 0;
-        background: var(--color-fff);
+        background: var(--color-white);
         border-radius: 22px 22px 0 0;
-        -webkit-mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, var(--color-000) 33.5px);
-        mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, var(--color-000) 33.5px);
+        -webkit-mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, var(--color-black) 33.5px);
+        mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, var(--color-black) 33.5px);
     }
     .bn-list {
         position: relative;
@@ -3461,12 +3257,12 @@ html.translated-ltr .hero-copy h1 {
         gap: 3px;
         min-width: 0;
         padding: 8px 1px 0;
-        color: var(--color-64748b);
+        color: var(--color-gray);
         text-align: center;
         transition: color .25s ease;
     }
     .bn-item:focus-visible {
-        outline: 2px solid var(--color-0754a5);
+        outline: 2px solid var(--color-blue);
         outline-offset: -2px;
         border-radius: 10px;
     }
@@ -3495,8 +3291,8 @@ html.translated-ltr .hero-copy h1 {
         height: 54px;
         margin: -27px 0 0 -27px;
         border-radius: 50%;
-        background: linear-gradient(145deg, var(--color-0a66c8), var(--color-063a82));
-        box-shadow: 0 6px 16px var(--color-rgba-7-84-165-4);
+        background: linear-gradient(145deg, color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)), color-mix(in srgb, var(--color-blue) 39%, var(--color-blue-dark)));
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue) 40%, transparent);
         opacity: 0;
         transform: scale(.4);
         transition: transform .35s cubic-bezier(.34, 1.4, .5, 1), opacity .2s ease;
@@ -3514,13 +3310,13 @@ html.translated-ltr .hero-copy h1 {
     }
     /* ACTIVE ITEM = raised circle (default: Home) */
     .bn-item.active {
-        color: var(--color-0754a5);
+        color: var(--color-blue);
     }
     .bn-item.active .bn-label {
         font-weight: 700;
     }
     .bn-item.active .bn-ico {
-        color: var(--color-fff);
+        color: var(--color-white);
         transform: translateY(-18px);
     }
     .bn-item.active .bn-ico i {
@@ -3602,7 +3398,7 @@ html.translated-ltr .hero-copy h1 {
     }
     .top-contact a i {
         font-size: 11px;
-        color: var(--color-ffd21f);
+        color: var(--color-yellow);
     }
     .top-links {
         flex-wrap: nowrap !important;
@@ -3628,8 +3424,8 @@ html.translated-ltr .hero-copy h1 {
     }
     /* ---------- HEADER / NAVBAR ---------- */
     .site-header {
-        border-bottom: 1px solid var(--color-e8eff7);
-        box-shadow: 0 4px 18px var(--color-rgba-8-45-100-10);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-blue) 9%, var(--color-white));
+        box-shadow: 0 4px 18px color-mix(in srgb, var(--color-blue-dark) 10%, transparent);
     }
     .site-header .navbar {
         padding: 9px 16px;
@@ -3649,7 +3445,7 @@ html.translated-ltr .hero-copy h1 {
     .brand-copy small {
         display: block;
         padding-left: 10px;
-        border-left: 2px solid var(--color-ffd21f);
+        border-left: 2px solid var(--color-yellow);
         font-size: 11.5px;
         font-weight: 700;
         line-height: 1.4;
@@ -3661,17 +3457,17 @@ html.translated-ltr .hero-copy h1 {
         width: 46px;
         height: 46px;
         padding: 0;
-        border: 1px solid var(--color-d6e3f3);
+        border: 1px solid color-mix(in srgb, var(--color-blue-dark) 9%, var(--color-blue-light));
         border-radius: 12px;
-        background: var(--color-f2f7fe);
+        background: color-mix(in srgb, var(--color-blue-light) 64%, var(--color-white));
         box-shadow: none;
         transition: background .25s ease, box-shadow .25s ease;
     }
     .navbar-toggler:active {
-        background: var(--color-e4eefb);
+        background: color-mix(in srgb, var(--color-blue-light) 97%, var(--color-blue-dark));
     }
     .navbar-toggler:focus {
-        box-shadow: 0 0 0 3px var(--color-rgba-7-84-165-18);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-blue) 18%, transparent);
     }
     .navbar-toggler-icon {
         width: 22px;
@@ -3682,14 +3478,14 @@ html.translated-ltr .hero-copy h1 {
         max-height: calc(100dvh - 140px);
         margin-top: 8px;
         padding-top: 4px;
-        border-top: 1px solid var(--color-e6eef7);
+        border-top: 1px solid color-mix(in srgb, var(--color-blue) 10%, var(--color-white));
         overflow-y: auto;
     }
     .navbar-nav {
         padding: 4px 0;
     }
     .navbar-nav .nav-item {
-        border-bottom: 1px solid var(--color-f0f4f9);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-blue) 6%, var(--color-white));
     }
     .navbar-nav .nav-item:last-child {
         padding-top: 10px;
@@ -3701,7 +3497,7 @@ html.translated-ltr .hero-copy h1 {
     }
     .navbar-nav .dropdown-menu {
         margin: 0 0 8px;
-        background: var(--color-f6f9fd);
+        background: color-mix(in srgb, var(--color-gray-light) 65%, var(--color-white));
         box-shadow: none;
     }
     .member-login {
@@ -3885,12 +3681,12 @@ html.translated-ltr .hero-copy h1 {
     margin-bottom: 5px;
     font-size: 26px;
     line-height: 1;
-    color: var(--color-0646b5);
+    color: color-mix(in hsl, var(--color-blue-light) 19%, var(--color-blue-dark));
     transition: transform .25s ease, color .25s ease;
 }
 
 .quick-card:hover i {
-    color: var(--color-0754a5);
+    color: var(--color-blue);
     transform: scale(1.1);
 }
 
@@ -3926,13 +3722,13 @@ html.translated-ltr .hero-copy h1 {
         padding: 10px 4px;
         border-radius: 14px;
         justify-content: center;
-        background: linear-gradient(145deg, var(--color-f1f8ff), var(--color-e4effc));
-        border: 1px solid var(--color-d6e6f8);
-        box-shadow: 0 2px 8px var(--color-rgba-8-45-100-06);
+        background: linear-gradient(145deg, color-mix(in srgb, var(--color-blue-light) 66%, var(--color-white)), color-mix(in srgb, var(--color-blue-light) 97%, var(--color-blue)));
+        border: 1px solid color-mix(in srgb, var(--color-blue) 9%, var(--color-blue-light));
+        box-shadow: 0 2px 8px color-mix(in srgb, var(--color-blue-dark) 6%, transparent);
     }
     .quick-section .quick-card:active {
         transform: scale(.96);
-        background: var(--color-fff);
+        background: var(--color-white);
     }
     .quick-card i {
         margin-bottom: 6px;
@@ -3952,7 +3748,7 @@ html.translated-ltr .hero-copy h1 {
         margin-top: 2px;
         font-size: 10px;
         line-height: 1.25;
-        color: var(--color-475569);
+        color: color-mix(in srgb, var(--color-gray) 66%, var(--color-gray-dark));
         overflow-wrap: anywhere;
     }
     /* English (Google Translate): longer words */
@@ -4068,7 +3864,7 @@ html.translated-ltr .hero-copy h1 {
     font-size: 15px;
     font-weight: 700;
     line-height: 1.3;
-    color: var(--color-101827);
+    color: var(--color-gray-dark);
 }
 
 .brand-sub {
@@ -4076,7 +3872,7 @@ html.translated-ltr .hero-copy h1 {
     font-size: 13.5px;
     font-weight: 400;
     line-height: 1.3;
-    color: var(--color-334155);
+    color: color-mix(in srgb, var(--color-gray) 44%, var(--color-gray-dark));
 }
 
 
@@ -4203,23 +3999,23 @@ html.translated-rtl .sko-tag {
     gap: 8px;
     padding: 12px 8px;
     scroll-snap-align: start;
-    border: 1px solid var(--color-e1e7ef);
+    border: 1px solid color-mix(in srgb, var(--color-blue-dark) 12%, var(--color-white));
     border-radius: 14px;
-    background: linear-gradient(145deg, var(--color-fff), var(--color-f6faff));
-    box-shadow: 0 3px 10px var(--color-rgba-10-44-92-07);
+    background: linear-gradient(145deg, var(--color-white), color-mix(in srgb, var(--color-blue-light) 44%, var(--color-white)));
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
 }
 
 .partner-track>.partner-card:hover {
     transform: translateY(-4px);
-    border-color: var(--color-b8d2f1);
-    box-shadow: 0 10px 22px var(--color-rgba-8-45-100-14);
+    border-color: color-mix(in srgb, var(--color-blue) 20%, var(--color-blue-light));
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--color-blue-dark) 14%, transparent);
 }
 
 .partner-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: color-mix(in srgb, currentColor 10%, var(--color-fff));
+    background: color-mix(in srgb, currentColor 10%, var(--color-white));
     transition: transform .3s ease;
 }
 
@@ -4250,14 +4046,14 @@ html.translated-rtl .sko-tag {
 }
 
 .round-arrow:hover {
-    background: var(--color-0754a5);
-    color: var(--color-fff);
-    border-color: var(--color-0754a5);
-    box-shadow: 0 6px 14px var(--color-rgba-7-84-165-3);
+    background: var(--color-blue);
+    color: var(--color-white);
+    border-color: var(--color-blue);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--color-blue) 30%, transparent);
 }
 
 .round-arrow:focus-visible {
-    outline: 2px solid var(--color-ffd21f);
+    outline: 2px solid var(--color-yellow);
     outline-offset: 2px;
 }
 
@@ -4274,7 +4070,7 @@ html.translated-rtl .sko-tag {
     padding: 0;
     border: 0;
     border-radius: 99px;
-    background: var(--color-c9cdd3);
+    background: color-mix(in srgb, var(--color-gray-dark) 19%, var(--color-gray-light));
     cursor: pointer;
     position: relative;
     transition: width .3s ease, background .3s ease;
@@ -4288,7 +4084,7 @@ html.translated-rtl .sko-tag {
 
 .slider-pips button.active {
     width: 24px;
-    background: var(--color-0757c7);
+    background: color-mix(in hsl, var(--color-blue-dark) 74%, var(--color-blue-light));
 }
 
 
@@ -4365,11 +4161,11 @@ html.translated-rtl .sko-tag {
         display: block;
         margin-top: 8px;
         min-width: 210px;
-        border: 1px solid var(--color-e6eef7);
-        border-top: 3px solid var(--color-0754a5);
+        border: 1px solid color-mix(in srgb, var(--color-blue) 10%, var(--color-white));
+        border-top: 3px solid var(--color-blue);
         border-radius: 12px;
         padding: 8px;
-        box-shadow: 0 14px 34px var(--color-rgba-8-45-100-16);
+        box-shadow: 0 14px 34px color-mix(in srgb, var(--color-blue-dark) 16%, transparent);
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);
@@ -4387,14 +4183,14 @@ html.translated-rtl .sko-tag {
         padding: 9px 12px;
         font-size: 13.5px;
         font-weight: 600;
-        color: var(--color-151b27);
+        color: color-mix(in srgb, var(--color-gray-dark) 99%, var(--color-gray-light));
         border-radius: 8px;
         transition: background .2s ease, color .2s ease, padding-left .2s ease;
     }
     .navbar-nav .dropdown-item:hover,
     .navbar-nav .dropdown-item:focus {
-        background: var(--color-eaf4ff);
-        color: var(--color-0754a5);
+        background: var(--color-blue-light);
+        color: var(--color-blue);
         padding-left: 17px;
     }
     /* arrow rotates when open */
@@ -4406,7 +4202,7 @@ html.translated-rtl .sko-tag {
     }
     /* active underline on the opened menu title */
     .navbar-nav .dropdown-toggle.show {
-        color: var(--color-064bb2);
+        color: color-mix(in hsl, var(--color-blue-dark) 80%, var(--color-blue-light));
     }
 }
 
@@ -4435,12 +4231,12 @@ html.translated-rtl .sko-tag {
         --bs-offcanvas-transition: transform .38s cubic-bezier(.32, .72, 0, 1);
         border: 0;
         border-radius: 0 26px 26px 0;
-        background: var(--color-fff);
-        box-shadow: 0 0 44px var(--color-rgba-5-30-80-35);
+        background: var(--color-white);
+        box-shadow: 0 0 44px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 74%, var(--color-black)) 35%, transparent);
         overflow: hidden;
     }
     .offcanvas-backdrop {
-        --bs-backdrop-bg: var(--color-04163d);
+        --bs-backdrop-bg: color-mix(in srgb, var(--color-blue-dark) 56%, var(--color-black));
         --bs-backdrop-opacity: .6;
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
@@ -4450,8 +4246,8 @@ html.translated-rtl .sko-tag {
         justify-content: space-between;
         gap: 10px;
         padding: 16px 14px 14px 16px;
-        background: linear-gradient(135deg, var(--color-eaf4ff), var(--color-fff) 75%);
-        border-bottom: 3px solid var(--color-ffd21f);
+        background: linear-gradient(135deg, var(--color-blue-light), var(--color-white) 75%);
+        border-bottom: 3px solid var(--color-yellow);
     }
     .side-brand {
         display: flex;
@@ -4471,12 +4267,12 @@ html.translated-rtl .sko-tag {
         font-size: 14px;
         font-weight: 700;
         line-height: 1.3;
-        color: var(--color-101827);
+        color: var(--color-gray-dark);
     }
     .side-brand small {
         font-size: 11px;
         font-weight: 400;
-        color: var(--color-475569);
+        color: color-mix(in srgb, var(--color-gray) 66%, var(--color-gray-dark));
     }
     .side-close {
         flex: none;
@@ -4484,16 +4280,16 @@ html.translated-rtl .sko-tag {
         height: 38px;
         display: grid;
         place-items: center;
-        border: 1px solid var(--color-d6e3f3);
+        border: 1px solid color-mix(in srgb, var(--color-blue-dark) 9%, var(--color-blue-light));
         border-radius: 50%;
-        background: var(--color-fff);
-        color: var(--color-0754a5);
+        background: var(--color-white);
+        color: var(--color-blue);
         font-size: 16px;
         transition: transform .25s ease, background .25s ease;
     }
     .side-close:active {
         transform: scale(.9) rotate(90deg);
-        background: var(--color-eaf4ff);
+        background: var(--color-blue-light);
     }
     /* ---------- body / list ---------- */
     .sko-side-body {
@@ -4521,17 +4317,17 @@ html.translated-rtl .sko-tag {
         border-radius: 12px;
         font-size: 15px;
         font-weight: 700;
-        color: var(--color-151b27);
+        color: color-mix(in srgb, var(--color-gray-dark) 99%, var(--color-gray-light));
         white-space: normal;
         transition: background .2s ease, color .2s ease;
     }
     .sko-sidebar .navbar-nav .nav-link:active {
-        background: var(--color-eaf4ff);
+        background: var(--color-blue-light);
     }
     .sko-sidebar .navbar-nav .nav-link.active,
     .sko-sidebar .navbar-nav .nav-link.show {
-        background: var(--color-eaf4ff);
-        color: var(--color-0754a5);
+        background: var(--color-blue-light);
+        color: var(--color-blue);
     }
     /* icon chip before every menu title */
     .sko-sidebar .navbar-nav .nav-link::before {
@@ -4544,15 +4340,15 @@ html.translated-rtl .sko-tag {
         display: grid;
         place-items: center;
         border-radius: 10px;
-        background: var(--color-eef5fd);
-        color: var(--color-0754a5);
+        background: color-mix(in hsl, var(--color-blue-light) 85%, var(--color-white));
+        color: var(--color-blue);
         font-size: 14px;
         transition: background .2s ease, color .2s ease;
     }
     .sko-sidebar .navbar-nav .nav-link.active::before,
     .sko-sidebar .navbar-nav .nav-link.show::before {
-        background: linear-gradient(145deg, var(--color-0a66c8), var(--color-063a82));
-        color: var(--color-fff);
+        background: linear-gradient(145deg, color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)), color-mix(in srgb, var(--color-blue) 39%, var(--color-blue-dark)));
+        color: var(--color-white);
     }
     .sko-sidebar .navbar-nav>li:nth-child(1)>.nav-link::before {
         content: "\f015";
@@ -4598,7 +4394,7 @@ html.translated-rtl .sko-tag {
         margin: 2px 0 6px 28px;
         padding: 4px 0 4px 12px;
         border: 0;
-        border-left: 2px solid var(--color-d6e6f8);
+        border-left: 2px solid color-mix(in srgb, var(--color-blue) 9%, var(--color-blue-light));
         border-radius: 0;
         background: transparent;
         box-shadow: none;
@@ -4611,13 +4407,13 @@ html.translated-rtl .sko-tag {
         border-radius: 10px;
         font-size: 14px;
         font-weight: 600;
-        color: var(--color-334155);
+        color: color-mix(in srgb, var(--color-gray) 44%, var(--color-gray-dark));
     }
     .sko-sidebar .dropdown-item:hover,
     .sko-sidebar .dropdown-item:focus,
     .sko-sidebar .dropdown-item:active {
-        background: var(--color-eaf4ff);
-        color: var(--color-0754a5);
+        background: var(--color-blue-light);
+        color: var(--color-blue);
     }
     @keyframes skoDrop {
         from {
@@ -4637,7 +4433,7 @@ html.translated-rtl .sko-tag {
         padding: 12px 14px;
         border-radius: 12px;
         font-size: 15px;
-        box-shadow: 0 6px 16px var(--color-rgba-7-133-46-25);
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-green) 25%, transparent);
     }
     /* ---------- footer ---------- */
     .side-foot {
@@ -4645,8 +4441,8 @@ html.translated-rtl .sko-tag {
         flex-direction: column;
         gap: 8px;
         padding: 12px 16px calc(14px + env(safe-area-inset-bottom, 0px));
-        border-top: 1px solid var(--color-e6eef7);
-        background: var(--color-f6f9fd);
+        border-top: 1px solid color-mix(in srgb, var(--color-blue) 10%, var(--color-white));
+        background: color-mix(in srgb, var(--color-gray-light) 65%, var(--color-white));
         font-size: 12.5px;
     }
     .side-foot a {
@@ -4654,7 +4450,7 @@ html.translated-rtl .sko-tag {
         align-items: center;
         gap: 10px;
         font-weight: 600;
-        color: var(--color-334155);
+        color: color-mix(in srgb, var(--color-gray) 44%, var(--color-gray-dark));
     }
     .side-foot i {
         width: 28px;
@@ -4662,8 +4458,8 @@ html.translated-rtl .sko-tag {
         display: grid;
         place-items: center;
         border-radius: 50%;
-        background: var(--color-e4effc);
-        color: var(--color-0754a5);
+        background: color-mix(in srgb, var(--color-blue-light) 97%, var(--color-blue));
+        color: var(--color-blue);
         font-size: 12px;
     }
 }
@@ -4753,7 +4549,7 @@ html.translated-rtl .sko-tag {
     right: 0;
     height: 3px;
     z-index: 1100;
-    background: linear-gradient(90deg, var(--color-ffd21f), var(--color-0a66c8));
+    background: linear-gradient(90deg, var(--color-yellow), color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)));
     transform: scaleX(0);
     transform-origin: left;
     pointer-events: none;
@@ -4767,7 +4563,7 @@ html.translated-rtl .sko-tag {
 }
 
 .site-header.is-stuck {
-    box-shadow: 0 8px 26px var(--color-rgba-8-45-100-14);
+    box-shadow: 0 8px 26px color-mix(in srgb, var(--color-blue-dark) 14%, transparent);
 }
 
 
@@ -4789,7 +4585,7 @@ html.translated-rtl .sko-tag {
     width: 55%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(100deg, transparent, var(--color-rgba-255-255-255-35), transparent);
+    background: linear-gradient(100deg, transparent, color-mix(in srgb, var(--color-white) 35%, transparent), transparent);
     transform: translateX(-130%) skewX(-18deg);
     transition: transform .7s ease;
     pointer-events: none;
@@ -4808,10 +4604,10 @@ html.translated-rtl .sko-tag {
 }
 
 .view-link:hover {
-    background: var(--color-0754a5);
-    border-color: var(--color-0754a5);
-    color: var(--color-fff);
-    box-shadow: 0 6px 14px var(--color-rgba-7-84-165-25);
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-white);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--color-blue) 25%, transparent);
 }
 
 .view-link i {
@@ -4844,7 +4640,7 @@ html.translated-rtl .sko-tag {
 
 .leader-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px var(--color-rgba-8-45-100-16);
+    box-shadow: 0 12px 24px color-mix(in srgb, var(--color-blue-dark) 16%, transparent);
 }
 
 .leader-card img {
@@ -4864,7 +4660,7 @@ html.translated-rtl .sko-tag {
 
 .news-item:hover img {
     transform: scale(1.04);
-    box-shadow: 0 6px 14px var(--color-rgba-8-45-100-2);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--color-blue-dark) 20%, transparent);
 }
 
 
@@ -4886,7 +4682,7 @@ html.translated-rtl .sko-tag {
 
 .social-links a:hover {
     transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 6px 12px var(--color-rgba-0-0-0-25);
+    box-shadow: 0 6px 12px color-mix(in srgb, var(--color-black) 25%, transparent);
 }
 
 
@@ -4970,9 +4766,9 @@ html.translated-rtl .sko-tag {
     z-index: 2;
     flex: 0 0 auto;
     padding: 8px 8px 10px;
-    background: var(--color-f3f6fa);
-    border-top: 3px solid var(--color-0754a5);
-    box-shadow: 0 -10px 14px -8px var(--color-rgba-8-45-100-12);
+    background: var(--color-gray-light);
+    border-top: 3px solid var(--color-blue);
+    box-shadow: 0 -10px 14px -8px color-mix(in srgb, var(--color-blue-dark) 12%, transparent);
 }
 
 .leader-card h3 {
@@ -4982,7 +4778,7 @@ html.translated-rtl .sko-tag {
 
 .leader-card p {
     margin: 2px 0 1px;
-    color: var(--color-0754a5);
+    color: var(--color-blue);
 }
 
 
@@ -5048,7 +4844,7 @@ html.translated-rtl .sko-tag {
     aspect-ratio: 16 / 4;
     height: auto;
     min-height: 340px;
-    background: var(--color-052d70);
+    background: color-mix(in srgb, var(--color-blue) 8%, var(--color-blue-dark));
 }
 
 .hero-section::before,
@@ -5105,12 +4901,12 @@ html.translated-rtl .sko-tag {
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    background: linear-gradient(90deg, var(--color-rgba-4-32-84-80) 0%, var(--color-rgba-4-32-84-55) 42%, var(--color-rgba-4-32-84-08) 78%, transparent 100%);
+    background: linear-gradient(90deg, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 78%, var(--color-black)) 80%, transparent) 0%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 78%, var(--color-black)) 55%, transparent) 42%, color-mix(in srgb, var(--color-blue-dark) 8%, transparent) 78%, transparent 100%);
 }
 
 .hero-lead,
 .hero-benefits {
-    text-shadow: 0 2px 8px var(--color-rgba-0-20-70-45);
+    text-shadow: 0 2px 8px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 61%, var(--color-black)) 45%, transparent);
 }
 
 
@@ -5131,7 +4927,7 @@ html.translated-rtl .sko-tag {
         aspect-ratio: 16 / 7;
         height: auto;
         min-height: 0;
-        background: var(--color-052d70);
+        background: color-mix(in srgb, var(--color-blue) 8%, var(--color-blue-dark));
     }
     .hero-photo {
         inset: 0;
@@ -5144,7 +4940,7 @@ html.translated-rtl .sko-tag {
         object-position: center;
     }
     .hero-photo::after {
-        background: linear-gradient(90deg, var(--color-rgba-4-32-84-80) 0%, var(--color-rgba-4-32-84-58) 60%, var(--color-rgba-4-32-84-22) 100%);
+        background: linear-gradient(90deg, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 78%, var(--color-black)) 80%, transparent) 0%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 78%, var(--color-black)) 58%, transparent) 60%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 78%, var(--color-black)) 22%, transparent) 100%);
     }
     .hero-content {
         height: auto;
@@ -5218,8 +5014,8 @@ html.translated-rtl .sko-tag {
 @media (max-width: 767.98px) {
     .stats-section {
         padding: 20px 0 22px;
-        border-top: 3px solid var(--color-ffd21f);
-        background: linear-gradient(160deg, var(--color-06407a) 0%, var(--color-0a579b) 55%, var(--color-05376c) 100%);
+        border-top: 3px solid var(--color-yellow);
+        background: linear-gradient(160deg, color-mix(in srgb, var(--color-blue) 75%, var(--color-black)) 0%, color-mix(in srgb, var(--color-blue) 97%, var(--color-black)) 55%, color-mix(in srgb, var(--color-blue) 65%, var(--color-black)) 100%);
     }
     /* soft light glows behind the cards */
     .stats-section::before {
@@ -5227,7 +5023,7 @@ html.translated-rtl .sko-tag {
         position: absolute;
         inset: 0;
         pointer-events: none;
-        background: radial-gradient(circle at 92% 0%, var(--color-rgba-255-210-31-20), transparent 42%), radial-gradient(circle at 0% 100%, var(--color-rgba-90-175-255-28), transparent 48%);
+        background: radial-gradient(circle at 92% 0%, color-mix(in srgb, var(--color-yellow) 20%, transparent), transparent 42%), radial-gradient(circle at 0% 100%, color-mix(in srgb, color-mix(in hsl, var(--color-blue-light) 55%, var(--color-blue)) 28%, transparent), transparent 48%);
     }
     .stats-section .container {
         padding-left: 14px;
@@ -5252,10 +5048,10 @@ html.translated-rtl .sko-tag {
         gap: 9px;
         justify-content: flex-start;
         align-items: center;
-        border: 1px solid var(--color-rgba-255-255-255-18);
+        border: 1px solid color-mix(in srgb, var(--color-white) 18%, transparent);
         border-radius: 16px;
-        background: linear-gradient(145deg, var(--color-rgba-255-255-255-15), var(--color-rgba-255-255-255-06));
-        box-shadow: 0 8px 20px var(--color-rgba-0-20-60-22), inset 0 1px 0 var(--color-rgba-255-255-255-18);
+        background: linear-gradient(145deg, color-mix(in srgb, var(--color-white) 15%, transparent), color-mix(in srgb, var(--color-white) 6%, transparent));
+        box-shadow: 0 8px 20px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 54%, var(--color-black)) 22%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-white) 18%, transparent);
         -webkit-backdrop-filter: blur(6px);
         backdrop-filter: blur(6px);
     }
@@ -5271,9 +5067,9 @@ html.translated-rtl .sko-tag {
         width: 38px;
         height: 38px;
         border-radius: 12px;
-        background: var(--color-rgba-255-255-255-14);
-        box-shadow: inset 0 0 0 1px var(--color-rgba-255-255-255-16);
-        color: var(--color-ffd21f);
+        background: color-mix(in srgb, var(--color-white) 14%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-white) 16%, transparent);
+        color: var(--color-yellow);
         font-size: 17px;
         line-height: 1;
     }
@@ -5293,7 +5089,7 @@ html.translated-rtl .sko-tag {
         font-size: clamp(10.5px, 3vw, 12.5px);
         font-weight: 500;
         line-height: 1.25;
-        color: var(--color-rgba-255-255-255-88);
+        color: color-mix(in srgb, var(--color-white) 88%, transparent);
         overflow-wrap: anywhere;
     }
 }
@@ -5336,15 +5132,15 @@ html.translated-rtl .sko-tag {
         justify-content: center;
         min-height: 0;
         padding: 9px 4px 8px;
-        border: 1px solid var(--color-e3ecf7);
+        border: 1px solid color-mix(in srgb, var(--color-blue-light) 97%, var(--color-black));
         border-radius: 14px;
-        background: var(--color-fff);
-        box-shadow: 0 4px 12px var(--color-rgba-8-45-100-07);
+        background: var(--color-white);
+        box-shadow: 0 4px 12px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
         transition: transform .2s ease, box-shadow .2s ease;
     }
     .quick-section .quick-card:active {
         transform: scale(.96);
-        box-shadow: 0 2px 8px var(--color-rgba-8-45-100-10);
+        box-shadow: 0 2px 8px color-mix(in srgb, var(--color-blue-dark) 10%, transparent);
     }
     /* plain colored icon (no background) */
     .quick-section .quick-card i {
@@ -5358,34 +5154,34 @@ html.translated-rtl .sko-tag {
         line-height: 1;
     }
     .quick-section .row>.col:nth-child(1) .quick-card i {
-        color: var(--color-0b4fc2);
+        color: color-mix(in hsl, var(--color-blue-light) 23%, var(--color-blue-dark));
     }
     .quick-section .row>.col:nth-child(2) .quick-card i {
-        color: var(--color-0a7a3d);
+        color: color-mix(in hsl, var(--color-green-dark) 90%, var(--color-green-light));
     }
     .quick-section .row>.col:nth-child(3) .quick-card i {
-        color: var(--color-5b3bd1);
+        color: var(--color-purple);
     }
     .quick-section .row>.col:nth-child(4) .quick-card i {
-        color: var(--color-d97706);
+        color: var(--color-orange);
     }
     .quick-section .row>.col:nth-child(5) .quick-card i {
-        color: var(--color-0b7a99);
+        color: color-mix(in srgb, var(--color-green) 12%, var(--color-teal));
     }
     .quick-section .row>.col:nth-child(6) .quick-card i {
-        color: var(--color-d4244f);
+        color: color-mix(in srgb, var(--color-red) 84%, var(--color-purple));
     }
     .quick-section .quick-card strong {
         font-size: 12.5px;
         font-weight: 800;
         line-height: 1.2;
-        color: var(--color-0f1f3d);
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     }
     .quick-section .quick-card span {
         margin-top: 1px;
         font-size: 10.5px;
         line-height: 1.2;
-        color: var(--color-64748b);
+        color: var(--color-gray);
     }
     /* ---------- PARTNER SECTION ---------- */
     .partner-section {
@@ -5405,15 +5201,15 @@ html.translated-rtl .sko-tag {
         width: 32px;
         height: 32px;
         border-radius: 10px;
-        background: var(--color-eaf2ff);
-        color: var(--color-0754a5);
+        background: var(--color-blue-light);
+        color: var(--color-blue);
         font-size: 15px;
     }
     .partner-section .view-link {
         padding: 6px 12px;
         border: 0;
-        background: var(--color-eef5ff);
-        color: var(--color-0754a5);
+        background: color-mix(in srgb, var(--color-blue-light) 84%, var(--color-white));
+        color: var(--color-blue);
         font-size: 12px;
     }
     .partner-section .partner-track {
@@ -5425,10 +5221,10 @@ html.translated-rtl .sko-tag {
         min-height: 116px;
         gap: 9px;
         padding: 16px 8px 12px;
-        border: 1px solid var(--color-e4edf8);
+        border: 1px solid color-mix(in srgb, var(--color-blue-light) 97%, var(--color-black));
         border-radius: 18px;
-        background: linear-gradient(180deg, var(--color-fff), var(--color-f5f9ff));
-        box-shadow: 0 6px 16px var(--color-rgba-8-45-100-08);
+        background: linear-gradient(180deg, var(--color-white), color-mix(in srgb, var(--color-blue-light) 50%, var(--color-white)));
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
         transition: transform .2s ease, box-shadow .2s ease;
     }
     /* small brand-yellow accent on top of each card */
@@ -5441,11 +5237,11 @@ html.translated-rtl .sko-tag {
         height: 3px;
         transform: translateX(-50%);
         border-radius: 0 0 4px 4px;
-        background: var(--color-ffd21f);
+        background: var(--color-yellow);
     }
     .partner-section .partner-track>.partner-card:hover {
         transform: none;
-        box-shadow: 0 6px 16px var(--color-rgba-8-45-100-08);
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
     }
     .partner-section .partner-track>.partner-card:active {
         transform: scale(.97);
@@ -5462,7 +5258,7 @@ html.translated-rtl .sko-tag {
         font-size: 12.5px;
         font-weight: 700;
         line-height: 1.3;
-        color: var(--color-14233f);
+        color: color-mix(in hsl, var(--color-blue) 23%, var(--color-gray-dark));
     }
     /* slider dots: smaller + tidy */
     .partner-section .slider-pips {
@@ -5534,15 +5330,15 @@ html.translated-rtl .sko-tag {
         width: 32px;
         height: 32px;
         border-radius: 10px;
-        background: var(--color-eaf2ff);
-        color: var(--color-0754a5);
+        background: var(--color-blue-light);
+        color: var(--color-blue);
         font-size: 15px;
     }
     .services-section .section-heading .view-link {
         padding: 6px 12px;
         border: 0;
-        background: var(--color-eef5ff);
-        color: var(--color-0754a5);
+        background: color-mix(in srgb, var(--color-blue-light) 84%, var(--color-white));
+        color: var(--color-blue);
         font-size: 12px;
     }
     /* ---------- grid: equal height cards ---------- */
@@ -5555,22 +5351,22 @@ html.translated-rtl .sko-tag {
     }
     /* ---------- accent colour per card ---------- */
     .services-section .service-green {
-        --sc: var(--color-087046);
+        --sc: color-mix(in hsl, var(--color-green-dark) 74%, var(--color-teal));
     }
     .services-section .service-pink {
-        --sc: var(--color-d32937);
+        --sc: color-mix(in srgb, var(--color-red) 92%, var(--color-purple-dark));
     }
     .services-section .service-cyan {
-        --sc: var(--color-0a7aa8);
+        --sc: var(--color-teal);
     }
     .services-section .service-purple {
-        --sc: var(--color-6a3fd0);
+        --sc: color-mix(in srgb, var(--color-purple) 94%, var(--color-purple-light));
     }
     .services-section .service-indigo {
-        --sc: var(--color-2748c9);
+        --sc: color-mix(in hsl, var(--color-purple) 55%, var(--color-teal));
     }
     .services-section .service-mint {
-        --sc: var(--color-d97706);
+        --sc: var(--color-orange);
     }
     /* ---------- card ---------- */
     .services-section .service-card {
@@ -5583,11 +5379,11 @@ html.translated-rtl .sko-tag {
         justify-content: flex-start;
         gap: 0;
         text-align: left;
-        color: var(--color-0f1f3d);
-        border: 1px solid color-mix(in srgb, var(--sc) 16%, var(--color-e6edf6));
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
+        border: 1px solid color-mix(in srgb, var(--sc) 16%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
         border-radius: 18px;
-        background: linear-gradient(160deg, color-mix(in srgb, var(--sc) 9%, var(--color-fff)) 0%, var(--color-fff) 65%);
-        box-shadow: 0 6px 16px var(--color-rgba-8-45-100-07);
+        background: linear-gradient(160deg, color-mix(in srgb, var(--sc) 9%, var(--color-white)) 0%, var(--color-white) 65%);
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
         overflow: hidden;
         -webkit-tap-highlight-color: transparent;
         transition: transform .2s ease, box-shadow .2s ease;
@@ -5606,12 +5402,12 @@ html.translated-rtl .sko-tag {
     }
     .services-section .service-card:hover {
         transform: none;
-        border-color: color-mix(in srgb, var(--sc) 16%, var(--color-e6edf6));
-        box-shadow: 0 6px 16px var(--color-rgba-8-45-100-07);
+        border-color: color-mix(in srgb, var(--sc) 16%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
     }
     .services-section .service-card:active {
         transform: scale(.97);
-        box-shadow: 0 3px 8px var(--color-rgba-8-45-100-10);
+        box-shadow: 0 3px 8px color-mix(in srgb, var(--color-blue-dark) 10%, transparent);
     }
     /* ---------- icon chip ---------- */
     .services-section .service-card>i {
@@ -5623,8 +5419,8 @@ html.translated-rtl .sko-tag {
         height: 42px;
         margin-bottom: 12px;
         border-radius: 13px;
-        background: linear-gradient(145deg, var(--sc), color-mix(in srgb, var(--sc) 68%, var(--color-000)));
-        color: var(--color-fff);
+        background: linear-gradient(145deg, var(--sc), color-mix(in srgb, var(--sc) 68%, var(--color-black)));
+        color: var(--color-white);
         font-size: 18px;
         line-height: 1;
         box-shadow: 0 6px 14px color-mix(in srgb, var(--sc) 35%, transparent);
@@ -5640,7 +5436,7 @@ html.translated-rtl .sko-tag {
         font-size: 13.5px;
         font-weight: 800;
         line-height: 1.3;
-        color: var(--color-0f1f3d);
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
         overflow-wrap: anywhere;
     }
     .services-section .service-card .sc-sub {
@@ -5651,7 +5447,7 @@ html.translated-rtl .sko-tag {
         font-size: 11px;
         font-weight: 500;
         line-height: 1.3;
-        color: var(--color-64748b);
+        color: var(--color-gray);
         overflow-wrap: anywhere;
     }
     /* ---------- arrow chip ---------- */
@@ -5664,7 +5460,7 @@ html.translated-rtl .sko-tag {
         width: 26px;
         height: 26px;
         border-radius: 50%;
-        background: color-mix(in srgb, var(--sc) 12%, var(--color-fff));
+        background: color-mix(in srgb, var(--sc) 12%, var(--color-white));
         color: var(--sc);
         transition: background .2s ease, color .2s ease, transform .2s ease;
     }
@@ -5677,7 +5473,7 @@ html.translated-rtl .sko-tag {
     }
     .services-section .service-card:active .sc-go {
         background: var(--sc);
-        color: var(--color-fff);
+        color: var(--color-white);
         transform: translateX(2px);
     }
     /* ---------- English (Google Translate): longer words ---------- */
@@ -5767,7 +5563,7 @@ html.translated-rtl .sko-tag {
         padding: 10px 10px 10px 10px;
         border-radius: 14px;
         text-align: left;
-        box-shadow: 0 3px 10px var(--color-rgba-8-45-100-07);
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
     }
     /* smaller decorative circle */
     .services-section .service-card::before {
@@ -5881,9 +5677,9 @@ html.translated-rtl .sko-tag {
     /* ---------- video card ---------- */
     .news-events-section .feature-video-card {
         padding: 6px;
-        border: 1px solid var(--color-dbe7f5);
+        border: 1px solid color-mix(in srgb, var(--color-blue-dark) 7%, var(--color-blue-light));
         border-radius: 18px;
-        box-shadow: 0 8px 22px var(--color-rgba-8-45-100-12);
+        box-shadow: 0 8px 22px color-mix(in srgb, var(--color-blue-dark) 12%, transparent);
         -webkit-tap-highlight-color: transparent;
     }
     .news-events-section .feature-video-card>img {
@@ -5896,7 +5692,7 @@ html.translated-rtl .sko-tag {
         inset: 6px;
         z-index: 1;
         border-radius: 13px;
-        background: linear-gradient(180deg, transparent 45%, var(--color-rgba-0-20-60-45) 100%);
+        background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 54%, var(--color-black)) 45%, transparent) 100%);
         pointer-events: none;
     }
     .news-events-section .feature-video-card.is-playing::after {
@@ -5906,9 +5702,9 @@ html.translated-rtl .sko-tag {
         z-index: 2;
         width: 56px;
         height: 56px;
-        border: 2px solid var(--color-fff);
-        background: var(--color-rgba-229-38-49-92);
-        box-shadow: 0 8px 22px var(--color-rgba-0-0-0-35);
+        border: 2px solid var(--color-white);
+        background: color-mix(in srgb, var(--color-red) 92%, transparent);
+        box-shadow: 0 8px 22px color-mix(in srgb, var(--color-black) 35%, transparent);
     }
     .news-events-section .feature-video-card .video-play i {
         font-size: 18px;
@@ -5921,9 +5717,9 @@ html.translated-rtl .sko-tag {
     .news-events-section .content-panel {
         margin: 0;
         padding: 14px 14px 12px;
-        border: 1px solid var(--color-e1eaf6);
+        border: 1px solid color-mix(in srgb, var(--color-blue-light) 96%, var(--color-black));
         border-radius: 20px;
-        box-shadow: 0 8px 22px var(--color-rgba-8-45-100-09);
+        box-shadow: 0 8px 22px color-mix(in srgb, var(--color-blue-dark) 9%, transparent);
     }
     .news-events-section .panel-heading {
         margin-bottom: 8px;
@@ -5939,15 +5735,15 @@ html.translated-rtl .sko-tag {
         width: 32px;
         height: 32px;
         border-radius: 10px;
-        background: var(--color-eaf2ff);
-        color: var(--color-0754a5);
+        background: var(--color-blue-light);
+        color: var(--color-blue);
         font-size: 15px;
     }
     .news-events-section .panel-heading .view-link {
         padding: 6px 12px;
         border: 0;
-        background: var(--color-eef5ff);
-        color: var(--color-0754a5);
+        background: color-mix(in srgb, var(--color-blue-light) 84%, var(--color-white));
+        color: var(--color-blue);
         font-size: 12px;
     }
     /* ---------- news items ---------- */
@@ -5958,7 +5754,7 @@ html.translated-rtl .sko-tag {
         min-height: 0;
         margin: 0 -8px;
         padding: 10px 8px;
-        border-bottom: 1px solid var(--color-edf2f8);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-blue) 7%, var(--color-white));
         border-radius: 14px;
         -webkit-tap-highlight-color: transparent;
         transition: background .2s ease;
@@ -5967,7 +5763,7 @@ html.translated-rtl .sko-tag {
         border-bottom: 0;
     }
     .news-events-section .news-item:active {
-        background: var(--color-f3f8fe);
+        background: color-mix(in srgb, var(--color-blue-light) 55%, var(--color-white));
     }
     /* whole row is tappable */
     .news-events-section .news-item h3 a::after {
@@ -5980,11 +5776,11 @@ html.translated-rtl .sko-tag {
         width: 84px;
         height: 64px;
         border-radius: 12px;
-        box-shadow: 0 4px 10px var(--color-rgba-8-45-100-12);
+        box-shadow: 0 4px 10px color-mix(in srgb, var(--color-blue-dark) 12%, transparent);
     }
     .news-events-section .news-item:hover img {
         transform: none;
-        box-shadow: 0 4px 10px var(--color-rgba-8-45-100-12);
+        box-shadow: 0 4px 10px color-mix(in srgb, var(--color-blue-dark) 12%, transparent);
     }
     .news-events-section .news-item h3 {
         display: -webkit-box;
@@ -5995,7 +5791,7 @@ html.translated-rtl .sko-tag {
         font-size: 13.5px;
         font-weight: 800;
         line-height: 1.35;
-        color: var(--color-0f1f3d);
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     }
     /* date chip */
     .news-events-section .news-item time {
@@ -6004,11 +5800,11 @@ html.translated-rtl .sko-tag {
         gap: 5px;
         padding: 3px 9px;
         border-radius: 999px;
-        background: var(--color-eef5ff);
+        background: color-mix(in srgb, var(--color-blue-light) 84%, var(--color-white));
         font-size: 10.5px;
         font-weight: 600;
         line-height: 1.3;
-        color: var(--color-0754a5);
+        color: var(--color-blue);
     }
     /* ---------- event items ---------- */
     .news-events-section .event-item {
@@ -6016,9 +5812,9 @@ html.translated-rtl .sko-tag {
         gap: 12px;
         margin: 0 0 8px;
         padding: 10px;
-        border: 1px solid var(--color-e3edf8);
+        border: 1px solid color-mix(in srgb, var(--color-blue-light) 97%, var(--color-black));
         border-radius: 16px;
-        background: linear-gradient(160deg, var(--color-f5f9ff) 0%, var(--color-fff) 70%);
+        background: linear-gradient(160deg, color-mix(in srgb, var(--color-blue-light) 50%, var(--color-white)) 0%, var(--color-white) 70%);
     }
     .news-events-section .event-date {
         flex: none;
@@ -6027,15 +5823,15 @@ html.translated-rtl .sko-tag {
         min-height: 62px;
         padding: 6px 2px;
         border-radius: 14px;
-        box-shadow: inset 0 0 0 1px var(--color-rgba-255-255-255-6), 0 4px 10px var(--color-rgba-8-45-100-08);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-white) 60%, transparent), 0 4px 10px color-mix(in srgb, var(--color-blue-dark) 8%, transparent);
     }
     .news-events-section .event-date.pink {
-        background: linear-gradient(145deg, var(--color-ffe6ee), var(--color-ffd0df));
-        color: var(--color-a31649);
+        background: linear-gradient(145deg, var(--color-red-light), color-mix(in hsl, var(--color-red-light) 95%, var(--color-black)));
+        color: color-mix(in srgb, var(--color-red-dark) 69%, var(--color-purple));
     }
     .news-events-section .event-date.blue {
-        background: linear-gradient(145deg, var(--color-e2f1ff), var(--color-c9e2ff));
-        color: var(--color-07539a);
+        background: linear-gradient(145deg, color-mix(in srgb, var(--color-teal-light) 98%, var(--color-teal-dark)), color-mix(in hsl, var(--color-blue-dark) 9%, var(--color-blue-light)));
+        color: color-mix(in srgb, var(--color-blue) 95%, var(--color-black));
     }
     .news-events-section .event-date b {
         font-size: 22px;
@@ -6051,12 +5847,12 @@ html.translated-rtl .sko-tag {
         font-size: 14px;
         font-weight: 800;
         line-height: 1.3;
-        color: var(--color-0f1f3d);
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     }
     .news-events-section .event-item p {
         font-size: 12px;
         line-height: 1.35;
-        color: var(--color-475569);
+        color: color-mix(in srgb, var(--color-gray) 66%, var(--color-gray-dark));
     }
     /* location chip */
     .news-events-section .event-item small {
@@ -6066,16 +5862,16 @@ html.translated-rtl .sko-tag {
         max-width: 100%;
         margin-top: 6px;
         padding: 3px 9px;
-        border: 1px solid var(--color-e1ebf6);
+        border: 1px solid color-mix(in srgb, var(--color-blue-light) 96%, var(--color-black));
         border-radius: 999px;
-        background: var(--color-fff);
+        background: var(--color-white);
         font-size: 10.5px;
         line-height: 1.35;
-        color: var(--color-475569);
+        color: color-mix(in srgb, var(--color-gray) 66%, var(--color-gray-dark));
     }
     .news-events-section .event-item small i {
         flex: none;
-        color: var(--color-d4244f);
+        color: color-mix(in srgb, var(--color-red) 84%, var(--color-purple));
     }
     /* ---------- "all events" button ---------- */
     .news-events-section .all-events {
@@ -6088,11 +5884,11 @@ html.translated-rtl .sko-tag {
         padding: 10px 14px;
         border: 0;
         border-radius: 14px;
-        background: linear-gradient(145deg, var(--color-0a66c8), var(--color-063a82));
+        background: linear-gradient(145deg, color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)), color-mix(in srgb, var(--color-blue) 39%, var(--color-blue-dark)));
         font-size: 14px;
         font-weight: 700;
-        color: var(--color-fff);
-        box-shadow: 0 8px 18px var(--color-rgba-7-84-165-28);
+        color: var(--color-white);
+        box-shadow: 0 8px 18px color-mix(in srgb, var(--color-blue) 28%, transparent);
         -webkit-tap-highlight-color: transparent;
         transition: transform .2s ease, box-shadow .2s ease;
     }
@@ -6100,12 +5896,12 @@ html.translated-rtl .sko-tag {
     .news-events-section .all-events:focus,
     .news-events-section .all-events:active {
         border: 0;
-        background: linear-gradient(145deg, var(--color-0a66c8), var(--color-063a82));
-        color: var(--color-fff);
+        background: linear-gradient(145deg, color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)), color-mix(in srgb, var(--color-blue) 39%, var(--color-blue-dark)));
+        color: var(--color-white);
     }
     .news-events-section .all-events:active {
         transform: scale(.97);
-        box-shadow: 0 4px 10px var(--color-rgba-7-84-165-28);
+        box-shadow: 0 4px 10px color-mix(in srgb, var(--color-blue) 28%, transparent);
     }
     /* ---------- English (Google Translate): longer words ---------- */
     html[lang="en"] .news-events-section .news-item h3,
@@ -6215,9 +6011,9 @@ html.translated-rtl .sko-tag {
         overflow: hidden;
         content-visibility: visible;
         padding: 26px 0 calc(92px + env(safe-area-inset-bottom, 0px));
-        border-top: 3px solid var(--color-ffd21f);
+        border-top: 3px solid var(--color-yellow);
         border-radius: 24px 24px 0 0;
-        background: radial-gradient(circle at 100% 0%, var(--color-rgba-255-210-31-16), transparent 40%), radial-gradient(circle at 0% 100%, var(--color-rgba-90-175-255-22), transparent 45%), linear-gradient(160deg, var(--color-03275e) 0%, var(--color-062c69) 60%, var(--color-001d4b) 100%);
+        background: radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-yellow) 16%, transparent), transparent 40%), radial-gradient(circle at 0% 100%, color-mix(in srgb, color-mix(in hsl, var(--color-blue-light) 55%, var(--color-blue)) 22%, transparent), transparent 45%), linear-gradient(160deg, color-mix(in srgb, var(--color-blue-dark) 89%, var(--color-black)) 0%, var(--color-blue-dark) 60%, color-mix(in srgb, var(--color-blue-dark) 69%, var(--color-black)) 100%);
     }
     .site-footer .container {
         padding-left: 16px;
@@ -6247,10 +6043,10 @@ html.translated-rtl .sko-tag {
     /* glass cards */
     .site-footer .row>div:nth-child(n+2) {
         padding: 14px;
-        border: 1px solid var(--color-rgba-255-255-255-14);
+        border: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
         border-radius: 18px;
-        background: linear-gradient(145deg, var(--color-rgba-255-255-255-10), var(--color-rgba-255-255-255-04));
-        box-shadow: 0 8px 20px var(--color-rgba-0-12-40-22), inset 0 1px 0 var(--color-rgba-255-255-255-12);
+        background: linear-gradient(145deg, color-mix(in srgb, var(--color-white) 10%, transparent), color-mix(in srgb, var(--color-white) 4%, transparent));
+        box-shadow: 0 8px 20px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 35%, var(--color-black)) 22%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-white) 12%, transparent);
     }
     /* ---------- brand ---------- */
     .site-footer .footer-brand {
@@ -6269,7 +6065,7 @@ html.translated-rtl .sko-tag {
         margin: 3px 0;
         font-size: 13px;
         line-height: 1.6;
-        color: var(--color-rgba-255-255-255-86);
+        color: color-mix(in srgb, var(--color-white) 86%, transparent);
     }
     .footer-brand p br {
         display: none;
@@ -6289,7 +6085,7 @@ html.translated-rtl .sko-tag {
         width: 4px;
         height: 16px;
         border-radius: 4px;
-        background: var(--color-ffd21f);
+        background: var(--color-yellow);
     }
     /* ---------- link lists ---------- */
     .footer-links li {
@@ -6297,7 +6093,7 @@ html.translated-rtl .sko-tag {
         align-items: center;
         margin: 0;
         font-size: 13px;
-        border-bottom: 1px solid var(--color-rgba-255-255-255-08);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
     }
     .footer-links li:last-child {
         border-bottom: 0;
@@ -6307,7 +6103,7 @@ html.translated-rtl .sko-tag {
         margin-right: 8px;
         font-size: 18px;
         line-height: 1;
-        color: var(--color-ffd21f);
+        color: var(--color-yellow);
     }
     .footer-links a {
         display: block;
@@ -6322,7 +6118,7 @@ html.translated-rtl .sko-tag {
         transform: none;
     }
     .footer-links a:active {
-        color: var(--color-a9d7ff);
+        color: color-mix(in hsl, var(--color-blue) 20%, var(--color-blue-light));
     }
     /* ---------- contact ---------- */
     .contact-list li {
@@ -6340,8 +6136,8 @@ html.translated-rtl .sko-tag {
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background: var(--color-rgba-255-255-255-12);
-        color: var(--color-ffd21f);
+        background: color-mix(in srgb, var(--color-white) 12%, transparent);
+        color: var(--color-yellow);
         font-size: 12px;
     }
     .contact-list li>span,
@@ -6355,7 +6151,7 @@ html.translated-rtl .sko-tag {
         -webkit-tap-highlight-color: transparent;
     }
     .contact-list li>a:active {
-        color: var(--color-a9d7ff);
+        color: color-mix(in hsl, var(--color-blue) 20%, var(--color-blue-light));
     }
     /* ---------- social ---------- */
     .social-links {
@@ -6365,29 +6161,29 @@ html.translated-rtl .sko-tag {
     .social-links a {
         width: 40px;
         height: 40px;
-        color: var(--color-fff);
+        color: var(--color-white);
         font-size: 16px;
-        box-shadow: 0 4px 10px var(--color-rgba-0-0-0-25);
+        box-shadow: 0 4px 10px color-mix(in srgb, var(--color-black) 25%, transparent);
         -webkit-tap-highlight-color: transparent;
     }
     .social-links a:nth-child(1) {
-        background: var(--color-1877f2);
+        background: color-mix(in hsl, var(--color-blue-dark) 58%, var(--color-blue-light));
     }
     .social-links a:nth-child(2) {
-        background: var(--color-f21d2f);
+        background: color-mix(in hsl, var(--color-red) 89%, var(--color-red-dark));
     }
     .social-links a:nth-child(3) {
-        background: var(--color-0a66c2);
+        background: color-mix(in hsl, var(--color-blue-light) 10%, var(--color-blue));
     }
     .social-links a:nth-child(4) {
-        background: var(--color-111);
+        background: color-mix(in srgb, var(--color-gray-light) 7%, var(--color-black));
     }
     .social-links a:nth-child(5) {
-        background: var(--color-05b94e);
+        background: color-mix(in hsl, var(--color-green) 84%, var(--color-green-light));
     }
     .social-links a:hover {
         transform: none;
-        box-shadow: 0 4px 10px var(--color-rgba-0-0-0-25);
+        box-shadow: 0 4px 10px color-mix(in srgb, var(--color-black) 25%, transparent);
     }
     .social-links a:active {
         transform: scale(.92);
@@ -6401,21 +6197,21 @@ html.translated-rtl .sko-tag {
         padding: 4px;
         border: 0;
         border-radius: 999px;
-        box-shadow: 0 6px 16px var(--color-rgba-0-12-40-28);
+        box-shadow: 0 6px 16px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 35%, var(--color-black)) 28%, transparent);
     }
     .newsletter input {
         padding: 0 14px;
         font-size: 16px;
-        color: var(--color-0f1f3d);
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     }
     .newsletter input::placeholder {
-        color: var(--color-8493a8);
+        color: color-mix(in srgb, var(--color-gray) 76%, var(--color-gray-light));
     }
     .newsletter button {
         width: 40px;
         min-width: 40px;
         height: 40px;
-        background: linear-gradient(145deg, var(--color-0a66c8), var(--color-063a82));
+        background: linear-gradient(145deg, color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)), color-mix(in srgb, var(--color-blue) 39%, var(--color-blue-dark)));
         font-size: 15px;
         -webkit-tap-highlight-color: transparent;
         transition: transform .2s ease;
@@ -6427,7 +6223,7 @@ html.translated-rtl .sko-tag {
     .footer-bottom {
         margin-top: 18px;
         padding: 14px 0 0;
-        border-top: 1px solid var(--color-rgba-255-255-255-14);
+        border-top: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
         font-size: 11.5px;
         line-height: 1.6;
     }
@@ -6448,7 +6244,7 @@ html.translated-rtl .sko-tag {
         -webkit-tap-highlight-color: transparent;
     }
     .footer-bottom a:active {
-        background: var(--color-rgba-255-255-255-12);
+        background: color-mix(in srgb, var(--color-white) 12%, transparent);
     }
     /* English (Google Translate): longer words */
     html[lang="en"] .footer-links li,
@@ -6504,22 +6300,22 @@ html.translated-rtl .sko-tag {
 @media (min-width: 768px) {
     /* ---------- accent colour per card ---------- */
     .services-section .service-green {
-        --sc: var(--color-087046);
+        --sc: color-mix(in hsl, var(--color-green-dark) 74%, var(--color-teal));
     }
     .services-section .service-pink {
-        --sc: var(--color-d32937);
+        --sc: color-mix(in srgb, var(--color-red) 92%, var(--color-purple-dark));
     }
     .services-section .service-cyan {
-        --sc: var(--color-0a7aa8);
+        --sc: var(--color-teal);
     }
     .services-section .service-purple {
-        --sc: var(--color-6a3fd0);
+        --sc: color-mix(in srgb, var(--color-purple) 94%, var(--color-purple-light));
     }
     .services-section .service-indigo {
-        --sc: var(--color-2748c9);
+        --sc: color-mix(in hsl, var(--color-purple) 55%, var(--color-teal));
     }
     .services-section .service-mint {
-        --sc: var(--color-d97706);
+        --sc: var(--color-orange);
     }
     /* ---------- equal height cards in every row ---------- */
     .services-section .row.row-cols-2>.col {
@@ -6540,11 +6336,11 @@ html.translated-rtl .sko-tag {
         min-height: 88px;
         padding: 14px 44px 14px 14px;
         text-align: left;
-        color: var(--color-0f1f3d);
-        border: 1px solid color-mix(in srgb, var(--sc) 16%, var(--color-e6edf6));
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
+        border: 1px solid color-mix(in srgb, var(--sc) 16%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
         border-radius: 16px;
-        background: linear-gradient(160deg, color-mix(in srgb, var(--sc) 9%, var(--color-fff)) 0%, var(--color-fff) 65%);
-        box-shadow: 0 6px 16px var(--color-rgba-8-45-100-07);
+        background: linear-gradient(160deg, color-mix(in srgb, var(--sc) 9%, var(--color-white)) 0%, var(--color-white) 65%);
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
         overflow: hidden;
         transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
@@ -6563,7 +6359,7 @@ html.translated-rtl .sko-tag {
     }
     .services-section .service-card:hover {
         transform: translateY(-4px);
-        border-color: color-mix(in srgb, var(--sc) 38%, var(--color-e6edf6));
+        border-color: color-mix(in srgb, var(--sc) 38%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
         box-shadow: 0 14px 28px color-mix(in srgb, var(--sc) 18%, transparent);
     }
     .services-section .service-card:hover::before {
@@ -6584,8 +6380,8 @@ html.translated-rtl .sko-tag {
         width: 46px;
         height: 46px;
         border-radius: 14px;
-        background: linear-gradient(145deg, var(--sc), color-mix(in srgb, var(--sc) 68%, var(--color-000)));
-        color: var(--color-fff);
+        background: linear-gradient(145deg, var(--sc), color-mix(in srgb, var(--sc) 68%, var(--color-black)));
+        color: var(--color-white);
         font-size: 19px;
         line-height: 1;
         box-shadow: 0 6px 14px color-mix(in srgb, var(--sc) 32%, transparent);
@@ -6603,7 +6399,7 @@ html.translated-rtl .sko-tag {
         font-size: 15px;
         font-weight: 800;
         line-height: 1.3;
-        color: var(--color-0f1f3d);
+        color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
         overflow-wrap: anywhere;
     }
     /* ---------- SUB TEXT (now visible on desktop too) ---------- */
@@ -6616,7 +6412,7 @@ html.translated-rtl .sko-tag {
         font-size: 12.5px;
         font-weight: 500;
         line-height: 1.35;
-        color: var(--color-64748b);
+        color: var(--color-gray);
         overflow-wrap: anywhere;
     }
     /* ---------- arrow chip (now visible on desktop too) ---------- */
@@ -6629,7 +6425,7 @@ html.translated-rtl .sko-tag {
         width: 28px;
         height: 28px;
         border-radius: 50%;
-        background: color-mix(in srgb, var(--sc) 12%, var(--color-fff));
+        background: color-mix(in srgb, var(--sc) 12%, var(--color-white));
         color: var(--sc);
         transform: translateY(-50%);
         transition: background .25s ease, color .25s ease, transform .25s ease;
@@ -6643,7 +6439,7 @@ html.translated-rtl .sko-tag {
     }
     .services-section .service-card:hover .sc-go {
         background: var(--sc);
-        color: var(--color-fff);
+        color: var(--color-white);
         transform: translateY(-50%) translateX(3px);
     }
     /* ---------- English (Google Translate): longer words ---------- */
@@ -7014,9 +6810,9 @@ html.translated-ltr .services-section .service-card .sc-sub {
     isolation: isolate;
     overflow: hidden;
     padding: 34px 0 36px;
-    border-top: 3px solid var(--color-ffd21f);
-    border-bottom: 1px solid var(--color-rgba-255-255-255-08);
-    background: linear-gradient(135deg, var(--color-052b5c) 0%, var(--color-0a579b) 52%, var(--color-06386f) 100%);
+    border-top: 3px solid var(--color-yellow);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-blue-dark) 90%, var(--color-black)) 0%, color-mix(in srgb, var(--color-blue) 97%, var(--color-black)) 52%, color-mix(in srgb, var(--color-blue) 68%, var(--color-black)) 100%);
 }
 
 
@@ -7028,10 +6824,10 @@ html.translated-ltr .services-section .service-card .sc-sub {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background-image: radial-gradient(var(--color-rgba-255-255-255-10) 1px, transparent 1.5px);
+    background-image: radial-gradient(color-mix(in srgb, var(--color-white) 10%, transparent) 1px, transparent 1.5px);
     background-size: 22px 22px;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, var(--color-000) 35%, var(--color-000) 65%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, var(--color-000) 35%, var(--color-000) 65%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, var(--color-black) 35%, var(--color-black) 65%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, var(--color-black) 35%, var(--color-black) 65%, transparent 100%);
 }
 
 
@@ -7043,7 +6839,7 @@ html.translated-ltr .services-section .service-card .sc-sub {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: radial-gradient(520px 260px at 92% 0%, var(--color-rgba-255-210-31-16), transparent 70%), radial-gradient(560px 280px at 4% 100%, var(--color-rgba-90-175-255-26), transparent 70%);
+    background: radial-gradient(520px 260px at 92% 0%, color-mix(in srgb, var(--color-yellow) 16%, transparent), transparent 70%), radial-gradient(560px 280px at 4% 100%, color-mix(in srgb, color-mix(in hsl, var(--color-blue-light) 55%, var(--color-blue)) 26%, transparent), transparent 70%);
 }
 
 .stats-section .container {
@@ -7079,10 +6875,10 @@ html.translated-ltr .services-section .service-card .sc-sub {
     margin: 0;
     padding: 16px 18px;
     overflow: hidden;
-    border: 1px solid var(--color-rgba-255-255-255-16);
+    border: 1px solid color-mix(in srgb, var(--color-white) 16%, transparent);
     border-radius: 18px;
-    background: linear-gradient(145deg, var(--color-rgba-255-255-255-15), var(--color-rgba-255-255-255-05));
-    box-shadow: 0 10px 24px var(--color-rgba-0-18-56-24), inset 0 1px 0 var(--color-rgba-255-255-255-18);
+    background: linear-gradient(145deg, color-mix(in srgb, var(--color-white) 15%, transparent), color-mix(in srgb, var(--color-white) 5%, transparent));
+    box-shadow: 0 10px 24px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 50%, var(--color-black)) 24%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-white) 18%, transparent);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     transition: opacity .6s ease var(--d, 0s), transform .35s cubic-bezier(.22, .7, .2, 1), box-shadow .35s ease, border-color .35s ease, background .35s ease;
@@ -7099,7 +6895,7 @@ html.translated-ltr .services-section .service-card .sc-sub {
     width: 34px;
     height: 3px;
     border-radius: 0 0 4px 4px;
-    background: linear-gradient(90deg, var(--color-ffd21f), var(--color-ffb800));
+    background: linear-gradient(90deg, var(--color-yellow), var(--color-yellow-dark));
     transition: width .35s ease;
 }
 
@@ -7114,7 +6910,7 @@ html.translated-ltr .services-section .service-card .sc-sub {
     width: 45%;
     height: 100%;
     pointer-events: none;
-    background: linear-gradient(100deg, transparent, var(--color-rgba-255-255-255-16), transparent);
+    background: linear-gradient(100deg, transparent, color-mix(in srgb, var(--color-white) 16%, transparent), transparent);
     transform: translateX(-140%) skewX(-18deg);
     transition: transform .8s ease;
 }
@@ -7131,9 +6927,9 @@ html.translated-ltr .services-section .service-card .sc-sub {
     width: 50px;
     height: 50px;
     border-radius: 15px;
-    background: linear-gradient(145deg, var(--color-rgba-255-210-31-26), var(--color-rgba-255-255-255-08));
-    box-shadow: inset 0 0 0 1px var(--color-rgba-255-210-31-38), 0 6px 14px var(--color-rgba-0-18-56-28);
-    color: var(--color-ffd21f);
+    background: linear-gradient(145deg, color-mix(in srgb, var(--color-yellow) 26%, transparent), color-mix(in srgb, var(--color-white) 8%, transparent));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-yellow) 38%, transparent), 0 6px 14px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 50%, var(--color-black)) 28%, transparent);
+    color: var(--color-yellow);
     font-size: 20px;
     line-height: 1;
     transition: transform .35s cubic-bezier(.34, 1.4, .5, 1);
@@ -7156,17 +6952,17 @@ html.translated-ltr .services-section .service-card .sc-sub {
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -.3px;
-    color: var(--color-fff);
+    color: var(--color-white);
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 2px 10px var(--color-rgba-0-20-70-35);
+    text-shadow: 0 2px 10px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 61%, var(--color-black)) 35%, transparent);
 }
 
 .stats-section .row>.stat-item span {
     font-size: 13px;
     font-weight: 500;
     line-height: 1.3;
-    color: var(--color-rgba-255-255-255-84);
+    color: color-mix(in srgb, var(--color-white) 84%, transparent);
     overflow-wrap: break-word;
 }
 
@@ -7176,9 +6972,9 @@ html.translated-ltr .services-section .service-card .sc-sub {
 @media (hover: hover) {
     .stats-section .row>.stat-item:hover {
         transform: translateY(-5px);
-        border-color: var(--color-rgba-255-210-31-5);
-        background: linear-gradient(145deg, var(--color-rgba-255-255-255-2), var(--color-rgba-255-255-255-07));
-        box-shadow: 0 18px 34px var(--color-rgba-0-16-50-36), inset 0 1px 0 var(--color-rgba-255-255-255-22);
+        border-color: color-mix(in srgb, var(--color-yellow) 50%, transparent);
+        background: linear-gradient(145deg, color-mix(in srgb, var(--color-white) 20%, transparent), color-mix(in srgb, var(--color-white) 7%, transparent));
+        box-shadow: 0 18px 34px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 44%, var(--color-black)) 36%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-white) 22%, transparent);
     }
     .stats-section .row>.stat-item:hover::before {
         width: 64px;
@@ -7258,7 +7054,7 @@ html.translated-ltr .services-section .service-card .sc-sub {
         min-height: 0;
         padding: 12px 10px;
         border-radius: 16px;
-        box-shadow: 0 8px 20px var(--color-rgba-0-18-56-24), inset 0 1px 0 var(--color-rgba-255-255-255-18);
+        box-shadow: 0 8px 20px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 50%, var(--color-black)) 24%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-white) 18%, transparent);
     }
     .stats-section .row>.stat-item:last-child {
         grid-column: 1 / -1;
@@ -7344,27 +7140,27 @@ html.translated-ltr .stats-section .row>.stat-item span {
 /* ---------- accent colour per card (inherited by the card) ---------- */
 
 .quick-section .row>.col:nth-child(1) {
-    --qc: var(--color-0b4fc2);
+    --qc: color-mix(in hsl, var(--color-blue-light) 23%, var(--color-blue-dark));
 }
 
 .quick-section .row>.col:nth-child(2) {
-    --qc: var(--color-0a7a3d);
+    --qc: color-mix(in hsl, var(--color-green-dark) 90%, var(--color-green-light));
 }
 
 .quick-section .row>.col:nth-child(3) {
-    --qc: var(--color-5b3bd1);
+    --qc: var(--color-purple);
 }
 
 .quick-section .row>.col:nth-child(4) {
-    --qc: var(--color-d97706);
+    --qc: var(--color-orange);
 }
 
 .quick-section .row>.col:nth-child(5) {
-    --qc: var(--color-0b7a99);
+    --qc: color-mix(in srgb, var(--color-green) 12%, var(--color-teal));
 }
 
 .quick-section .row>.col:nth-child(6) {
-    --qc: var(--color-d4244f);
+    --qc: color-mix(in srgb, var(--color-red) 84%, var(--color-purple));
 }
 
 
@@ -7397,10 +7193,10 @@ html.translated-ltr .stats-section .row>.stat-item span {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--qc) 16%, var(--color-e6edf6));
+    border: 1px solid color-mix(in srgb, var(--qc) 16%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
     border-radius: 18px;
-    background: linear-gradient(160deg, color-mix(in srgb, var(--qc) 8%, var(--color-fff)) 0%, var(--color-fff) 72%);
-    box-shadow: 0 6px 16px var(--color-rgba-8-45-100-07);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--qc) 8%, var(--color-white)) 0%, var(--color-white) 72%);
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
     -webkit-tap-highlight-color: transparent;
     transition: opacity .6s ease var(--d, 0s), transform .3s cubic-bezier(.22, .7, .2, 1), box-shadow .3s ease, border-color .3s ease;
 }
@@ -7449,9 +7245,9 @@ html.translated-ltr .stats-section .row>.stat-item span {
     height: 46px;
     margin: 0 0 9px;
     border-radius: 14px;
-    background: linear-gradient(145deg, var(--qc), color-mix(in srgb, var(--qc) 66%, var(--color-000)));
+    background: linear-gradient(145deg, var(--qc), color-mix(in srgb, var(--qc) 66%, var(--color-black)));
     box-shadow: 0 6px 14px color-mix(in srgb, var(--qc) 34%, transparent);
-    color: var(--color-fff);
+    color: var(--color-white);
     font-size: 19px;
     line-height: 1;
     transition: transform .3s cubic-bezier(.34, 1.4, .5, 1);
@@ -7466,7 +7262,7 @@ html.translated-ltr .stats-section .row>.stat-item span {
     font-size: 15px;
     font-weight: 800;
     line-height: 1.25;
-    color: var(--color-0f1f3d);
+    color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     overflow-wrap: anywhere;
 }
 
@@ -7477,7 +7273,7 @@ html.translated-ltr .stats-section .row>.stat-item span {
     font-size: 12.5px;
     font-weight: 500;
     line-height: 1.3;
-    color: var(--color-64748b);
+    color: var(--color-gray);
     overflow-wrap: anywhere;
 }
 
@@ -7487,8 +7283,8 @@ html.translated-ltr .stats-section .row>.stat-item span {
 @media (hover: hover) {
     .quick-section .quick-card:hover {
         transform: translateY(-5px);
-        border-color: color-mix(in srgb, var(--qc) 40%, var(--color-e6edf6));
-        background: linear-gradient(160deg, color-mix(in srgb, var(--qc) 11%, var(--color-fff)) 0%, var(--color-fff) 72%);
+        border-color: color-mix(in srgb, var(--qc) 40%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
+        background: linear-gradient(160deg, color-mix(in srgb, var(--qc) 11%, var(--color-white)) 0%, var(--color-white) 72%);
         box-shadow: 0 16px 30px color-mix(in srgb, var(--qc) 20%, transparent);
     }
     .quick-section .quick-card:hover::before {
@@ -7499,7 +7295,7 @@ html.translated-ltr .stats-section .row>.stat-item span {
     }
     .quick-section .row>.col:nth-child(n) .quick-card:hover>i {
         transform: scale(1.1) rotate(-5deg);
-        color: var(--color-fff);
+        color: var(--color-white);
     }
 }
 
@@ -7556,7 +7352,7 @@ html.translated-ltr .stats-section .row>.stat-item span {
         height: 100%;
         padding: 12px 4px 9px;
         border-radius: 16px;
-        box-shadow: 0 4px 12px var(--color-rgba-8-45-100-07);
+        box-shadow: 0 4px 12px color-mix(in srgb, var(--color-blue-dark) 7%, transparent);
     }
     .quick-section .quick-card::before {
         width: 26px;
@@ -7589,7 +7385,7 @@ html.translated-ltr .stats-section .row>.stat-item span {
     }
     .quick-section .quick-card:active {
         transform: scale(.96);
-        box-shadow: 0 2px 8px var(--color-rgba-8-45-100-10);
+        box-shadow: 0 2px 8px color-mix(in srgb, var(--color-blue-dark) 10%, transparent);
     }
 }
 
@@ -7685,7 +7481,7 @@ html.translated-ltr .quick-section .quick-card span {
         padding: 10px 14px;
         text-align: left;
         border-radius: 14px;
-        box-shadow: 0 4px 12px var(--color-rgba-8-45-100-06);
+        box-shadow: 0 4px 12px color-mix(in srgb, var(--color-blue-dark) 6%, transparent);
     }
     /* accent bar: slim line on the left edge instead of the top */
     .quick-section .quick-card::before {
@@ -7859,19 +7655,19 @@ html.translated-ltr .quick-section .quick-card span {
 /* ---------- 2. CARD: clean premium surface ---------- */
 
 .quick-section .quick-card {
-    border: 1px solid color-mix(in srgb, var(--qc) 14%, var(--color-e6edf6));
+    border: 1px solid color-mix(in srgb, var(--qc) 14%, color-mix(in srgb, var(--color-blue) 10%, var(--color-white)));
     border-radius: 16px;
-    background: linear-gradient(165deg, color-mix(in srgb, var(--qc) 6%, var(--color-fff)) 0%, var(--color-fff) 70%);
-    box-shadow: 0 1px 2px var(--color-rgba-8-45-100-04), 0 6px 16px var(--color-rgba-8-45-100-06);
+    background: linear-gradient(165deg, color-mix(in srgb, var(--qc) 6%, var(--color-white)) 0%, var(--color-white) 70%);
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--color-blue-dark) 4%, transparent), 0 6px 16px color-mix(in srgb, var(--color-blue-dark) 6%, transparent);
 }
 
 .quick-section .quick-card strong {
-    color: var(--color-0f1f3d);
+    color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     letter-spacing: -.1px;
 }
 
 .quick-section .quick-card span {
-    color: var(--color-64748b);
+    color: var(--color-gray);
 }
 
 
@@ -7988,7 +7784,7 @@ html.translated-ltr .quick-section .quick-card span {
         padding: 9px 3px 8px;
         gap: 0;
         border-radius: 13px;
-        box-shadow: 0 1px 2px var(--color-rgba-8-45-100-04), 0 3px 9px var(--color-rgba-8-45-100-06);
+        box-shadow: 0 1px 2px color-mix(in srgb, var(--color-blue-dark) 4%, transparent), 0 3px 9px color-mix(in srgb, var(--color-blue-dark) 6%, transparent);
     }
     /* slim accent bar on top */
     .quick-section .quick-card::before {
@@ -8097,9 +7893,9 @@ html.translated-ltr .quick-section .quick-card span {
         z-index: 2;
         width: 52px;
         height: 52px;
-        border: 2px solid var(--color-fff);
-        background: var(--color-rgba-229-38-49-94);
-        box-shadow: 0 8px 22px var(--color-rgba-0-0-0-38);
+        border: 2px solid var(--color-white);
+        background: color-mix(in srgb, var(--color-red) 94%, transparent);
+        box-shadow: 0 8px 22px color-mix(in srgb, var(--color-black) 38%, transparent);
     }
     .campaign-card .campaign-play i {
         font-size: 18px;
@@ -8107,7 +7903,7 @@ html.translated-ltr .quick-section .quick-card span {
     }
     /* ---------- 2. DARK GRADIENT: from bottom, so the title stays readable ---------- */
     .campaign-card .campaign-overlay {
-        background: linear-gradient(0deg, var(--color-rgba-0-20-48-88) 0%, var(--color-rgba-0-20-48-45) 42%, var(--color-rgba-0-20-48-08) 75%, transparent 100%);
+        background: linear-gradient(0deg, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 44%, var(--color-black)) 88%, transparent) 0%, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 44%, var(--color-black)) 45%, transparent) 42%, color-mix(in srgb, var(--color-gray-dark) 8%, transparent) 75%, transparent 100%);
     }
     /* ---------- 3. TITLE: bottom-left, never touches the play button ---------- */
     .campaign-card .campaign-copy {
@@ -8119,7 +7915,7 @@ html.translated-ltr .quick-section .quick-card span {
         font-size: clamp(12.5px, 3.8vw, 15.5px);
         font-weight: 800;
         line-height: 1.3;
-        text-shadow: 0 2px 6px var(--color-rgba-0-0-0-7);
+        text-shadow: 0 2px 6px color-mix(in srgb, var(--color-black) 70%, transparent);
     }
     /* let the text flow naturally instead of 3 forced lines */
     .campaign-card .campaign-copy br {
@@ -8176,7 +7972,7 @@ html.translated-ltr .quick-section .quick-card span {
 }
 
 .leader-card.is-clickable:focus-visible {
-    outline: 2px solid var(--color-0754a5);
+    outline: 2px solid var(--color-blue);
     outline-offset: 3px;
 }
 
@@ -8191,8 +7987,8 @@ html.translated-ltr .quick-section .quick-card span {
     margin-top: 6px;
     padding: 4px 11px;
     border-radius: 999px;
-    background: var(--color-eaf4ff);
-    color: var(--color-0754a5);
+    background: var(--color-blue-light);
+    color: var(--color-blue);
     font-size: 11.5px;
     font-weight: 700;
     line-height: 1.3;
@@ -8206,8 +8002,8 @@ html.translated-ltr .quick-section .quick-card span {
 
 @media (hover: hover) {
     .leader-card:hover .leader-more {
-        background: var(--color-0754a5);
-        color: var(--color-fff);
+        background: var(--color-blue);
+        color: var(--color-white);
     }
     .leader-card:hover .leader-more i {
         transform: translateX(3px);
@@ -8234,12 +8030,12 @@ html.translated-ltr .quick-section .quick-card span {
     border: 0;
     border-radius: 24px;
     overflow: hidden;
-    background: var(--color-fff);
-    box-shadow: 0 30px 70px var(--color-rgba-4-22-61-38);
+    background: var(--color-white);
+    box-shadow: 0 30px 70px color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 56%, var(--color-black)) 38%, transparent);
 }
 
 .modal-backdrop.show {
-    --bs-backdrop-bg: var(--color-04163d);
+    --bs-backdrop-bg: color-mix(in srgb, var(--color-blue-dark) 56%, var(--color-black));
     --bs-backdrop-opacity: .62;
 }
 
@@ -8255,10 +8051,10 @@ html.translated-ltr .quick-section .quick-card span {
     height: 38px;
     display: grid;
     place-items: center;
-    border: 1px solid var(--color-rgba-255-255-255-6);
+    border: 1px solid color-mix(in srgb, var(--color-white) 60%, transparent);
     border-radius: 50%;
-    background: var(--color-rgba-4-22-61-55);
-    color: var(--color-fff);
+    background: color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 56%, var(--color-black)) 55%, transparent);
+    color: var(--color-white);
     font-size: 15px;
     cursor: pointer;
     -webkit-backdrop-filter: blur(4px);
@@ -8267,12 +8063,12 @@ html.translated-ltr .quick-section .quick-card span {
 }
 
 .lm-close:hover {
-    background: var(--color-e52631);
+    background: var(--color-red);
     transform: rotate(90deg);
 }
 
 .lm-close:focus-visible {
-    outline: 2px solid var(--color-ffd21f);
+    outline: 2px solid var(--color-yellow);
     outline-offset: 2px;
 }
 
@@ -8290,7 +8086,7 @@ html.translated-ltr .quick-section .quick-card span {
 .lm-photo {
     position: relative;
     min-height: 100%;
-    background: linear-gradient(160deg, var(--color-062d68), var(--color-0754a5));
+    background: linear-gradient(160deg, var(--color-blue-dark), var(--color-blue));
 }
 
 .lm-photo::after {
@@ -8298,7 +8094,7 @@ html.translated-ltr .quick-section .quick-card span {
     position: absolute;
     inset: auto 0 0 0;
     height: 40%;
-    background: linear-gradient(0deg, var(--color-rgba-4-22-61-55), transparent);
+    background: linear-gradient(0deg, color-mix(in srgb, color-mix(in srgb, var(--color-blue-dark) 56%, var(--color-black)) 55%, transparent), transparent);
     pointer-events: none;
 }
 
@@ -8317,7 +8113,7 @@ html.translated-ltr .quick-section .quick-card span {
     flex-direction: column;
     gap: 12px;
     padding: 30px 28px 26px;
-    border-top: 4px solid var(--color-ffd21f);
+    border-top: 4px solid var(--color-yellow);
 }
 
 
@@ -8327,8 +8123,8 @@ html.translated-ltr .quick-section .quick-card span {
     align-self: flex-start;
     padding: 5px 13px;
     border-radius: 999px;
-    background: var(--color-eaf4ff);
-    color: var(--color-0754a5);
+    background: var(--color-blue-light);
+    color: var(--color-blue);
     font-size: 13px;
     font-weight: 800;
     line-height: 1.3;
@@ -8339,14 +8135,14 @@ html.translated-ltr .quick-section .quick-card span {
     font-size: clamp(20px, 2.4vw, 27px);
     font-weight: 800;
     line-height: 1.3;
-    color: var(--color-0f1f3d);
+    color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
 }
 
 .lm-org {
     margin: 0;
     font-size: 13.5px;
     line-height: 1.4;
-    color: var(--color-64748b);
+    color: var(--color-gray);
 }
 
 .lm-line {
@@ -8354,14 +8150,14 @@ html.translated-ltr .quick-section .quick-card span {
     width: 52px;
     height: 3px;
     border-radius: 3px;
-    background: var(--color-ffd21f);
+    background: var(--color-yellow);
 }
 
 .lm-bio {
     margin: 0;
     font-size: 14.5px;
     line-height: 1.85;
-    color: var(--color-334155);
+    color: color-mix(in srgb, var(--color-gray) 44%, var(--color-gray-dark));
 }
 
 .lm-bio:empty {
@@ -8388,12 +8184,12 @@ html.translated-ltr .quick-section .quick-card span {
     align-items: center;
     gap: 12px;
     padding: 10px 12px;
-    border: 1px solid var(--color-e3edf8);
+    border: 1px solid color-mix(in srgb, var(--color-blue-light) 97%, var(--color-black));
     border-radius: 14px;
-    background: var(--color-f6f9fd);
+    background: color-mix(in srgb, var(--color-gray-light) 65%, var(--color-white));
     font-size: 14px;
     font-weight: 600;
-    color: var(--color-0f1f3d);
+    color: color-mix(in hsl, var(--color-blue-dark) 68%, var(--color-black));
     -webkit-tap-highlight-color: transparent;
     transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
@@ -8405,8 +8201,8 @@ html.translated-ltr .quick-section .quick-card span {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: linear-gradient(145deg, var(--color-0a66c8), var(--color-063a82));
-    color: var(--color-fff);
+    background: linear-gradient(145deg, color-mix(in hsl, var(--color-blue) 89%, var(--color-blue-light)), color-mix(in srgb, var(--color-blue) 39%, var(--color-blue-dark)));
+    color: var(--color-white);
     font-size: 13px;
 }
 
@@ -8416,8 +8212,8 @@ html.translated-ltr .quick-section .quick-card span {
 }
 
 .lm-info a:hover {
-    background: var(--color-eaf4ff);
-    border-color: var(--color-b9d8ff);
+    background: var(--color-blue-light);
+    border-color: color-mix(in hsl, var(--color-blue-dark) 13%, var(--color-blue-light));
 }
 
 .lm-info a:active {
