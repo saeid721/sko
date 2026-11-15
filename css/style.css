@@ -14,17 +14,6 @@
 /* Global color and font tokens */
 
 :root {
-    /* ============================================
-       COLOR TOKENS  (only 3 formats per colour)
-       --color-{name}        = main
-       --color-{name}-dark   = dark
-       --color-{name}-light  = light
-       Need another shade? Don't add a new token -
-       mix it in the class:
-         color-mix(in srgb, var(--color-blue) 40%, transparent)   -> 40% opacity
-         color-mix(in srgb, var(--color-blue) 10%, var(--color-white)) -> lighter tint
-         color-mix(in hsl,  var(--color-blue) 80%, var(--color-blue-light)) -> brighter tint
-       ============================================ */
     /* Blue (brand) */
     --color-blue: #0754a5;
     --color-blue-dark: #062d68;
