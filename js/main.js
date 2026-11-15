@@ -1077,3 +1077,61 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 })();
+
+
+
+
+// ============================================
+// SERVICES CARDS: auto-fit title + sub text (never cut, single line)
+// Safety net: shrinks the font a little only when text still overflows
+// ============================================
+(() => {
+    const MIN_SIZE = 9;
+    const STEP = 0.5;
+
+    const fit = () => {
+        const nodes = document.querySelectorAll(
+            ".services-section .service-card strong, .services-section .service-card .sc-sub"
+        );
+
+        nodes.forEach((el) => {
+            el.style.fontSize = ""; // start from the CSS size
+
+            let size = parseFloat(getComputedStyle(el).fontSize);
+            let guard = 0;
+
+            while (el.scrollWidth > el.clientWidth + 0.5 && size > MIN_SIZE && guard < 40) {
+                size -= STEP;
+                el.style.fontSize = size + "px";
+                guard++;
+            }
+        });
+    };
+
+    let timer = null;
+    const schedule = () => {
+        clearTimeout(timer);
+        timer = setTimeout(fit, 120);
+    };
+
+    window.addEventListener("load", schedule);
+    window.addEventListener("resize", schedule);
+    window.addEventListener("orientationchange", schedule);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+
+    // re-fit after Bangla <-> English switch (Google Translate changes the text)
+    const section = document.querySelector(".services-section");
+    if (section && "MutationObserver" in window) {
+        new MutationObserver(schedule).observe(section, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+    }
+    new MutationObserver(schedule).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["lang", "class"]
+    });
+
+    schedule();
+})();
