@@ -330,17 +330,23 @@
                                 <h2><i class="fa-solid fa-pen-nib"></i> কেন্দ্রীয় নেতৃত্ব</h2><a href="leadership.html" class="view-link">সবাই দেখুন <i class="fa-solid fa-arrow-right"></i></a></div>
                             <div class="row g-3">
                                 <div class="col-6">
-                                    <article class="leader-card"><img src="assets/images/leader-01.jpg" alt="অধ্যক্ষ মো: সেলিম ভূইয়া" loading="lazy" decoding="async">
+                                    <article class="leader-card is-clickable" role="button" tabindex="0" aria-haspopup="dialog" data-leader data-bio="শিক্ষক-কর্মচারীদের অধিকার, মর্যাদা ও কল্যাণে দীর্ঘদিন ধরে নেতৃত্ব দিয়ে আসছেন। শিক্ষার মান উন্নয়ন ও পেশাগত বিকাশে তাঁর ভূমিকা উল্লেখযোগ্য।"
+                                        data-phone="+8801700000000" data-email="info@sko.org.bd">
+                                        <img src="assets/images/leader-01.jpg" alt="অধ্যক্ষ মো: সেলিম ভূইয়া" loading="lazy" decoding="async">
                                         <div>
-                                            <h3>অধ্যক্ষ মো: সেলিম ভূইয়া</h3>
-                                            <p>চেয়ারম্যান</p><small>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</small></div>
+                                            <h3>অধ্যক্ষ মো: সেলিম ভূইয়া</h3>
+                                            <p>চেয়ারম্যান</p><small>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</small>
+                                        </div>
                                     </article>
                                 </div>
                                 <div class="col-6">
-                                    <article class="leader-card"><img src="assets/images/leader-02.jpg" alt="মো. জাকির হোসেন" loading="lazy" decoding="async">
+                                    <article class="leader-card is-clickable" role="button" tabindex="0" aria-haspopup="dialog" data-leader data-bio="সংগঠনের কেন্দ্রীয় কার্যক্রম সমন্বয় ও সদস্যদের সেবা নিশ্চিত করতে নিরলস কাজ করছেন। জেলা ও উপজেলা কমিটির সঙ্গে সমন্বয়ে তাঁর বিশেষ অবদান রয়েছে।"
+                                        data-phone="+8801700000000" data-email="info@sko.org.bd">
+                                        <img src="assets/images/leader-02.jpg" alt="মো. জাকির হোসেন" loading="lazy" decoding="async">
                                         <div>
                                             <h3>মো. জাকির হোসেন</h3>
-                                            <p>মহাসচিব</p><small>শিক্ষক কর্মচারী ঐক্য জোট<span class="sko-tag notranslate" translate="no"> (SKO)</span></small></div>
+                                            <p>মহাসচিব</p><small>শিক্ষক কর্মচারী ঐক্য জোট<span class="sko-tag notranslate" translate="no"> (SKO)</span></small>
+                                        </div>
                                     </article>
                                 </div>
                             </div>
@@ -450,6 +456,32 @@
     <button type="button" class="back-to-top" id="backToTop" aria-label="উপরে যান">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
+
+    <!-- ===== LEADER DETAILS MODAL ===== -->
+    <div class="modal fade leader-modal" id="leaderModal" tabindex="-1" aria-labelledby="lmName" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="lm-close" data-bs-dismiss="modal" aria-label="বন্ধ করুন"><i class="fa-solid fa-xmark"></i></button>
+                <div class="lm-wrap">
+                    <div class="lm-photo">
+                        <img class="lm-img" alt="" decoding="async">
+                    </div>
+                    <div class="lm-body">
+                        <span class="lm-role"></span>
+                        <h2 class="lm-name" id="lmName"></h2>
+                        <p class="lm-org"></p>
+                        <span class="lm-line" aria-hidden="true"></span>
+                        <p class="lm-bio"></p>
+                        <ul class="lm-info">
+                            <li class="lm-phone"><a href="#"><i class="fa-solid fa-phone"></i><span></span></a></li>
+                            <li class="lm-mail"><a href="#"><i class="fa-solid fa-envelope"></i><span></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== /LEADER DETAILS MODAL ===== -->
 
     <!-- Hidden Google Translate engine (do not remove) -->
     <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>

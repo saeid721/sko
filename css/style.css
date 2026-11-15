@@ -7911,3 +7911,334 @@ html.translated-ltr .quick-section .quick-card span {
         font-size: clamp(11.5px, 3.4vw, 14px);
     }
 }
+
+
+/* =========================================================
+   LEADER CARD: CLICKABLE + DETAILS MODAL
+   ========================================================= */
+
+
+/* ---------- clickable card ---------- */
+
+.leader-card.is-clickable {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.leader-card.is-clickable:focus-visible {
+    outline: 2px solid #0754a5;
+    outline-offset: 3px;
+}
+
+.leader-card.is-clickable:active {
+    transform: scale(.98);
+}
+
+.leader-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: #eaf4ff;
+    color: #0754a5;
+    font-size: 11.5px;
+    font-weight: 700;
+    line-height: 1.3;
+    transition: background .25s ease, color .25s ease;
+}
+
+.leader-more i {
+    font-size: 10px;
+    transition: transform .25s ease;
+}
+
+@media (hover: hover) {
+    .leader-card:hover .leader-more {
+        background: #0754a5;
+        color: #fff;
+    }
+    .leader-card:hover .leader-more i {
+        transform: translateX(3px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .leader-more {
+        margin-top: 5px;
+        padding: 3px 9px;
+        font-size: 10.5px;
+    }
+}
+
+
+/* ---------- modal shell ---------- */
+
+.leader-modal .modal-dialog {
+    max-width: 780px;
+}
+
+.leader-modal .modal-content {
+    position: relative;
+    border: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 30px 70px rgba(4, 22, 61, .38);
+}
+
+.modal-backdrop.show {
+    --bs-backdrop-bg: #04163d;
+    --bs-backdrop-opacity: .62;
+}
+
+
+/* ---------- close button ---------- */
+
+.lm-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 50%;
+    background: rgba(4, 22, 61, .55);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: transform .25s ease, background .25s ease;
+}
+
+.lm-close:hover {
+    background: #e52631;
+    transform: rotate(90deg);
+}
+
+.lm-close:focus-visible {
+    outline: 2px solid #ffd21f;
+    outline-offset: 2px;
+}
+
+
+/* ---------- layout ---------- */
+
+.lm-wrap {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.lm-photo {
+    position: relative;
+    min-height: 100%;
+    background: linear-gradient(160deg, #062d68, #0754a5);
+}
+
+.lm-photo::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 40%;
+    background: linear-gradient(0deg, rgba(4, 22, 61, .55), transparent);
+    pointer-events: none;
+}
+
+.lm-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+}
+
+.lm-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 30px 28px 26px;
+    border-top: 4px solid #ffd21f;
+}
+
+
+/* ---------- text ---------- */
+
+.lm-role {
+    align-self: flex-start;
+    padding: 5px 13px;
+    border-radius: 999px;
+    background: #eaf4ff;
+    color: #0754a5;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.lm-name {
+    margin: 0;
+    font-size: clamp(20px, 2.4vw, 27px);
+    font-weight: 800;
+    line-height: 1.3;
+    color: #0f1f3d;
+}
+
+.lm-org {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #64748b;
+}
+
+.lm-line {
+    display: block;
+    width: 52px;
+    height: 3px;
+    border-radius: 3px;
+    background: #ffd21f;
+}
+
+.lm-bio {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: #334155;
+}
+
+.lm-bio:empty {
+    display: none;
+}
+
+
+/* ---------- contact rows ---------- */
+
+.lm-info {
+    display: grid;
+    gap: 8px;
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lm-info li[hidden] {
+    display: none;
+}
+
+.lm-info a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid #e3edf8;
+    border-radius: 14px;
+    background: #f6f9fd;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f1f3d;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.lm-info a i {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #0a66c8, #063a82);
+    color: #fff;
+    font-size: 13px;
+}
+
+.lm-info a span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.lm-info a:hover {
+    background: #eaf4ff;
+    border-color: #b9d8ff;
+}
+
+.lm-info a:active {
+    transform: scale(.98);
+}
+
+
+/* ---------- mobile: bottom sheet ---------- */
+
+@media (max-width: 575.98px) {
+    .leader-modal .modal-dialog.modal-dialog-centered {
+        max-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        align-items: flex-end;
+    }
+    .leader-modal.fade .modal-dialog {
+        transform: translateY(70px);
+        transition: transform .35s cubic-bezier(.32, .72, 0, 1);
+    }
+    .leader-modal.show .modal-dialog {
+        transform: none;
+    }
+    .leader-modal .modal-content {
+        border-radius: 24px 24px 0 0;
+    }
+    .lm-wrap {
+        grid-template-columns: 1fr;
+        max-height: 90dvh;
+    }
+    .lm-photo {
+        height: 250px;
+        min-height: 0;
+    }
+    .lm-img {
+        object-position: center 15%;
+    }
+    .lm-body {
+        gap: 10px;
+        padding: 20px 18px calc(22px + env(safe-area-inset-bottom, 0px));
+    }
+    .lm-role {
+        font-size: 12px;
+    }
+    .lm-name {
+        font-size: 20px;
+    }
+    .lm-bio {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+}
+
+
+/* ---------- tablet: narrower photo ---------- */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .lm-wrap {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+    .lm-body {
+        padding: 24px 20px 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .leader-modal.fade .modal-dialog,
+    .lm-close,
+    .lm-info a,
+    .leader-more,
+    .leader-more i {
+        transition: none;
+    }
+}

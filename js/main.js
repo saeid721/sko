@@ -1135,3 +1135,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
     schedule();
 })();
+
+
+// ============================================
+// LEADERSHIP CARDS: click / Enter / Space -> details modal
+// ============================================
+(() => {
+    const modalEl = document.getElementById("leaderModal");
+    const cards = document.querySelectorAll("[data-leader]");
+    if (!modalEl || !cards.length || !window.bootstrap) return;
+
+    const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+    const $ = (sel) => modalEl.querySelector(sel);
+
+    const imgEl = $(".lm-img");
+    const roleEl = $(".lm-role");
+    const nameEl = $(".lm-name");
+    const orgEl = $(".lm-org");
+    const bioEl = $(".lm-bio");
+    const phoneRow = $(".lm-phone");
+    const mailRow = $(".lm-mail");
+
+    let lastCard = null;
+
+    // show a contact row only when it has a value
+    const setRow = (row, text, href) => {
+        if (!text) {
+            row.hidden = true;
+            return;
+        }
+        row.hidden = false;
+        row.querySelector("a").href = href;
+        row.querySelector("span").textContent = text;
+    };
+
+    const txt = (card, sel) => {
+        const el = card.querySelector(sel);
+        return el ? el.textContent.trim() : "";
+    };
+
+    const open = (card) => {
+        const d = card.dataset;
+        const photo = card.querySelector("img");
+
+        lastCard = card;
+
+        imgEl.src = photo ? photo.getAttribute("src") : "";
+        imgEl.alt = photo ? photo.alt : "";
+        roleEl.textContent = txt(card, "p");
+        nameEl.textContent = txt(card, "h3");
+        orgEl.textContent = txt(card, "small");
+        bioEl.textContent = d.bio || "";
+
+        setRow(phoneRow, d.phone, "tel:" + (d.phone || "").replace(/\s+/g, ""));
+        setRow(mailRow, d.email, "mailto:" + (d.email || ""));
+
+        modal.show();
+    };
+
+    cards.forEach((card) => {
+        card.addEventListener("click", () => open(card));
+        card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                open(card);
+            }
+        });
+    });
+
+    // give focus back to the card that opened the modal
+    modalEl.addEventListener("hidden.bs.modal", () => {
+        if (lastCard) lastCard.focus({ preventScroll: true });
+    });
+})();
