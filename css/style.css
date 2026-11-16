@@ -3,10 +3,11 @@
    ============================================ */
 
 @font-face {
-    font-family: var(--font-family-1);
-    src: url("../assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf") format("truetype");
+    font-family: "Noto Sans Bengali";
+    src: url("../assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf") format("truetype-variations"), url("../assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf") format("truetype");
     font-style: normal;
     font-weight: 100 900;
+    font-stretch: 62.5% 100%;
     font-display: swap;
 }
 
@@ -14,6 +15,12 @@
 /* Global color and font tokens */
 
 :root {
+    /* Fonts */
+    --font-family-1: "Noto Sans Bengali", sans-serif;
+    --font-family-2: "Noto Sans Bengali", "Segoe UI", Arial, sans-serif;
+    --font-family-3: Arial, sans-serif;
+    --font-family-4: "Inter", "Noto Sans Bengali", sans-serif;
+    --font-family-5: "Font Awesome 6 Free";
     /* Blue (brand) */
     --color-blue: #0754a5;
     --color-blue-dark: #062d68;
@@ -49,12 +56,7 @@
     /* Base */
     --color-white: #fff;
     --color-black: #000;
-    /* Fonts */
-    --font-family-1: "Noto Sans Bengali";
-    --font-family-2: "Noto Sans Bengali", sans-serif;
-    --font-family-3: Arial, sans-serif;
-    --font-family-4: "Inter", "Noto Sans Bengali", sans-serif;
-    --font-family-5: "Font Awesome 6 Free";
+    --ink: #111827;
 }
 
 * {
@@ -70,6 +72,9 @@ body {
     color: var(--ink);
     background: var(--color-white);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 a {
@@ -1085,7 +1090,7 @@ a {
 .site-footer {
     background: linear-gradient(110deg, color-mix(in srgb, var(--color-blue-dark) 89%, var(--color-black)), var(--color-blue-dark) 60%, color-mix(in srgb, var(--color-blue-dark) 69%, var(--color-black)));
     color: var(--color-white);
-    padding-top: 15px;
+    padding-top: 35px;
 }
 
 .footer-brand {
