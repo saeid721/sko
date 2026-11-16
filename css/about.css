@@ -227,14 +227,14 @@
 
 .about-intro {
     display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 22px;
     align-items: center;
 }
 
 .about-intro figure {
     margin: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     border-radius: 14px;
     overflow: hidden;
     background: var(--color-blue-light);
@@ -278,7 +278,7 @@
         gap: 14px;
     }
     .about-intro figure {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 16 / 9;
     }
     .about-page .about-card {
         padding: 16px;
@@ -390,6 +390,25 @@
     color: var(--color-red);
 }
 
+.about-link .ab-txt {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.35;
+}
+
+.about-link .ab-txt small {
+    margin-top: 1px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-gray);
+}
+
+.about-link.is-doc:hover .ab-txt small,
+.about-link.is-doc:focus-visible .ab-txt small {
+    color: var(--color-blue);
+}
+
 .about-link .ab-go {
     display: grid;
     place-items: center;
@@ -417,6 +436,7 @@
 }
 
 .about-book {
+    position: relative;
     margin: 0;
     aspect-ratio: 16 / 9;
     border-radius: var(--ab-radius);
@@ -435,6 +455,36 @@
 
 .about-book:hover img {
     transform: scale(1.05);
+}
+
+.about-book img {
+    object-position: center 30%;
+}
+
+.about-book figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 14px 12px;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-white);
+    background: linear-gradient(0deg, rgba(6, 45, 104, .88), rgba(6, 45, 104, 0));
+    pointer-events: none;
+}
+
+.about-book figcaption i {
+    margin-right: 6px;
+    color: var(--color-yellow);
+}
+
+@media (max-width: 767.98px) {
+    .about-book figcaption {
+        padding: 26px 12px 10px;
+        font-size: 12.5px;
+    }
 }
 
 
