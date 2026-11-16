@@ -3230,10 +3230,13 @@ html.translated-ltr .hero-copy h1 {
     .bn-bar {
         position: absolute;
         inset: 0;
-        background: var(--color-white);
+        background: linear-gradient(180deg, color-mix(in srgb, var(--color-white) 95%, transparent), color-mix(in srgb, var(--color-white) 86%, transparent));
+        border: 1px solid color-mix(in srgb, var(--color-blue) 10%, var(--color-white));
         border-radius: 22px 22px 0 0;
         -webkit-mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, var(--color-black) 33.5px);
         mask: radial-gradient(circle 33px at var(--bn-x) 3px, transparent 32.5px, var(--color-black) 33.5px);
+        -webkit-backdrop-filter: blur(18px) saturate(1.6);
+        backdrop-filter: blur(18px) saturate(1.6);
     }
     .bn-list {
         position: relative;
