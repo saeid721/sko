@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // URL: committee-list.html#members | ?tab=advisory | ?type=central
+    // URL: leadership.html#members | ?tab=advisory | ?type=central
     const typeMap = { central: "executive" };
     const params = new URLSearchParams(location.search);
     const fromUrl = location.hash.slice(1) || params.get("tab") || typeMap[params.get("type")] || "executive";
