@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 01. Primary SEO -->
-    <title>SKO - শিক্ষক কর্মচারী ঐক্য জোট</title>
-    <meta name="description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <title>সদস্য শপথনামা - SKO | শিক্ষক কর্মচারী ঐক্য জোট</title>
+    <meta name="description" content="SKO-এর সদস্য হিসেবে নৈতিক, পেশাগত ও সাংগঠনিক অঙ্গীকার।">
     <meta name="author" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
     <meta name="publisher" content="SKO">
     <meta name="application-name" content="SKO">
@@ -24,9 +24,9 @@
     <meta name="theme-color" content="#003399">
 
     <!-- 03. Canonical & Language -->
-    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/">
-    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/">
-    <link rel="canonical" href="https://www.sko.org.bd/">
+    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/oath">
+    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/oath">
+    <link rel="canonical" href="https://www.sko.org.bd/oath">
 
     <!-- 04. Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -35,9 +35,9 @@
     <!-- 05. Open Graph / Social Search -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SKO">
-    <meta property="og:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta property="og:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
-    <meta property="og:url" content="https://www.sko.org.bd/">
+    <meta property="og:title" content="সদস্য শপথনামা - SKO">
+    <meta property="og:description" content="SKO-এর সদস্য হিসেবে নৈতিক, পেশাগত ও সাংগঠনিক অঙ্গীকার।">
+    <meta property="og:url" content="https://www.sko.org.bd/oath">
     <meta property="og:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,8 +48,8 @@
 
     <!-- 06. X / Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta name="twitter:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <meta name="twitter:title" content="সদস্য শপথনামা - SKO">
+    <meta name="twitter:description" content="SKO-এর সদস্য হিসেবে নৈতিক, পেশাগত ও সাংগঠনিক অঙ্গীকার।">
     <meta name="twitter:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta name="twitter:image:alt" content="SKO Logo">
 
@@ -67,13 +67,18 @@
 
     <!-- 10. CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS (Ensure it's included) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- New Oath CSS -->
+    <link rel="stylesheet" href="css/oath.css">
 
 </head>
 
 <body>
+    <!-- ================= HEADER START (UNCHANGED) ================= -->
     <div class="topbar">
         <div class="container px-lg-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div class="top-contact d-flex flex-wrap gap-3">
@@ -134,10 +139,11 @@
                                 <li><a class="dropdown-item" href="committee-list.html?type=division">বিভাগীয় কমিটি</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সদস্য</a>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">সদস্য</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="registration.html">সদস্য নিবন্ধন</a></li>
                                 <li><a class="dropdown-item" href="verify-member.html">সদস্য যাচাই</a></li>
+                                <li><a class="dropdown-item active" href="oath.html">সদস্য শপথনামা</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">মতামত ও নোটিশ</a>
@@ -169,31 +175,164 @@
             </div>
         </nav>
     </header>
-    <main class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 reveal">
-                <div class="card border-0 shadow-sm p-5 text-center" style="background: url('images/oath-bg.jpg') center/cover; border: 2px solid var(--sko-primary) !important;">
-                    <img src="images/logo.png" alt="SKO Logo" class="mx-auto mb-3" style="height: 60px;">
-                    <h3 class="fw-bold text-sko-primary mb-4">সদস্য শপথনামা</h3>
-                    <p class="text-start fs-5 lh-lg">
-                        আমি, ................................................................, শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর একজন সদস্য হিসেবে মহান আল্লাহর নিকট শপথ গ্রহণ করছি যে—
-                    </p>
-                    <ul class="text-start fs-6 lh-lg mb-4">
-                        <li>আমি সংগঠনের সংবিধান, নীতিমালা ও সিদ্ধান্তসমূহ নিষ্ঠার সাথে মেনে চলব।</li>
-                        <li>শিক্ষা, শিক্ষক ও শিক্ষা প্রতিষ্ঠানের স্বার্থ রক্ষায় সর্বদা এক্যবদ্ধভাবে কাজ করব।</li>
-                        <li>সংগঠনের মর্যাদা, সুনাম ও শৃঙ্খলা অক্ষুণ্ণ রাখতে সচেষ্ট থাকব।</li>
-                        <li>সহকর্মী শিক্ষক-কর্মচারীদের প্রতি সৌহার্দ্য, প্রজ্ঞা ও সহযোগিতার মনোভাব বজায় রাখব।</li>
-                        <li>শিক্ষার মান উন্নয়ন, শিক্ষক-কর্মচারীদের অধিকার ও কল্যাণ প্রতিষ্ঠায় সক্রিয় ভূমিকা রাখব।</li>
-                    </ul>
-                    <p class="text-start fs-5 lh-lg mb-0">
-                        আমি এ অঙ্গীকার করছি যে, উপরোক্ত শপথের প্রতি আজীবন অনুগত থাকব এবং সংগঠনের লক্ষ্য ও উদ্দেশ্য বাস্তবায়নে সর্বাজক সহযোগিতা করব।
-                    </p>
+    <!-- ================= HEADER END ================= -->
+
+    <!-- ================= MAIN CONTENT START ================= -->
+    <main class="oath-page">
+        <!-- Hero Section -->
+        <section class="oath-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb oath-breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> হোম</a></li>
+                        <li class="breadcrumb-item"><a href="#">সদস্য</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">সদস্য শপথনামা</li>
+                    </ol>
+                </nav>
+                <div class="hero-content">
+                    <h1 class="hero-title">সদস্য শপথনামা <span>(Member Oath)</span></h1>
+                    <p class="hero-subtitle">SKO-এর সদস্য হিসেবে নৈতিক, পেশাগত ও সাংগঠনিক অঙ্গীকার</p>
                 </div>
             </div>
-        </div>
-    </main>
+        </section>
 
-    <!-- Footer -->
+        <!-- Main Content Layout -->
+        <section class="oath-main">
+            <div class="container">
+                <div class="row g-4">
+
+                    <!-- Left Sidebar: Membership Navigation -->
+                    <div class="col-lg-3 col-xl-2">
+                        <div class="oath-sidebar-card">
+                            <div class="sidebar-header">
+                                <i class="fa-solid fa-users"></i> সদস্যতা সম্পর্কিত
+                            </div>
+                            <ul class="oath-nav-list">
+                                <li><a href="registration.html"><i class="fa-regular fa-id-badge"></i> সদস্য নিবন্ধন <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="instructions.html"><i class="fa-regular fa-file-lines"></i> সদস্যতার নির্দেশিকা <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="oath.html" class="active"><i class="fa-solid fa-hand"></i> সদস্য শপথনামা <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="terms.html"><i class="fa-solid fa-scale-balanced"></i> সদস্যপদের শর্তাবলি <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="renew.html"><i class="fa-regular fa-calendar-check"></i> সদস্যপদ নবায়ন <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="verify-member.html"><i class="fa-regular fa-id-card"></i> সদস্য পরিচয়পত্র <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="verify-member.html"><i class="fa-solid fa-user-check"></i> সদস্য যাচাই <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                                <li><a href="member-services.html"><i class="fa-solid fa-hand-holding-heart"></i> সদস্য সেবা <i class="fa-solid fa-chevron-right arrow"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Middle Content: Oath Document -->
+                    <div class="col-lg-9 col-xl-7">
+                        <div class="oath-document-card">
+                            <!-- Decorative Border Element -->
+                            <div class="doc-border-frame"></div>
+
+                            <div class="doc-content">
+                                <div class="doc-header">
+                                    <img src="assets/images/logo.png" alt="SKO Logo" class="doc-logo" onerror="this.src='https://via.placeholder.com/60x60?text=SKO'">
+                                    <h2 class="doc-title">সদস্য শপথনামা</h2>
+                                    <div class="title-divider">
+                                        <span class="line"></span>
+                                        <i class="fa-solid fa-leaf"></i>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+
+                                <div class="doc-body">
+                                    <p class="oath-intro">
+                                        আমি, ................................................................, শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর একজন সদস্য হিসেবে মহান আল্লাহর নিকট শপথ গ্রহণ করছি যে—
+                                    </p>
+
+                                    <ul class="oath-list">
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> আমি সংগঠনের সংবিধান, নীতিমালা ও সিদ্ধান্তসমূহ নিষ্ঠার সাথে মেনে চলব।</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> শিক্ষা, শিক্ষক ও শিক্ষা প্রতিষ্ঠানের স্বার্থ রক্ষায় সর্বদা এক্যবদ্ধভাবে কাজ করব।</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> সংগঠনের মর্যাদা, সুনাম ও শৃঙ্খলা অক্ষুণ্ণ রাখতে সচেষ্ট থাকব।</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> সহকর্মী শিক্ষক-কর্মচারীদের প্রতি সৌহার্দ্য, প্রজ্ঞা ও সহযোগিতার মনোভাব বজায় রাখব।</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> কোনো রাজনৈতিক, ব্যক্তিগত বা সাম্প্রদায়িক স্বার্থে সংগঠনের নাম ব্যবহার করব না।</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> শিক্ষার মান উন্নয়ন, শিক্ষক-কর্মচারীদের অধিকার ও কল্যাণ প্রতিষ্ঠায় সক্রিয় ভূমিকা রাখব।</li>
+                                    </ul>
+
+                                    <p class="oath-outro">
+                                        আমি এ অঙ্গীকার করছি যে, উপরোক্ত শপথের প্রতি আজীবন অনুগত থাকব এবং সংগঠনের লক্ষ্য ও উদ্দেশ্য বাস্তবায়নে সর্বাজক সহযোগিতা করব।
+                                    </p>
+                                </div>
+
+                                <!-- Decorative Bottom Element -->
+                                <div class="doc-footer-decor">
+                                    <i class="fa-solid fa-leaf"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar: PDF & Actions -->
+                    <div class="col-lg-12 col-xl-3">
+                        <div class="oath-action-card mb-4">
+                            <div class="action-header">
+                                <h3><i class="fa-regular fa-file-pdf text-danger"></i> শপথনামা (PDF)</h3>
+                            </div>
+                            <div class="action-body text-center">
+                                <div class="pdf-preview">
+                                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=200&h=280" alt="Oath PDF Preview" class="img-fluid rounded shadow-sm">
+                                    <div class="pdf-icon-badge"><i class="fa-solid fa-file-pdf"></i></div>
+                                </div>
+                                <a href="#" class="btn-download-pdf mt-3">
+                                    <i class="fa-solid fa-download"></i> ডাউনলোড (PDF)
+                                </a>
+                                <div class="d-flex gap-2 mt-2">
+                                    <button class="btn btn-action-outline flex-grow-1" onclick="window.print()">
+                                        <i class="fa-solid fa-print"></i> প্রিন্ট করুন
+                                    </button>
+                                    <button class="btn btn-action-outline flex-grow-1" id="shareBtn">
+                                        <i class="fa-solid fa-share-nodes"></i> শেয়ার করুন
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Highlights Row -->
+                <div class="oath-bottom-highlights mt-4">
+                    <div class="highlight-item">
+                        <div class="highlight-icon-box"><i class="fa-solid fa-users"></i></div>
+                        <div class="highlight-text">
+                            <h4>সংগঠনের প্রতি অঙ্গীকার</h4>
+                            <p>ঐক্য ও শৃঙ্খলা বজায় রাখা</p>
+                        </div>
+                    </div>
+                    <div class="highlight-divider"></div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="highlight-text">
+                            <h4>শিক্ষার মানোন্নয়ন</h4>
+                            <p>শিক্ষক ও প্রতিষ্ঠানের উন্নয়নে কাজ</p>
+                        </div>
+                    </div>
+                    <div class="highlight-divider"></div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon-box"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="highlight-text">
+                            <h4>সহযোগিতা ও সৌহার্দ্য</h4>
+                            <p>সহকর্মীদের প্রতি প্রজ্ঞা ও সহমর্মিতা</p>
+                        </div>
+                    </div>
+                    <div class="highlight-divider"></div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="highlight-text">
+                            <h4>নৈতিকতা ও দায়িত্ব</h4>
+                            <p>পেশাগত সততা ও সংগঠনের মর্যাদা রক্ষা</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- ================= MAIN CONTENT END ================= -->
+
+    <!-- ================= FOOTER START (UNCHANGED) ================= -->
     <footer class="site-footer">
         <div class="container px-lg-4">
             <div class="row g-4">
@@ -244,8 +383,9 @@
             </div>
         </div>
     </footer>
+    <!-- ================= FOOTER END ================= -->
 
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste START) ===== -->
+    <!-- ===== MOBILE BOTTOM NAVIGATION (UNCHANGED) ===== -->
     <nav class="bottom-nav" id="bottomNav" aria-label="মোবাইল নেভিগেশন">
         <div class="bn-bar" aria-hidden="true"></div>
         <div class="bn-list">
@@ -279,17 +419,18 @@
             </a>
         </div>
     </nav>
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste END) ===== -->
 
     <button type="button" class="back-to-top" id="backToTop" aria-label="উপরে যান">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
-    <!-- Hidden Google Translate engine (do not remove) -->
     <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
+
+    <!-- New Oath JS -->
+    <script src="js/oath.js" defer></script>
 </body>
 
 </html>

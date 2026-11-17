@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 01. Primary SEO -->
-    <title>SKO - শিক্ষক কর্মচারী ঐক্য জোট</title>
-    <meta name="description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <title>অনুষ্ঠানের বিস্তারিত - SKO | শিক্ষক কর্মচারী ঐক্য জোট</title>
+    <meta name="description" content="SKO কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ - অনুষ্ঠানের বিস্তারিত, কমসূচি, অংশগ্রহণ ও অনলাইন নিবন্ধন।">
     <meta name="author" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
     <meta name="publisher" content="SKO">
     <meta name="application-name" content="SKO">
@@ -24,9 +24,9 @@
     <meta name="theme-color" content="#003399">
 
     <!-- 03. Canonical & Language -->
-    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/">
-    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/">
-    <link rel="canonical" href="https://www.sko.org.bd/">
+    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/event-details">
+    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/event-details">
+    <link rel="canonical" href="https://www.sko.org.bd/event-details">
 
     <!-- 04. Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -35,9 +35,9 @@
     <!-- 05. Open Graph / Social Search -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SKO">
-    <meta property="og:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta property="og:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
-    <meta property="og:url" content="https://www.sko.org.bd/">
+    <meta property="og:title" content="অনুষ্ঠানের বিস্তারিত - SKO">
+    <meta property="og:description" content="SKO কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ - অনুষ্ঠানের বিস্তারিত, কমসূচি, অংশগ্রহণ ও অনলাইন নিবন্ধন।">
+    <meta property="og:url" content="https://www.sko.org.bd/event-details">
     <meta property="og:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,8 +48,8 @@
 
     <!-- 06. X / Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta name="twitter:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <meta name="twitter:title" content="অনুষ্ঠানের বিস্তারিত - SKO">
+    <meta name="twitter:description" content="SKO কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ - অনুষ্ঠানের বিস্তারিত, কমসূচি, অংশগ্রহণ ও অনলাইন নিবন্ধন।">
     <meta name="twitter:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta name="twitter:image:alt" content="SKO Logo">
 
@@ -67,13 +67,18 @@
 
     <!-- 10. CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS (Ensure it's included) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- New Event Details CSS -->
+    <link rel="stylesheet" href="css/event-details.css">
 
 </head>
 
 <body>
+    <!-- ================= HEADER START (UNCHANGED) ================= -->
     <div class="topbar">
         <div class="container px-lg-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div class="top-contact d-flex flex-wrap gap-3">
@@ -146,10 +151,11 @@
                                 <li><a class="dropdown-item" href="news.html">মতামত</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অনুষ্ঠান</a>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">অনুষ্ঠান</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="events.html">আসন্ন অনুষ্ঠান</a></li>
                                 <li><a class="dropdown-item" href="events.html?type=archive">অনুষ্ঠান আর্কাইভ</a></li>
+                                <li><a class="dropdown-item active" href="event-details.html">অনুষ্ঠানের বিস্তারিত</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সেবা</a>
@@ -169,39 +175,315 @@
             </div>
         </nav>
     </header>
-    <main class="container py-5">
-        <div class="row g-4">
-            <div class="col-lg-8 reveal">
-                <div class="card border-0 shadow-sm p-4">
-                    <div class="bg-secondary bg-opacity-25 rounded mb-4 d-flex align-items-center justify-content-center" style="height: 300px;">
-                        <span class="text-muted">Event Banner Placeholder</span>
-                    </div>
-                    <span class="badge bg-danger mb-2 align-self-start">কেন্দ্রীয় অনুষ্ঠান</span>
-                    <h2 class="fw-bold mb-3">SKO কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬</h2>
-                    <div class="d-flex flex-wrap gap-3 text-muted mb-4 small">
-                        <span><i data-lucide="calendar" class="me-1" style="width:16px;"></i> ১৫ ডিসেম্বর, ২০২৬</span>
-                        <span><i data-lucide="clock" class="me-1" style="width:16px;"></i> সকাল ১০:০০ - বিকাল ৫:০০</span>
-                        <span><i data-lucide="map-pin" class="me-1" style="width:16px;"></i> কৃষিবিদ ইনস্টিটিউট বাংলাদেশ (কাবি), ঢাকা</span>
-                    </div>
-                    <p class="fs-6 lh-lg">শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর বার্ষিক কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ আগামী ১৫ ডিসেম্বর, ২০২৬ তারিখে ঢাকাস্থ কৃষিবিদ ইনস্টিটিউট বাংলাদেশ (কাবি) মিলনায়তনে অনুষ্ঠিত হবে। এতে সম্মেলনে কেন্দ্রীয়, বিভাগীয়, জেলা ও উপজেলা পর্যায়ের
-                        নির্বাচিত প্রতিনিধিবৃন্দ অংশগ্রহণ করবেন।</p>
-                </div>
-            </div>
-            <div class="col-lg-4 reveal">
-                <div class="card border-0 shadow-sm mb-4">
-                    <div class="card-header bg-sko-green text-white fw-bold">অনলাইনে নিবন্ধন করুন</div>
-                    <div class="card-body">
-                        <div class="mb-3"><label class="form-label fw-semibold small">সদস্যের ধরন</label><select class="form-select form-select-sm"><option>নিয়মিত সদস্য</option></select></div>
-                        <div class="mb-3"><label class="form-label fw-semibold small">নাম</label><input type="text" class="form-control form-control-sm" placeholder="আপনার নাম"></div>
-                        <div class="mb-3"><label class="form-label fw-semibold small">মোবাইল নম্বর</label><input type="tel" class="form-control form-control-sm" placeholder="01XXXXXXXXX"></div>
-                        <button class="btn btn-sko-green w-100 btn-sm">নিবন্ধন করুন</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- ================= HEADER END ================= -->
 
-    <!-- Footer -->
+    <!-- ================= MAIN CONTENT START ================= -->
+    <main class="event-page">
+        <!-- Hero Section -->
+        <section class="ev-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb ev-breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> হোম</a></li>
+                        <li class="breadcrumb-item"><a href="events.html">অনুষ্ঠান ও কমসূচি</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">অনুষ্ঠানের বিস্তারিত</li>
+                    </ol>
+                </nav>
+                <div class="hero-content">
+                    <h1 class="hero-title">অনুষ্ঠানের বিস্তারিত <span>(Event Details)</span></h1>
+                    <p class="hero-subtitle">অনুষ্ঠানের তথ্য, কমসূচি, অংশগ্রহণ ও অনলাইন নিবন্ধন</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Layout -->
+        <section class="ev-main">
+            <div class="container">
+                <div class="row g-4">
+
+                    <!-- Left Column: Event Info -->
+                    <div class="col-lg-8">
+
+                        <!-- Top Banner & Info -->
+                        <div class="ev-card mb-4">
+                            <div class="ev-banner">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200&h=500" alt="SKO কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬">
+                                <div class="banner-overlay">
+                                    <span class="photo-count"><i class="fa-regular fa-image"></i> সময় ছবি (২৪)</span>
+                                </div>
+                            </div>
+                            <div class="ev-info-content">
+                                <div class="ev-badges mb-3">
+                                    <span class="badge bg-danger">কেন্দ্রীয় অনুষ্ঠান</span>
+                                    <span class="badge bg-primary">সম্মেলন</span>
+                                </div>
+                                <h2 class="ev-title">SKO কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬</h2>
+
+                                <ul class="ev-meta-list">
+                                    <li><i class="fa-regular fa-calendar-days"></i> ১৫ ডিসেম্বর, ২০২৬ (মঙ্গলবার)</li>
+                                    <li><i class="fa-regular fa-clock"></i> সকাল ১০:০০ - বিকাল ৫:০০</li>
+                                    <li><i class="fa-solid fa-location-dot"></i> কৃষিবিদ ইনস্টিটিউট বাংলাদেশ (কাবি), ঢাকা</li>
+                                    <li><i class="fa-solid fa-users"></i> প্রত্যাশিত অংশগ্রহণকারী: ১,২০০+</li>
+                                </ul>
+
+                                <div class="ev-status-row">
+                                    <span class="status-badge bg-success"><i class="fa-solid fa-circle-check"></i> নিবন্ধন চলছে</span>
+                                    <span class="deadline-text"><i class="fa-regular fa-calendar-xmark"></i> নিবন্ধনের শেষ তারিখ: <strong>১০ ডিসেম্বর, ২০২৬</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabs Navigation -->
+                        <div class="ev-tabs-wrapper mb-4">
+                            <ul class="nav nav-pills ev-tabs" id="eventTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="details-tab" data-bs-toggle="pill" data-bs-target="#details" type="button" role="tab" aria-selected="true"><i class="fa-solid fa-circle-info"></i> অনুষ্ঠান সম্পর্কে</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="schedule-tab" data-bs-toggle="pill" data-bs-target="#schedule" type="button" role="tab" aria-selected="false"><i class="fa-regular fa-clock"></i> কমসূচি</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="eligibility-tab" data-bs-toggle="pill" data-bs-target="#eligibility" type="button" role="tab" aria-selected="false"><i class="fa-solid fa-user-check"></i> অংশগ্রহণের যোগ্যতা</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="guidelines-tab" data-bs-toggle="pill" data-bs-target="#guidelines" type="button" role="tab" aria-selected="false"><i class="fa-regular fa-file-lines"></i> নিবন্ধন নির্দেশিকা</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="downloads-tab" data-bs-toggle="pill" data-bs-target="#downloads" type="button" role="tab" aria-selected="false"><i class="fa-solid fa-download"></i> সংযুক্তি</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="venue-tab" data-bs-toggle="pill" data-bs-target="#venue" type="button" role="tab" aria-selected="false"><i class="fa-solid fa-map-location-dot"></i> স্থান ও যোগাযোগ</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="tab-content ev-tab-content" id="eventTabsContent">
+                            <!-- Tab 1: Details -->
+                            <div class="tab-pane fade show active" id="details" role="tabpanel">
+                                <div class="ev-card p-4 mb-4">
+                                    <h3 class="section-subtitle"><i class="fa-solid fa-circle-info text-primary"></i> অনুষ্ঠানের বিস্তারিত</h3>
+                                    <p class="text-justify">শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর বার্ষিক কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ আগামী ১৫ ডিসেম্বর, ২০২৬ তারিখে ঢাকাস্থ কৃষিবিদ ইনস্টিটিউট বাংলাদেশ (কাবি) মিলনায়তনে অনুষ্ঠিত হবে। এই সম্মেলনে কেন্দ্রীয় সংগঠন এবং সহযোগী
+                                        সংগঠনসমূহের কেন্দ্রীয়, বিভাগীয়, জেলা ও উপজেলা পর্যায়ের নির্বাচিত প্রতিনিধিবৃন্দ অংশগ্রহণ করবেন।</p>
+                                    <p class="text-justify">সম্মেলনে সংগঠনের বর্তমান কার্যক্রম, আগামী দিনের কর্মপরিকল্পনা, নীতিমালা পর্যালোচনা এবং শিক্ষক-কর্মচারীদের অধিকার, মর্যাদা ও কল্যাণসংশ্লিষ্ট গুরুত্বপূর্ণ বিষয়ে আলোচনা ও সিদ্ধান্ত গ্রহণ করা হবে।</p>
+
+                                    <div class="ev-info-grid mt-4">
+                                        <div class="info-box">
+                                            <div class="icon"><i class="fa-solid fa-users"></i></div>
+                                            <div class="text">
+                                                <span>আয়োজক</span>
+                                                <strong>SKO কেন্দ্রীয় সংগঠন</strong>
+                                            </div>
+                                        </div>
+                                        <div class="info-box">
+                                            <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+                                            <div class="text">
+                                                <span>সহযোগী</span>
+                                                <strong>সকল সহযোগী সংগঠন</strong>
+                                            </div>
+                                        </div>
+                                        <div class="info-box">
+                                            <div class="icon"><i class="fa-solid fa-user-group"></i></div>
+                                            <div class="text">
+                                                <span>অংশগ্রহণকারী</span>
+                                                <strong>১,২০০+</strong>
+                                            </div>
+                                        </div>
+                                        <div class="info-box">
+                                            <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                            <div class="text">
+                                                <span>ধরন</span>
+                                                <strong>কেন্দ্রীয় প্রতিনিধি সম্মেলন</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Objectives Card (Inline) -->
+                                <div class="ev-card p-4">
+                                    <h3 class="section-subtitle"><i class="fa-solid fa-bullseye text-primary"></i> অনুষ্ঠানের উদ্দেশ্য</h3>
+                                    <ul class="objectives-list">
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> সংগঠনের বার্ষিক কার্যক্রম পর্যালোচনা</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> ভবিষ্যৎ কর্মপরিকল্পনা নির্ধারণ</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> শিক্ষক-কর্মচারীদের অধিকার ও কল্যাণ</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> নীতি ও দিকনির্দেশনা প্রদান</li>
+                                        <li><i class="fa-solid fa-circle-check text-success"></i> সাংগঠনিক ঐক্য সুদৃঢ়করণ</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2: Schedule -->
+                            <div class="tab-pane fade" id="schedule" role="tabpanel">
+                                <div class="ev-card p-4">
+                                    <h3 class="section-subtitle">কমসূচি</h3>
+                                    <p class="text-muted">বিস্তারিত কমসূচি শীঘ্রই আপলোড করা হবে।</p>
+                                </div>
+                            </div>
+
+                            <!-- Tab 3: Eligibility -->
+                            <div class="tab-pane fade" id="eligibility" role="tabpanel">
+                                <div class="ev-card p-4">
+                                    <h3 class="section-subtitle">অংশগ্রহণের যোগ্যতা</h3>
+                                    <p class="text-muted">কেন্দ্রীয়, বিভাগীয়, জেলা ও উপজেলা কমিটির নির্বাচিত প্রতিনিধিগণ।</p>
+                                </div>
+                            </div>
+
+                            <!-- Tab 4: Guidelines -->
+                            <div class="tab-pane fade" id="guidelines" role="tabpanel">
+                                <div class="ev-card p-4">
+                                    <h3 class="section-subtitle">নিবন্ধন নির্দেশিকা</h3>
+                                    <p class="text-muted">অনলাইনে ফর্ম পূরণ করে নিবন্ধন সম্পন্ন করুন।</p>
+                                </div>
+                            </div>
+
+                            <!-- Tab 5: Downloads -->
+                            <div class="tab-pane fade" id="downloads" role="tabpanel">
+                                <div class="ev-card p-4">
+                                    <h3 class="section-subtitle">সংযুক্তি (ডাউনলোড)</h3>
+                                    <ul class="download-list">
+                                        <li><a href="#"><i class="fa-regular fa-file-pdf text-danger"></i> অনুষ্ঠানের বিজ্ঞপ্তি (PDF)</a></li>
+                                        <li><a href="#"><i class="fa-regular fa-file-pdf text-danger"></i> কমিটির সমন্বয়সূচি (PDF)</a></li>
+                                        <li><a href="#"><i class="fa-regular fa-file-pdf text-danger"></i> নিবন্ধন নির্দেশিকা (PDF)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Tab 6: Venue -->
+                            <div class="tab-pane fade" id="venue" role="tabpanel">
+                                <div class="ev-card p-4">
+                                    <h3 class="section-subtitle">স্থান ও যোগাযোগ</h3>
+                                    <p>কৃষিবিদ ইনস্টিটিউট বাংলাদেশ (কাবি), শেরেবাংলা নগর, ঢাকা।</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Section (Below Tabs) -->
+                        <div class="ev-card p-4 mt-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="section-subtitle mb-0"><i class="fa-regular fa-image text-primary"></i> অনুষ্ঠানের ছবি (পূর্ববর্তী আয়োজন)</h3>
+                            </div>
+                            <div class="gallery-slider-wrapper">
+                                <button class="gallery-nav prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                <div class="gallery-track">
+                                    <div class="gallery-slide">
+                                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=300&h=200" alt="Event Photo 1">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=300&h=200" alt="Event Photo 2">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=300&h=200" alt="Event Photo 3">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=300&h=200" alt="Event Photo 4">
+                                    </div>
+                                </div>
+                                <button class="gallery-nav next"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Sidebar -->
+                    <div class="col-lg-4">
+
+                        <!-- Registration Form Card -->
+                        <div class="ev-card form-card mb-4">
+                            <div class="form-header">
+                                <h3><i class="fa-solid fa-pen-to-square"></i> অনলাইনে নিবন্ধন করুন</h3>
+                            </div>
+                            <div class="form-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">সদস্যের ধরন <span class="text-danger">*</span></label>
+                                        <select class="form-select">
+                                            <option selected>নিয়মিত সদস্য</option>
+                                            <option>সহযোগী সদস্য</option>
+                                            <option>প্রতিনিধি</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">সংগঠন (সহযোগী সংগঠন) <span class="text-danger">*</span></label>
+                                        <select class="form-select">
+                                            <option selected>নির্বাচন করুন</option>
+                                            <option>BCTA</option>
+                                            <option>BSTA</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">নাম (বাংলায়) <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                                            <input type="text" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন...">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">মোবাইল নম্বর <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                            <input type="tel" class="form-control" placeholder="01XXXXXXXXX">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-register w-100">
+                                        <i class="fa-solid fa-arrow-right-to-bracket"></i> নিবন্ধন করুন
+                                    </button>
+                                </form>
+                                <div class="form-notice mt-3">
+                                    <i class="fa-solid fa-circle-info text-primary"></i> নিবন্ধন সম্পন্ন হলে SMS ও ইমেইলে নিশ্চিতকরণ বার্তা পাঠানো হবে।
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Events Card -->
+                        <div class="ev-card other-events-card">
+                            <div class="other-events-header">
+                                <h3><i class="fa-regular fa-calendar-days"></i> অন্যান্য আসন্ন অনুষ্ঠান</h3>
+                            </div>
+                            <ul class="other-events-list">
+                                <li>
+                                    <div class="event-thumb">
+                                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=100&h=80" alt="Event">
+                                    </div>
+                                    <div class="event-info">
+                                        <h4>শিক্ষক প্রশিক্ষণ কর্মশালা</h4>
+                                        <span><i class="fa-regular fa-calendar"></i> ০৮ ডিসেম্বর, ২০২৬ | ঢাকা</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right arrow"></i>
+                                </li>
+                                <li>
+                                    <div class="event-thumb">
+                                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=100&h=80" alt="Event">
+                                    </div>
+                                    <div class="event-info">
+                                        <h4>বিভাগীয় সমন্বয় সভা</h4>
+                                        <span><i class="fa-regular fa-calendar"></i> ২৪ নভেম্বর, ২০২৬ | চট্টগ্রাম</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right arrow"></i>
+                                </li>
+                                <li>
+                                    <div class="event-thumb">
+                                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=100&h=80" alt="Event">
+                                    </div>
+                                    <div class="event-info">
+                                        <h4>নীতি ও পরিকল্পনা সভা</h4>
+                                        <span><i class="fa-regular fa-calendar"></i> ৩০ নভেম্বর, ২০২৬ | রাজশাহী</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right arrow"></i>
+                                </li>
+                            </ul>
+                            <div class="other-events-footer">
+                                <a href="events.html" class="btn-view-all-events">সব অনুষ্ঠান দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ================= MAIN CONTENT END ================= -->
+
+    <!-- ================= FOOTER START (UNCHANGED) ================= -->
     <footer class="site-footer">
         <div class="container px-lg-4">
             <div class="row g-4">
@@ -252,8 +534,9 @@
             </div>
         </div>
     </footer>
+    <!-- ================= FOOTER END ================= -->
 
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste START) ===== -->
+    <!-- ===== MOBILE BOTTOM NAVIGATION (UNCHANGED) ===== -->
     <nav class="bottom-nav" id="bottomNav" aria-label="মোবাইল নেভিগেশন">
         <div class="bn-bar" aria-hidden="true"></div>
         <div class="bn-list">
@@ -287,17 +570,18 @@
             </a>
         </div>
     </nav>
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste END) ===== -->
 
     <button type="button" class="back-to-top" id="backToTop" aria-label="উপরে যান">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
-    <!-- Hidden Google Translate engine (do not remove) -->
     <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
+
+    <!-- New Event Details JS -->
+    <script src="js/event-details.js" defer></script>
 </body>
 
 </html>

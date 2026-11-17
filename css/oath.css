@@ -1,0 +1,515 @@
+/* ==========================================================================
+   SKO Member Oath Page Styles
+   ========================================================================== */
+
+:root {
+    --oath-primary: #003399;
+    --oath-primary-light: #e8f0fe;
+    --oath-text: #334155;
+    --oath-text-dark: #0f172a;
+    --oath-bg: #f8fafc;
+    --oath-border: #e2e8f0;
+    --oath-radius: 12px;
+    --oath-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --oath-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+}
+
+.oath-page {
+    background-color: var(--oath-bg);
+    font-family: 'Hind Siliguri', sans-serif;
+    padding-bottom: 3rem;
+}
+
+
+/* --- Hero Section --- */
+
+.oath-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.oath-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10L90 90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><path d="M90 10L10 90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+    background-size: 20px 20px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.oath-breadcrumb .breadcrumb-item a {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.oath-breadcrumb .breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.oath-breadcrumb .breadcrumb-item.active {
+    color: #e2e8f0;
+}
+
+.oath-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    color: #64748b;
+}
+
+.oath-hero .hero-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.oath-hero .hero-title span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+    display: block;
+}
+
+.oath-hero .hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 0;
+}
+
+
+/* --- Main Content Area --- */
+
+.oath-main {
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* --- Left Sidebar Navigation --- */
+
+.oath-sidebar-card {
+    background: #fff;
+    border-radius: var(--oath-radius);
+    box-shadow: var(--oath-shadow);
+    border: 1px solid var(--oath-border);
+    overflow: hidden;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-header {
+    background: var(--oath-primary);
+    color: #fff;
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.oath-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.oath-nav-list li {
+    border-bottom: 1px solid var(--oath-border);
+}
+
+.oath-nav-list li:last-child {
+    border-bottom: none;
+}
+
+.oath-nav-list a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    color: var(--oath-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.oath-nav-list a:hover,
+.oath-nav-list a.active {
+    background: var(--oath-primary-light);
+    color: var(--oath-primary);
+    font-weight: 600;
+}
+
+.oath-nav-list a i:first-child {
+    width: 18px;
+    text-align: center;
+}
+
+.oath-nav-list a .arrow {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+
+/* --- Oath Document (Middle) --- */
+
+.oath-document-card {
+    background: #fff;
+    border-radius: var(--oath-radius);
+    box-shadow: var(--oath-shadow-lg);
+    border: 1px solid var(--oath-border);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative Frame */
+
+.doc-border-frame {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.doc-border-frame::before,
+.doc-border-frame::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #93c5fd;
+}
+
+.doc-border-frame::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+}
+
+.doc-border-frame::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 8px;
+}
+
+.doc-content {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+}
+
+.doc-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.doc-logo {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.doc-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--oath-primary);
+    margin-bottom: 0.5rem;
+}
+
+.title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: #16a34a;
+    /* Green accent */
+}
+
+.title-divider .line {
+    height: 2px;
+    width: 60px;
+    background: #16a34a;
+}
+
+.title-divider i {
+    font-size: 1rem;
+}
+
+.doc-body {
+    font-size: 1.1rem;
+    color: var(--oath-text-dark);
+    line-height: 1.8;
+}
+
+.oath-intro {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.oath-intro strong {
+    color: var(--oath-primary);
+}
+
+.oath-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.oath-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    text-align: justify;
+}
+
+.oath-list li i {
+    margin-top: 0.35rem;
+    font-size: 1rem;
+}
+
+.oath-outro {
+    text-align: justify;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.doc-footer-decor {
+    text-align: center;
+    color: #16a34a;
+    font-size: 1.25rem;
+}
+
+
+/* --- Right Sidebar: Actions --- */
+
+.oath-action-card {
+    background: #fff;
+    border-radius: var(--oath-radius);
+    box-shadow: var(--oath-shadow);
+    border: 1px solid var(--oath-border);
+    overflow: hidden;
+}
+
+.action-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--oath-border);
+    background: #fff;
+}
+
+.action-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--oath-text-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-body {
+    padding: 1.5rem;
+}
+
+.pdf-preview {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.pdf-preview img {
+    max-width: 100%;
+    border: 1px solid var(--oath-border);
+}
+
+.pdf-icon-badge {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background: #dc2626;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-download-pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: var(--oath-primary);
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-download-pdf:hover {
+    background: #002266;
+    color: #fff;
+}
+
+.btn-action-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #fff;
+    color: var(--oath-primary);
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid var(--oath-primary);
+}
+
+.btn-action-outline:hover {
+    background: var(--oath-primary-light);
+}
+
+
+/* --- Bottom Highlights Row --- */
+
+.oath-bottom-highlights {
+    background: #fff;
+    border-radius: var(--oath-radius);
+    box-shadow: var(--oath-shadow);
+    border: 1px solid var(--oath-border);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 1 200px;
+}
+
+.highlight-icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--oath-primary-light);
+    color: var(--oath-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.highlight-text h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--oath-text-dark);
+    margin-bottom: 0.15rem;
+}
+
+.highlight-text p {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.highlight-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--oath-border);
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1199.98px) {
+    .oath-sidebar-card {
+        position: static;
+        margin-bottom: 1.5rem;
+    }
+    .oath-document-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .oath-hero {
+        padding: 2rem 0;
+    }
+    .oath-hero .hero-title {
+        font-size: 1.8rem;
+    }
+    .oath-hero .hero-title span {
+        font-size: 1rem;
+    }
+    .oath-bottom-highlights {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .highlight-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .oath-hero .hero-title {
+        font-size: 1.5rem;
+    }
+    .oath-hero .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    .oath-document-card {
+        padding: 1rem;
+    }
+    .doc-content {
+        padding: 0.5rem;
+    }
+    .doc-title {
+        font-size: 1.5rem;
+    }
+    .doc-body {
+        font-size: 1rem;
+    }
+    .oath-list li {
+        font-size: 0.95rem;
+    }
+}
