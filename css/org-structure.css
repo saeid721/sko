@@ -40,64 +40,6 @@
 }
 
 
-/* --- Hero Section --- */
-
-.org-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-    color: #fff;
-    padding: 3rem 0;
-    margin-bottom: -2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.org-hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10L90 90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><path d="M90 10L10 90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
-    background-size: 20px 20px;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.org-breadcrumb .breadcrumb-item a {
-    color: #93c5fd;
-    text-decoration: none;
-}
-
-.org-breadcrumb .breadcrumb-item.active {
-    color: #e2e8f0;
-}
-
-.org-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-    color: #64748b;
-}
-
-.org-hero .hero-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.org-hero .hero-title span {
-    font-size: 1.2rem;
-    font-weight: 400;
-    opacity: 0.8;
-    display: block;
-}
-
-.org-hero .hero-subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-bottom: 0;
-}
-
-
 /* --- Navigation Tabs --- */
 
 .org-tabs-section {

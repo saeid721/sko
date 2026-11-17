@@ -22,68 +22,6 @@
 }
 
 
-/* --- Hero Section --- */
-
-.cm-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-    color: #fff;
-    padding: 3rem 0 5rem 0;
-    /* Extra bottom padding to overlap */
-    position: relative;
-    overflow: hidden;
-}
-
-.cm-hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.cm-breadcrumb .breadcrumb-item a {
-    color: #93c5fd;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.cm-breadcrumb .breadcrumb-item a:hover {
-    color: #fff;
-}
-
-.cm-breadcrumb .breadcrumb-item.active {
-    color: #e2e8f0;
-}
-
-.cm-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-    color: #64748b;
-}
-
-.cm-hero .hero-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.cm-hero .hero-title span {
-    font-size: 1.2rem;
-    font-weight: 400;
-    opacity: 0.8;
-    display: block;
-}
-
-.cm-hero .hero-subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-bottom: 0;
-}
-
-
 /* --- Main Content Area --- */
 
 .cm-main {
