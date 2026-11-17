@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 01. Primary SEO -->
-    <title>SKO - শিক্ষক কর্মচারী ঐক্য জোট</title>
-    <meta name="description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <title>সদস্য নিবন্ধন - SKO</title>
+    <meta name="description" content="SKO এবং এর সহযোগী সংগঠনের সদস্য হতে অনলাইনে নিবন্ধন করুন।">
     <meta name="author" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
     <meta name="publisher" content="SKO">
     <meta name="application-name" content="SKO">
@@ -24,9 +24,9 @@
     <meta name="theme-color" content="#003399">
 
     <!-- 03. Canonical & Language -->
-    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/">
-    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/">
-    <link rel="canonical" href="https://www.sko.org.bd/">
+    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/registration">
+    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/registration">
+    <link rel="canonical" href="https://www.sko.org.bd/registration">
 
     <!-- 04. Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -35,9 +35,9 @@
     <!-- 05. Open Graph / Social Search -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SKO">
-    <meta property="og:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta property="og:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
-    <meta property="og:url" content="https://www.sko.org.bd/">
+    <meta property="og:title" content="সদস্য নিবন্ধন - SKO">
+    <meta property="og:description" content="SKO এবং এর সহযোগী সংগঠনের সদস্য হতে অনলাইনে নিবন্ধন করুন।">
+    <meta property="og:url" content="https://www.sko.org.bd/registration">
     <meta property="og:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,8 +48,8 @@
 
     <!-- 06. X / Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta name="twitter:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <meta name="twitter:title" content="সদস্য নিবন্ধন - SKO">
+    <meta name="twitter:description" content="SKO এবং এর সহযোগী সংগঠনের সদস্য হতে অনলাইনে নিবন্ধন করুন।">
     <meta name="twitter:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta name="twitter:image:alt" content="SKO Logo">
 
@@ -67,13 +67,18 @@
 
     <!-- 10. CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS (Ensure it's included) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Your existing CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- NEW Registration CSS -->
+    <link rel="stylesheet" href="css/registration.css">
 
 </head>
 
 <body>
+    <!-- ================= HEADER START (UNCHANGED) ================= -->
     <div class="topbar">
         <div class="container px-lg-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div class="top-contact d-flex flex-wrap gap-3">
@@ -134,9 +139,9 @@
                                 <li><a class="dropdown-item" href="committee-list.html?type=division">বিভাগীয় কমিটি</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সদস্য</a>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">সদস্য</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="registration.html">সদস্য নিবন্ধন</a></li>
+                                <li><a class="dropdown-item active" href="registration.html">সদস্য নিবন্ধন</a></li>
                                 <li><a class="dropdown-item" href="verify-member.html">সদস্য যাচাই</a></li>
                             </ul>
                         </li>
@@ -169,150 +174,395 @@
             </div>
         </nav>
     </header>
+    <!-- ================= HEADER END ================= -->
 
-    <main>
-        <header class="page-header reveal mb-4">
+    <!-- ================= MAIN CONTENT START ================= -->
+    <main class="reg-page">
+        <!-- Hero Section -->
+        <section class="reg-hero">
             <div class="container">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb text-white-50">
-                        <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">হোম</a></li>
-                        <li class="breadcrumb-item active text-white">সদস্য নিবন্ধন</li>
+                <nav aria-label="breadcrumb" class="reg-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> হোম</a></li>
+                        <li class="breadcrumb-item"><a href="#">সদস্য</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">সদস্য নিবন্ধন</li>
                     </ol>
                 </nav>
-                <h1 class="display-6 fw-bold mb-2">সদস্য নিবন্ধন (Membership Registration)</h1>
-                <p class="mb-0">SKO এবং এর সহযোগী সংগঠনের সদস্য হতে অনলাইনে নিবন্ধন করুন</p>
+                <div class="hero-content">
+                    <h1 class="hero-title">সদস্য নিবন্ধন <span>(Membership Registration)</span></h1>
+                    <p class="hero-subtitle">SKO এবং এর সহযোগী সংগঠনের সদস্য হতে অনলাইনে নিবন্ধন করুন</p>
+                </div>
             </div>
-        </header>
+        </section>
 
-        <div class="container pb-5">
-            <div class="row g-4">
-                <!-- Left Sidebar (Steps) -->
-                <div class="col-lg-3 d-none d-lg-block reveal">
-                    <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
-                        <div class="card-body p-0">
-                            <div class="list-group list-group-flush rounded">
-                                <a href="#" class="list-group-item list-group-item-action active bg-sko-primary border-primary fw-bold">
-                                    <i data-lucide="user" class="me-2" style="width:16px;"></i> ১. ব্যক্তিগত তথ্য
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action text-muted">
-                                    <i data-lucide="graduation-cap" class="me-2" style="width:16px;"></i> ২. শিক্ষা ও কর্মস্থান
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action text-muted">
-                                    <i data-lucide="network" class="me-2" style="width:16px;"></i> ৩. সাংগঠনিক তথ্য
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action text-muted">
-                                    <i data-lucide="map-pin" class="me-2" style="width:16px;"></i> ৪. ঠিকানা ও যোগাযোগ
-                                </a>
+        <!-- Main Form Area -->
+        <section class="reg-main">
+            <div class="container">
+                <div class="row g-4">
+
+                    <!-- Left Sidebar: Steps & Instructions -->
+                    <div class="col-xl-3 col-lg-4 order-2 order-lg-1">
+                        <!-- Steps Widget -->
+                        <div class="reg-widget widget-steps mb-4">
+                            <div class="widget-header">
+                                <i class="fa-solid fa-list-check"></i> নিবন্ধনের ধাপসমূহ
+                            </div>
+                            <div class="steps-list">
+                                <div class="step-item active">
+                                    <span class="step-num">1</span>
+                                    <span class="step-text">ব্যক্তিগত তথ্য</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">2</span>
+                                    <span class="step-text">শিক্ষা ও কর্মস্থান</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">3</span>
+                                    <span class="step-text">সাংগঠনিক তথ্য</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">4</span>
+                                    <span class="step-text">ঠিকানা ও যোগাযোগ</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">5</span>
+                                    <span class="step-text">ছবি ও সংযুক্তি</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">6</span>
+                                    <span class="step-text">শপথ ও জমা</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Main Form -->
-                <div class="col-lg-9">
-                    <div class="card border-0 shadow-sm reveal">
-                        <div class="card-header bg-white py-3">
-                            <h5 class="mb-0 fw-bold text-sko-primary"><i data-lucide="edit-3" class="me-2"></i> ব্যক্তিগত তথ্য</h5>
+                        <!-- Instructions Widget -->
+                        <div class="reg-widget widget-instructions">
+                            <div class="widget-header bg-blue-light text-blue">
+                                <i class="fa-solid fa-circle-info"></i> গুরুত্বপূর্ণ নির্দেশনা
+                            </div>
+                            <ul class="instruction-list">
+                                <li><i class="fa-solid fa-circle-check"></i> সকল তথ্য সঠিক ও সত্য হতে হবে।</li>
+                                <li><i class="fa-solid fa-circle-check"></i> (*) চিহ্নিত ক্ষেত্রগুলো বাধ্যতামূলক।</li>
+                                <li><i class="fa-solid fa-circle-check"></i> আপনার ছবি পরিষ্কার হতে হবে (JPG/PNG, সর্বোচ্চ 2MB)।</li>
+                                <li><i class="fa-solid fa-circle-check"></i> NID (জাতীয় পরিচয়পত্র) নম্বরটি সঠিকভাবে দিন।</li>
+                                <li><i class="fa-solid fa-circle-check"></i> নিবন্ধন সফল হলে একটি আবেদন নম্বর পাবেন।</li>
+                            </ul>
                         </div>
-                        <div class="card-body p-4">
-                            <form action="#" method="POST">
-                                <div class="row g-3">
-                                    <!-- Name -->
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">পূর্ণ নাম <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন" required>
-                                    </div>
+                    </div>
 
-                                    <!-- Father's Name -->
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">পিতার নাম <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="পিতার নাম লিখুন" required>
-                                    </div>
+                    <!-- Middle Content: Form -->
+                    <div class="col-xl-6 col-lg-8 order-1 order-lg-2">
+                        <div class="reg-form-wrapper">
+                            <div class="form-header-title">
+                                <h2><i class="fa-regular fa-user"></i> সদস্য নিবন্ধন ফরম</h2>
+                                <span class="text-danger small fw-bold">* চিহ্নিত ক্ষেত্রগুলো বাধ্যতামূলক</span>
+                            </div>
 
-                                    <!-- DOB -->
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">জন্ম তারিখ <span class="text-danger">*</span></label>
-                                        <input type="date" class="form-control" required>
-                                    </div>
+                            <form id="registrationForm" novalidate>
 
-                                    <!-- Gender -->
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">জেন্ডার <span class="text-danger">*</span></label>
-                                        <select class="form-select" required>
-                                            <option value="">-- নির্বাচন করুন --</option>
-                                            <option value="male">পুরুষ</option>
-                                            <option value="female">মহিলা</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- NID -->
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">জাতীয় পরিচয়পত্র (NID) নম্বর <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="১৭ সংখ্যার NID নম্বর" required>
-                                    </div>
-
-                                    <!-- Mobile -->
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">মোবাইল নম্বর <span class="text-danger">*</span></label>
-                                        <input type="tel" class="form-control" placeholder="01XXXXXXXXX" required>
-                                    </div>
-
-                                    <!-- Email -->
-                                    <div class="col-md-12">
-                                        <label class="form-label fw-semibold">ইমেইল (ঐচ্ছিক)</label>
-                                        <input type="email" class="form-control" placeholder="আপনার ইমেইল ঠিকানা">
-                                    </div>
-                                </div>
-
-                                <hr class="my-4">
-
-                                <!-- Education Info -->
-                                <h5 class="mb-3 fw-bold text-sko-primary"><i data-lucide="graduation-cap" class="me-2"></i> শিক্ষা প্রতিষ্ঠান ও চাকরির তথ্য</h5>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">শিক্ষা প্রতিষ্ঠানের নাম <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">পদবী <span class="text-danger">*</span></label>
-                                        <select class="form-select" required>
-                                            <option value="">-- পদবী নির্বাচন করুন --</option>
-                                            <option value="teacher">শিক্ষক</option>
-                                            <option value="staff">কর্মচারী</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">ইনডেক্স নম্বর <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-semibold">চাকরির অবস্থান <span class="text-danger">*</span></label>
-                                        <div class="d-flex gap-3 mt-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="job_status" id="working" checked>
-                                                <label class="form-check-label" for="working">চাকুরিরত</label>
+                                <!-- 1. Personal Info -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-regular fa-user text-primary"></i> ব্যক্তিগত তথ্য</h3>
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">পূর্ণ নাম <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                                                <input type="text" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন" required>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="job_status" id="retired">
-                                                <label class="form-check-label" for="retired">অবসরপ্রাপ্ত</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">পিতার নাম <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                                                <input type="text" class="form-control" placeholder="পিতার নাম লিখুন" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">মাতার নাম <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                                                <input type="text" class="form-control" placeholder="মাতার নাম লিখুন" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">জন্ম তারিখ <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-calendar"></i></span>
+                                                <input type="date" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">জেন্ডার <span class="text-danger">*</span></label>
+                                            <select class="form-select" required>
+                                                <option value="">-- নির্বাচন করুন --</option>
+                                                <option value="male">পুরুষ</option>
+                                                <option value="female">মহিলা</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">জাতীয় পরিচয়পত্র (NID) নম্বর <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-id-card"></i></span>
+                                                <input type="text" class="form-control" placeholder="১৭ সংখ্যার NID নম্বর লিখুন" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="mt-4 pt-3 border-top d-flex justify-content-between">
-                                    <button type="button" class="btn btn-outline-secondary px-4"><i data-lucide="arrow-left" class="me-1" style="width:16px;"></i> পূর্ববর্তী</button>
-                                    <button type="submit" class="btn btn-sko-green px-4 fw-bold">সংরক্ষণ করুন <i data-lucide="save" class="ms-1" style="width:16px;"></i></button>
+                                <!-- 2. Education & Job Info -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-solid fa-graduation-cap text-primary"></i> শিক্ষা প্রতিষ্ঠান ও চাকরির তথ্য</h3>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">শিক্ষা প্রতিষ্ঠানের নাম <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-school"></i></span>
+                                                <input type="text" class="form-control" placeholder="শিক্ষা প্রতিষ্ঠানের নাম লিখুন" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">শিক্ষা প্রতিষ্ঠানের পদবী <span class="text-danger">*</span></label>
+                                            <select class="form-select" required>
+                                                <option value="">-- পদবী নির্বাচন করুন --</option>
+                                                <option value="teacher">শিক্ষক</option>
+                                                <option value="staff">কর্মচারী</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">ইনডেক্স নম্বর <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
+                                                <input type="text" class="form-control" placeholder="ইনডেক্স নম্বর লিখুন" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">চাকরির অবস্থান <span class="text-danger">*</span></label>
+                                            <div class="d-flex gap-4 mt-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="job_status" id="working" checked>
+                                                    <label class="form-check-label" for="working">চাকুরিরত</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="job_status" id="retired">
+                                                    <label class="form-check-label" for="retired">অবসরপ্রাপ্ত</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Organizational Info -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-solid fa-sitemap text-primary"></i> সাংগঠনিক তথ্য</h3>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">সাংগঠনিক পদবী (বর্তমান) <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-user-tie"></i></span>
+                                                <input type="text" class="form-control" placeholder="বর্তমান সাংগঠনিক পদবী লিখুন" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">সাংগঠনিক পদবী (পূর্বের)</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-user-clock"></i></span>
+                                                <input type="text" class="form-control" placeholder="পূর্বের সাংগঠনিক পদবী (যদি থাকে)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Address -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-solid fa-location-dot text-primary"></i> ঠিকানা (স্থায়ী ও বর্তমান)</h3>
+
+                                    <!-- Permanent Address -->
+                                    <div class="address-box mb-3">
+                                        <h6 class="mb-3 text-secondary fw-bold"><i class="fa-solid fa-house-chimney"></i> স্থায়ী ঠিকানা <span class="text-danger">*</span></h6>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label small">ওয়ার্ড/গ্রাম <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control form-control-sm" placeholder="ওয়ার্ড/গ্রাম" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small">পোস্ট <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control form-control-sm" placeholder="পোস্ট" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label small">থানা/উপজেলা <span class="text-danger">*</span></label>
+                                                <select class="form-select form-select-sm" required>
+                                                    <option value="">নির্বাচন করুন</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label small">জেলা/মহানগর <span class="text-danger">*</span></label>
+                                                <select class="form-select form-select-sm" required>
+                                                    <option value="">নির্বাচন করুন</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label small">বিভাগ <span class="text-danger">*</span></label>
+                                                <select class="form-select form-select-sm" required>
+                                                    <option value="">নির্বাচন করুন</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Present Address -->
+                                    <div class="address-box">
+                                        <h6 class="mb-3 text-secondary fw-bold"><i class="fa-solid fa-building"></i> বর্তমান ঠিকানা (যদি স্থায়ী ঠিকানা ভিন্ন হয়)</h6>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label small">ওয়ার্ড/গ্রাম</label>
+                                                <input type="text" class="form-control form-control-sm" placeholder="ওয়ার্ড/গ্রাম">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small">পোস্ট</label>
+                                                <input type="text" class="form-control form-control-sm" placeholder="পোস্ট">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label small">থানা/উপজেলা</label>
+                                                <select class="form-select form-select-sm">
+                                                    <option value="">নির্বাচন করুন</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label small">জেলা/মহানগর</label>
+                                                <select class="form-select form-select-sm">
+                                                    <option value="">নির্বাচন করুন</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label small">বিভাগ</label>
+                                                <select class="form-select form-select-sm">
+                                                    <option value="">নির্বাচন করুন</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 5. Contact Info -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-solid fa-phone text-primary"></i> যোগাযোগের তথ্য</h3>
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">মোবাইল নম্বর <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-mobile-screen"></i></span>
+                                                <input type="tel" class="form-control" placeholder="01XXXXXXXXX" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">হোয়াটসঅ্যাপ নম্বর</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text text-success"><i class="fa-brands fa-whatsapp"></i></span>
+                                                <input type="tel" class="form-control" placeholder="01XXXXXXXXX">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">ইমেইল (Email)</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+                                                <input type="email" class="form-control" placeholder="আপনার ইমেইল লিখুন">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="form-actions mt-4 pt-3 border-top">
+                                    <button type="button" class="btn btn-outline-secondary px-4">
+                                        <i class="fa-solid fa-arrow-left me-2"></i> পূর্ববর্তী
+                                    </button>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-outline-primary px-4">
+                                            <i class="fa-regular fa-floppy-disk me-2"></i> খসড়া সংরক্ষণ
+                                        </button>
+                                        <button type="submit" class="btn btn-primary px-4">
+                                            নিবন্ধন সম্পন্ন করুন <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+
+                    <!-- Right Sidebar: Digital ID & Benefits -->
+                    <div class="col-xl-3 col-lg-12 order-3">
+                        <!-- Digital ID Preview -->
+                        <div class="reg-widget widget-id-preview mb-4">
+                            <div class="widget-header bg-dark-blue text-white">
+                                <i class="fa-regular fa-id-card"></i> সদস্য পরিচয়পত্র (নমুনা)
+                            </div>
+                            <div class="id-card-preview">
+                                <div class="id-header">
+                                    <div class="id-photo">
+                                        <img src="https://via.placeholder.com/80" alt="Member Photo">
+                                    </div>
+                                    <div class="id-logo">
+                                        <img src="assets/images/logo.png" alt="SKO Logo">
+                                        <p>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</p>
+                                        <span>কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা</span>
+                                    </div>
+                                    <div class="id-photo">
+                                        <img src="https://via.placeholder.com/80" alt="Member Photo">
+                                    </div>
+                                </div>
+                                <div class="id-title">সদস্য পরিচয়পত্র</div>
+                                <div class="id-body">
+                                    <div class="id-info">
+                                        <p><strong>নাম</strong> : মো: আফজাল করিম</p>
+                                        <p><strong>পিতার নাম</strong> : মো: রফিকুল ইসলাম</p>
+                                        <p><strong>শিক্ষা প্রতিষ্ঠান</strong> : চাঁদা কলেজ, চাঁদা</p>
+                                        <p><strong>পদবী</strong> : অধ্যাপক</p>
+                                        <p><strong>ইনডেক্স নম্বর</strong> : ১২৩৪৫</p>
+                                        <p><strong>সদস্য নম্বর</strong> : SKO-BCTA-254001</p>
+                                        <p><strong>সাংগঠনিক পদবী</strong> : জেলা সাধারণ সম্পাদক</p>
+                                        <p><strong>মেয়াদ</strong> : ২০২৫ - ২০২৬</p>
+                                    </div>
+                                    <div class="id-qr">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                    </div>
+                                </div>
+                                <div class="id-footer">
+                                    <div class="signature">
+                                        <span>স্বাক্ষর</span>
+                                        <strong>চেয়ারম্যান</strong>
+                                    </div>
+                                    <div class="seal">
+                                        <i class="fa-solid fa-stamp"></i>
+                                    </div>
+                                    <div class="signature">
+                                        <span>স্বাক্ষর</span>
+                                        <strong>মহাসচিব</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- After Registration Benefits -->
+                        <div class="reg-widget widget-benefits">
+                            <div class="widget-header bg-dark-blue text-white">
+                                <i class="fa-regular fa-id-badge"></i> নিবন্ধনের পর আপনি যা পাবেন
+                            </div>
+                            <ul class="benefit-list">
+                                <li><i class="fa-solid fa-circle-check text-success"></i> সদস্য নম্বর</li>
+                                <li><i class="fa-solid fa-circle-check text-success"></i> ডিজিটাল সদস্য পরিচয়পত্র (QR কোডসহ)</li>
+                                <li><i class="fa-solid fa-circle-check text-success"></i> প্রিন্টযোগ্য রিপোর্ট (চেয়ারম্যান ও মহাসচিবের স্বাক্ষরহ)</li>
+                                <li><i class="fa-solid fa-circle-check text-success"></i> মেয়াদসহ বৈধ সদস্যপদ</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
+    <!-- ================= MAIN CONTENT END ================= -->
 
-    <!-- Footer -->
+    <!-- ================= FOOTER START (UNCHANGED) ================= -->
     <footer class="site-footer">
         <div class="container px-lg-4">
             <div class="row g-4">
@@ -352,8 +602,7 @@
                 <div class="col-lg-2">
                     <h3>আমাদের সঙ্গে থাকুন</h3>
                     <div class="social-links"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
-                    <form class="newsletter"><label for="newsletterEmail" class="visually-hidden">আপনার ইমেইল লিখুন</label><input id="newsletterEmail" type="email" placeholder="আপনার ইমেইল লিখুন" required><button aria-label="সাবস্ক্রাইব করুন"><i class="fa-solid fa-paper-plane"></i></button></form>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
                 </div>
             </div>
         </div>
@@ -363,12 +612,13 @@
             </div>
         </div>
     </footer>
+    <!-- ================= FOOTER END ================= -->
 
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste START) ===== -->
+    <!-- ===== MOBILE BOTTOM NAVIGATION (UNCHANGED) ===== -->
     <nav class="bottom-nav" id="bottomNav" aria-label="মোবাইল নেভিগেশন">
         <div class="bn-bar" aria-hidden="true"></div>
         <div class="bn-list">
-            <a class="bn-item" href="registration.html" data-nav="register">
+            <a class="bn-item active" href="registration.html" data-nav="register">
                 <span class="bn-ico"><i class="fa-solid fa-user-plus"></i></span>
                 <span class="bn-label">নিবন্ধন</span>
             </a>
@@ -380,7 +630,7 @@
                 <span class="bn-ico"><i class="fa-solid fa-qrcode"></i></span>
                 <span class="bn-label">QR</span>
             </a>
-            <a class="bn-item active" href="index.html" data-nav="home" aria-current="page">
+            <a class="bn-item" href="index.html" data-nav="home" aria-current="page">
                 <span class="bn-ico"><i class="fa-solid fa-house"></i></span>
                 <span class="bn-label">হোম</span>
             </a>
@@ -398,17 +648,20 @@
             </a>
         </div>
     </nav>
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste END) ===== -->
 
     <button type="button" class="back-to-top" id="backToTop" aria-label="উপরে যান">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
-    <!-- Hidden Google Translate engine (do not remove) -->
     <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- NEW Registration JS -->
+    <script src="js/registration.js" defer></script>
 </body>
 
 </html>

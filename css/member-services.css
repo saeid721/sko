@@ -1,0 +1,602 @@
+/* ============================================
+   MEMBER SERVICES PAGE STYLES (css/member-services.css)
+   ============================================ */
+
+.ms-page {
+    --ms-border: #e2e8f0;
+    --ms-radius: 16px;
+    --ms-shadow: 0 4px 20px rgba(0, 51, 153, 0.05);
+    --ms-shadow-hover: 0 8px 30px rgba(0, 51, 153, 0.1);
+    background-color: #f8fafc;
+    padding-bottom: 40px;
+}
+
+
+/* ---------- Hero Section ---------- */
+
+.ms-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #003399 100%);
+    padding: 40px 0;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Optional: Add a subtle background pattern or image if needed */
+
+.ms-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../assets/images/hero-bg-pattern.png') no-repeat center right;
+    background-size: cover;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.ms-breadcrumb {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.ms-breadcrumb .breadcrumb {
+    margin: 0;
+    font-size: 14px;
+}
+
+.ms-breadcrumb .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.ms-breadcrumb .breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.ms-breadcrumb .breadcrumb-item.active {
+    color: #fff;
+    font-weight: 600;
+}
+
+.ms-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.hero-title span {
+    font-size: 0.7em;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.hero-subtitle {
+    margin: 0;
+    font-size: clamp(14px, 1.5vw, 16px);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+    .ms-hero {
+        padding: 30px 0;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .hero-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+}
+
+
+/* ---------- Main Content Layout ---------- */
+
+.ms-main {
+    padding-top: 40px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Section Title */
+
+.ms-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 24px;
+}
+
+.ms-section-title i {
+    color: #003399;
+}
+
+
+/* ---------- Service Cards ---------- */
+
+.ms-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--ms-radius);
+    border: 1px solid var(--ms-border);
+    box-shadow: var(--ms-shadow);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: all 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ms-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ms-shadow-hover);
+    border-color: #cbd5e1;
+}
+
+.ms-card-icon {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+}
+
+.ms-card-content {
+    flex: 1 1 auto;
+    padding-right: 20px;
+}
+
+.ms-card-content h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.ms-card-content p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.ms-card-arrow {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 20px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.ms-card:hover .ms-card-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+
+/* Card Color Variants (Tone based on CSS variables) */
+
+.ms-card.card-blue {
+    --tone: #2563eb;
+    --tone-bg: #eff6ff;
+}
+
+.ms-card.card-green {
+    --tone: #16a34a;
+    --tone-bg: #f0fdf4;
+}
+
+.ms-card.card-purple {
+    --tone: #9333ea;
+    --tone-bg: #faf5ff;
+}
+
+.ms-card.card-orange {
+    --tone: #ea580c;
+    --tone-bg: #fff7ed;
+}
+
+.ms-card.card-pink {
+    --tone: #db2777;
+    --tone-bg: #fdf2f8;
+}
+
+.ms-card.card-sky {
+    --tone: #0284c7;
+    --tone-bg: #f0f9ff;
+}
+
+.ms-card.card-teal {
+    --tone: #0d9488;
+    --tone-bg: #f0fdfa;
+}
+
+.ms-card.card-indigo {
+    --tone: #4f46e5;
+    --tone-bg: #eef2ff;
+}
+
+.ms-card.card-red {
+    --tone: #dc2626;
+    --tone-bg: #fef2f2;
+}
+
+.ms-card[class*="card-"] {
+    background: linear-gradient(135deg, var(--tone-bg), #fff 120%);
+    border-color: color-mix(in srgb, var(--tone) 15%, transparent);
+}
+
+.ms-card[class*="card-"] .ms-card-icon {
+    background: #fff;
+    color: var(--tone);
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--tone) 15%, transparent);
+}
+
+.ms-card[class*="card-"] .ms-card-arrow {
+    color: var(--tone);
+}
+
+
+/* ---------- Sidebar Widgets ---------- */
+
+.ms-sidebar-widget {
+    background: #fff;
+    border: 1px solid var(--ms-border);
+    border-radius: var(--ms-radius);
+    box-shadow: var(--ms-shadow);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.widget-header {
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Quick Links Widget */
+
+.widget-quick-links .widget-header {
+    background: #eff6ff;
+    color: #003399;
+    border-bottom: 1px solid #bfdbfe;
+}
+
+.quick-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links-list li {
+    border-bottom: 1px solid var(--ms-border);
+}
+
+.quick-links-list li:last-child {
+    border-bottom: none;
+}
+
+.quick-links-list a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.quick-links-list a:hover {
+    background: #f8fafc;
+    color: #003399;
+}
+
+.quick-links-list a i:first-child {
+    width: 20px;
+    color: #64748b;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.quick-links-list a:hover i:first-child {
+    color: #003399;
+}
+
+.quick-links-list a i:last-child {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+
+/* Helpdesk Widget */
+
+.widget-helpdesk .widget-header {
+    background: #003399;
+    color: #fff;
+}
+
+.helpdesk-body {
+    padding: 20px;
+}
+
+.helpdesk-body p {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.helpdesk-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.helpdesk-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
+}
+
+.helpdesk-contact a i {
+    color: #003399;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.helpdesk-contact a:hover {
+    color: #003399;
+}
+
+.btn-helpdesk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: #003399;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-helpdesk:hover {
+    background: #002266;
+    color: #fff;
+}
+
+
+/* ---------- Bottom Benefits Bar ---------- */
+
+.ms-benefits-bar {
+    margin-top: 30px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--ms-border);
+    border-radius: var(--ms-radius);
+    box-shadow: var(--ms-shadow);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.benefit-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #003399;
+    padding-right: 24px;
+    border-right: 1px solid var(--ms-border);
+    min-width: 200px;
+}
+
+.benefit-title i {
+    font-size: 32px;
+}
+
+.benefit-title span {
+    line-height: 1.3;
+}
+
+.benefit-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.benefit-item i {
+    font-size: 24px;
+    color: #003399;
+}
+
+
+/* Specific benefit item colors for icons */
+
+.benefit-item:nth-child(1) i {
+    color: #2563eb;
+}
+
+.benefit-item:nth-child(2) i {
+    color: #0284c7;
+}
+
+.benefit-item:nth-child(3) i {
+    color: #0d9488;
+}
+
+.benefit-item:nth-child(4) i {
+    color: #db2777;
+}
+
+.benefit-item:nth-child(5) i {
+    color: #ea580c;
+}
+
+.benefit-item:nth-child(6) i {
+    color: #4f46e5;
+}
+
+
+/* ---------- Responsive Adjustments ---------- */
+
+@media (max-width: 1199.98px) {
+    .ms-main {
+        margin-top: 20px;
+    }
+    .ms-sidebar-widget {
+        margin-top: 24px;
+    }
+    .benefit-title {
+        border-right: none;
+        border-bottom: 1px solid var(--ms-border);
+        padding-bottom: 16px;
+        width: 100%;
+        padding-right: 0;
+    }
+    .benefit-items {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .ms-card {
+        padding: 16px;
+        gap: 12px;
+    }
+    .ms-card-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .ms-card-content h4 {
+        font-size: 15px;
+    }
+    .ms-card-content p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .ms-section-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    .ms-benefits-bar {
+        padding: 16px;
+    }
+    .benefit-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .benefit-item {
+        align-items: flex-start;
+        text-align: left;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .benefit-item i {
+        font-size: 20px;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ms-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+    .ms-card-icon {
+        margin-bottom: 8px;
+    }
+    .ms-card-content {
+        padding-right: 0;
+    }
+    .ms-card-arrow {
+        bottom: 16px;
+        right: 16px;
+    }
+}

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 01. Primary SEO -->
-    <title>SKO - শিক্ষক কর্মচারী ঐক্য জোট</title>
-    <meta name="description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <title>সংবাদের বিস্তারিত - SKO</title>
+    <meta name="description" content="SKO-এর সর্বশেষ সংবাদ, কার্যক্রম ও গুরুত্বপূর্ণ আপডেটের পূর্ণ বিবরণ।">
     <meta name="author" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
     <meta name="publisher" content="SKO">
     <meta name="application-name" content="SKO">
@@ -24,20 +24,20 @@
     <meta name="theme-color" content="#003399">
 
     <!-- 03. Canonical & Language -->
-    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/">
-    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/">
-    <link rel="canonical" href="https://www.sko.org.bd/">
+    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/news-details">
+    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/news-details">
+    <link rel="canonical" href="https://www.sko.org.bd/news-details">
 
     <!-- 04. Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
 
     <!-- 05. Open Graph / Social Search -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="SKO">
-    <meta property="og:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta property="og:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
-    <meta property="og:url" content="https://www.sko.org.bd/">
+    <meta property="og:title" content="সংবাদের বিস্তারিত - SKO">
+    <meta property="og:description" content="SKO-এর সর্বশেষ সংবাদ, কার্যক্রম ও গুরুত্বপূর্ণ আপডেটের পূর্ণ বিবরণ।">
+    <meta property="og:url" content="https://www.sko.org.bd/news-details">
     <meta property="og:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,8 +48,8 @@
 
     <!-- 06. X / Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta name="twitter:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <meta name="twitter:title" content="সংবাদের বিস্তারিত - SKO">
+    <meta name="twitter:description" content="SKO-এর সর্বশেষ সংবাদ, কার্যক্রম ও গুরুত্বপূর্ণ আপডেটের পূর্ণ বিবরণ।">
     <meta name="twitter:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta name="twitter:image:alt" content="SKO Logo">
 
@@ -67,13 +67,18 @@
 
     <!-- 10. CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS (Ensure it's included) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Your existing CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- NEW News Details CSS -->
+    <link rel="stylesheet" href="css/news-details.css">
 
 </head>
 
 <body>
+    <!-- ================= HEADER START (UNCHANGED) ================= -->
     <div class="topbar">
         <div class="container px-lg-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div class="top-contact d-flex flex-wrap gap-3">
@@ -140,10 +145,10 @@
                                 <li><a class="dropdown-item" href="verify-member.html">সদস্য যাচাই</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">মতামত ও নোটিশ</a>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">মতামত ও নোটিশ</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="notices.html">নোটিশ</a></li>
-                                <li><a class="dropdown-item" href="news.html">মতামত</a></li>
+                                <li><a class="dropdown-item active" href="news.html">মতামত</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অনুষ্ঠান</a>
@@ -169,36 +174,213 @@
             </div>
         </nav>
     </header>
-    <main class="container py-5">
-        <div class="row g-4">
-            <div class="col-lg-8 reveal">
-                <div class="card border-0 shadow-sm p-4">
-                    <span class="badge bg-primary mb-2 align-self-start">কেন্দ্রীয় সংবাদ</span>
-                    <h2 class="fw-bold mb-3">SKO-এর কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ সফলভাবে অনুষ্ঠিত</h2>
-                    <p class="text-muted small mb-4"><i data-lucide="calendar" class="me-1" style="width:14px;"></i> ১৫ অক্টোবর, ২০২৬ | <i data-lucide="eye" class="ms-2 me-1" style="width:14px;"></i> ২,৮৪৫ বার পঠিত</p>
-                    <div class="bg-secondary bg-opacity-25 rounded mb-4 d-flex align-items-center justify-content-center" style="height: 300px;">
-                        <span class="text-muted">News Image Placeholder</span>
-                    </div>
-                    <p class="fs-6 lh-lg">শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর কেন্দ্রীয় প্রতিনিধি সম্মেলন ১৫ অক্টোবর ২০২৬, বৃহস্পতিবার ঢাকায় সফলভাবে অনুষ্ঠিত হয়েছে। সম্মেলনে দেশের مختلف জেলা, উপজেলা ও শিক্ষা প্রতিষ্ঠানের প্রতিনিধিরা অংশগ্রহণ করেন।</p>
-                    <p class="fs-6 lh-lg">সম্মেলনে SKO-এর কার্যক্রমের অগ্রগতি, সাংগঠনিক ভবিষ্যৎ কর্মপরিকল্পনা, সদস্য কল্যাণ, শিক্ষার মান উন্নয়ন এবং শিক্ষক-কর্মচারীদের পেশাগত অধিকার সুরক্ষা নিয়ে বিস্তারিত আলোচনা হয়।</p>
-                </div>
-            </div>
-            <div class="col-lg-4 reveal">
-                <div class="card border-0 shadow-sm mb-4">
-                    <div class="card-header bg-sko-primary text-white fw-bold">সাম্প্রতিক সংবাদ</div>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action d-flex">
-                            <div class="bg-secondary bg-opacity-25 rounded me-3" style="width: 60px; height: 60px; flex-shrink: 0;"></div>
-                            <div>
-                                <h6 class="mb-0 fw-bold">সদস্যপদ নবায়ন কার্যক্রম শুরু হয়েছে</h6><small class="text-muted">১৪ অক্টোবর, ২০২৬</small></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- ================= HEADER END ================= -->
 
-    <!-- Footer -->
+    <!-- ================= MAIN CONTENT START ================= -->
+    <main class="nd-page">
+        <!-- Hero Section -->
+        <section class="nd-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="nd-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> হোম</a></li>
+                        <li class="breadcrumb-item"><a href="#">সংবাদ ও নোটিশ</a></li>
+                        <li class="breadcrumb-item"><a href="news.html">সব সংবাদ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">সংবাদের বিস্তারিত</li>
+                    </ol>
+                </nav>
+                <div class="hero-content">
+                    <h1 class="hero-title">সংবাদের বিস্তারিত <span>(News Details)</span></h1>
+                    <p class="hero-subtitle">SKO-এর সর্বশেষ সংবাদ, কার্যক্রম ও গুরুত্বপূর্ণ আপডেটের পূর্ণ বিবরণ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Layout -->
+        <section class="nd-main">
+            <div class="container">
+                <div class="row g-4">
+
+                    <!-- Left Column: Article Content -->
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="nd-article-card">
+
+                            <!-- Article Header -->
+                            <div class="article-header">
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge-cat badge-blue">কেন্দ্রীয় সংবাদ</span>
+                                    <span class="badge-cat badge-red"><i class="fa-solid fa-star"></i> গুরুত্বপূর্ণ</span>
+                                </div>
+                                <h1 class="article-title">SKO-এর কেন্দ্রীয় প্রতিনিধি সম্মেলন ২০২৬ সফলভাবে অনুষ্ঠিত</h1>
+
+                                <div class="article-meta-bar">
+                                    <div class="meta-left">
+                                        <span><i class="fa-regular fa-calendar"></i> ১৫ অক্টোবর, ২০২৬</span>
+                                        <span><i class="fa-regular fa-clock"></i> বৃহস্পতিবার, ১১:৩০ পূর্বাহ্ণ</span>
+                                        <span><i class="fa-solid fa-location-dot"></i> ঢাকা</span>
+                                        <span><i class="fa-regular fa-eye"></i> ২,৮৪৫ বার পড়া</span>
+                                    </div>
+                                    <div class="meta-right">
+                                        <div class="font-resizer">
+                                            <button class="resize-btn" id="fontDecrease">A-</button>
+                                            <button class="resize-btn active" id="fontReset">A</button>
+                                            <button class="resize-btn" id="fontIncrease">A+</button>
+                                        </div>
+                                        <button class="action-icon" title="প্রিন্ট করুন"><i class="fa-solid fa-print"></i></button>
+                                        <button class="action-icon" title="শেয়ার করুন"><i class="fa-solid fa-share-nodes"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Featured Image -->
+                            <div class="article-image">
+                                <img src="https://via.placeholder.com/1200x600" alt="Featured News Image">
+                            </div>
+
+                            <!-- Article Content -->
+                            <div class="article-content" id="articleContent">
+                                <p>শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর কেন্দ্রীয় প্রতিনিধি সম্মেলন ১৫ অক্টোবর ২০২৬, বৃহস্পতিবার ঢাকায় সফলভাবে অনুষ্ঠিত হয়েছে। সম্মেলনে দেশের বিভিন্ন জেলা, উপজেলা ও শিক্ষা প্রতিষ্ঠানের প্রতিনিধিরা অংশগ্রহণ করেন।</p>
+
+                                <p>সম্মেলনে SKO-এর কার্যক্রমের অগ্রগতি, সাংগঠনিক ভবিষ্যৎ কর্মপরিকল্পনা, সদস্য কল্যাণ, শিক্ষার মান উন্নয়ন এবং শিক্ষক-কর্মচারীদের পেশাগত অধিকার সুরক্ষা নিয়ে বিস্তারিত আলোচনা হয়।</p>
+
+                                <p>সভায় সভাপতিত্ব করেন SKO-এর সভাপতি এবং প্রধান অতিথি হিসেবে উপস্থিত ছিলেন শিক্ষা ক্ষেত্রে প্রখ্যাত ব্যক্তিবর্গ। বক্তারা সংগঠনের ঐক্য, পেশাগত মর্যাদা ও শিক্ষাব্যবস্থার উন্নয়নে সুনির্দিষ্ট উদ্যোগের ওপর গুরুত্বারোপ করেন।</p>
+                            </div>
+
+                            <!-- Image Gallery -->
+                            <div class="article-gallery-section">
+                                <h4 class="section-title"><i class="fa-regular fa-images"></i> অনুষ্ঠানের আরও কিছু ছবি</h4>
+                                <div class="gallery-wrapper">
+                                    <button class="gallery-nav prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="gallery-track">
+                                        <div class="gallery-item"><img src="https://via.placeholder.com/200x120" alt="Gallery Image"></div>
+                                        <div class="gallery-item"><img src="https://via.placeholder.com/200x120" alt="Gallery Image"></div>
+                                        <div class="gallery-item"><img src="https://via.placeholder.com/200x120" alt="Gallery Image"></div>
+                                        <div class="gallery-item"><img src="https://via.placeholder.com/200x120" alt="Gallery Image"></div>
+                                        <div class="gallery-item"><img src="https://via.placeholder.com/200x120" alt="Gallery Image"></div>
+                                    </div>
+                                    <button class="gallery-nav next"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Attachments Section -->
+                            <div class="article-attachments-section">
+                                <div class="attachment-grid">
+                                    <!-- Attachment 1 -->
+                                    <div class="attachment-card">
+                                        <div class="att-icon"><i class="fa-solid fa-paperclip"></i></div>
+                                        <div class="att-info">
+                                            <h6>সংযুক্তি (ডাউনলোড করুন)</h6>
+                                        </div>
+                                        <a href="#" class="att-download"><i class="fa-solid fa-download"></i></a>
+                                    </div>
+                                    <!-- Attachment 2 -->
+                                    <div class="attachment-card">
+                                        <div class="att-icon text-danger"><i class="fa-solid fa-file-pdf"></i></div>
+                                        <div class="att-info">
+                                            <h6>সম্মেলনের যোগাযোগ পত্র</h6>
+                                            <span>PDF | ১.২ MB</span>
+                                        </div>
+                                        <a href="#" class="att-download"><i class="fa-solid fa-download"></i></a>
+                                    </div>
+                                    <!-- Attachment 3 -->
+                                    <div class="attachment-card">
+                                        <div class="att-icon text-danger"><i class="fa-solid fa-file-pdf"></i></div>
+                                        <div class="att-info">
+                                            <h6>গৃহীত সিদ্ধান্ত (রেজুলেশন)</h6>
+                                            <span>PDF | ৮৮৫ KB</span>
+                                        </div>
+                                        <a href="#" class="att-download"><i class="fa-solid fa-download"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Feedback & Share -->
+                            <div class="article-footer-bar">
+                                <div class="feedback-area">
+                                    <span class="feedback-text"><i class="fa-regular fa-thumbs-up"></i> এই সংবাদটি কেমন লাগলো?</span>
+                                    <button class="reaction-btn like"><i class="fa-regular fa-thumbs-up"></i> ১,২৮৩</button>
+                                    <button class="reaction-btn love"><i class="fa-regular fa-heart"></i> ১২৮</button>
+                                    <button class="reaction-btn share"><i class="fa-solid fa-share-nodes"></i></button>
+                                </div>
+                                <div class="share-area">
+                                    <span class="share-text">শেয়ার করুন</span>
+                                    <a href="#" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon tw"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" class="social-icon li"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-icon wa"><i class="fa-brands fa-whatsapp"></i></a>
+                                    <button class="social-icon copy"><i class="fa-solid fa-link"></i></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="col-xl-3 col-lg-4">
+
+                        <!-- Summary Widget -->
+                        <div class="nd-widget widget-summary mb-4">
+                            <div class="widget-header">
+                                <i class="fa-regular fa-newspaper"></i> সংবাদ সংক্ষেপ
+                            </div>
+                            <ul class="summary-list">
+                                <li><span><i class="fa-solid fa-users"></i> সংগঠন</span> <span>: শিক্ষক কর্মচারী ঐক্য জোট (SKO)</span></li>
+                                <li><span><i class="fa-solid fa-location-dot"></i> স্থান</span> <span>: ঢাকা</span></li>
+                                <li><span><i class="fa-regular fa-calendar"></i> তারিখ</span> <span>: ১৫ অক্টোবর, ২০২৬</span></li>
+                                <li><span><i class="fa-solid fa-users-rays"></i> অংশগ্রহণকারী</span> <span>: কেন্দ্রীয় ও মাঠ পর্যায়ের প্রতিনিধি</span></li>
+                                <li><span><i class="fa-solid fa-tag"></i> বিষয়</span> <span>: কার্যক্রম, পরিকল্পনা ও সদস্য কল্যাণ</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Related News Widget -->
+                        <div class="nd-widget widget-related mb-4">
+                            <div class="widget-header">
+                                <i class="fa-regular fa-newspaper"></i> সম্পর্কিত সংবাদ
+                            </div>
+                            <div class="related-list">
+                                <a href="#" class="related-item">
+                                    <div class="item-img"><img src="https://via.placeholder.com/80x60" alt="News"></div>
+                                    <div class="item-content">
+                                        <h4>সদস্যপদ নবায়ন কার্যক্রম শুরু হয়েছে</h4>
+                                        <span><i class="fa-regular fa-calendar"></i> ১৪ অক্টোবর, ২০২৬</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="related-item">
+                                    <div class="item-img"><img src="https://via.placeholder.com/80x60" alt="News"></div>
+                                    <div class="item-content">
+                                        <h4>বিভাগীয় পর্যায়ে শিক্ষক সমাবেশ অনুষ্ঠিত</h4>
+                                        <span><i class="fa-regular fa-calendar"></i> ১২ অক্টোবর, ২০২৬</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="related-item">
+                                    <div class="item-img"><img src="https://via.placeholder.com/80x60" alt="News"></div>
+                                    <div class="item-content">
+                                        <h4>শিক্ষক প্রশিক্ষণ কর্মসূচির নতুন সিডিউল প্রকাশ</h4>
+                                        <span><i class="fa-regular fa-calendar"></i> ১০ অক্টোবর, ২০২৬</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter Widget -->
+                        <div class="nd-widget widget-newsletter">
+                            <div class="widget-header bg-dark-blue text-white">
+                                <i class="fa-regular fa-bell"></i> নিয়মিত আপডেট পেতে আমাদের সাথে থাকুন
+                            </div>
+                            <div class="widget-body text-center">
+                                <button class="btn btn-primary w-100 btn-subscribe">
+                                    <i class="fa-solid fa-envelope me-2"></i> নিউজলেটার সাবস্ক্রাইব করুন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ================= MAIN CONTENT END ================= -->
+
+    <!-- ================= FOOTER START (UNCHANGED) ================= -->
     <footer class="site-footer">
         <div class="container px-lg-4">
             <div class="row g-4">
@@ -238,8 +420,7 @@
                 <div class="col-lg-2">
                     <h3>আমাদের সঙ্গে থাকুন</h3>
                     <div class="social-links"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
-                    <form class="newsletter"><label for="newsletterEmail" class="visually-hidden">আপনার ইমেইল লিখুন</label><input id="newsletterEmail" type="email" placeholder="আপনার ইমেইল লিখুন" required><button aria-label="সাবস্ক্রাইব করুন"><i class="fa-solid fa-paper-plane"></i></button></form>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
                 </div>
             </div>
         </div>
@@ -249,8 +430,9 @@
             </div>
         </div>
     </footer>
+    <!-- ================= FOOTER END ================= -->
 
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste START) ===== -->
+    <!-- ===== MOBILE BOTTOM NAVIGATION (UNCHANGED) ===== -->
     <nav class="bottom-nav" id="bottomNav" aria-label="মোবাইল নেভিগেশন">
         <div class="bn-bar" aria-hidden="true"></div>
         <div class="bn-list">
@@ -284,17 +466,20 @@
             </a>
         </div>
     </nav>
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste END) ===== -->
 
     <button type="button" class="back-to-top" id="backToTop" aria-label="উপরে যান">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
-    <!-- Hidden Google Translate engine (do not remove) -->
     <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- NEW News Details JS -->
+    <script src="js/news-details.js" defer></script>
 </body>
 
 </html>

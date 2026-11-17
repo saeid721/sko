@@ -1,0 +1,476 @@
+/* ============================================
+   FORMER COMMITTEES PAGE STYLES (css/former-committees.css)
+   ============================================ */
+
+.fc-page {
+    --fc-border: #e2e8f0;
+    --fc-radius: 16px;
+    --fc-shadow: 0 4px 20px rgba(0, 51, 153, 0.05);
+    background-color: #f8fafc;
+    padding-bottom: 40px;
+}
+
+
+/* ---------- Hero Section ---------- */
+
+.fc-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #003399 100%);
+    padding: 40px 0;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.fc-breadcrumb {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.fc-breadcrumb .breadcrumb {
+    margin: 0;
+    font-size: 14px;
+}
+
+.fc-breadcrumb .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.fc-breadcrumb .breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.fc-breadcrumb .breadcrumb-item.active {
+    color: #fff;
+    font-weight: 600;
+}
+
+.fc-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.hero-title span {
+    font-size: 0.7em;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.hero-subtitle {
+    margin: 0;
+    font-size: clamp(14px, 1.5vw, 16px);
+    opacity: 0.9;
+}
+
+
+/* ---------- Main Layout ---------- */
+
+.fc-main {
+    padding-top: 30px;
+}
+
+
+/* ---------- Sidebar Widgets ---------- */
+
+.fc-widget {
+    background: #fff;
+    border: 1px solid var(--fc-border);
+    border-radius: var(--fc-radius);
+    box-shadow: var(--fc-shadow);
+    overflow: hidden;
+}
+
+.widget-header {
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #003399;
+    color: #fff;
+    border-bottom: none;
+}
+
+
+/* Categories List */
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    border-bottom: 1px solid var(--fc-border);
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+.category-list a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.category-list a:hover {
+    background: #f8fafc;
+}
+
+.category-list a.active {
+    background: #eff6ff;
+    color: #003399;
+    border-left: 4px solid #003399;
+}
+
+.category-list a i:first-child {
+    width: 24px;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.category-list a i:last-child {
+    font-size: 12px;
+}
+
+.category-list .badge {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+
+/* Total Stats */
+
+.widget-total .widget-body {
+    padding: 24px;
+}
+
+.total-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #003399;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+
+/* Info Widget */
+
+.widget-info {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.widget-info .widget-body {
+    padding: 20px;
+}
+
+.widget-info i {
+    font-size: 24px;
+}
+
+
+/* ---------- Right Content Toolbar ---------- */
+
+.fc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.fc-tabs {
+    display: flex;
+    background: #fff;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--fc-border);
+    box-shadow: var(--fc-shadow);
+}
+
+.fc-tab {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    color: #64748b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.fc-tab:hover {
+    color: #003399;
+    background: #f8fafc;
+}
+
+.fc-tab.active {
+    background: #003399;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 51, 153, 0.2);
+}
+
+.fc-search {
+    position: relative;
+    flex: 1;
+    max-width: 350px;
+}
+
+.fc-search i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+}
+
+.fc-search input {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px 0 42px;
+    border: 1px solid var(--fc-border);
+    border-radius: 10px;
+    font-size: 14px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.fc-search input:focus {
+    outline: none;
+    border-color: #003399;
+    box-shadow: 0 0 0 3px rgba(0, 51, 153, 0.1);
+}
+
+
+/* ---------- Committee Cards ---------- */
+
+.committee-card {
+    background: #fff;
+    border: 1px solid var(--fc-border);
+    border-radius: var(--fc-radius);
+    box-shadow: var(--fc-shadow);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.committee-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 51, 153, 0.1);
+}
+
+.card-top-badge {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badge-former {
+    background: #003399;
+}
+
+.badge-expired {
+    background: #ea580c;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 12px 0;
+    line-height: 1.4;
+}
+
+.card-image {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: #f1f5f9;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--fc-border);
+    font-size: 13px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-meta i {
+    color: #003399;
+}
+
+.card-members {
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.card-members h6 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-members ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-members ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.card-members ul li:last-child {
+    margin-bottom: 0;
+}
+
+.card-members .role {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.card-actions .btn {
+    flex: 1;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+
+/* ---------- Pagination ---------- */
+
+.fc-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid var(--fc-border);
+}
+
+.pagination {
+    margin: 0;
+}
+
+.page-link {
+    color: #003399;
+    border: 1px solid var(--fc-border);
+    margin: 0 2px;
+    border-radius: 8px !important;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 14px;
+}
+
+.page-link:hover {
+    background: #eff6ff;
+    color: #003399;
+}
+
+.page-item.active .page-link {
+    background: #003399;
+    border-color: #003399;
+    color: #fff;
+}
+
+.page-item.disabled .page-link {
+    color: #cbd5e1;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 991.98px) {
+    .fc-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .fc-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+    }
+    .fc-search {
+        max-width: none;
+    }
+    .fc-pagination {
+        flex-direction: column;
+    }
+}

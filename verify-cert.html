@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 01. Primary SEO -->
-    <title>SKO - শিক্ষক কর্মচারী ঐক্য জোট</title>
-    <meta name="description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <title>ডিজিটাল সনদ যাচাই - SKO</title>
+    <meta name="description" content="SKO কর্তৃক প্রদত্ত সকল সনদ ও প্রশংসাপত্রের সত্যতা অনলাইনে যাচাই করুন।">
     <meta name="author" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
     <meta name="publisher" content="SKO">
     <meta name="application-name" content="SKO">
@@ -24,9 +24,9 @@
     <meta name="theme-color" content="#003399">
 
     <!-- 03. Canonical & Language -->
-    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/">
-    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/">
-    <link rel="canonical" href="https://www.sko.org.bd/">
+    <link rel="alternate" hreflang="bn" href="https://www.sko.org.bd/verify-cert">
+    <link rel="alternate" hreflang="x-default" href="https://www.sko.org.bd/verify-cert">
+    <link rel="canonical" href="https://www.sko.org.bd/verify-cert">
 
     <!-- 04. Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -35,9 +35,9 @@
     <!-- 05. Open Graph / Social Search -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SKO">
-    <meta property="og:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta property="og:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
-    <meta property="og:url" content="https://www.sko.org.bd/">
+    <meta property="og:title" content="ডিজিটাল সনদ যাচাই - SKO">
+    <meta property="og:description" content="SKO কর্তৃক প্রদত্ত সকল সনদ ও প্রশংসাপত্রের সত্যতা অনলাইনে যাচাই করুন।">
+    <meta property="og:url" content="https://www.sko.org.bd/verify-cert">
     <meta property="og:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,8 +48,8 @@
 
     <!-- 06. X / Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SKO - শিক্ষক কর্মচারী ঐক্য জোট">
-    <meta name="twitter:description" content="শিক্ষক, কর্মচারী ও শিক্ষা প্রতিষ্ঠানসমূহের অধিকার, মর্যাদা ও কল্যাণে এক্যবদ্ধ SKO প্ল্যাটফর্ম।">
+    <meta name="twitter:title" content="ডিজিটাল সনদ যাচাই - SKO">
+    <meta name="twitter:description" content="SKO কর্তৃক প্রদত্ত সকল সনদ ও প্রশংসাপত্রের সত্যতা অনলাইনে যাচাই করুন।">
     <meta name="twitter:image" content="https://www.sko.org.bd/images/og-image.jpg">
     <meta name="twitter:image:alt" content="SKO Logo">
 
@@ -67,13 +67,18 @@
 
     <!-- 10. CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS (Ensure it's included) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Your existing CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- NEW Verify Cert CSS -->
+    <link rel="stylesheet" href="css/verify-cert.css">
 
 </head>
 
 <body>
+    <!-- ================= HEADER START (UNCHANGED) ================= -->
     <div class="topbar">
         <div class="container px-lg-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div class="top-contact d-flex flex-wrap gap-3">
@@ -169,37 +174,262 @@
             </div>
         </nav>
     </header>
-    <main class="container py-5">
-        <div class="row g-4">
-            <div class="col-lg-6 reveal">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-3">সনদ যাচাই করুন</h5>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">সনদ নম্বর <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="উদাহরণ: SKO-CERT-2026-000123">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">সনদধারীর নাম <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="সনদে উল্লেখিত নাম লিখুন">
-                        </div>
-                        <button class="btn btn-sko-green w-100"><i data-lucide="search" class="me-1" style="width:16px;"></i> সনদ যাচাই করুন</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 reveal">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
-                        <i data-lucide="badge-check" class="text-success mb-3 mx-auto" style="width: 60px; height: 60px;"></i>
-                        <h4 class="fw-bold">সনদ যাচাইয়ের ফলাফল</h4>
-                        <p class="text-muted">সনদ নম্বর ও নাম প্রদান করে যাচাই করুন। সঠিক তথ্য প্রদান করা হলে এখানে সনদের বিস্তারিত তথ্য দেখা যাবে।</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- ================= HEADER END ================= -->
 
-    <!-- Footer -->
+    <!-- ================= MAIN CONTENT START ================= -->
+    <main class="vc-page">
+        <!-- Hero Section -->
+        <section class="vc-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="vc-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> হোম</a></li>
+                        <li class="breadcrumb-item"><a href="#">সেবা</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">ডিজিটাল সনদ যাচাই</li>
+                    </ol>
+                </nav>
+                <div class="hero-content">
+                    <h1 class="hero-title">ডিজিটাল সনদ যাচাই <span>(Certificate Verification)</span></h1>
+                    <p class="hero-subtitle">SKO কর্তৃক প্রদত্ত সকল সনদ ও প্রশংসাপত্রের সত্যতা অনলাইনে যাচাই করুন</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Layout -->
+        <section class="vc-main">
+            <div class="container">
+
+                <!-- Top Section: Form & Sample Certificate -->
+                <div class="row g-4 mb-4">
+                    <!-- Left Column: Form -->
+                    <div class="col-lg-7">
+                        <div class="vc-card form-card">
+                            <div class="card-header-title">
+                                <i class="fa-solid fa-magnifying-glass text-primary"></i> সনদ যাচাই করুন
+                            </div>
+                            <div class="card-body">
+                                <div class="row g-4">
+                                    <!-- Form Inputs -->
+                                    <div class="col-md-7">
+                                        <div class="mb-3">
+                                            <label class="form-label">সনদ নম্বর <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-file-lines"></i></span>
+                                                <input type="text" class="form-control" placeholder="উদাহরণ: SKO-CERT-2026-000123" id="certNumber">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">সনদধারীর নাম <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                                                <input type="text" class="form-control" placeholder="সনদে উল্লেখিত নাম লিখুন" id="certName">
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="form-label">সনদের ধরন</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-award"></i></span>
+                                                <select class="form-select">
+                                                    <option value="">সনদের ধরন নির্বাচন করুন</option>
+                                                    <option value="appreciation">প্রশংসাপত্র</option>
+                                                    <option value="training">প্রশিক্ষণ সনদ</option>
+                                                    <option value="participation">অংশগ্রহণ সনদ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-primary flex-grow-1" id="btnVerify">
+                                                <i class="fa-solid fa-magnifying-glass me-2"></i> সনদ যাচাই করুন
+                                            </button>
+                                            <button class="btn btn-outline-secondary" id="btnReset">
+                                                <i class="fa-solid fa-rotate-right me-2"></i> রিসেট
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- QR Section -->
+                                    <div class="col-md-5">
+                                        <div class="text-center text-muted small mb-2 fw-bold">অথবা QR কোড স্ক্যান করুন</div>
+                                        <div class="qr-scanner-box">
+                                            <div class="scanner-corners">
+                                                <span></span><span></span><span></span><span></span>
+                                            </div>
+                                            <i class="fa-solid fa-qrcode"></i>
+                                            <div class="scanner-line"></div>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-3 btn-sm">
+                                            <i class="fa-solid fa-camera me-2"></i> QR স্ক্যান করুন
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Sample Certificate Preview -->
+                    <div class="col-lg-5">
+                        <div class="sample-cert-wrapper">
+                            <div class="sample-cert">
+                                <div class="cert-corner top-left"></div>
+                                <div class="cert-corner top-right"></div>
+                                <div class="cert-corner bottom-left"></div>
+                                <div class="cert-corner bottom-right"></div>
+
+                                <div class="cert-header">
+                                    <img src="assets/images/logo.png" alt="SKO Logo" class="cert-logo">
+                                    <div class="cert-org">
+                                        <h5>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</h5>
+                                        <p>কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা</p>
+                                    </div>
+                                    <div class="cert-badge">
+                                        <i class="fa-solid fa-award"></i>
+                                        <span>SKO<br>সনদ</span>
+                                    </div>
+                                </div>
+
+                                <div class="cert-title">প্রশংসাপত্র</div>
+
+                                <div class="cert-body">
+                                    <h4 class="cert-recipient">এম. এ. রহমান</h4>
+                                    <p class="cert-text">শিক্ষা ও শিক্ষক কল্যাণে বিশেষ অবদান রাখার জন্য তাঁকে এই প্রশংসাপত্র প্রদান করা হলো।</p>
+                                </div>
+
+                                <div class="cert-footer">
+                                    <div class="cert-sign">
+                                        <span class="sign-placeholder"></span>
+                                        <strong>চেয়ারম্যান</strong>
+                                    </div>
+                                    <div class="cert-qr">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                    </div>
+                                    <div class="cert-sign">
+                                        <span class="sign-placeholder"></span>
+                                        <strong>মহাসচিব</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Verification Result -->
+                <div class="vc-card result-card" id="resultSection">
+                    <div class="card-header-title d-flex justify-content-between align-items-center">
+                        <div class="text-success">
+                            <i class="fa-solid fa-circle-check"></i> সনদ যাচাই সফল হয়েছে
+                        </div>
+                        <span class="badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
+                    </div>
+
+                    <div class="card-body">
+                        <p class="text-muted mb-4">এই সনদটি SKO কর্তৃক ইস্যুকৃত এবং বৈধ।</p>
+
+                        <div class="row g-4 align-items-center">
+                            <!-- Details Table -->
+                            <div class="col-lg-8">
+                                <div class="result-details-grid">
+                                    <div class="detail-item">
+                                        <i class="fa-regular fa-file-lines"></i>
+                                        <div>
+                                            <span>সনদ নম্বর</span>
+                                            <strong id="resCertNumber">: SKO-CERT-2026-000123</strong>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        <div>
+                                            <span>প্রদান তারিখ</span>
+                                            <strong>: ১৫ জানুয়ারি, ২০২৬</strong>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-regular fa-user"></i>
+                                        <div>
+                                            <span>সনদধারীর নাম</span>
+                                            <strong id="resCertName">: এম. এ. রহমান</strong>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                        <div>
+                                            <span>মেয়াদ</span>
+                                            <strong>: ১৫ জানুয়ারি, ২০২৬ - ১৫ জানুয়ারি, ২০২৮</strong>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-solid fa-award"></i>
+                                        <div>
+                                            <span>সনদের ধরন</span>
+                                            <strong>: প্রশংসাপত্র</strong>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-solid fa-circle-check text-success"></i>
+                                        <div>
+                                            <span>বর্তমান অবস্থা</span>
+                                            <strong class="badge-status">বৈধ (Active)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="col-lg-4">
+                                <div class="result-actions">
+                                    <button class="btn btn-primary w-100 mb-2">
+                                        <i class="fa-solid fa-download me-2"></i> সনদ ডাউনলোড (PDF)
+                                    </button>
+                                    <button class="btn btn-outline-primary w-100 mb-2">
+                                        <i class="fa-solid fa-print me-2"></i> প্রিন্ট করুন
+                                    </button>
+                                    <button class="btn btn-outline-primary w-100">
+                                        <i class="fa-solid fa-share-nodes me-2"></i> শেয়ার করুন
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Features Bar -->
+                <div class="vc-features-bar mt-4">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+                        <div class="feature-text">
+                            <h6>নির্ভরযোগ্য যাচাই</h6>
+                            <p>SKO-এর কেন্দ্রীয় ডাটাবেজ থেকে সনদের সত্যতা যাচাই</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="feature-text">
+                            <h6>দ্রুত ও সহজ</h6>
+                            <p>সনদ নম্বর বা QR কোড দিয়ে তাৎক্ষণিক যাচাই</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                        <div class="feature-text">
+                            <h6>নিরাপদ ও বিশ্বস্ত</h6>
+                            <p>জাল সনদ প্রতিরোধে ডিজিটাল যাচাই ব্যবস্থা</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="feature-text">
+                            <h6>বিভিন্ন সনদের যাচাই</h6>
+                            <p>প্রশংসাপত্র, প্রশিক্ষণ সনদ, অংশগ্রহণ সনদ ও অন্যান্য অফিসিয়াল সনদ</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- ================= MAIN CONTENT END ================= -->
+
+    <!-- ================= FOOTER START (UNCHANGED) ================= -->
     <footer class="site-footer">
         <div class="container px-lg-4">
             <div class="row g-4">
@@ -239,8 +469,7 @@
                 <div class="col-lg-2">
                     <h3>আমাদের সঙ্গে থাকুন</h3>
                     <div class="social-links"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
-                    <form class="newsletter"><label for="newsletterEmail" class="visually-hidden">আপনার ইমেইল লিখুন</label><input id="newsletterEmail" type="email" placeholder="আপনার ইমেইল লিখুন" required><button aria-label="সাবস্ক্রাইব করুন"><i class="fa-solid fa-paper-plane"></i></button></form>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
                 </div>
             </div>
         </div>
@@ -250,8 +479,9 @@
             </div>
         </div>
     </footer>
+    <!-- ================= FOOTER END ================= -->
 
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste START) ===== -->
+    <!-- ===== MOBILE BOTTOM NAVIGATION (UNCHANGED) ===== -->
     <nav class="bottom-nav" id="bottomNav" aria-label="মোবাইল নেভিগেশন">
         <div class="bn-bar" aria-hidden="true"></div>
         <div class="bn-list">
@@ -285,17 +515,20 @@
             </a>
         </div>
     </nav>
-    <!-- ===== MOBILE BOTTOM NAVIGATION (paste END) ===== -->
 
     <button type="button" class="back-to-top" id="backToTop" aria-label="উপরে যান">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
-    <!-- Hidden Google Translate engine (do not remove) -->
     <div id="google_translate_element" class="notranslate" translate="no" aria-hidden="true"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- NEW Verify Cert JS -->
+    <script src="js/verify-cert.js" defer></script>
 </body>
 
 </html>
