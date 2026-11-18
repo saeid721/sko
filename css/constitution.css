@@ -1167,3 +1167,123 @@ body.cn-lock {
         transition: none !important;
     }
 }
+
+
+/* ==========================================================================
+   PDF-DRIVEN CHAPTER PAGES  (keep at the END of the file)
+   ========================================================================== */
+
+.read-pane {
+    overflow-x: auto;
+}
+
+.pdf-pages {
+    display: grid;
+    gap: 1rem;
+    width: calc(100% * var(--zoom, 1));
+    margin: 0 auto;
+    transition: width 0.25s ease;
+}
+
+.pdf-page {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 595 / 842;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px -18px rgba(15, 23, 42, 0.45);
+    overflow: hidden;
+}
+
+.pdf-page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: pageImgIn 0.35s ease;
+}
+
+.pdf-page.is-loading {
+    background: linear-gradient(100deg, #f1f5f9 30%, #fff 50%, #f1f5f9 70%);
+    background-size: 200% 100%;
+    animation: pageShimmer 1.2s linear infinite;
+}
+
+.page-tag {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    z-index: 2;
+    padding: 0.15rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+@keyframes pageShimmer {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes pageImgIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.pdf-error {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border: 1px dashed #fca5a5;
+    border-radius: 14px;
+    background: #fef2f2;
+}
+
+.pdf-error>i {
+    font-size: 2.2rem;
+    color: #dc2626;
+}
+
+.pdf-error h4 {
+    margin: 0.75rem 0 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cn-text-dark);
+}
+
+.pdf-error p {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.pdf-error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+}
+
+.pdf-error-actions .btn-action-primary,
+.pdf-error-actions .btn-action-outline {
+    display: inline-flex;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+    .pdf-page {
+        border-radius: 6px;
+    }
+}
