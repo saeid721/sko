@@ -1,7 +1,6 @@
 /* ============================================
    COMMITTEE / LEADERSHIP PAGE (css/leadership.css)
    style.css এর পরে লোড হবে
-   Hero: style.css এর .about-hero ব্যবহার হয়েছে (এখানে নেই)
    ============================================ */
 
 .committee-page {
@@ -366,7 +365,13 @@
 }
 
 .cm-tabpanel[hidden] {
-    display: none;
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cm-tabpanel.is-entering {
+        animation: none;
+    }
 }
 
 .cm-tabpanel.is-entering {

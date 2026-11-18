@@ -10,18 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const activate = (name, opts = {}) => {
         const target = tabs.find((t) => t.dataset.tab === name) || tabs[0];
+        const panelId = "cmPanel-" + target.dataset.tab;
 
         tabs.forEach((t) => {
             const on = t === target;
+            t.classList.toggle("is-active", on);
             t.setAttribute("aria-selected", String(on));
             t.tabIndex = on ? 0 : -1;
         });
 
         panels.forEach((p) => {
-            const on = p.id === target.getAttribute("aria-controls");
+            const on = p.id === panelId;
             p.hidden = !on;
+            p.classList.remove("is-entering");
             if (on) {
-                p.classList.remove("is-entering");
                 void p.offsetWidth; // restart animation
                 p.classList.add("is-entering");
             }
@@ -33,6 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 left: target.offsetLeft - (tabBar.clientWidth - target.offsetWidth) / 2,
                 behavior: "smooth"
             });
+        }
+
+        // mobile: panel এর শুরুতে নরমভাবে স্ক্রল (শুধু ক্লিকের সময়)
+        if (opts.updateUrl && window.matchMedia("(max-width: 767.98px)").matches) {
+            const top = tabBar.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: "smooth" });
         }
 
         if (opts.focus) target.focus();
@@ -61,7 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const fromUrl = location.hash.slice(1) || params.get("tab") || typeMap[params.get("type")] || "executive";
     activate(fromUrl);
 
-    window.addEventListener("hashchange", () => activate(location.hash.slice(1)));
+    window.addEventListener("hashchange", () => {
+        const h = location.hash.slice(1);
+        if (tabs.some((t) => t.dataset.tab === h)) activate(h);
+    });
 
     /* ---------- Member list (search) ---------- */
 

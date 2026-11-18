@@ -165,27 +165,21 @@
 }
 
 
-/* Watermark Logo */
+/* Watermark Logo (ছবি, ১৮% opacity, লেখার পেছনে) */
 
 .watermark-logo {
+    --wm-opacity: .10;
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    font-size: 10rem;
-    color: rgba(0, 51, 153, 0.03);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: clamp(150px, 24%, 280px);
+    height: auto;
+    opacity: var(--wm-opacity);
     pointer-events: none;
-    z-index: 1;
-}
-
-.watermark-logo span {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    letter-spacing: -5px;
-    margin-top: -10px;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .message-header {
@@ -315,71 +309,647 @@
 }
 
 
-/* --- Responsive Adjustments --- */
+/* ==========================================================================
+   PREMIUM UPGRADE (chairman + secretary-general pages)
+   ========================================================================== */
+
+
+/* ---------- 1. Reading progress ---------- */
+
+.cm-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.cm-progress span {
+    display: block;
+    height: 100%;
+    transform-origin: left;
+    transform: scaleX(0);
+    background: linear-gradient(90deg, #003399, #2563eb, #16a34a);
+    transition: transform .1s linear;
+}
+
+
+/* ---------- 2. Profile card ---------- */
+
+.cm-profile-card {
+    border-radius: 20px;
+    top: 96px;
+}
+
+.cm-profile-card::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: linear-gradient(90deg, #003399, #2563eb 55%, #16a34a);
+}
+
+.profile-img-wrapper {
+    width: auto;
+    height: auto;
+    aspect-ratio: 4 / 4.4;
+    margin: 1rem 1rem 0;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 51, 153, .18);
+}
+
+.profile-img-wrapper::after {
+    display: none;
+}
+
+.profile-img {
+    display: block;
+}
+
+.profile-info {
+    padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.profile-info h2 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--cm-primary);
+}
+
+.profile-info .designation {
+    display: inline-block;
+    margin: .4rem 0 .5rem;
+    padding: .2rem .95rem;
+    border-radius: 999px;
+    background: var(--cm-primary-light);
+    font-size: .9rem;
+}
+
+.profile-highlights {
+    display: grid;
+    gap: .6rem;
+    padding: 1rem;
+    background: #f8fafc;
+}
+
+.profile-highlights li {
+    align-items: center;
+    padding: .75rem .85rem;
+    border: 1px solid var(--cm-border);
+    border-radius: 12px;
+    background: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.profile-highlights li:last-child {
+    border-bottom: 1px solid var(--cm-border);
+}
+
+.profile-highlights li:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cm-shadow);
+}
+
+.highlight-icon {
+    border: 0;
+    border-radius: 10px;
+    background: var(--cm-primary-light);
+    box-shadow: none;
+}
+
+.profile-highlights li span {
+    padding-top: 0;
+}
+
+
+/* ---------- 3. Message card + header ---------- */
+
+.cm-message-card {
+    border-radius: 20px;
+    padding: 2.25rem 2.5rem;
+}
+
+.cm-message-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: linear-gradient(90deg, #003399, #2563eb 55%, #16a34a);
+    z-index: 3;
+}
+
+.message-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--cm-border);
+}
+
+.message-title {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    min-width: 0;
+}
+
+.message-ico {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--cm-primary-light);
+    color: var(--cm-primary);
+}
+
+.message-header .message-ico i {
+    font-size: 1.25rem;
+}
+
+.message-header h3 {
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+    line-height: 1.3;
+}
+
+.reading-meta {
+    display: block;
+    margin-top: .15rem;
+    font-size: .82rem;
+    color: #64748b;
+}
+
+.message-header .reading-meta i {
+    font-size: .85rem;
+}
+
+
+/* ---------- 4. Reading tools ---------- */
+
+.message-tools {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.tool-group {
+    display: inline-flex;
+    border: 1px solid var(--cm-border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.tool-btn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 .7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cm-border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--cm-primary);
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+.tool-group .tool-btn {
+    border: 0;
+    border-radius: 0;
+}
+
+.tool-group .tool-btn+.tool-btn {
+    border-left: 1px solid var(--cm-border);
+}
+
+.tool-btn small {
+    margin-left: 1px;
+    font-size: .7em;
+}
+
+.message-header .tool-btn i {
+    font-size: .95rem;
+}
+
+.tool-btn:hover:not(:disabled) {
+    background: var(--cm-primary-light);
+}
+
+.tool-btn:active:not(:disabled) {
+    transform: scale(.95);
+}
+
+.tool-btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.tool-btn:focus-visible,
+.cm-next:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, .35);
+    outline-offset: 2px;
+}
+
+
+/* ---------- 5. Quote ---------- */
+
+.quote-box {
+    padding: 1.5rem 3.25rem;
+    border: 1px solid #bfdbfe;
+    border-left: 1px solid #bfdbfe;
+    border-radius: 14px;
+    box-shadow: inset 4px 0 0 var(--cm-primary);
+}
+
+.quote-box p {
+    font-style: normal;
+    font-size: clamp(1rem, 1.9vw, 1.25rem);
+}
+
+.quote-icon {
+    top: 14px;
+    left: 16px;
+    font-size: 1.4rem;
+    color: rgba(0, 51, 153, .25);
+}
+
+.quote-icon.end {
+    top: auto;
+    bottom: 14px;
+    left: auto;
+    right: 16px;
+}
+
+
+/* ---------- 6. Message body (লেখার আকার JS দিয়ে বদলায়) ---------- */
+
+.message-body p {
+    font-size: calc(var(--cm-fs, 1.05) * 1rem);
+    line-height: 1.9;
+    text-align: left;
+    text-wrap: pretty;
+}
+
+.message-body .greeting {
+    font-size: calc(var(--cm-fs, 1.05) * 1.05rem);
+}
+
+@media (min-width: 768px) {
+    .message-body p:not(.greeting) {
+        text-align: justify;
+    }
+}
+
+
+/* ---------- 7. Signature + watermark ---------- */
+
+.signature-block {
+    margin-top: 2.25rem;
+    padding: .25rem 0 .25rem 1.1rem;
+    border-top: 0;
+    border-left: 4px solid var(--cm-primary);
+}
+
+.signature-img {
+    width: 160px;
+    height: 54px;
+}
+
+.signature-block h4 {
+    color: var(--cm-primary);
+}
+
+.message-body .signature-block p {
+    margin: 0;
+    font-size: .92rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+
+/* ---------- 8. Next message card ---------- */
+
+.cm-next {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: 1px solid var(--cm-border);
+    border-radius: 16px;
+    box-shadow: var(--cm-shadow);
+    color: var(--cm-text-dark);
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.cm-next:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cm-shadow-lg);
+    border-color: #bfdbfe;
+    color: var(--cm-text-dark);
+}
+
+.cm-next-ico {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #003399, #2563eb);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.cm-next-txt {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cm-next-txt small {
+    font-size: .78rem;
+    color: #64748b;
+}
+
+.cm-next-txt strong {
+    font-size: 1.05rem;
+}
+
+.cm-next>.fa-arrow-right {
+    color: var(--cm-primary);
+    transition: transform .2s ease;
+}
+
+.cm-next:hover>.fa-arrow-right {
+    transform: translateX(4px);
+}
+
+
+/* ---------- 9. Toast + reveal ---------- */
+
+.cm-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 90px;
+    transform: translate(-50%, 20px);
+    opacity: 0;
+    padding: .65rem 1.1rem;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #fff;
+    font-size: .88rem;
+    z-index: 3000;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.cm-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.cm-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .6s ease, transform .6s ease, box-shadow .2s ease;
+}
+
+.cm-reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cm-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .cm-progress span,
+    .cm-toast,
+    .cm-next,
+    .profile-highlights li {
+        transition: none;
+    }
+}
+
+
+/* ---------- 10. Responsive ---------- */
 
 @media (max-width: 1199.98px) {
     .cm-profile-card {
         position: static;
-        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .profile-highlights {
+        grid-template-columns: 1fr 1fr;
     }
     .profile-img-wrapper {
-        height: 400px;
+        aspect-ratio: 16 / 10;
     }
 }
 
 @media (max-width: 991.98px) {
-    .cm-hero {
-        padding: 2rem 0 4rem 0;
-    }
-    .cm-hero .hero-title {
-        font-size: 1.8rem;
-    }
-    .cm-hero .hero-title span {
-        font-size: 1rem;
+    .cm-main {
+        margin-top: -2rem;
     }
     .cm-message-card {
-        padding: 1.5rem;
-    }
-    .quote-box {
-        padding: 1rem 1.5rem;
-    }
-    .quote-box p {
-        font-size: 1rem;
+        padding: 1.75rem 1.5rem;
     }
 }
 
 @media (max-width: 575.98px) {
-    .cm-hero .hero-title {
-        font-size: 1.5rem;
-    }
-    .cm-hero .hero-subtitle {
-        font-size: 0.95rem;
-    }
     .profile-img-wrapper {
-        height: 280px;
+        aspect-ratio: 4 / 3.6;
+        margin: .75rem .75rem 0;
     }
     .profile-info h2 {
         font-size: 1.2rem;
     }
     .cm-message-card {
-        padding: 1.25rem;
+        padding: 1.25rem 1rem;
+        border-radius: 16px;
     }
-    .message-header h3 {
-        font-size: 1.25rem;
+    .message-header {
+        align-items: flex-start;
     }
-    .message-body p {
-        font-size: 0.95rem;
-        text-align: left;
+    .message-tools {
+        width: 100%;
     }
-    .message-body .greeting {
-        font-size: 1rem;
+    .message-tools>.tool-btn {
+        flex: 1;
+    }
+    .tool-group {
+        flex: 2;
+    }
+    .tool-group .tool-btn {
+        flex: 1;
+    }
+    .quote-box {
+        padding: 2.3rem 1rem 1.25rem;
+    }
+    .quote-icon.end {
+        display: none;
     }
     .signature-img {
         width: 120px;
     }
     .watermark-logo {
-        font-size: 6rem;
-        bottom: -10px;
-        right: -10px;
+        --wm-opacity: .10;
+        width: 120px;
+        right: -.25rem;
+        bottom: -.25rem;
+    }
+    .cm-next {
+        padding: .9rem 1rem;
+    }
+}
+
+
+/* ---------- 11. Print ---------- */
+
+@media print {
+    .topbar,
+    .site-header,
+    .about-hero,
+    .bottom-nav,
+    .back-to-top,
+    .site-footer,
+    .cm-progress,
+    .message-tools,
+    .cm-next,
+    .profile-highlights {
+        display: none !important;
+    }
+    .cm-main {
+        margin-top: 0;
+    }
+    .cm-profile-card {
+        position: static;
+        box-shadow: none;
+    }
+    .cm-message-card {
+        box-shadow: none;
+        border: 0;
+    }
+    .cm-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* ---------- 12. Profile details (label/value) + collapsible on mobile ---------- */
+
+.profile-more {
+    border-top: 1px solid var(--cm-border);
+    background: #f8fafc;
+}
+
+.profile-more .profile-highlights {
+    border-top: 0;
+}
+
+.profile-more>summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    padding: .85rem 1.25rem;
+    font-weight: 600;
+    color: var(--cm-primary);
+    cursor: pointer;
+    list-style: none;
+}
+
+.profile-more>summary::-webkit-details-marker {
+    display: none;
+}
+
+.profile-more>summary i {
+    transition: transform .25s ease;
+}
+
+.profile-more[open]>summary i {
+    transform: rotate(180deg);
+}
+
+.profile-more>summary:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, .35);
+    outline-offset: -3px;
+}
+
+@media (min-width: 768px) {
+    .profile-more>summary {
+        display: none;
+    }
+}
+
+.hl-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.hl-text small {
+    font-size: .75rem;
+    line-height: 1.3;
+    color: #64748b;
+}
+
+.hl-text strong {
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--cm-text-dark);
+}
+
+
+/* ---------- 13. Mobile: compact profile (বাণী যেন তাড়াতাড়ি চোখে পড়ে) ---------- */
+
+@media (max-width: 575.98px) {
+    .cm-profile-card {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        column-gap: .9rem;
+        align-items: center;
+        padding: 0 .85rem;
+    }
+    .cm-profile-card::before {
+        grid-column: 1 / -1;
+        margin: 0 -.85rem .85rem;
+    }
+    .profile-img-wrapper {
+        grid-column: 1;
+        margin: 0 0 .85rem;
+        aspect-ratio: 4 / 5;
+        border-radius: 12px;
+    }
+    .profile-info {
+        grid-column: 2;
+        margin-bottom: .85rem;
+        padding: 0;
+        text-align: left;
+    }
+    .profile-info h2 {
+        font-size: 1.1rem;
+    }
+    .profile-more,
+    .cm-profile-card>.profile-highlights {
+        grid-column: 1 / -1;
+        margin: 0 -.85rem;
     }
 }

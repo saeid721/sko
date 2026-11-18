@@ -141,20 +141,20 @@
         <!-- Navigation Tabs -->
         <section class="org-tabs-section">
             <div class="container">
-                <div class="org-tabs-wrapper">
-                    <a href="#" class="org-tab active">
+                <div class="org-tabs-wrapper" role="tablist" aria-label="সাংগঠনিক কাঠামোর বিভাগসমূহ">
+                    <a href="#structure" class="org-tab active" id="tab-structure" role="tab" data-tab="structure" aria-selected="true" aria-controls="panel-structure">
                         <i class="fa-solid fa-sitemap"></i> সাংগঠনিক কাঠামো
                     </a>
-                    <a href="#" class="org-tab">
+                    <a href="#details" class="org-tab" id="tab-details" role="tab" data-tab="details" aria-selected="false" tabindex="-1" aria-controls="panel-details">
                         <i class="fa-regular fa-file-lines"></i> কাঠামোর বিবরণ
                     </a>
-                    <a href="#" class="org-tab">
+                    <a href="#policy" class="org-tab" id="tab-policy" role="tab" data-tab="policy" aria-selected="false" tabindex="-1" aria-controls="panel-policy">
                         <i class="fa-solid fa-users-gear"></i> কমিটি গঠন নীতি
                     </a>
-                    <a href="#" class="org-tab">
+                    <a href="#roles" class="org-tab" id="tab-roles" role="tab" data-tab="roles" aria-selected="false" tabindex="-1" aria-controls="panel-roles">
                         <i class="fa-regular fa-clipboard"></i> দায়িত্ব ও কার্যাবলি
                     </a>
-                    <a href="#" class="org-tab">
+                    <a href="#terms" class="org-tab" id="tab-terms" role="tab" data-tab="terms" aria-selected="false" tabindex="-1" aria-controls="panel-terms">
                         <i class="fa-regular fa-calendar-check"></i> মেয়াদ ও নিয়মাবলি
                     </a>
                 </div>
@@ -162,7 +162,7 @@
         </section>
 
         <!-- Main Structure Area -->
-        <section class="org-main-section">
+        <section class="org-main-section org-panel" id="panel-structure" data-panel="structure" role="tabpanel" aria-labelledby="tab-structure">
             <div class="container">
                 <div class="row g-4">
 
@@ -188,31 +188,30 @@
                                 <div class="chart-connector-vertical"></div>
 
                                 <!-- Level 1: Associate Orgs -->
-                                <div class="chart-level level-1 associate-orgs">
-                                    <div class="associate-connector-horizontal"></div>
-                                    <div class="org-nodes-row">
-                                        <div class="chart-node node-associate">
-                                            <div class="node-icon"><i class="fa-solid fa-book"></i></div>
+                                <div class="chart-level assoc-level">
+                                    <div class="assoc-box">
+                                        <div class="assoc-item">
+                                            <span class="assoc-ico bg-blue"><i class="fa-solid fa-book-open"></i></span>
                                             <span>বাংলাদেশ কলেজ শিক্ষক সমিতি</span>
                                         </div>
-                                        <div class="chart-node node-associate">
-                                            <div class="node-icon"><i class="fa-solid fa-book"></i></div>
+                                        <div class="assoc-item">
+                                            <span class="assoc-ico bg-green"><i class="fa-solid fa-chalkboard-user"></i></span>
                                             <span>বাংলাদেশ শিক্ষক সমিতি</span>
                                         </div>
-                                        <div class="chart-node node-associate">
-                                            <div class="node-icon"><i class="fa-solid fa-mosque"></i></div>
+                                        <div class="assoc-item">
+                                            <span class="assoc-ico bg-cyan"><i class="fa-solid fa-mosque"></i></span>
                                             <span>বাংলাদেশ মাদ্রাসা শিক্ষক সমিতি</span>
                                         </div>
-                                        <div class="chart-node node-associate">
-                                            <div class="node-icon"><i class="fa-solid fa-gear"></i></div>
+                                        <div class="assoc-item">
+                                            <span class="assoc-ico bg-indigo"><i class="fa-solid fa-gear"></i></span>
                                             <span>বাংলাদেশ কারিগরি শিক্ষক সমিতি</span>
                                         </div>
-                                        <div class="chart-node node-associate">
-                                            <div class="node-icon"><i class="fa-solid fa-users"></i></div>
+                                        <div class="assoc-item">
+                                            <span class="assoc-ico bg-pink"><i class="fa-solid fa-users"></i></span>
                                             <span>শিক্ষাগ্রহীতার কর্মচারী ঐক্য ফেডারেশন</span>
                                         </div>
-                                        <div class="chart-node node-associate node-more">
-                                            <div class="node-icon"><i class="fa-solid fa-ellipsis"></i></div>
+                                        <div class="assoc-item is-more">
+                                            <span class="assoc-ico"><i class="fa-solid fa-ellipsis"></i></span>
                                             <span>অন্যান্য সহযোগী সংগঠন</span>
                                         </div>
                                     </div>
@@ -329,49 +328,42 @@
                             </div>
                             <div class="map-content">
                                 <div class="map-image">
-                                    <!-- Using a placeholder SVG map of Bangladesh for demonstration -->
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Bangladesh_location_map.svg/400px-Bangladesh_location_map.svg.png" alt="বাংলাদেশ ম্যাপ" class="bd-map">
-                                    <!-- Custom pins for visual effect -->
-                                    <span class="map-pin" style="top: 30%; left: 40%;"></span>
-                                    <span class="map-pin" style="top: 50%; left: 55%;"></span>
-                                    <span class="map-pin" style="top: 65%; left: 30%;"></span>
-                                    <span class="map-pin" style="top: 20%; left: 70%;"></span>
-                                    <span class="map-pin" style="top: 80%; left: 60%;"></span>
+                                    <img src="assets/images/map.webp" alt="বাংলাদেশ জুড়ে SKO-এর সাংগঠনিক বিস্তৃতির মানচিত্র" class="bd-map-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
                                 </div>
                                 <ul class="map-stats-list">
                                     <li>
                                         <div class="stat-icon bg-blue"><i class="fa-solid fa-building"></i></div>
                                         <div class="stat-info">
                                             <span>বিভাগ</span>
-                                            <strong>৮ টি</strong>
+                                            <strong><span data-count="8">৮</span> টি</strong>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="stat-icon bg-cyan"><i class="fa-solid fa-city"></i></div>
                                         <div class="stat-info">
                                             <span>জেলা</span>
-                                            <strong>৬৪ টি</strong>
+                                            <strong><span data-count="64">৬৪</span> টি</strong>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="stat-icon bg-orange"><i class="fa-solid fa-house-chimney"></i></div>
                                         <div class="stat-info">
                                             <span>উপজেলা / থানা</span>
-                                            <strong>৪৯২ টি</strong>
+                                            <strong><span data-count="492">৪৯২</span> টি</strong>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="stat-icon bg-pink"><i class="fa-solid fa-people-group"></i></div>
                                         <div class="stat-info">
                                             <span>ইউনিয়ন / ওয়ার্ড</span>
-                                            <strong>৮,৫০০+ টি</strong>
+                                            <strong><span data-count="8500">৮,৫০০</span>+ টি</strong>
                                         </div>
                                     </li>
                                     <li class="total-stat">
                                         <div class="stat-icon bg-primary"><i class="fa-solid fa-users"></i></div>
                                         <div class="stat-info">
                                             <span>মোট কমিটি</span>
-                                            <strong>৮,০০০+ টি</strong>
+                                            <strong><span data-count="8000">৮,০০০</span>+ টি</strong>
                                         </div>
                                     </li>
                                 </ul>
@@ -451,6 +443,332 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+        <!-- ===== TAB 2: কাঠামোর বিবরণ ===== -->
+        <section class="org-main-section org-panel" id="panel-details" data-panel="details" role="tabpanel" aria-labelledby="tab-details" hidden>
+            <div class="container">
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h2><i class="fa-regular fa-file-lines text-primary"></i> কাঠামোর বিবরণ <span>(স্তরভিত্তিক পরিচিতি)</span></h2>
+                    </div>
+                    <div class="panel-body">
+                        <p class="panel-lead">SKO-এর সাংগঠনিক কাঠামো কেন্দ্র থেকে তৃণমূল পর্যন্ত ধাপে ধাপে বিন্যস্ত। প্রতিটি স্তরের কমিটি নিজ নিজ এলাকায় সংগঠনের কার্যক্রম পরিচালনা করে এবং ওপরের স্তরের সঙ্গে সমন্বয় রক্ষা করে।</p>
+                        <div class="info-grid">
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-blue"><i class="fa-solid fa-users"></i></span>
+                                    <h3>কেন্দ্রীয় কমিটি</h3>
+                                </div>
+                                <p>SKO-এর সর্বোচ্চ নীতি-নির্ধারণী কমিটি। সংগঠনের নীতি, কর্মসূচি ও সার্বিক সমন্বয় এখান থেকে পরিচালিত হয়।</p>
+                                <dl class="info-meta">
+                                    <div><dt>সংখ্যা</dt>
+                                        <dd>১ টি</dd>
+                                    </div>
+                                    <div><dt>ওপরের স্তর</dt>
+                                        <dd>সর্বোচ্চ স্তর</dd>
+                                    </div>
+                                </dl>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-indigo"><i class="fa-solid fa-handshake"></i></span>
+                                    <h3>সহযোগী সংগঠন</h3>
+                                </div>
+                                <p>বিভিন্ন শিক্ষক ও কর্মচারী সংগঠন, যারা SKO-এর সঙ্গে ঐক্যবদ্ধ হয়ে যৌথভাবে কাজ করে।</p>
+                                <dl class="info-meta">
+                                    <div><dt>সংখ্যা</dt>
+                                        <dd>৫টি ও অন্যান্য</dd>
+                                    </div>
+                                    <div><dt>ওপরের স্তর</dt>
+                                        <dd>কেন্দ্রীয় কমিটি</dd>
+                                    </div>
+                                </dl>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-green"><i class="fa-solid fa-building"></i></span>
+                                    <h3>বিভাগীয় কমিটি</h3>
+                                </div>
+                                <p>বিভাগ পর্যায়ে সাংগঠনিক কার্যক্রম পরিচালনা এবং জেলা কমিটিগুলোর মধ্যে সমন্বয়।</p>
+                                <dl class="info-meta">
+                                    <div><dt>সংখ্যা</dt>
+                                        <dd>৮ টি</dd>
+                                    </div>
+                                    <div><dt>ওপরের স্তর</dt>
+                                        <dd>কেন্দ্রীয় কমিটি</dd>
+                                    </div>
+                                </dl>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-cyan"><i class="fa-solid fa-city"></i></span>
+                                    <h3>জেলা কমিটি</h3>
+                                </div>
+                                <p>জেলা পর্যায়ে সদস্য ও কার্যক্রম সমন্বয় এবং উপজেলা/থানা কমিটিগুলোর তত্ত্বাবধান।</p>
+                                <dl class="info-meta">
+                                    <div><dt>সংখ্যা</dt>
+                                        <dd>৬৪ টি</dd>
+                                    </div>
+                                    <div><dt>ওপরের স্তর</dt>
+                                        <dd>বিভাগীয় কমিটি</dd>
+                                    </div>
+                                </dl>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-orange"><i class="fa-solid fa-house-chimney"></i></span>
+                                    <h3>উপজেলা / থানা কমিটি</h3>
+                                </div>
+                                <p>উপজেলা বা থানা পর্যায়ে সংগঠন পরিচালনা এবং ইউনিয়ন/ওয়ার্ড কমিটির সঙ্গে সংযোগ রক্ষা।</p>
+                                <dl class="info-meta">
+                                    <div><dt>সংখ্যা</dt>
+                                        <dd>৪৯২ টি</dd>
+                                    </div>
+                                    <div><dt>ওপরের স্তর</dt>
+                                        <dd>জেলা কমিটি</dd>
+                                    </div>
+                                </dl>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-pink"><i class="fa-solid fa-people-group"></i></span>
+                                    <h3>ইউনিয়ন / ওয়ার্ড কমিটি</h3>
+                                </div>
+                                <p>তৃণমূল পর্যায়ে সদস্যদের সঙ্গে সরাসরি সংযোগ ও সেবা প্রদানের মূল স্তর।</p>
+                                <dl class="info-meta">
+                                    <div><dt>সংখ্যা</dt>
+                                        <dd>৮,৫০০+ টি</dd>
+                                    </div>
+                                    <div><dt>ওপরের স্তর</dt>
+                                        <dd>উপজেলা / থানা কমিটি</dd>
+                                    </div>
+                                </dl>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB 3: কমিটি গঠন নীতি ===== -->
+        <section class="org-main-section org-panel" id="panel-policy" data-panel="policy" role="tabpanel" aria-labelledby="tab-policy" hidden>
+            <div class="container">
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h2><i class="fa-solid fa-users-gear text-primary"></i> কমিটি গঠন নীতি <span>(গঠন প্রক্রিয়া ও মূলনীতি)</span></h2>
+                    </div>
+                    <div class="panel-body">
+                        <p class="panel-lead">যেকোনো স্তরের কমিটি গঠিত হয় গঠনতন্ত্র অনুযায়ী, গণতান্ত্রিক প্রক্রিয়ায় এবং ওপরের স্তরের অনুমোদনক্রমে।</p>
+                        <div class="panel-split">
+                            <ol class="step-list">
+                                <li>
+                                    <span class="step-no">১</span>
+                                    <div>
+                                        <h3>সদস্য সংগ্রহ ও যাচাই</h3>
+                                        <p>সংশ্লিষ্ট এলাকার যোগ্য শিক্ষক-কর্মচারীদের সদস্য হিসেবে নিবন্ধন ও যাচাই সম্পন্ন করা হয়।</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="step-no">২</span>
+                                    <div>
+                                        <h3>আহ্বায়ক কমিটি গঠন</h3>
+                                        <p>ওপরের স্তরের কমিটি সাময়িকভাবে আহ্বায়ক কমিটি গঠন করে দেয়।</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="step-no">৩</span>
+                                    <div>
+                                        <h3>সম্মেলন / কাউন্সিল</h3>
+                                        <p>সদস্যদের অংশগ্রহণে গণতান্ত্রিক পদ্ধতিতে পূর্ণাঙ্গ কমিটি চূড়ান্ত করা হয়।</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="step-no">৪</span>
+                                    <div>
+                                        <h3>অনুমোদন</h3>
+                                        <p>কমিটির সদস্য-তালিকা ও কাগজপত্র ওপরের স্তরের কমিটির কাছে জমা দিয়ে অনুমোদন নেওয়া হয়।</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="step-no">৫</span>
+                                    <div>
+                                        <h3>ঘোষণা ও প্রকাশ</h3>
+                                        <p>অনুমোদিত কমিটি আনুষ্ঠানিকভাবে ঘোষিত হয় এবং কমিটির তালিকায় প্রকাশ পায়।</p>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="principle-box">
+                                <h3 class="box-title"><i class="fa-solid fa-scale-balanced"></i> গঠনের মূলনীতি</h3>
+                                <ul class="principle-list">
+                                    <li><span class="info-ico bg-blue"><i class="fa-solid fa-check-to-slot"></i></span>
+                                        <div><strong>গণতান্ত্রিক প্রক্রিয়া</strong><span>সদস্যদের মতামতের ভিত্তিতে নেতৃত্ব নির্বাচন।</span></div>
+                                    </li>
+                                    <li><span class="info-ico bg-green"><i class="fa-solid fa-diagram-successor"></i></span>
+                                        <div><strong>ক্রমোচ্চ অনুমোদন</strong><span>নিচের স্তরের কমিটি ওপরের স্তরের অনুমোদনে কার্যকর হয়।</span></div>
+                                    </li>
+                                    <li><span class="info-ico bg-indigo"><i class="fa-solid fa-people-arrows"></i></span>
+                                        <div><strong>প্রতিনিধিত্ব</strong><span>সংশ্লিষ্ট সহযোগী সংগঠনগুলোর অংশগ্রহণ নিশ্চিত করা।</span></div>
+                                    </li>
+                                    <li><span class="info-ico bg-orange"><i class="fa-solid fa-folder-open"></i></span>
+                                        <div><strong>স্বচ্ছতা ও রেকর্ড</strong><span>কমিটি গঠনের সকল তথ্য সংরক্ষণ ও প্রকাশ।</span></div>
+                                    </li>
+                                </ul>
+                                <a href="committee-directory.html" class="box-link">অনুমোদিত কমিটির তালিকা দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB 4: দায়িত্ব ও কার্যাবলি ===== -->
+        <section class="org-main-section org-panel" id="panel-roles" data-panel="roles" role="tabpanel" aria-labelledby="tab-roles" hidden>
+            <div class="container">
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h2><i class="fa-regular fa-clipboard text-primary"></i> দায়িত্ব ও কার্যাবলি <span>(পদভিত্তিক দায়িত্ব)</span></h2>
+                    </div>
+                    <div class="panel-body">
+                        <p class="panel-lead">প্রতিটি কমিটিতে সাধারণত নিচের পদগুলো থাকে। পদ অনুযায়ী মূল দায়িত্বগুলো সংক্ষেপে দেওয়া হলো।</p>
+                        <div class="info-grid">
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-blue"><i class="fa-solid fa-user-tie"></i></span>
+                                    <h3>সভাপতি</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>কমিটির সভায় সভাপতিত্ব ও সার্বিক নেতৃত্ব প্রদান</li>
+                                    <li>সিদ্ধান্ত বাস্তবায়নে দিকনির্দেশনা দেওয়া</li>
+                                    <li>ওপরের স্তরের কমিটির সঙ্গে সমন্বয় রক্ষা</li>
+                                </ul>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-indigo"><i class="fa-solid fa-file-signature"></i></span>
+                                    <h3>সাধারণ সম্পাদক</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>দৈনন্দিন সাংগঠনিক কার্যক্রম পরিচালনা</li>
+                                    <li>সভা আহ্বান ও কার্যবিবরণী সংরক্ষণ</li>
+                                    <li>প্রতিবেদন প্রস্তুত ও যোগাযোগ রক্ষা</li>
+                                </ul>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-green"><i class="fa-solid fa-user-group"></i></span>
+                                    <h3>সহ-সভাপতি</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>সভাপতির অনুপস্থিতিতে দায়িত্ব পালন</li>
+                                    <li>নির্ধারিত কর্মসূচির তত্ত্বাবধান</li>
+                                    <li>সদস্যদের সঙ্গে সংযোগ রক্ষায় সহায়তা</li>
+                                </ul>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-cyan"><i class="fa-solid fa-user-pen"></i></span>
+                                    <h3>যুগ্ম সাধারণ সম্পাদক</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>সাধারণ সম্পাদককে কাজে সহায়তা</li>
+                                    <li>নথিপত্র ও যোগাযোগে সহযোগিতা</li>
+                                    <li>প্রয়োজনে সাধারণ সম্পাদকের দায়িত্ব পালন</li>
+                                </ul>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-orange"><i class="fa-solid fa-sitemap"></i></span>
+                                    <h3>সাংগঠনিক সম্পাদক</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>নতুন সদস্য সংগ্রহ ও কমিটি সম্প্রসারণ</li>
+                                    <li>নিচের স্তরের কমিটির সঙ্গে সমন্বয়</li>
+                                    <li>সাংগঠনিক কর্মসূচির পরিকল্পনা</li>
+                                </ul>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-pink"><i class="fa-solid fa-wallet"></i></span>
+                                    <h3>কোষাধ্যক্ষ</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>তহবিল ও হিসাব সংরক্ষণ</li>
+                                    <li>আয়-ব্যয়ের স্বচ্ছ রেকর্ড রাখা</li>
+                                    <li>নিয়মিত হিসাব-প্রতিবেদন উপস্থাপন</li>
+                                </ul>
+                            </article>
+                            <article class="info-card">
+                                <div class="info-head"><span class="info-ico bg-primary"><i class="fa-solid fa-users-gear"></i></span>
+                                    <h3>নির্বাহী সদস্য</h3>
+                                </div>
+                                <ul class="duty-list">
+                                    <li>সভায় অংশগ্রহণ ও মতামত প্রদান</li>
+                                    <li>অর্পিত দায়িত্ব যথাযথভাবে পালন</li>
+                                    <li>কর্মসূচি বাস্তবায়নে সহযোগিতা</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB 5: মেয়াদ ও নিয়মাবলি ===== -->
+        <section class="org-main-section org-panel" id="panel-terms" data-panel="terms" role="tabpanel" aria-labelledby="tab-terms" hidden>
+            <div class="container">
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h2><i class="fa-regular fa-calendar-check text-primary"></i> মেয়াদ ও নিয়মাবলি <span>(কমিটির জীবনচক্র)</span></h2>
+                    </div>
+                    <div class="panel-body">
+                        <p class="panel-lead">প্রতিটি কমিটি গঠনতন্ত্রে নির্ধারিত মেয়াদে দায়িত্ব পালন করে। মেয়াদ শেষে নতুন কমিটি গঠিত হয় এবং পুরোনো কমিটি সাবেক তালিকায় যুক্ত হয়।</p>
+
+                        <div class="life-track">
+                            <div class="life-step">
+                                <span class="info-ico bg-blue"><i class="fa-solid fa-flag"></i></span>
+                                <strong>গঠন ও অনুমোদন</strong>
+                                <span>নতুন কমিটির যাত্রা শুরু</span>
+                            </div>
+                            <div class="life-step">
+                                <span class="info-ico bg-green"><i class="fa-solid fa-play"></i></span>
+                                <strong>কার্যকর মেয়াদ</strong>
+                                <span>দায়িত্ব পালন ও কর্মসূচি</span>
+                            </div>
+                            <div class="life-step">
+                                <span class="info-ico bg-orange"><i class="fa-solid fa-hourglass-end"></i></span>
+                                <strong>মেয়াদ পূর্তি</strong>
+                                <span>সম্মেলনের প্রস্তুতি</span>
+                            </div>
+                            <div class="life-step">
+                                <span class="info-ico bg-indigo"><i class="fa-solid fa-rotate"></i></span>
+                                <strong>নতুন কমিটি</strong>
+                                <span>পুরোনো কমিটি সাবেক তালিকায়</span>
+                            </div>
+                        </div>
+
+                        <div class="rule-grid">
+                            <div class="rule-item">
+                                <span class="info-ico bg-blue"><i class="fa-solid fa-clock"></i></span>
+                                <div><strong>নির্ধারিত মেয়াদ</strong><span>কমিটি গঠনতন্ত্রে নির্ধারিত সময়কাল পর্যন্ত দায়িত্ব পালন করবে।</span></div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="info-ico bg-green"><i class="fa-solid fa-calendar-plus"></i></span>
+                                <div><strong>সময়মতো সম্মেলন</strong><span>মেয়াদ শেষ হওয়ার আগেই নতুন কমিটি গঠনের উদ্যোগ নিতে হবে।</span></div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="info-ico bg-cyan"><i class="fa-solid fa-people-line"></i></span>
+                                <div><strong>নিয়মিত সভা</strong><span>কমিটি নিয়মিত সভা করবে এবং কার্যবিবরণী সংরক্ষণ করবে।</span></div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="info-ico bg-orange"><i class="fa-solid fa-user-minus"></i></span>
+                                <div><strong>পদত্যাগ ও শূন্যপদ</strong><span>শূন্যপদ ওপরের স্তরের অনুমোদনক্রমে পূরণ করা হবে।</span></div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="info-ico bg-pink"><i class="fa-solid fa-file-invoice"></i></span>
+                                <div><strong>হিসাব ও প্রতিবেদন</strong><span>আয়-ব্যয় ও কার্যক্রমের প্রতিবেদন নিয়মিত ওপরের স্তরে জমা দিতে হবে।</span></div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="info-ico bg-indigo"><i class="fa-solid fa-gavel"></i></span>
+                                <div><strong>শৃঙ্খলা</strong><span>গঠনতন্ত্র বা সংগঠনের নীতি লঙ্ঘনে নিয়ম অনুযায়ী ব্যবস্থা নেওয়া হবে।</span></div>
+                            </div>
+                        </div>
+
+                        <div class="panel-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <p>মেয়াদ ও নিয়মের চূড়ান্ত বিধান জানতে <a href="constitution.html">গঠনতন্ত্র</a> দেখুন। মেয়াদ শেষ হওয়া কমিটির তথ্য পাবেন <a href="former-committees.html">সাবেক ও মেয়াদোত্তীর্ণ কমিটি</a> পাতায়।</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

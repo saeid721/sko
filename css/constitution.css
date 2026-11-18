@@ -624,3 +624,546 @@
         font-size: 1.1rem;
     }
 }
+
+
+/* ==========================================================================
+   PREMIUM UI UPGRADE  (keep at the END of the file)
+   ========================================================================== */
+
+.cn-viewer-card [hidden] {
+    display: none !important;
+}
+
+
+/* --- Table of contents --- */
+
+.sidebar-header {
+    background: linear-gradient(135deg, #003399, #1d4ed8);
+}
+
+.toc-list a {
+    border-left: 3px solid transparent;
+}
+
+.toc-list a.active {
+    border-left-color: var(--cn-primary);
+}
+
+.toc-list a:focus-visible {
+    outline: 3px solid rgba(0, 51, 153, 0.3);
+    outline-offset: -3px;
+}
+
+.toc-no {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--cn-primary-light);
+    color: var(--cn-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.toc-list a.active .toc-no {
+    background: var(--cn-primary);
+    color: #fff;
+}
+
+
+/* --- Viewer card --- */
+
+.cn-viewer-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    scroll-margin-top: 90px;
+}
+
+.viewer-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    background: linear-gradient(180deg, #fff, #f8fafc);
+}
+
+.viewer-header h3 {
+    color: var(--cn-primary);
+}
+
+.ctrl-btn:focus-visible,
+.vs-btn:focus-visible,
+.nav-btn:focus-visible {
+    outline: 3px solid rgba(0, 51, 153, 0.3);
+    outline-offset: 2px;
+}
+
+.viewer-switch {
+    display: flex;
+    gap: 0.35rem;
+    margin: 1rem 1.5rem 0;
+    padding: 0.35rem;
+    background: #f1f5f9;
+    border-radius: 12px;
+}
+
+.vs-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vs-btn:hover {
+    color: var(--cn-primary);
+}
+
+.vs-btn.active {
+    background: #fff;
+    color: var(--cn-primary);
+    box-shadow: 0 4px 10px -4px rgba(15, 23, 42, 0.25);
+}
+
+.viewer-progress {
+    height: 3px;
+    margin: 1rem 1.5rem 0;
+    background: var(--cn-border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.viewer-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #16a34a, #003399);
+    transition: width 0.4s ease;
+}
+
+.cn-viewer-card[data-mode="pdf"] .font-ctrl,
+.cn-viewer-card[data-mode="pdf"] .viewer-progress {
+    display: none;
+}
+
+
+/* --- Reading pane --- */
+
+.read-pane {
+    flex: 1;
+    min-height: 420px;
+    padding: 1.25rem 1.5rem 1rem;
+    font-size: calc(1rem * var(--read-scale, 1));
+}
+
+.ch-head {
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #eff6ff, #fff);
+    border: 1px solid #dbe7fb;
+    border-radius: 14px;
+}
+
+.ch-badge {
+    display: inline-flex;
+    margin-bottom: 0.7rem;
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #003399, #1d4ed8);
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: 600;
+}
+
+.ch-head h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.35em;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--cn-primary);
+}
+
+.ch-ico {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 10px -4px rgba(0, 51, 153, 0.35);
+    font-size: 1.05rem;
+}
+
+.ch-summary {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.8;
+    color: #475569;
+}
+
+.clause-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.clause {
+    display: flex;
+    gap: 0.9rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    animation: clauseIn 0.4s ease backwards;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+}
+
+.clause:hover {
+    border-color: #c7d7f5;
+    box-shadow: 0 12px 24px -16px rgba(0, 51, 153, 0.35);
+}
+
+.clause-no {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--cn-primary-light);
+    color: var(--cn-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.clause h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--cn-text-dark);
+}
+
+.clause p {
+    margin: 0;
+    font-size: 0.92em;
+    line-height: 1.8;
+    color: #475569;
+}
+
+@keyframes clauseIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* --- Footer navigation --- */
+
+.viewer-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.9rem 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid var(--cn-border);
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    max-width: 40%;
+    padding: 0.55rem 0.9rem;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: 10px;
+    color: var(--cn-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn.next {
+    justify-content: flex-end;
+    text-align: right;
+    background: var(--cn-primary);
+    border-color: var(--cn-primary);
+    color: #fff;
+}
+
+.nav-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px -10px rgba(0, 51, 153, 0.6);
+}
+
+.nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.nb-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.25;
+}
+
+.nb-text small {
+    font-size: 0.72rem;
+    opacity: 0.75;
+}
+
+.nb-text b {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.nav-count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+
+/* --- PDF pane --- */
+
+.pdf-pane {
+    flex: 1;
+    background: #e2e8f0;
+}
+
+.pdf-object {
+    display: block;
+    width: 100%;
+    height: 72vh;
+    min-height: 460px;
+    border: 0;
+}
+
+.pdf-fallback {
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+}
+
+.pdf-fallback>i {
+    font-size: 2.5rem;
+    color: #dc2626;
+}
+
+.pdf-fallback h4 {
+    margin: 0.75rem 0 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cn-text-dark);
+}
+
+.pdf-fallback p {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.pdf-fallback .btn-action-primary {
+    display: inline-flex;
+    padding: 0.6rem 1.25rem;
+}
+
+.pdf-help {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.7rem 1.25rem;
+    background: #fff;
+    border-top: 1px solid var(--cn-border);
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.pdf-help a {
+    font-weight: 700;
+    color: var(--cn-primary);
+    text-decoration: none;
+}
+
+
+/* --- Expanded (full screen) mode --- */
+
+body.cn-lock {
+    overflow: hidden;
+}
+
+.cn-viewer-card.is-expanded {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    overflow-y: auto;
+}
+
+.cn-viewer-card.is-expanded .read-pane {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cn-viewer-card.is-expanded .pdf-object {
+    height: calc(100vh - 230px);
+}
+
+
+/* --- Toast --- */
+
+.cn-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 96px;
+    z-index: 3000;
+    padding: 0.65rem 1.1rem;
+    background: #0f172a;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 16px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.cn-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+
+/* --- Responsive --- */
+
+@media (max-width: 991.98px) {
+    /* TOC becomes a horizontal chip strip */
+    .cn-sidebar-card {
+        position: static;
+        margin-bottom: 0;
+    }
+    .sidebar-header {
+        padding: 0.85rem 1.1rem;
+        font-size: 1rem;
+    }
+    .toc-list {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        max-height: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+    }
+    .toc-list::-webkit-scrollbar {
+        display: none;
+    }
+    .toc-list li {
+        flex: 0 0 auto;
+        border: 0;
+        scroll-snap-align: center;
+    }
+    .toc-list a {
+        padding: 0.5rem 0.85rem;
+        border: 1px solid var(--cn-border);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+    .toc-list a.active {
+        background: var(--cn-primary);
+        border-color: var(--cn-primary);
+        color: #fff;
+    }
+    .toc-list a.active .toc-no {
+        background: #fff;
+        color: var(--cn-primary);
+    }
+    .toc-list a .arrow,
+    .sidebar-footer {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .viewer-switch {
+        margin: 0.9rem 1rem 0;
+    }
+    .vs-btn {
+        font-size: 0.85rem;
+        padding: 0.55rem 0.5rem;
+    }
+    .viewer-progress {
+        margin: 0.9rem 1rem 0;
+    }
+    .read-pane {
+        min-height: 360px;
+        padding: 1rem;
+    }
+    .ch-head {
+        padding: 1rem;
+    }
+    .ch-head h2 {
+        font-size: 1.15em;
+    }
+    .clause {
+        padding: 0.85rem;
+        gap: 0.7rem;
+    }
+    .viewer-footer {
+        padding: 0.8rem 1rem;
+    }
+    .nav-btn {
+        max-width: none;
+        padding: 0.55rem 0.8rem;
+    }
+    .nb-text b {
+        display: none;
+    }
+    .pdf-object {
+        height: 65vh;
+        min-height: 400px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cn-page * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

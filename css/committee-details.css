@@ -696,129 +696,640 @@
 }
 
 
-/* --- Responsive Adjustments --- */
+/* ==========================================================================
+   PREMIUM UPGRADE: bug fixes + new components + responsive
+   ========================================================================== */
+
+
+/* ---------- 1. Bug fixes ---------- */
+
+.cd-side-card,
+.cd-table-card {
+    height: auto;
+}
+
+.cd-table-card {
+    scroll-margin-top: 90px;
+}
+
+.table-pagination[hidden] {
+    display: none;
+}
+
+
+/* Bootstrap এর .bg-info / .bg-success ওভাররাইড ঠেকানো */
+
+.badge-role.bg-info {
+    background: #e0f2fe !important;
+    color: #0369a1 !important;
+}
+
+.badge-role.bg-success {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+
+/* ---------- 2. Buttons ---------- */
+
+.cd-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .55rem 1.1rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--cd-primary);
+    background: #fff;
+    color: var(--cd-primary);
+    font-weight: 600;
+    font-size: .88rem;
+    line-height: 1.3;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s, color .2s, box-shadow .2s, transform .2s;
+}
+
+.cd-btn:hover {
+    background: var(--cd-primary-light);
+    color: var(--cd-primary);
+}
+
+.cd-btn:active {
+    transform: scale(.97);
+}
+
+.cd-btn.is-solid {
+    background: var(--cd-primary);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(0, 51, 153, .22);
+}
+
+.cd-btn.is-solid:hover {
+    background: #002673;
+    color: #fff;
+}
+
+.cd-btn:focus-visible,
+.btn-view:focus-visible,
+.pagination-custom a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, .35);
+    outline-offset: 2px;
+}
+
+
+/* ---------- 3. Header card ---------- */
+
+.cd-header-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.4rem 1.5rem;
+    gap: 1.25rem;
+}
+
+.cd-header-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cd-primary), #2563eb 55%, #16a34a);
+}
+
+.cd-logo-box {
+    width: 84px;
+    height: 84px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.cd-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cd-title-group h2 {
+    font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+    line-height: 1.35;
+}
+
+.cd-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6rem;
+}
+
+
+/* ---------- 4. শীর্ষ নেতৃত্ব ---------- */
+
+.cd-leader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    height: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #eff6ff, #fff 62%);
+    border: 1px solid var(--cd-border);
+    border-radius: 16px;
+    box-shadow: var(--cd-shadow);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cd-leader.is-green {
+    background: linear-gradient(135deg, #f0fdf4, #fff 62%);
+}
+
+.cd-leader::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 46%;
+    height: 4px;
+    border-radius: 0 4px 0 0;
+    background: var(--cd-primary);
+}
+
+.cd-leader.is-green::after {
+    background: #16a34a;
+}
+
+.cd-leader:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--cd-shadow-lg);
+}
+
+.cd-leader-photo {
+    flex: 0 0 112px;
+    aspect-ratio: 4 / 5;
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #dbeafe;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, .14);
+}
+
+.cd-leader-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.cd-leader-info {
+    min-width: 0;
+}
+
+.cd-leader-badge {
+    display: inline-block;
+    padding: .2rem .75rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.cd-leader-info h4 {
+    margin: 0 0 .25rem;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--cd-text-dark);
+}
+
+.cd-leader-info p {
+    margin: 0;
+    font-size: .85rem;
+    color: #64748b;
+}
+
+
+/* ---------- 5. Table card ---------- */
+
+.table-card-header {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.table-filters {
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.table-filters .search-box {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.search-box input {
+    min-width: 0;
+    padding-block: .6rem;
+    border-radius: 10px;
+}
+
+.search-box input:focus,
+.filter-select:focus {
+    box-shadow: 0 0 0 3px rgba(0, 51, 153, .12);
+}
+
+.table-filters .filter-select {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 160px;
+    padding-block: .6rem;
+    border-radius: 10px;
+}
+
+.cd-table tbody tr {
+    transition: background .2s;
+}
+
+.cd-table tbody tr.is-hidden {
+    display: none !important;
+}
+
+.cd-table tbody td:nth-child(1) {
+    width: 64px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.badge-role {
+    padding: .3rem .75rem;
+    border-radius: 999px;
+}
+
+.btn-view {
+    border: 0;
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .cd-table {
+        min-width: 680px;
+    }
+}
+
+
+/* ---------- 6. Pagination ---------- */
+
+.pagination-custom {
+    justify-content: center;
+}
+
+.pagination-custom li.disabled a {
+    opacity: .4;
+    pointer-events: none;
+}
+
+.pagination-custom li a {
+    width: 34px;
+    height: 34px;
+}
+
+
+/* ---------- 7. Documents (পুরো সারি ক্লিকযোগ্য) ---------- */
+
+.doc-list li {
+    position: relative;
+}
+
+.doc-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+
+/* ---------- 8. Empty state ---------- */
+
+.cd-empty {
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+.cd-empty-ico {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--cd-primary-light);
+    color: var(--cd-primary);
+    font-size: 1.5rem;
+}
+
+.cd-empty h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cd-text-dark);
+    margin-bottom: .35rem;
+}
+
+.cd-empty p {
+    color: #64748b;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+
+
+/* ---------- 9. Member modal ---------- */
+
+.cd-modal .modal-content {
+    border: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: 'Hind Siliguri', sans-serif;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .3);
+}
+
+.cd-modal-head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    background: linear-gradient(135deg, #003399, #1d4ed8);
+    color: #fff;
+}
+
+.cd-modal-avatar {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .18);
+    border: 2px solid rgba(255, 255, 255, .5);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cd-modal-head h5 {
+    margin: 0 0 .35rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.cd-modal-role {
+    display: inline-block;
+    padding: .15rem .75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .18);
+    font-size: .8rem;
+}
+
+.cd-modal-close {
+    position: absolute;
+    top: .9rem;
+    right: .9rem;
+}
+
+.cd-modal-list {
+    list-style: none;
+    margin: 0;
+    padding: .5rem 1.25rem;
+}
+
+.cd-modal-list li {
+    display: flex;
+    gap: .9rem;
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--cd-border);
+}
+
+.cd-modal-list li:last-child {
+    border-bottom: 0;
+}
+
+.cd-modal-list li>i {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--cd-primary-light);
+    color: var(--cd-primary);
+}
+
+.cd-modal-list small {
+    display: block;
+    font-size: .78rem;
+    color: #64748b;
+}
+
+.cd-modal-list strong {
+    font-size: .95rem;
+    color: var(--cd-text-dark);
+    font-weight: 600;
+}
+
+.cd-modal-foot {
+    display: flex;
+    gap: .75rem;
+    padding: .5rem 1.25rem 1.25rem;
+}
+
+.cd-modal-foot .cd-btn {
+    flex: 1;
+}
+
+
+/* ---------- 10. Scroll reveal (JS ছাড়া হলে কনটেন্ট লুকাবে না) ---------- */
+
+.cd-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .5s ease, transform .5s ease, box-shadow .25s ease;
+}
+
+.cd-reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cd-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .cd-leader,
+    .cd-btn {
+        transition: none;
+    }
+}
+
+
+/* ---------- 11. Responsive ---------- */
 
 @media (max-width: 991.98px) {
-    .cd-hero {
-        padding: 2rem 0;
-    }
-    .cd-hero .hero-title {
-        font-size: 1.8rem;
-    }
-    .cd-hero .hero-title span {
-        font-size: 1rem;
-    }
-    .cd-meta-strip {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .cd-meta-item:nth-child(even) {
-        border-right: none;
-    }
     .cd-meta-item:nth-last-child(-n+2) {
         border-bottom: none;
-    }
-    .table-filters {
-        width: 100%;
-    }
-    .search-box input {
-        min-width: 100%;
-    }
-    .filter-select {
-        width: 100%;
     }
 }
 
 @media (max-width: 575.98px) {
-    .cd-hero .hero-title {
-        font-size: 1.5rem;
+    .cd-main {
+        margin-top: -1.5rem;
     }
     .cd-header-card {
-        padding: 1rem;
+        padding: 1.1rem 1rem;
     }
     .cd-header-left {
         flex-direction: column;
         text-align: center;
-        gap: 0.75rem;
+        gap: .75rem;
     }
-    .cd-title-group h2 {
-        font-size: 1.25rem;
+    .cd-status {
+        width: 100%;
+        justify-content: center;
     }
-    .cd-title-group p {
-        font-size: 0.9rem;
+    .cd-status .badge-approved {
+        flex: 1 0 100%;
+        justify-content: center;
     }
-    .cd-meta-strip {
-        grid-template-columns: 1fr;
+    .cd-status .cd-btn {
+        flex: 1 1 calc(50% - .6rem);
     }
     .cd-meta-item {
         border-right: none;
     }
+    .cd-meta-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--cd-border);
+    }
     .cd-meta-item:last-child {
         border-bottom: none;
     }
-    .leader-card {
-        flex-direction: column;
-        text-align: center;
+    .cd-leader {
+        padding: .85rem;
+        gap: .85rem;
+    }
+    .cd-leader-photo {
+        flex-basis: 88px;
+    }
+    .table-card-header {
         padding: 1rem;
     }
-    .leader-img-wrapper {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
+    .table-filters {
+        flex-direction: column;
     }
-    .leader-info {
-        align-items: center;
+    .table-filters .filter-select {
+        width: 100%;
+    }
+    /* টেবিল → কার্ড */
+    .cd-table,
+    .cd-table tbody {
+        display: block;
     }
     .cd-table thead {
         display: none;
     }
     .cd-table tbody tr {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
+        display: grid;
+        grid-template-columns: 34px 1fr auto;
+        column-gap: .85rem;
+        row-gap: .2rem;
+        align-items: center;
+        padding: .9rem 1rem;
         border-bottom: 1px solid var(--cd-border);
     }
+    .cd-table tbody tr:last-child {
+        border-bottom: 0;
+    }
     .cd-table tbody td {
-        padding: 0.25rem 0;
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: right;
-    }
-    .cd-table tbody td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: var(--cd-text-dark);
+        display: block;
+        padding: 0;
+        border: 0;
         text-align: left;
-        margin-right: 1rem;
     }
-    /* Specific data-label injections for mobile view */
-    .cd-table tbody td:nth-child(1)::before {
-        content: "ক্রমিক";
+    .cd-table tbody td:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1 / span 4;
+        align-self: start;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--cd-primary-light);
+        color: var(--cd-primary);
+        font-size: .78rem;
+        font-weight: 700;
     }
-    .cd-table tbody td:nth-child(2)::before {
-        content: "নাম";
+    .cd-table tbody td:nth-child(2) {
+        grid-column: 2;
+        font-size: .95rem;
     }
-    .cd-table tbody td:nth-child(3)::before {
-        content: "পদবি";
+    .cd-table tbody td:nth-child(3) {
+        grid-column: 2;
     }
-    .cd-table tbody td:nth-child(4)::before {
-        content: "প্রতিষ্ঠান";
+    .cd-table tbody td:nth-child(4) {
+        grid-column: 2;
+        color: #64748b;
+        font-size: .8rem;
     }
-    .cd-table tbody td:nth-child(5)::before {
-        content: "মোবাইল";
-    }
-    .cd-table tbody td:nth-child(6)::before {
-        content: "বিস্তারিত";
+    .cd-table tbody td:nth-child(5) {
+        grid-column: 2;
+        font-size: .8rem;
     }
     .cd-table tbody td:nth-child(6) {
-        justify-content: flex-end;
-        margin-top: 0.5rem;
+        grid-column: 3;
+        grid-row: 1 / span 4;
+        align-self: center;
     }
-    .pagination-custom li a,
-    .pagination-custom li span {
-        width: 28px;
-        height: 28px;
-        font-size: 0.75rem;
+    .btn-view {
+        width: 40px;
+        height: 40px;
+    }
+    .table-pagination {
+        padding: 1rem;
+        text-align: center;
+    }
+    /* Modal → নিচ থেকে ওঠা bottom sheet */
+    .cd-modal .modal-dialog {
+        margin: 0;
+        max-width: none;
+        min-height: 100%;
+        align-items: flex-end;
+    }
+    .cd-modal .modal-content {
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+
+/* ---------- 12. Print ---------- */
+
+@media print {
+    .topbar,
+    .site-header,
+    .about-hero,
+    .bottom-nav,
+    .back-to-top,
+    .site-footer,
+    .cd-status .cd-btn,
+    .table-filters,
+    .table-pagination,
+    .btn-view {
+        display: none !important;
+    }
+    .cd-table tbody tr.is-hidden {
+        display: table-row !important;
+    }
+    .cd-main {
+        margin-top: 0;
+    }
+    .cd-reveal {
+        opacity: 1;
+        transform: none;
     }
 }
