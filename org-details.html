@@ -73,7 +73,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- NEW BCTA CSS -->
-    <link rel="stylesheet" href="css/bcta.css">
+    <link rel="stylesheet" href="css/associate-orgs.css">
 
 </head>
 
@@ -85,8 +85,6 @@
                 <a href="tel:+8801700000000"><i class="fa-solid fa-phone"></i> +880 1700-000000</a>
             </div>
             <div class="top-links d-flex align-items-center flex-wrap gap-3">
-                <!-- <a href="verify-member.html"><i class="fa-solid fa-user-magnifying-glass"></i> সদস্য যাচাই</a>
-                <a href="verify-qr.html"><i class="fa-solid fa-qrcode"></i> QR যাচাই</a> -->
                 <span class="language notranslate" translate="no" role="group" aria-label="Language">
           <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
           <button type="button" class="lang-btn active" data-lang="bn" aria-pressed="true">বাংলা</button>
@@ -130,7 +128,7 @@
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সাংগঠন</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="leadership.html">কেন্দ্রীয় নেতৃত্ব</a></li>
+                                <li><a class="dropdown-item" href="leadership.html">কেন্দ্রীয় নেতৃত্ব</a></li>
                                 <li><a class="dropdown-item" href="org-structure.html">সংগঠনের বিস্তারিত</a></li>
                                 <li><a class="dropdown-item" href="committee-directory.html">অনুমোদিত কমিটির তালিকা</a></li>
                                 <li><a class="dropdown-item" href="former-committees.html">সাবেক ও মেয়াদোত্তীর্ণ কমিটি</a></li>
@@ -202,7 +200,7 @@
                         <!-- Logo -->
                         <div class="col-lg-2 text-center">
                             <div class="org-logo-box">
-                                <img src="https://via.placeholder.com/120x120?text=BCTA" alt="BCTA Logo">
+                                <img src="assets/images/bcta-logo.png" alt="BCTA Logo" onerror="this.style.display='none'">
                             </div>
                         </div>
 
@@ -227,7 +225,7 @@
                                 <h5><i class="fa-solid fa-circle-info"></i> সংক্ষিপ্ত পরিচিতি</h5>
                                 <p>বাংলাদেশ কলেজ শিক্ষক সমিতি (BCTA) দেশের সরকারি ও বেসরকারি কলেজে কর্মরত শিক্ষকদের একটি কেন্দ্রীয়, গঠনতান্ত্রিক ও পেশাগত সংগঠন। শিক্ষকদের স্বার্থ সংরক্ষণ, পেশাগত উন্নয়ন, শিক্ষা-গবেষণা ও মানসম্মত উচ্চশিক্ষা প্রসারে BCTA
                                     দীর্ঘদিন ধরে কাজ করে আসছে।</p>
-                                <a href="#" class="btn-outline-blue mt-2">বিস্তারিত ইতিহাস দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="about.html" class="btn-outline-blue mt-2">বিস্তারিত ইতিহাস দেখুন <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -273,7 +271,7 @@
                 </div>
 
                 <!-- Navigation Tabs -->
-                <div class="org-nav-tabs mb-4">
+                <nav class="org-nav-tabs mb-4" aria-label="সংগঠনের সেকশন">
                     <a href="#overview" class="org-tab active"><i class="fa-solid fa-users-viewfinder"></i> সংগঠন পরিচিতি</a>
                     <a href="#leadership" class="org-tab"><i class="fa-solid fa-user-tie"></i> নেতৃত্ববৃন্দ</a>
                     <a href="#structure" class="org-tab"><i class="fa-solid fa-sitemap"></i> সাংগঠনিক কাঠামো</a>
@@ -282,71 +280,131 @@
                     <a href="#activities" class="org-tab"><i class="fa-solid fa-calendar-check"></i> কার্যক্রম</a>
                     <a href="#documents" class="org-tab"><i class="fa-regular fa-file-lines"></i> ডকুমেন্ট</a>
                     <a href="#contact" class="org-tab"><i class="fa-solid fa-address-book"></i> যোগাযোগ</a>
-                </div>
+                </nav>
 
                 <!-- Main Content Grid -->
                 <div class="row g-4">
 
-                    <!-- Left Column: Objectives & Leadership -->
-                    <div class="col-xl-8 col-lg-7">
+                    <!-- Left Column: Main Content -->
+                    <div class="col-xl-9 col-lg-7">
 
-                        <!-- Objectives -->
-                        <div class="org-card mb-4" id="overview">
-                            <div class="card-header-title">
-                                <i class="fa-solid fa-bullseye text-primary"></i> সংগঠনের লক্ষ্য ও উদ্দেশ্য
+                        <!-- PAIR 1: Objectives + Leadership -->
+                        <div class="row g-4 mb-4">
+                            <!-- Objectives -->
+                            <div class="col-lg-6" id="overview">
+                                <div class="org-card h-100">
+                                    <div class="card-header-title">
+                                        <i class="fa-solid fa-bullseye text-primary"></i> সংগঠনের লক্ষ্য ও উদ্দেশ্য
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="org-check-list">
+                                            <li><i class="fa-solid fa-circle-check"></i> কলেজ শিক্ষকদের ন্যায্য অধিকার ও মর্যাদা রক্ষা ও উন্নয়ন।</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> শিক্ষার মানোন্নয়ন ও উচ্চশিক্ষার প্রসারে ভূমিকা রাখা।</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> শিক্ষক সমাজের পেশাগত দক্ষতা বৃদ্ধি ও প্রশিক্ষণ আয়োজন।</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> শিক্ষানীতির বিষয়ে গবেষণা, মতামত ও সুপারিশ প্রদান।</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> সদস্যদের কল্যাণ, পারস্পরিক সহযোগিতা ও একতাবদ্ধতা সৃষ্টি করা।</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <ul class="org-check-list">
-                                    <li><i class="fa-solid fa-circle-check"></i> কলেজ শিক্ষকদের ন্যায্য অধিকার ও মর্যাদা রক্ষা ও উন্নয়ন।</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> শিক্ষার মানোন্নয়ন ও উচ্চশিক্ষার প্রসারে ভূমিকা রাখা।</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> শিক্ষক সমাজের পেশাগত দক্ষতা বৃদ্ধি ও প্রশিক্ষণ আয়োজন।</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> শিক্ষানীতির বিষয়ে গবেষণা, মতামত ও সুপারিশ প্রদান।</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> সদস্যদের কল্যাণ, পারস্পরিক সহযোগিতা ও একতাবদ্ধতা সৃষ্টি করা।</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Leadership -->
-                        <div class="org-card" id="leadership">
-                            <div class="card-header-title">
-                                <i class="fa-solid fa-user-tie text-primary"></i> প্রধান নেতৃত্ব
-                            </div>
-                            <div class="card-body">
-                                <div class="row g-3 justify-content-center">
-                                    <!-- Chairman -->
-                                    <div class="col-sm-5">
-                                        <div class="leader-card">
-                                            <div class="leader-img">
-                                                <img src="https://via.placeholder.com/150x180" alt="Chairman">
+                            <!-- Leadership -->
+                            <div class="col-lg-6" id="leadership">
+                                <div class="org-card h-100">
+                                    <div class="card-header-title">
+                                        <i class="fa-solid fa-user-tie text-primary"></i> প্রধান নেতৃত্ব
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row g-3 justify-content-center">
+                                            <!-- Chairman -->
+                                            <div class="col-sm-6">
+                                                <div class="leader-card">
+                                                    <div class="leader-img">
+                                                        <img src="assets/images/leaders/leader-01.jpg" alt="চেয়ারম্যান" loading="lazy">
+                                                    </div>
+                                                    <div class="leader-info">
+                                                        <h6>অধ্যাপক ড. মো. আবদুল করিম</h6>
+                                                        <span class="role-badge bg-blue">চেয়ারম্যান</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="leader-info">
-                                                <h6>অধ্যাপক ড. মো. আবদুল করিম</h6>
-                                                <span class="role-badge bg-blue">চেয়ারম্যান</span>
+                                            <!-- Secretary -->
+                                            <div class="col-sm-6">
+                                                <div class="leader-card">
+                                                    <div class="leader-img">
+                                                        <img src="assets/images/leaders/leader-02.jpg" alt="মহাসচিব" loading="lazy">
+                                                    </div>
+                                                    <div class="leader-info">
+                                                        <h6>মো. কামরুল ইসলাম</h6>
+                                                        <span class="role-badge bg-green">মহাসচিব</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Secretary -->
-                                    <div class="col-sm-5">
-                                        <div class="leader-card">
-                                            <div class="leader-img">
-                                                <img src="https://via.placeholder.com/150x180" alt="Secretary">
-                                            </div>
-                                            <div class="leader-info">
-                                                <h6>মো. কামরুল ইসলাম</h6>
-                                                <span class="role-badge bg-green">মহাসচিব</span>
-                                            </div>
+                                        <div class="text-center mt-3">
+                                            <a href="#" class="btn-outline-blue">সকল নেতৃত্ব দেখুন <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="text-center mt-4">
-                                    <a href="#" class="btn-outline-blue">সকল নেতৃত্ব দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- PAIR 3: Activities + Documents -->
+                        <div class="row g-4">
+                            <!-- Activities -->
+                            <div class="col-lg-6" id="activities">
+                                <div class="org-card h-100">
+                                    <div class="card-header-title d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                        <div><i class="fa-regular fa-calendar-check text-primary"></i> সাম্প্রতিক কার্যক্রম</div>
+                                        <a href="events.html" class="org-link-sm">সব কার্যক্রম <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                    <img src="assets/images/meeting.jpg" alt="সাম্প্রতিক কার্যক্রমের ছবি" class="org-event-cover" loading="lazy" onerror="this.style.display='none'">
+                                    <ul class="org-event-list">
+                                        <li>
+                                            <div class="event-info">
+                                                <h6>বার্ষিক সাধারণ সভা ২০২৬ অনুষ্ঠিত</h6><span><i class="fa-regular fa-calendar"></i> ১৫ নভেম্বর, ২০২৬</span></div>
+                                        </li>
+                                        <li>
+                                            <div class="event-info">
+                                                <h6>কলেজ শিক্ষকদের পেশাগত উন্নয়ন কর্মশালা</h6><span><i class="fa-regular fa-calendar"></i> ২৭ অক্টোবর, ২০২৬</span></div>
+                                        </li>
+                                        <li>
+                                            <div class="event-info">
+                                                <h6>শিক্ষানীতি বিষয়ে মতবিনিময় সভা</h6><span><i class="fa-regular fa-calendar"></i> ০৫ অক্টোবর, ২০২৬</span></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Documents -->
+                            <div class="col-lg-6" id="documents">
+                                <div class="org-card h-100">
+                                    <div class="card-header-title d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                        <div><i class="fa-regular fa-file-lines text-primary"></i> গুরুত্বপূর্ণ ডকুমেন্ট</div>
+                                        <a href="publications.html" class="org-link-sm">সব ডকুমেন্ট <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                    <ul class="org-doc-list">
+                                        <li>
+                                            <div class="doc-info"><i class="fa-regular fa-file-pdf text-danger"></i><span>সংগঠনের গঠনতন্ত্র</span></div><a href="constitution.html" class="btn-download" aria-label="গঠনতন্ত্র দেখুন"><i class="fa-solid fa-arrow-right"></i></a></li>
+                                        <li>
+                                            <div class="doc-info"><i class="fa-regular fa-file-pdf text-danger"></i><span>কেন্দ্রীয় কমিটির তালিকা</span></div><a href="committee-directory.html" class="btn-download" aria-label="কমিটির তালিকা দেখুন"><i class="fa-solid fa-arrow-right"></i></a></li>
+                                        <li>
+                                            <div class="doc-info"><i class="fa-regular fa-file-pdf text-danger"></i><span>সদস্যপদ নীতিমালা (PDF)</span></div>
+                                            <a href="assets/pdf/member-registration-guide.pdf" class="btn-download" download aria-label="সদস্যপদ নীতিমালা ডাউনলোড"><i class="fa-solid fa-download"></i></a>
+                                        </li>
+                                        <li>
+                                            <div class="doc-info"><i class="fa-regular fa-file-pdf text-danger"></i><span>বার্ষিক প্রতিবেদন ২০২৫ (PDF)</span></div>
+                                            <a href="assets/pdf/annual-activity-report.pdf" class="btn-download" download aria-label="বার্ষিক প্রতিবেদন ডাউনলোড"><i class="fa-solid fa-download"></i></a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <!-- Right Column: Quick Links, Events, Documents -->
-                    <div class="col-xl-4 col-lg-5">
+                    <!-- Right Column: Sidebar -->
+                    <div class="col-xl-3 col-lg-5 org-sidebar">
 
                         <!-- Quick Links -->
                         <div class="org-card mb-4">
@@ -354,82 +412,11 @@
                                 <i class="fa-solid fa-bolt text-primary"></i> দ্রুত লিংক
                             </div>
                             <ul class="org-quick-links">
-                                <li><a href="registration.html"><i class="fa-solid fa-user-plus"></i> সদস্য নিবন্ধন <i class="fa-solid fa-plus ms-auto"></i></a></li>
+                                <li><a href="registration.html"><i class="fa-solid fa-user-plus"></i> সদস্য নিবন্ধন <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
                                 <li><a href="verify-member.html"><i class="fa-solid fa-user-check"></i> সদস্য যাচাই <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
-                                <li><a href="leadership.html"><i class="fa-solid fa-users"></i> কমিটি তালিকা <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
-                                <li><a href="#"><i class="fa-regular fa-file-pdf"></i> সংগঠনের গঠনতন্ত্র (PDF) <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
-                                <li><a href="#"><i class="fa-solid fa-chart-line"></i> বার্ষিক প্রতিবেদন (PDF) <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Recent Events -->
-                        <div class="org-card mb-4" id="activities">
-                            <div class="card-header-title d-flex justify-content-between align-items-center">
-                                <div><i class="fa-regular fa-calendar-check text-primary"></i> সাম্প্রতিক কার্যক্রম</div>
-                                <a href="events.html" class="small text-primary text-decoration-none fw-bold">সব কার্যক্রম দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="event-photo mb-3">
-                                    <img src="https://via.placeholder.com/400x200" alt="Event Photo" class="w-100 rounded-top">
-                                </div>
-                                <ul class="org-event-list">
-                                    <li>
-                                        <div class="event-info">
-                                            <h6>বার্ষিক সাধারণ সভা ২০২৬ অনুষ্ঠিত</h6>
-                                            <span><i class="fa-regular fa-calendar"></i> ১৫ নভেম্বর, ২০২৬</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="event-info">
-                                            <h6>কলেজ শিক্ষকদের পেশাগত উন্নয়ন কর্মশালা</h6>
-                                            <span><i class="fa-regular fa-calendar"></i> ২৭ অক্টোবর, ২০২৬</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="event-info">
-                                            <h6>শিক্ষানীতি বিষয়ে মতবিনিময় সভা</h6>
-                                            <span><i class="fa-regular fa-calendar"></i> ০৫ অক্টোবর, ২০২৬</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Documents -->
-                        <div class="org-card" id="documents">
-                            <div class="card-header-title d-flex justify-content-between align-items-center">
-                                <div><i class="fa-regular fa-file-lines text-primary"></i> গুরুত্বপূর্ণ ডকুমেন্ট</div>
-                                <a href="#" class="small text-primary text-decoration-none fw-bold">সব ডকুমেন্ট <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                            <ul class="org-doc-list">
-                                <li>
-                                    <div class="doc-info">
-                                        <i class="fa-regular fa-file-pdf text-danger"></i>
-                                        <span>সংগঠনের গঠনতন্ত্র (PDF)</span>
-                                    </div>
-                                    <a href="#" class="btn-download"><i class="fa-solid fa-download"></i></a>
-                                </li>
-                                <li>
-                                    <div class="doc-info">
-                                        <i class="fa-regular fa-file-pdf text-danger"></i>
-                                        <span>কেন্দ্রীয় কমিটির তালিকা (PDF)</span>
-                                    </div>
-                                    <a href="#" class="btn-download"><i class="fa-solid fa-download"></i></a>
-                                </li>
-                                <li>
-                                    <div class="doc-info">
-                                        <i class="fa-regular fa-file-pdf text-danger"></i>
-                                        <span>সদস্যপদ নীতিমালা (PDF)</span>
-                                    </div>
-                                    <a href="#" class="btn-download"><i class="fa-solid fa-download"></i></a>
-                                </li>
-                                <li>
-                                    <div class="doc-info">
-                                        <i class="fa-regular fa-file-pdf text-danger"></i>
-                                        <span>বার্ষিক প্রতিবেদন ২০২৫ (PDF)</span>
-                                    </div>
-                                    <a href="#" class="btn-download"><i class="fa-solid fa-download"></i></a>
-                                </li>
+                                <li><a href="committee-directory.html"><i class="fa-solid fa-users"></i> কমিটি তালিকা <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
+                                <li><a href="constitution.html"><i class="fa-regular fa-file-pdf"></i> সংগঠনের গঠনতন্ত্র <i class="fa-solid fa-chevron-right ms-auto"></i></a></li>
+                                <li><a href="assets/pdf/annual-activity-report.pdf" download><i class="fa-solid fa-chart-line"></i> বার্ষিক প্রতিবেদন (PDF) <i class="fa-solid fa-download ms-auto"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -538,7 +525,7 @@
     <script src="js/main.js" defer></script>
 
     <!-- NEW BCTA JS -->
-    <script src="js/bcta.js" defer></script>
+    <script src="js/associate-orgs.js" defer></script>
 </body>
 
 </html>
