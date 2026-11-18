@@ -198,32 +198,44 @@
 
                 <!-- Search & Filter Bar -->
                 <div class="ed-search-bar mb-4">
-                    <div class="row g-2 align-items-center">
-                        <div class="col-lg-6">
-                            <div class="input-group search-input-group">
-                                <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
-                                <input type="text" class="form-control border-start-0 ps-0" placeholder="প্রয়োজনীয় শিক্ষা বিষয়ক ওয়েবসাইট খুঁজুন...">
-                            </div>
+                    <form class="ed-search-form" id="edSearchForm" role="search" autocomplete="off">
+                        <div class="ed-field ed-field-search" id="edSearchField">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" id="edSearch" class="ed-input" placeholder="প্রয়োজনীয় শিক্ষা বিষয়ক ওয়েবসাইট খুঁজুন..." aria-label="ওয়েবসাইট খুঁজুন">
+                            <button type="button" class="ed-clear" id="edClear" aria-label="লেখা মুছুন"><i class="fa-solid fa-xmark"></i></button>
                         </div>
-                        <div class="col-lg-3">
-                            <select class="form-select filter-select">
-                                <option selected><i class="fa-solid fa-list"></i> সব ক্যাটাগরি</option>
-                                <option>সরকারি</option>
-                                <option>বেসরকারি</option>
-                                <option>গবেষণা</option>
+                        <div class="ed-field">
+                            <i class="fa-solid fa-table-cells-large"></i>
+                            <select id="edCat" class="ed-select" aria-label="ক্যাটাগরি">
+                                <option value="">সব ক্যাটাগরি</option>
+                                <option value="student">শিক্ষার্থী সেবা</option>
+                                <option value="teacher">শিক্ষক সেবা</option>
+                                <option value="curriculum">পাঠ্যক্রম ও বই</option>
+                                <option value="online">অনলাইন শিক্ষা</option>
+                                <option value="research">গবেষণা ও পরিসংখ্যান</option>
+                                <option value="training">প্রশিক্ষণ</option>
+                                <option value="institution">শিক্ষা প্রতিষ্ঠান</option>
+                                <option value="law">আইন ও নীতিমালা</option>
+                                <option value="scholarship">বৃত্তি ও সহায়তা</option>
+                                <option value="international">আন্তর্জাতিক শিক্ষা</option>
                             </select>
                         </div>
-                        <div class="col-lg-2">
-                            <select class="form-select filter-select">
-                                <option selected>সব ধরনের প্রতিষ্ঠান</option>
-                                <option>বিশ্ববিদ্যালয়</option>
-                                <option>কলেজ</option>
-                                <option>স্কুল</option>
+                        <div class="ed-field">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <select id="edLevel" class="ed-select" aria-label="প্রতিষ্ঠানের ধরন">
+                                <option value="">সব ধরনের প্রতিষ্ঠান</option>
+                                <option value="school">স্কুল</option>
+                                <option value="college">কলেজ</option>
+                                <option value="university">বিশ্ববিদ্যালয়</option>
                             </select>
                         </div>
-                        <div class="col-lg-1">
-                            <button class="btn btn-search w-100"><i class="fa-solid fa-magnifying-glass"></i> খুঁজুন</button>
-                        </div>
+                        <button type="submit" class="ed-submit"><i class="fa-solid fa-magnifying-glass"></i> খুঁজুন</button>
+                    </form>
+
+                    <div class="ed-status" id="edStatus" role="status" aria-live="polite" hidden>
+                        <span class="ed-status-text" id="edStatusText"></span>
+                        <span class="ed-chips" id="edChips"></span>
+                        <button type="button" class="ed-reset" data-reset><i class="fa-solid fa-rotate-left"></i> সব মুছুন</button>
                     </div>
                 </div>
 
@@ -233,53 +245,66 @@
                     <div class="col-lg-8">
 
                         <!-- Government Websites Section -->
-                        <div class="ed-section mb-4">
-                            <div class="section-header d-flex justify-content-between align-items-center mb-3">
-                                <h2 class="section-title"><i class="fa-solid fa-star text-warning"></i> গুরুত্বপূর্ণ সরকারি শিক্ষা ও সংশ্লিষ্ট ওয়েবসাইট</h2>
-                                <a href="#" class="view-all-link">সবগুলো দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="ed-section mb-4" id="edGov">
+                            <div class="section-header d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                                <h2 class="section-title"><i class="fa-solid fa-star text-warning"></i> গুরুত্বপূর্ণ সরকারি শিক্ষা ও সংশ্লিষ্ট ওয়েবসাইট <span class="ed-count" id="edCount">৫টি</span></h2>
+                                <div class="res-head-actions">
+                                    <div class="res-nav" id="resNav" hidden>
+                                        <button type="button" class="res-nav-btn" id="resPrev" aria-label="আগের ওয়েবসাইট"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button type="button" class="res-nav-btn" id="resNext" aria-label="পরের ওয়েবসাইট"><i class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                    <a href="#" class="view-all-link" data-reset>সবগুলো দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
                             </div>
 
-                            <div class="row g-3">
+                            <div class="row g-3 res-row" id="resRow">
                                 <!-- Item 1 -->
-                                <div class="col-md-6 col-xl-4">
-                                    <a href="https://www.moedu.gov.bd" target="_blank" class="resource-card">
-                                        <div class="res-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Government_of_Bangladesh_logo.svg/200px-Government_of_Bangladesh_logo.svg.png" alt="শিক্ষা মন্ত্রণালয়"></div>
+                                <div class="col-md-6 col-xl-4 res-col" data-cat="law institution scholarship international" data-level="school college university" data-keywords="ministry of education moedu মন্ত্রণালয় নোটিশ নীতি">
+                                    <a href="https://www.moedu.gov.bd" target="_blank" rel="noopener noreferrer" class="resource-card">
+                                        <div class="res-logo"><i class="fa-solid fa-landmark"></i><img src="https://www.google.com/s2/favicons?domain=moedu.gov.bd&sz=128" alt="" loading="lazy" onerror="this.remove()"></div>
                                         <h4>শিক্ষা মন্ত্রণালয়</h4>
                                         <span class="res-url">www.moedu.gov.bd <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                                     </a>
                                 </div>
                                 <!-- Item 2 -->
-                                <div class="col-md-6 col-xl-4">
-                                    <a href="https://www.dshe.gov.bd" target="_blank" class="resource-card">
-                                        <div class="res-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Government_of_Bangladesh_logo.svg/200px-Government_of_Bangladesh_logo.svg.png" alt="মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর"></div>
+                                <div class="col-md-6 col-xl-4 res-col" data-cat="teacher institution student scholarship" data-level="school college university" data-keywords="dshe মাধ্যমিক উচ্চমাধ্যমিক এমপিও নিয়োগ স্কুল কলেজ">
+                                    <a href="https://www.dshe.gov.bd" target="_blank" rel="noopener noreferrer" class="resource-card">
+                                        <div class="res-logo"><i class="fa-solid fa-building-columns"></i><img src="https://www.google.com/s2/favicons?domain=dshe.gov.bd&sz=128" alt="" loading="lazy" onerror="this.remove()"></div>
                                         <h4>মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর</h4>
                                         <span class="res-url">www.dshe.gov.bd <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                                     </a>
                                 </div>
                                 <!-- Item 3 -->
-                                <div class="col-md-6 col-xl-4">
-                                    <a href="https://www.dpe.gov.bd" target="_blank" class="resource-card">
-                                        <div class="res-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Government_of_Bangladesh_logo.svg/200px-Government_of_Bangladesh_logo.svg.png" alt="প্রাথমিক শিক্ষা অধিদপ্তর"></div>
+                                <div class="col-md-6 col-xl-4 res-col" data-cat="teacher institution student curriculum" data-level="school" data-keywords="dpe primary প্রাথমিক সহকারী শিক্ষক বিদ্যালয়">
+                                    <a href="https://www.dpe.gov.bd" target="_blank" rel="noopener noreferrer" class="resource-card">
+                                        <div class="res-logo"><i class="fa-solid fa-children"></i><img src="https://www.google.com/s2/favicons?domain=dpe.gov.bd&sz=128" alt="" loading="lazy" onerror="this.remove()"></div>
                                         <h4>প্রাথমিক শিক্ষা অধিদপ্তর</h4>
                                         <span class="res-url">www.dpe.gov.bd <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                                     </a>
                                 </div>
                                 <!-- Item 4 -->
-                                <div class="col-md-6 col-xl-4">
-                                    <a href="https://www.nctb.gov.bd" target="_blank" class="resource-card">
-                                        <div class="res-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Government_of_Bangladesh_logo.svg/200px-Government_of_Bangladesh_logo.svg.png" alt="জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড"></div>
+                                <div class="col-md-6 col-xl-4 res-col" data-cat="curriculum online student" data-level="school college" data-keywords="nctb পাঠ্যপুস্তক বই সিলেবাস কারিকুলাম ই-বুক">
+                                    <a href="https://www.nctb.gov.bd" target="_blank" rel="noopener noreferrer" class="resource-card">
+                                        <div class="res-logo"><i class="fa-solid fa-book-open"></i><img src="https://www.google.com/s2/favicons?domain=nctb.gov.bd&sz=128" alt="" loading="lazy" onerror="this.remove()"></div>
                                         <h4>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড</h4>
                                         <span class="res-url">www.nctb.gov.bd <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                                     </a>
                                 </div>
                                 <!-- Item 5 -->
-                                <div class="col-md-6 col-xl-4">
-                                    <a href="https://www.banbeis.gov.bd" target="_blank" class="resource-card">
-                                        <div class="res-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Government_of_Bangladesh_logo.svg/200px-Government_of_Bangladesh_logo.svg.png" alt="বাংলাদেশ শিক্ষা তথ্য ও পরিসংখ্যান ব্যুরো"></div>
+                                <div class="col-md-6 col-xl-4 res-col" data-cat="research institution" data-level="school college university" data-keywords="banbeis পরিসংখ্যান তথ্য রিপোর্ট সমীক্ষা ব্যানবেইস">
+                                    <a href="https://www.banbeis.gov.bd" target="_blank" rel="noopener noreferrer" class="resource-card">
+                                        <div class="res-logo"><i class="fa-solid fa-chart-column"></i><img src="https://www.google.com/s2/favicons?domain=banbeis.gov.bd&sz=128" alt="" loading="lazy" onerror="this.remove()"></div>
                                         <h4>বাংলাদেশ শিক্ষা তথ্য ও পরিসংখ্যান ব্যুরো</h4>
                                         <span class="res-url">www.banbeis.gov.bd <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                                     </a>
                                 </div>
+                            </div>
+
+                            <div class="ed-empty" id="edEmptyGov" hidden>
+                                <i class="fa-regular fa-face-frown"></i>
+                                <h4>কোনো ওয়েবসাইট পাওয়া যায়নি</h4>
+                                <p>অন্য শব্দ দিয়ে খুঁজুন অথবা ফিল্টার মুছে ফেলুন।</p>
+                                <button type="button" class="ed-empty-btn" data-reset>সব ফিল্টার মুছুন</button>
                             </div>
                         </div>
 
@@ -288,56 +313,63 @@
                             <h2 class="section-title mb-3"><i class="fa-solid fa-layer-group text-primary"></i> বিষয়ভিত্তিক শিক্ষাসংক্রান্ত লিংকসমূহ</h2>
 
                             <div class="category-grid">
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="student">
                                     <div class="cat-icon bg-blue"><i class="fa-solid fa-graduation-cap"></i></div>
                                     <h4>শিক্ষার্থী সেবা</h4>
                                     <p>ভর্তি, ফলাফল, বৃত্তি, রেজিস্ট্রেশন</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="teacher">
                                     <div class="cat-icon bg-green"><i class="fa-solid fa-building-columns"></i></div>
                                     <h4>শিক্ষক সেবা</h4>
                                     <p>নিয়োগ, এমপিও, প্রশিক্ষণ</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="curriculum">
                                     <div class="cat-icon bg-purple"><i class="fa-solid fa-book-open"></i></div>
                                     <h4>পাঠ্যক্রম ও বই</h4>
                                     <p>পাঠ্যপুস্তক, সিলেবাস, কারিকুলাম</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="online">
                                     <div class="cat-icon bg-orange"><i class="fa-solid fa-laptop-code"></i></div>
                                     <h4>অনলাইন শিক্ষা</h4>
                                     <p>ই-লার্নিং, ভিডিও ক্লাস, রিসোর্স</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="research">
                                     <div class="cat-icon bg-teal"><i class="fa-solid fa-chart-line"></i></div>
                                     <h4>গবেষণা ও পরিসংখ্যান</h4>
                                     <p>শিক্ষা তথ্য, রিপোর্ট, সমীক্ষা</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="training">
                                     <div class="cat-icon bg-red"><i class="fa-solid fa-chalkboard-user"></i></div>
                                     <h4>প্রশিক্ষণ</h4>
                                     <p>শিক্ষক প্রশিক্ষণ, CPD, TTC</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="institution">
                                     <div class="cat-icon bg-indigo"><i class="fa-solid fa-school"></i></div>
                                     <h4>শিক্ষা প্রতিষ্ঠান</h4>
                                     <p>স্কুল, কলেজ, মাদ্রাসা, কারিগরি</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="law">
                                     <div class="cat-icon bg-yellow"><i class="fa-solid fa-gavel"></i></div>
                                     <h4>আইন ও নীতিমালা</h4>
                                     <p>শিক্ষা সংক্রান্ত আইন ও বিধি</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="scholarship">
                                     <div class="cat-icon bg-pink"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                                     <h4>বৃত্তি ও সহায়তা</h4>
                                     <p>সরকারি ও বেসরকারি বৃত্তি</p>
                                 </a>
-                                <a href="#" class="cat-box">
+                                <a href="#" class="cat-box" role="button" aria-pressed="false" data-cat-id="international">
                                     <div class="cat-icon bg-cyan"><i class="fa-solid fa-globe"></i></div>
                                     <h4>আন্তর্জাতিক শিক্ষা</h4>
                                     <p>উচ্চশিক্ষা, স্কলারশিপ, এমবেসি</p>
                                 </a>
+                            </div>
+
+                            <div class="ed-empty" id="edEmptyCat" hidden>
+                                <i class="fa-regular fa-face-frown"></i>
+                                <h4>কোনো বিষয় পাওয়া যায়নি</h4>
+                                <p>অন্য শব্দ দিয়ে খুঁজুন অথবা ফিল্টার মুছে ফেলুন।</p>
+                                <button type="button" class="ed-empty-btn" data-reset>সব ফিল্টার মুছুন</button>
                             </div>
                         </div>
 
@@ -409,7 +441,7 @@
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fa-solid fa-link"></i></div>
                         <div class="stat-text">
-                            <strong>২০০+</strong>
+                            <strong><span data-count="200">২০০</span>+</strong>
                             <span>গুরুত্বপূর্ণ লিংক</span>
                         </div>
                     </div>
@@ -417,7 +449,7 @@
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
                         <div class="stat-text">
-                            <strong>১০+</strong>
+                            <strong><span data-count="10">১০</span>+</strong>
                             <span>ক্যাটাগরি</span>
                         </div>
                     </div>
@@ -425,7 +457,7 @@
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fa-solid fa-building-columns"></i></div>
                         <div class="stat-text">
-                            <strong>২০+</strong>
+                            <strong><span data-count="20">২০</span>+</strong>
                             <span>সরকারি সংস্থা</span>
                         </div>
                     </div>
