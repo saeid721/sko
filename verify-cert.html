@@ -338,31 +338,44 @@
                         <div class="result-body" id="resBody">
                             <div class="result-layout" id="resLayout">
 
-                                <div class="result-details-grid">
-                                    <div class="detail-item">
-                                        <i class="fa-regular fa-file-lines"></i>
-                                        <div><span>সনদ নম্বর</span><strong id="resCertNumber"></strong></div>
+                                <div class="result-main">
+
+                                    <div class="result-holder">
+                                        <span class="holder-avatar"><i class="fa-solid fa-award"></i></span>
+                                        <div class="holder-text">
+                                            <span class="holder-label">সনদধারী</span>
+                                            <strong class="holder-name" id="resCertName"></strong>
+                                            <span class="holder-type" id="resCertType"></span>
+                                        </div>
                                     </div>
-                                    <div class="detail-item">
-                                        <i class="fa-regular fa-user"></i>
-                                        <div><span>সনদধারীর নাম</span><strong id="resCertName"></strong></div>
+
+                                    <div class="result-details-grid">
+                                        <div class="detail-item wide">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <div><span>সনদ নম্বর</span><strong id="resCertNumber"></strong></div>
+                                            <button type="button" class="copy-btn" id="btnCopyNo" aria-label="সনদ নম্বর কপি করুন">
+                                                <i class="fa-regular fa-copy"></i>
+                                            </button>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fa-regular fa-calendar"></i>
+                                            <div><span>প্রদান তারিখ</span><strong id="resIssueDate"></strong></div>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <div><span>বর্তমান অবস্থা</span><strong class="badge-status" id="resStatus"></strong></div>
+                                        </div>
+                                        <div class="detail-item wide">
+                                            <i class="fa-regular fa-calendar-check"></i>
+                                            <div><span>মেয়াদ</span><strong id="resValidity"></strong></div>
+                                        </div>
                                     </div>
-                                    <div class="detail-item">
-                                        <i class="fa-solid fa-award"></i>
-                                        <div><span>সনদের ধরন</span><strong id="resCertType"></strong></div>
+
+                                    <div class="validity-box" id="resProgressWrap">
+                                        <div class="validity-bar"><span id="resProgress"></span></div>
+                                        <div class="validity-note" id="resProgressText"></div>
                                     </div>
-                                    <div class="detail-item">
-                                        <i class="fa-regular fa-calendar"></i>
-                                        <div><span>প্রদান তারিখ</span><strong id="resIssueDate"></strong></div>
-                                    </div>
-                                    <div class="detail-item">
-                                        <i class="fa-regular fa-calendar-check"></i>
-                                        <div><span>মেয়াদ</span><strong id="resValidity"></strong></div>
-                                    </div>
-                                    <div class="detail-item">
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <div><span>বর্তমান অবস্থা</span><strong class="badge-status" id="resStatus"></strong></div>
-                                    </div>
+
                                 </div>
 
                                 <div class="result-actions" id="resActions">
@@ -377,6 +390,11 @@
                                     </button>
                                 </div>
 
+                            </div>
+
+                            <div class="result-foot">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>SKO ডিজিটাল ভেরিফিকেশন · যাচাইয়ের সময়: <strong id="resVerifiedAt"></strong></span>
                             </div>
                         </div>
 

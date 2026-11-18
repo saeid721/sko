@@ -24,10 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const resIssueDate = document.getElementById('resIssueDate');
     const resValidity = document.getElementById('resValidity');
     const resStatus = document.getElementById('resStatus');
+    const resVerifiedAt = document.getElementById('resVerifiedAt');
+    const resProgressWrap = document.getElementById('resProgressWrap');
+    const resProgress = document.getElementById('resProgress');
+    const resProgressText = document.getElementById('resProgressText');
 
     const btnDownload = document.getElementById('btnDownload');
     const btnPrint = document.getElementById('btnPrint');
     const btnShare = document.getElementById('btnShare');
+    const btnCopyNo = document.getElementById('btnCopyNo');
 
     /* ================= DEMO DATABASE =================
        Test numbers:
@@ -173,6 +178,37 @@ document.addEventListener("DOMContentLoaded", () => {
         currentCert = null;
     }
 
+    function humanSpan(days) {
+        const y = Math.floor(days / 365);
+        const m = Math.floor((days % 365) / 30);
+        const d = (days % 365) % 30;
+        const parts = [];
+        if (y) parts.push(`${toBn(y)} বছর`);
+        if (m) parts.push(`${toBn(m)} মাস`);
+        if (!y && d) parts.push(`${toBn(d)} দিন`);
+        return parts.join(' ') || '১ দিনেরও কম সময়';
+    }
+
+    function renderValidity(state, rec) {
+        const start = new Date(rec.issued + 'T00:00:00');
+        const end = new Date(rec.expires + 'T23:59:59');
+        const now = new Date();
+        const pct = Math.min(100, Math.max(0, ((now - start) / (end - start)) * 100));
+        const days = Math.ceil((end - now) / 86400000);
+
+        resProgressWrap.hidden = state === 'revoked';
+        resProgressWrap.classList.toggle('is-soon', state === 'valid' && days <= 60);
+
+        resProgress.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            resProgress.style.width = (state === 'expired' ? 100 : pct).toFixed(1) + '%';
+        }));
+
+        resProgressText.textContent = state === 'expired' ?
+            `${humanSpan(Math.abs(days))} আগে মেয়াদ শেষ হয়েছে` :
+            `মেয়াদ বাকি: ${humanSpan(days)}`;
+    }
+
     function showResult(state, data = {}) {
         const s = STATES[state];
         const rec = data.rec;
@@ -196,6 +232,14 @@ document.addEventListener("DOMContentLoaded", () => {
             resStatus.textContent = s.status;
             resActions.hidden = state !== 'valid';
             resLayout.classList.toggle('no-actions', state !== 'valid');
+            renderValidity(state, rec);
+            resVerifiedAt.textContent = new Date().toLocaleString('bn-BD', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit'
+            });
         }
 
         currentCert = hasDetails ? { no: data.no, rec } : null;
@@ -304,6 +348,11 @@ document.addEventListener("DOMContentLoaded", () => {
             return ok;
         }
     }
+
+    btnCopyNo.addEventListener('click', async() => {
+        if (!currentCert) return;
+        toast((await copyText(currentCert.no)) ? 'সনদ নম্বর কপি হয়েছে।' : 'কপি করা যায়নি।');
+    });
 
     btnPrint.addEventListener('click', () => window.print());
 
