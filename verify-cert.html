@@ -197,7 +197,7 @@
             <div class="container">
 
                 <!-- Top Section: Form & Sample Certificate -->
-                <div class="row g-4 mb-4">
+                <div class="row g-4 mb-4 vc-top-row">
                     <!-- Left Column: Form -->
                     <div class="col-lg-7">
                         <div class="vc-card form-card">
@@ -207,26 +207,31 @@
                             <div class="card-body">
                                 <div class="row g-4">
                                     <!-- Form Inputs -->
-                                    <div class="col-md-7">
+                                    <form class="col-md-7" id="verifyForm" novalidate autocomplete="off">
                                         <div class="mb-3">
-                                            <label class="form-label">সনদ নম্বর <span class="text-danger">*</span></label>
+                                            <label class="form-label" for="certNumber">সনদ নম্বর <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-regular fa-file-lines"></i></span>
-                                                <input type="text" class="form-control" placeholder="উদাহরণ: SKO-CERT-2026-000123" id="certNumber">
+                                                <input type="text" class="form-control" id="certNumber" name="certNumber" placeholder="উদাহরণ: SKO-CERT-2026-000123" autocapitalize="characters" spellcheck="false" aria-describedby="certNumberError certNumberHint" required>
                                             </div>
+                                            <div class="field-error" id="certNumberError" role="alert"></div>
+                                            <div class="form-hint" id="certNumberHint">সনদে মুদ্রিত নম্বরটি হুবহু লিখুন</div>
                                         </div>
+
                                         <div class="mb-3">
-                                            <label class="form-label">সনদধারীর নাম <span class="text-danger">*</span></label>
+                                            <label class="form-label" for="certName">সনদধারীর নাম <span class="form-optional">(ঐচ্ছিক)</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                                                <input type="text" class="form-control" placeholder="সনদে উল্লেখিত নাম লিখুন" id="certName">
+                                                <input type="text" class="form-control" id="certName" name="certName" placeholder="সনদে উল্লেখিত নাম লিখুন" aria-describedby="certNameError">
                                             </div>
+                                            <div class="field-error" id="certNameError" role="alert"></div>
                                         </div>
+
                                         <div class="mb-4">
-                                            <label class="form-label">সনদের ধরন</label>
+                                            <label class="form-label" for="certType">সনদের ধরন <span class="form-optional">(ঐচ্ছিক)</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-solid fa-award"></i></span>
-                                                <select class="form-select">
+                                                <select class="form-select" id="certType" name="certType">
                                                     <option value="">সনদের ধরন নির্বাচন করুন</option>
                                                     <option value="appreciation">প্রশংসাপত্র</option>
                                                     <option value="training">প্রশিক্ষণ সনদ</option>
@@ -236,28 +241,35 @@
                                         </div>
 
                                         <div class="d-flex gap-2">
-                                            <button class="btn btn-primary flex-grow-1" id="btnVerify">
+                                            <button type="submit" class="btn btn-primary flex-grow-1" id="btnVerify">
                                                 <i class="fa-solid fa-magnifying-glass me-2"></i> সনদ যাচাই করুন
                                             </button>
-                                            <button class="btn btn-outline-secondary" id="btnReset">
-                                                <i class="fa-solid fa-rotate-right me-2"></i> রিসেট
+                                            <button type="button" class="btn btn-outline-secondary" id="btnReset" aria-label="রিসেট">
+                                                <i class="fa-solid fa-rotate-right"></i><span class="d-none d-sm-inline ms-2">রিসেট</span>
                                             </button>
                                         </div>
-                                    </div>
+                                    </form>
 
                                     <!-- QR Section -->
                                     <div class="col-md-5">
-                                        <div class="text-center text-muted small mb-2 fw-bold">অথবা QR কোড স্ক্যান করুন</div>
-                                        <div class="qr-scanner-box">
-                                            <div class="scanner-corners">
-                                                <span></span><span></span><span></span><span></span>
+                                        <div class="qr-panel">
+                                            <div class="qr-panel-title">অথবা QR কোড স্ক্যান করুন</div>
+                                            <div class="qr-scanner-box" id="scanBox">
+                                                <video id="scanVideo" playsinline muted></video>
+                                                <div class="scanner-corners">
+                                                    <span></span><span></span><span></span><span></span>
+                                                </div>
+                                                <i class="fa-solid fa-qrcode"></i>
+                                                <div class="scanner-line"></div>
                                             </div>
-                                            <i class="fa-solid fa-qrcode"></i>
-                                            <div class="scanner-line"></div>
+                                            <button type="button" class="btn btn-outline-primary w-100 mt-3" id="btnScan">
+                                                <i class="fa-solid fa-camera me-2"></i><span>QR স্ক্যান করুন</span>
+                                            </button>
+                                            <label class="qr-upload" for="qrFile">
+                                                <i class="fa-regular fa-image me-1"></i> ছবি থেকে QR পড়ুন
+                                            </label>
+                                            <input type="file" id="qrFile" accept="image/*" hidden>
                                         </div>
-                                        <button class="btn btn-outline-primary w-100 mt-3 btn-sm">
-                                            <i class="fa-solid fa-camera me-2"></i> QR স্ক্যান করুন
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -311,88 +323,75 @@
                 </div>
 
                 <!-- Bottom Section: Verification Result -->
-                <div class="vc-card result-card" id="resultSection">
-                    <div class="card-header-title d-flex justify-content-between align-items-center">
-                        <div class="text-success">
-                            <i class="fa-solid fa-circle-check"></i> সনদ যাচাই সফল হয়েছে
+                <div class="vc-result" id="resultSection" tabindex="-1" aria-live="polite" hidden>
+                    <div class="vc-card result-card" id="resultCard" data-state="valid">
+
+                        <div class="result-head">
+                            <span class="result-icon"><i class="fa-solid fa-circle-check" id="resIcon"></i></span>
+                            <div class="result-head-text">
+                                <h2 id="resTitle">সনদ যাচাই সফল হয়েছে</h2>
+                                <p id="resMessage">এই সনদটি SKO কর্তৃক ইস্যুকৃত এবং বৈধ।</p>
+                            </div>
+                            <span class="badge-verified" id="resBadge"><i class="fa-solid fa-check"></i> Verified</span>
                         </div>
-                        <span class="badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
-                    </div>
 
-                    <div class="card-body">
-                        <p class="text-muted mb-4">এই সনদটি SKO কর্তৃক ইস্যুকৃত এবং বৈধ।</p>
+                        <div class="result-body" id="resBody">
+                            <div class="result-layout" id="resLayout">
 
-                        <div class="row g-4 align-items-center">
-                            <!-- Details Table -->
-                            <div class="col-lg-8">
                                 <div class="result-details-grid">
                                     <div class="detail-item">
                                         <i class="fa-regular fa-file-lines"></i>
-                                        <div>
-                                            <span>সনদ নম্বর</span>
-                                            <strong id="resCertNumber">: SKO-CERT-2026-000123</strong>
-                                        </div>
-                                    </div>
-                                    <div class="detail-item">
-                                        <i class="fa-regular fa-calendar"></i>
-                                        <div>
-                                            <span>প্রদান তারিখ</span>
-                                            <strong>: ১৫ জানুয়ারি, ২০২৬</strong>
-                                        </div>
+                                        <div><span>সনদ নম্বর</span><strong id="resCertNumber"></strong></div>
                                     </div>
                                     <div class="detail-item">
                                         <i class="fa-regular fa-user"></i>
-                                        <div>
-                                            <span>সনদধারীর নাম</span>
-                                            <strong id="resCertName">: এম. এ. রহমান</strong>
-                                        </div>
-                                    </div>
-                                    <div class="detail-item">
-                                        <i class="fa-regular fa-calendar-check"></i>
-                                        <div>
-                                            <span>মেয়াদ</span>
-                                            <strong>: ১৫ জানুয়ারি, ২০২৬ - ১৫ জানুয়ারি, ২০২৮</strong>
-                                        </div>
+                                        <div><span>সনদধারীর নাম</span><strong id="resCertName"></strong></div>
                                     </div>
                                     <div class="detail-item">
                                         <i class="fa-solid fa-award"></i>
-                                        <div>
-                                            <span>সনদের ধরন</span>
-                                            <strong>: প্রশংসাপত্র</strong>
-                                        </div>
+                                        <div><span>সনদের ধরন</span><strong id="resCertType"></strong></div>
                                     </div>
                                     <div class="detail-item">
-                                        <i class="fa-solid fa-circle-check text-success"></i>
-                                        <div>
-                                            <span>বর্তমান অবস্থা</span>
-                                            <strong class="badge-status">বৈধ (Active)</strong>
-                                        </div>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        <div><span>প্রদান তারিখ</span><strong id="resIssueDate"></strong></div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                        <div><span>মেয়াদ</span><strong id="resValidity"></strong></div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <div><span>বর্তমান অবস্থা</span><strong class="badge-status" id="resStatus"></strong></div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Action Buttons -->
-                            <div class="col-lg-4">
-                                <div class="result-actions">
-                                    <button class="btn btn-primary w-100 mb-2">
+                                <div class="result-actions" id="resActions">
+                                    <button type="button" class="btn btn-primary" id="btnDownload">
                                         <i class="fa-solid fa-download me-2"></i> সনদ ডাউনলোড (PDF)
                                     </button>
-                                    <button class="btn btn-outline-primary w-100 mb-2">
+                                    <button type="button" class="btn btn-outline-primary" id="btnPrint">
                                         <i class="fa-solid fa-print me-2"></i> প্রিন্ট করুন
                                     </button>
-                                    <button class="btn btn-outline-primary w-100">
+                                    <button type="button" class="btn btn-outline-primary" id="btnShare">
                                         <i class="fa-solid fa-share-nodes me-2"></i> শেয়ার করুন
                                     </button>
                                 </div>
+
                             </div>
                         </div>
+
+                        <div class="result-help" id="resHelp" hidden>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>সনদ নম্বর ও নাম আবার মিলিয়ে দেখুন। সমস্যা থাকলে <a href="mailto:info@sko.org.bd">info@sko.org.bd</a> ঠিকানায় যোগাযোগ করুন।</span>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- Bottom Features Bar -->
                 <div class="vc-features-bar mt-4">
                     <div class="feature-item">
-                        <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
                         <div class="feature-text">
                             <h6>নির্ভরযোগ্য যাচাই</h6>
                             <p>SKO-এর কেন্দ্রীয় ডাটাবেজ থেকে সনদের সত্যতা যাচাই</p>
@@ -523,6 +522,9 @@
 
     <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- QR decoder (camera + image) -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js" defer></script>
 
     <!-- NEW Verify Cert JS -->
     <script src="js/verify-cert.js" defer></script>
