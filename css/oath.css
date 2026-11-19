@@ -451,3 +451,780 @@
         font-size: 0.95rem;
     }
 }
+
+
+/* ==========================================================================
+   OATH PAGE – PREMIUM / RESPONSIVE OVERRIDE  (paste at END of oath.css)
+   ========================================================================== */
+
+.oath-page {
+    --oath-primary: var(--color-blue, #0754a5);
+    --oath-primary-dark: var(--color-blue-dark, #062d68);
+    --oath-green: var(--color-green, #07852e);
+    --oath-primary-light: #eaf4ff;
+    --oath-border: #dfe8f3;
+}
+
+
+/* ---------- Hero spacing / overlap ---------- */
+
+.oath-page .about-hero {
+    padding-bottom: clamp(44px, 6vw, 64px);
+}
+
+.oath-main {
+    margin-top: -28px;
+    padding-bottom: 1rem;
+}
+
+
+/* ---------- Left menu (desktop card, mobile chips) ---------- */
+
+.oath-sidebar-card {
+    border-radius: 16px;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, var(--oath-primary-dark), var(--oath-primary));
+}
+
+.oath-nav-list a.active {
+    background: var(--oath-primary);
+    color: #fff;
+}
+
+.oath-nav-list a.active .arrow {
+    color: #fff;
+}
+
+@media (max-width: 1199.98px) {
+    .oath-sidebar-card {
+        position: static;
+        margin-bottom: 0;
+    }
+    .sidebar-header {
+        display: none;
+    }
+    .oath-nav-list {
+        display: flex;
+        gap: 8px;
+        padding: 10px;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .oath-nav-list::-webkit-scrollbar {
+        display: none;
+    }
+    .oath-nav-list li {
+        flex: 0 0 auto;
+        border: 0;
+        scroll-snap-align: start;
+    }
+    .oath-nav-list a {
+        min-height: 42px;
+        padding: .5rem .95rem;
+        white-space: nowrap;
+        font-size: .88rem;
+        border: 1px solid var(--oath-border);
+        border-radius: 999px;
+        background: #fff;
+    }
+    .oath-nav-list a.active {
+        border-color: var(--oath-primary);
+        box-shadow: 0 4px 10px rgba(7, 84, 165, .25);
+    }
+    .oath-nav-list a .arrow {
+        display: none;
+    }
+}
+
+
+/* ---------- Name tool ---------- */
+
+.oath-name-tool {
+    background: #fff;
+    border: 1px solid var(--oath-border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--oath-shadow);
+}
+
+.oath-name-tool label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .15rem .5rem;
+    margin-bottom: 8px;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--oath-text-dark);
+}
+
+.oath-name-tool label small {
+    font-size: .8rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.oath-name-field {
+    position: relative;
+}
+
+.oath-name-field input {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 46px 0 14px;
+    font-size: 16px;
+    /* stops iOS zoom */
+    color: var(--oath-text-dark);
+    background: #f8fbff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    outline: 0;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+.oath-name-field input:focus {
+    background: #fff;
+    border-color: var(--oath-primary);
+    box-shadow: 0 0 0 4px rgba(7, 84, 165, .12);
+}
+
+.oath-name-field button {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 36px;
+    height: 36px;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.oath-name-field button[hidden] {
+    display: none;
+}
+
+
+/* ---------- Certificate paper ---------- */
+
+.oath-paper {
+    --o: clamp(8px, 1.6vw, 14px);
+    padding: clamp(14px, 3vw, 28px);
+    background: linear-gradient(180deg, #fff 0%, #f6faff 100%);
+    border: 1px solid #d5e3f5;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px -18px rgba(6, 45, 104, .28);
+    overflow: hidden;
+}
+
+.oath-paper::before {
+    content: "";
+    position: absolute;
+    inset: var(--o);
+    border: 1.5px solid #c9d9f0;
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.paper-corner {
+    position: absolute;
+    z-index: 3;
+    width: clamp(26px, 5vw, 44px);
+    height: clamp(26px, 5vw, 44px);
+    border: 3px solid var(--oath-primary);
+    pointer-events: none;
+}
+
+.paper-corner.tl {
+    top: var(--o);
+    left: var(--o);
+    border-right: 0;
+    border-bottom: 0;
+    border-top-left-radius: 12px;
+}
+
+.paper-corner.tr {
+    top: var(--o);
+    right: var(--o);
+    border-left: 0;
+    border-bottom: 0;
+    border-top-right-radius: 12px;
+}
+
+.paper-corner.bl {
+    bottom: var(--o);
+    left: var(--o);
+    border-right: 0;
+    border-top: 0;
+    border-bottom-left-radius: 12px;
+}
+
+.paper-corner.br {
+    bottom: var(--o);
+    right: var(--o);
+    border-left: 0;
+    border-top: 0;
+    border-bottom-right-radius: 12px;
+}
+
+.oath-paper .doc-content {
+    padding: clamp(.9rem, 3vw, 1.6rem) clamp(.4rem, 3vw, 2.2rem);
+}
+
+.oath-paper .doc-header {
+    margin-bottom: clamp(1.2rem, 3vw, 2rem);
+}
+
+.oath-paper .doc-logo {
+    width: auto;
+    height: clamp(52px, 9vw, 68px);
+    margin-bottom: .75rem;
+}
+
+.oath-paper .doc-title {
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    line-height: 1.3;
+    color: var(--oath-primary);
+}
+
+.oath-paper .title-divider {
+    color: var(--oath-green);
+}
+
+.oath-paper .title-divider .line {
+    width: clamp(40px, 12vw, 90px);
+    background: linear-gradient(90deg, transparent, var(--oath-green));
+}
+
+.oath-paper .title-divider .line:last-child {
+    background: linear-gradient(270deg, transparent, var(--oath-green));
+}
+
+.oath-paper .doc-body {
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    line-height: 1.85;
+}
+
+.oath-paper .oath-intro {
+    text-align: left;
+}
+
+.oath-name {
+    display: inline-block;
+    min-width: clamp(150px, 40%, 300px);
+    max-width: 100%;
+    padding: 0 .35rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--oath-primary);
+    border-bottom: 2px dotted #94a3b8;
+    overflow-wrap: anywhere;
+}
+
+.oath-name:not(:empty) {
+    border-bottom: 2px solid var(--oath-primary);
+}
+
+.oath-name:empty::before {
+    content: "\00a0";
+}
+
+.oath-paper .oath-list {
+    gap: .6rem;
+}
+
+.oath-paper .oath-list li {
+    align-items: flex-start;
+    gap: .8rem;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.oath-check {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    margin-top: .22rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--oath-green);
+    color: #fff;
+}
+
+.oath-paper .oath-list li .oath-check i {
+    margin: 0;
+    font-size: .68rem;
+}
+
+.oath-paper .oath-outro {
+    margin: 1.4rem 0 0;
+    padding: 1rem 1.1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--oath-primary-dark);
+    background: var(--oath-primary-light);
+    border-left: 4px solid var(--oath-green);
+    border-radius: 10px;
+}
+
+.oath-sign {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 6vw, 56px);
+    margin: clamp(2rem, 6vw, 3rem) 0 1.25rem;
+}
+
+.sign-box {
+    text-align: center;
+}
+
+.sign-line {
+    display: block;
+    height: 34px;
+    border-bottom: 1.5px solid #64748b;
+}
+
+.sign-box small {
+    display: block;
+    margin-top: .4rem;
+    font-size: .85rem;
+    color: #64748b;
+}
+
+.oath-paper .doc-footer-decor {
+    margin-top: .5rem;
+}
+
+@media (min-width: 768px) {
+    .oath-paper .oath-intro,
+    .oath-paper .oath-list li,
+    .oath-paper .oath-outro {
+        text-align: justify;
+    }
+}
+
+
+/* ---------- Right action card ---------- */
+
+.oath-action-card {
+    border-radius: 16px;
+}
+
+.action-header {
+    padding: 1rem 1.25rem;
+}
+
+.action-body {
+    padding: 1.25rem;
+}
+
+.pdf-preview {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 1rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: zoom-in;
+}
+
+.pdf-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1103 / 1426;
+    object-fit: cover;
+    background: #fff;
+    border: 1px solid var(--oath-border);
+    border-radius: 10px;
+    box-shadow: 0 12px 24px -12px rgba(6, 45, 104, .4);
+    transition: transform .25s;
+}
+
+.pdf-preview:hover img {
+    transform: translateY(-2px);
+}
+
+.pdf-icon-badge {
+    bottom: -8px;
+    right: -8px;
+}
+
+.pdf-zoom {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    padding: 5px 12px;
+    font-size: .78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #fff;
+    background: rgba(6, 45, 104, .82);
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.action-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+}
+
+.btn-download-pdf,
+.btn-action-outline {
+    min-height: 46px;
+    cursor: pointer;
+}
+
+.btn-download-pdf {
+    background: linear-gradient(135deg, var(--oath-primary-dark), var(--oath-primary));
+    box-shadow: 0 8px 18px -8px rgba(7, 84, 165, .6);
+}
+
+.btn-download-pdf:hover {
+    background: linear-gradient(135deg, #04204b, var(--oath-primary-dark));
+}
+
+.btn-action-outline {
+    border-color: var(--oath-primary);
+}
+
+@media (min-width: 992px) {
+    .oath-action-card {
+        position: sticky;
+        top: 96px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .action-body {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 1.25rem;
+        align-items: center;
+    }
+    .pdf-preview {
+        margin: 0;
+    }
+    .action-buttons {
+        justify-content: center;
+    }
+}
+
+
+/* ---------- Bottom highlights ---------- */
+
+.oath-bottom-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 0;
+    border-radius: 16px;
+    align-items: stretch;
+}
+
+.oath-bottom-highlights .highlight-divider {
+    display: none;
+}
+
+.oath-bottom-highlights .highlight-item {
+    padding: 1.15rem 1.25rem;
+}
+
+.oath-bottom-highlights .highlight-divider+.highlight-item {
+    border-left: 1px solid var(--oath-border);
+}
+
+@media (max-width: 991.98px) {
+    .oath-bottom-highlights {
+        grid-template-columns: 1fr 1fr;
+        gap: .75rem;
+        padding: .75rem;
+    }
+    .oath-bottom-highlights .highlight-item,
+    .oath-bottom-highlights .highlight-divider+.highlight-item {
+        padding: .9rem;
+        background: #f8fbff;
+        border: 1px solid var(--oath-border);
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .oath-bottom-highlights {
+        grid-template-columns: 1fr;
+    }
+    .highlight-icon-box {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+/* ---------- Mobile polish ---------- */
+
+@media (max-width: 767.98px) {
+    .oath-page .about-hero {
+        padding-bottom: 44px;
+    }
+    .oath-main {
+        margin-top: -24px;
+    }
+    .oath-paper {
+        border-radius: 14px;
+    }
+    .oath-paper .oath-list li {
+        padding: .6rem .7rem;
+        gap: .65rem;
+    }
+}
+
+@media (max-width: 359.98px) {
+    .oath-sign {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ---------- Toast ---------- */
+
+.oath-toast {
+    position: fixed;
+    left: 50%;
+    bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+    z-index: 1100;
+    max-width: calc(100vw - 32px);
+    padding: 12px 18px;
+    font-size: .92rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    background: #0f172a;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 16px);
+    transition: opacity .25s, transform .25s;
+}
+
+.oath-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (min-width: 768px) {
+    .oath-toast {
+        bottom: 28px;
+    }
+}
+
+
+/* ---------- Preview lightbox ---------- */
+
+.oath-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 16px 16px;
+    background: rgba(6, 20, 45, .88);
+    backdrop-filter: blur(3px);
+}
+
+.oath-lightbox.open {
+    display: flex;
+}
+
+.oath-lightbox img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+}
+
+.lb-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: rgba(255, 255, 255, .16);
+    border: 0;
+    border-radius: 50%;
+}
+
+
+/* ---------- Focus + reduced motion ---------- */
+
+.oath-page a:focus-visible,
+.oath-page button:focus-visible,
+.oath-page input:focus-visible {
+    outline: 3px solid rgba(7, 84, 165, .45);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .oath-page *,
+    .oath-toast {
+        transition: none !important;
+    }
+}
+
+
+/* ---------- Print: certificate only (A4, one page) ---------- */
+
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+        /* removes browser date/title/URL header & footer */
+    }
+    *,
+    *::before,
+    *::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        animation: none !important;
+        transition: none !important;
+    }
+    html,
+    body {
+        height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #fff !important;
+    }
+    /* hide everything except the certificate */
+    .topbar,
+    .site-header,
+    .about-hero,
+    .site-footer,
+    .bottom-nav,
+    .back-to-top,
+    #google_translate_element,
+    .oath-sidebar-card,
+    .oath-action-card,
+    .oath-bottom-highlights,
+    .oath-name-tool,
+    .oath-toast,
+    .oath-lightbox,
+    .no-print {
+        display: none !important;
+    }
+    /* remove bootstrap container / grid so the paper can use full A4 width */
+    .oath-page {
+        padding: 0 !important;
+        background: #fff !important;
+    }
+    .oath-main {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .oath-main .container {
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .oath-main .row {
+        display: block !important;
+        margin: 0 !important;
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+    }
+    .oath-main .row>[class*="col-"] {
+        display: none !important;
+    }
+    .oath-main .row>.col-lg-8 {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    /* A4 certificate */
+    .oath-paper {
+        --o: 3mm;
+        width: 190mm !important;
+        max-width: 190mm !important;
+        margin: 10mm auto 0 !important;
+        padding: 8mm !important;
+        opacity: 1 !important;
+        transform: none !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        overflow: visible !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    .oath-paper::before {
+        border-radius: 6px;
+    }
+    .oath-paper .doc-content {
+        padding: 6mm 8mm !important;
+    }
+    .oath-paper .doc-header {
+        margin-bottom: 7mm !important;
+    }
+    .oath-paper .doc-logo {
+        height: 17mm !important;
+        margin-bottom: 3mm !important;
+    }
+    .oath-paper .doc-title {
+        font-size: 30px !important;
+    }
+    .oath-paper .doc-body {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+    .oath-paper .oath-intro,
+    .oath-paper .oath-list li,
+    .oath-paper .oath-outro {
+        text-align: left !important;
+    }
+    .oath-paper .oath-list {
+        gap: 3mm !important;
+    }
+    .oath-paper .oath-list li {
+        padding: 2.5mm 3.5mm !important;
+        break-inside: avoid;
+    }
+    .oath-paper .oath-outro {
+        margin-top: 6mm !important;
+        padding: 4mm 5mm !important;
+    }
+    .oath-sign {
+        margin: 16mm 0 6mm !important;
+        gap: 20mm !important;
+    }
+    .oath-sign .sign-line {
+        height: 14mm !important;
+    }
+}

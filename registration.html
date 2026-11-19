@@ -255,6 +255,11 @@
                                 <span class="text-danger small fw-bold">* চিহ্নিত ক্ষেত্রগুলো বাধ্যতামূলক</span>
                             </div>
 
+                            <div class="reg-progress" aria-hidden="true">
+                                <div class="reg-progress-text"><span>ফরম পূরণের অগ্রগতি</span><strong id="regProgressText">0%</strong></div>
+                                <div class="reg-progress-track"><span id="regProgressBar"></span></div>
+                            </div>
+
                             <form id="registrationForm" novalidate>
 
                                 <!-- 1. Personal Info -->
@@ -265,14 +270,14 @@
                                             <label class="form-label">পূর্ণ নাম <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                                                <input type="text" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                                                <input type="text" id="fullName" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন" autocomplete="name" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <label class="form-label">পিতার নাম <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                                                <input type="text" class="form-control" placeholder="পিতার নাম লিখুন" required>
+                                                <input type="text" id="fatherName" class="form-control" placeholder="পিতার নাম লিখুন" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -301,7 +306,7 @@
                                             <label class="form-label">জাতীয় পরিচয়পত্র (NID) নম্বর <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-regular fa-id-card"></i></span>
-                                                <input type="text" class="form-control" placeholder="১৭ সংখ্যার NID নম্বর লিখুন" required>
+                                                <input type="text" id="nid" class="form-control" placeholder="১০, ১৩ বা ১৭ সংখ্যার NID নম্বর লিখুন" inputmode="numeric" maxlength="17" pattern="([0-9]{10}|[0-9]{13}|[0-9]{17})" required>
                                             </div>
                                         </div>
                                     </div>
@@ -315,12 +320,12 @@
                                             <label class="form-label">শিক্ষা প্রতিষ্ঠানের নাম <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-solid fa-school"></i></span>
-                                                <input type="text" class="form-control" placeholder="শিক্ষা প্রতিষ্ঠানের নাম লিখুন" required>
+                                                <input type="text" id="institution" class="form-control" placeholder="শিক্ষা প্রতিষ্ঠানের নাম লিখুন" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">শিক্ষা প্রতিষ্ঠানের পদবী <span class="text-danger">*</span></label>
-                                            <select class="form-select" required>
+                                            <select class="form-select" id="designation" required>
                                                 <option value="">-- পদবী নির্বাচন করুন --</option>
                                                 <option value="teacher">শিক্ষক</option>
                                                 <option value="staff">কর্মচারী</option>
@@ -330,7 +335,7 @@
                                             <label class="form-label">ইনডেক্স নম্বর <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
-                                                <input type="text" class="form-control" placeholder="ইনডেক্স নম্বর লিখুন" required>
+                                                <input type="text" id="indexNo" class="form-control" placeholder="ইনডেক্স নম্বর লিখুন" inputmode="numeric" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -357,7 +362,7 @@
                                             <label class="form-label">সাংগঠনিক পদবী (বর্তমান) <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-solid fa-user-tie"></i></span>
-                                                <input type="text" class="form-control" placeholder="বর্তমান সাংগঠনিক পদবী লিখুন" required>
+                                                <input type="text" id="orgPost" class="form-control" placeholder="বর্তমান সাংগঠনিক পদবী লিখুন" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -449,14 +454,14 @@
                                             <label class="form-label">মোবাইল নম্বর <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fa-solid fa-mobile-screen"></i></span>
-                                                <input type="tel" class="form-control" placeholder="01XXXXXXXXX" required>
+                                                <input type="tel" id="mobile" class="form-control" placeholder="01XXXXXXXXX" inputmode="numeric" maxlength="11" pattern="01[3-9][0-9]{8}" autocomplete="tel" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <label class="form-label">হোয়াটসঅ্যাপ নম্বর</label>
                                             <div class="input-group">
                                                 <span class="input-group-text text-success"><i class="fa-brands fa-whatsapp"></i></span>
-                                                <input type="tel" class="form-control" placeholder="01XXXXXXXXX">
+                                                <input type="tel" id="whatsapp" class="form-control" placeholder="01XXXXXXXXX" inputmode="numeric" maxlength="11" pattern="01[3-9][0-9]{8}" autocomplete="tel">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -467,6 +472,37 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <!-- 6. Photo Upload -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-solid fa-camera text-primary"></i> ছবি আপলোড <span class="text-danger">*</span></h3>
+                                    <div class="photo-upload">
+                                        <div class="photo-drop" id="photoDrop">
+                                            <input type="file" id="photoInput" class="photo-input" accept="image/png,image/jpeg" required aria-label="ছবি আপলোড করুন">
+                                            <div class="photo-empty">
+                                                <i class="fa-solid fa-user"></i>
+                                                <span><i class="fa-solid fa-arrow-up-from-bracket"></i> ছবি দিন</span>
+                                            </div>
+                                            <img id="photoPreview" alt="নির্বাচিত ছবি">
+                                            <button type="button" class="photo-remove" id="photoRemove" aria-label="ছবি মুছুন"><i class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                        <div class="photo-help">
+                                            <p class="mb-1 fw-bold">পাসপোর্ট সাইজ ছবি আপলোড করুন</p>
+                                            <p class="small text-muted mb-3">JPG / PNG, সর্বোচ্চ 2MB। পরিষ্কার ও সামনে থেকে তোলা ছবি দিন।</p>
+                                            <label for="photoInput" class="btn btn-primary btn-sm px-4"><i class="fa-solid fa-folder-open me-2"></i> ফাইল নির্বাচন করুন</label>
+                                            <div class="photo-error" id="photoError" role="alert"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 7. Declaration -->
+                                <div class="form-section">
+                                    <h3 class="section-title"><i class="fa-solid fa-file-signature text-primary"></i> শপথ ও ঘোষণা</h3>
+                                    <label class="declare-box" for="declaration">
+                                        <input class="form-check-input" type="checkbox" id="declaration" required>
+                                        <span>আমি শপথ করে ঘোষণা করছি যে, উপরে প্রদত্ত সকল তথ্য সত্য ও সঠিক। কোনো তথ্য ভুল প্রমাণিত হলে সদস্যপদ বাতিলসহ সংগঠনের নিয়মানুযায়ী ব্যবস্থা গ্রহণে আমার কোনো আপত্তি থাকবে না।</span>
+                                    </label>
                                 </div>
 
                                 <!-- Action Buttons -->
@@ -491,52 +527,91 @@
                     <div class="col-xl-3 col-lg-12 order-3">
                         <!-- Digital ID Preview -->
                         <div class="reg-widget widget-id-preview mb-4">
-                            <div class="widget-header bg-dark-blue text-white">
+                            <div class="widget-header">
                                 <i class="fa-regular fa-id-card"></i> সদস্য পরিচয়পত্র (নমুনা)
+                                <span class="live-badge"><i></i> লাইভ প্রিভিউ</span>
                             </div>
-                            <div class="id-card-preview">
-                                <div class="id-header">
-                                    <div class="id-photo">
-                                        <img src="https://via.placeholder.com/80" alt="Member Photo">
+
+                            <div class="id-wrap">
+                                <article class="id-card" aria-label="সদস্য পরিচয়পত্রের নমুনা">
+
+                                    <!-- Top: leaders + brand -->
+                                    <div class="id-top">
+                                        <figure class="id-leader">
+                                            <img src="assets/images/leaders/leader-01.jpg" alt="চেয়ারম্যান" loading="lazy" onerror="this.style.visibility='hidden'">
+                                            <figcaption>চেয়ারম্যান</figcaption>
+                                        </figure>
+                                        <div class="id-brand">
+                                            <img src="assets/images/logo.png" alt="SKO">
+                                            <h4>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</h4>
+                                            <p>কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা</p>
+                                        </div>
+                                        <figure class="id-leader">
+                                            <img src="assets/images/leaders/leader-02.jpg" alt="মহাসচিব" loading="lazy" onerror="this.style.visibility='hidden'">
+                                            <figcaption>মহাসচিব</figcaption>
+                                        </figure>
                                     </div>
-                                    <div class="id-logo">
-                                        <img src="assets/images/logo.png" alt="SKO Logo">
-                                        <p>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</p>
-                                        <span>কেন্দ্রীয় সংগঠন ও সমন্বিত ব্যবস্থাপনা</span>
+
+                                    <div class="id-ribbon"><span>সদস্য পরিচয়পত্র</span></div>
+
+                                    <!-- Main: photo + QR + info -->
+                                    <div class="id-main">
+                                        <div class="id-side">
+                                            <div class="id-photo">
+                                                <img id="pvPhoto" src="assets/images/member/ec-01.jpg" alt="সদস্যের ছবি" onerror="this.style.visibility='hidden'">
+                                            </div>
+                                            <div class="id-qr">
+                                                <div class="id-qr-code" id="pvQr" role="img" aria-label="QR কোড"></div>
+                                                <span>স্ক্যান করে যাচাই করুন</span>
+                                            </div>
+                                        </div>
+
+                                        <dl class="id-info">
+                                            <div><dt>নাম</dt>
+                                                <dd id="pvName" data-default="মো: আব্দুল করিম">মো: আব্দুল করিম</dd>
+                                            </div>
+                                            <div><dt>পিতার নাম</dt>
+                                                <dd id="pvFather" data-default="মো: রফিকুল ইসলাম">মো: রফিকুল ইসলাম</dd>
+                                            </div>
+                                            <div><dt>শিক্ষা প্রতিষ্ঠান</dt>
+                                                <dd id="pvInstitute" data-default="ঢাকা কলেজ, ঢাকা">ঢাকা কলেজ, ঢাকা</dd>
+                                            </div>
+                                            <div><dt>পদবী</dt>
+                                                <dd id="pvDesignation" data-default="প্রভাষক">প্রভাষক</dd>
+                                            </div>
+                                            <div><dt>ইনডেক্স নম্বর</dt>
+                                                <dd id="pvIndex" data-default="১২৩৪৫">১২৩৪৫</dd>
+                                            </div>
+                                            <div class="id-num"><dt>সদস্য নম্বর</dt>
+                                                <dd id="pvMember">SKO-BCTA-254001</dd>
+                                            </div>
+                                            <div><dt>সাংগঠনিক পদবী</dt>
+                                                <dd id="pvOrgPost" data-default="জেলা সাধারণ সম্পাদক">জেলা সাধারণ সম্পাদক</dd>
+                                            </div>
+                                            <div><dt>মেয়াদ</dt>
+                                                <dd>২০২৫ – ২০২৮</dd>
+                                            </div>
+                                        </dl>
                                     </div>
-                                    <div class="id-photo">
-                                        <img src="https://via.placeholder.com/80" alt="Member Photo">
+
+                                    <!-- Footer: signatures + seal -->
+                                    <div class="id-foot">
+                                        <div class="id-sign">
+                                            <span>চেয়ারম্যান</span>
+                                            <small>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</small>
+                                        </div>
+                                        <img class="id-seal" src="assets/images/seal.png" alt="SKO সিল" onerror="this.style.visibility='hidden'">
+                                        <div class="id-sign">
+                                            <span>মহাসচিব</span>
+                                            <small>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="id-title">সদস্য পরিচয়পত্র</div>
-                                <div class="id-body">
-                                    <div class="id-info">
-                                        <p><strong>নাম</strong> : মো: আফজাল করিম</p>
-                                        <p><strong>পিতার নাম</strong> : মো: রফিকুল ইসলাম</p>
-                                        <p><strong>শিক্ষা প্রতিষ্ঠান</strong> : চাঁদা কলেজ, চাঁদা</p>
-                                        <p><strong>পদবী</strong> : অধ্যাপক</p>
-                                        <p><strong>ইনডেক্স নম্বর</strong> : ১২৩৪৫</p>
-                                        <p><strong>সদস্য নম্বর</strong> : SKO-BCTA-254001</p>
-                                        <p><strong>সাংগঠনিক পদবী</strong> : জেলা সাধারণ সম্পাদক</p>
-                                        <p><strong>মেয়াদ</strong> : ২০২৫ - ২০২৬</p>
-                                    </div>
-                                    <div class="id-qr">
-                                        <i class="fa-solid fa-qrcode"></i>
-                                    </div>
-                                </div>
-                                <div class="id-footer">
-                                    <div class="signature">
-                                        <span>স্বাক্ষর</span>
-                                        <strong>চেয়ারম্যান</strong>
-                                    </div>
-                                    <div class="seal">
-                                        <i class="fa-solid fa-stamp"></i>
-                                    </div>
-                                    <div class="signature">
-                                        <span>স্বাক্ষর</span>
-                                        <strong>মহাসচিব</strong>
-                                    </div>
-                                </div>
+                                    <div class="id-wave"></div>
+                                </article>
+
+                                <p class="id-note">
+                                    <i class="fa-solid fa-circle-info"></i> ফরম পূরণ করলে কার্ডের তথ্য স্বয়ংক্রিয়ভাবে আপডেট হবে। এটি শুধু নমুনা।
+                                </p>
                             </div>
                         </div>
 
@@ -656,6 +731,9 @@
 
     <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- QR Code generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
 
     <!-- NEW Registration JS -->
     <script src="js/registration.js" defer></script>
