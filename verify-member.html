@@ -131,7 +131,7 @@
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সাংগঠন</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="leadership.html">কেন্দ্রীয় নেতৃত্ব</a></li>
-                                <li><a class="dropdown-item" href="org-structure.html">সংগঠনের বিস্তারিত</a></li>
+                                <li><a class="dropdown-item" href="org-details.html">সংগঠনের বিস্তারিত</a></li>
                                 <li><a class="dropdown-item" href="committee-directory.html">অনুমোদিত কমিটির তালিকা</a></li>
                                 <li><a class="dropdown-item" href="former-committees.html">সাবেক ও মেয়াদোত্তীর্ণ কমিটি</a></li>
                                 <li><a class="dropdown-item" href="central-instructions.html">কেন্দ্রীয় নির্দেশনা</a></li>
@@ -195,63 +195,81 @@
         <!-- Main Layout -->
         <section class="vm-main">
             <div class="container">
-                <div class="row g-4">
+                <div class="row g-4 align-items-start">
 
                     <!-- Left Column: Verification Form -->
-                    <div class="col-xl-4 col-lg-5">
+                    <div class="col-xl-4 col-lg-5 search-col">
                         <div class="vm-card search-card">
                             <div class="card-header-title">
                                 <i class="fa-solid fa-magnifying-glass text-primary"></i> সদস্য যাচাই করুন
                             </div>
 
                             <!-- Custom Tabs -->
-                            <div class="vm-tabs">
-                                <button class="vm-tab active" data-target="byId">
-                                    <i class="fa-regular fa-id-card"></i> সদস্য নম্বর দিয়ে
+                            <div class="vm-tabs" role="tablist" aria-label="যাচাইয়ের পদ্ধতি">
+                                <button type="button" class="vm-tab active" role="tab" aria-selected="true" aria-controls="byId" data-target="byId">
+                                    <i class="fa-regular fa-id-card"></i><span>সদস্য নম্বর</span>
                                 </button>
-                                <button class="vm-tab" data-target="byNid">
-                                    <i class="fa-regular fa-address-card"></i> NID নম্বর দিয়ে
+                                <button type="button" class="vm-tab" role="tab" aria-selected="false" aria-controls="byNid" data-target="byNid">
+                                    <i class="fa-regular fa-address-card"></i><span>NID নম্বর</span>
                                 </button>
-                                <button class="vm-tab" data-target="byQr">
-                                    <i class="fa-solid fa-qrcode"></i> QR কোড স্ক্যান
+                                <button type="button" class="vm-tab" role="tab" aria-selected="false" aria-controls="byQr" data-target="byQr">
+                                    <i class="fa-solid fa-qrcode"></i><span>QR স্ক্যান</span>
                                 </button>
                             </div>
 
                             <div class="tab-content-wrapper">
-                                <!-- Tab 1: ID -->
-                                <div class="vm-tab-pane active" id="byId">
-                                    <label class="form-label">সদস্য নম্বর <span class="text-danger">*</span></label>
-                                    <div class="input-group mb-3">
+
+                                <!-- Tab 1: Member ID -->
+                                <form class="vm-tab-pane active" id="byId" role="tabpanel" novalidate autocomplete="off">
+                                    <label class="form-label" for="memberIdInput">সদস্য নম্বর <span class="text-danger">*</span></label>
+                                    <div class="input-group">
                                         <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
-                                        <input type="text" class="form-control" placeholder="যেমন: SKO-BCTA-254001" id="memberIdInput">
+                                        <input type="text" class="form-control" id="memberIdInput" placeholder="যেমন: SKO-BCTA-254001" autocapitalize="characters" spellcheck="false" aria-describedby="memberIdInputError">
                                     </div>
-                                    <button class="btn btn-primary w-100 btn-verify" id="btnVerifyId">
+                                    <div class="field-error" id="memberIdInputError" role="alert"></div>
+                                    <div class="form-hint">সদস্য পরিচয়পত্রে মুদ্রিত নম্বরটি লিখুন</div>
+                                    <button type="submit" class="btn btn-primary w-100 btn-verify mt-3" id="btnVerifyId">
                                         <i class="fa-solid fa-magnifying-glass me-2"></i> যাচাই করুন
                                     </button>
-                                </div>
+                                </form>
 
                                 <!-- Tab 2: NID -->
-                                <div class="vm-tab-pane" id="byNid">
-                                    <label class="form-label">NID নম্বর <span class="text-danger">*</span></label>
-                                    <div class="input-group mb-3">
+                                <form class="vm-tab-pane" id="byNid" role="tabpanel" novalidate autocomplete="off">
+                                    <label class="form-label" for="nidInput">NID নম্বর <span class="text-danger">*</span></label>
+                                    <div class="input-group">
                                         <span class="input-group-text"><i class="fa-regular fa-id-card"></i></span>
-                                        <input type="text" class="form-control" placeholder="১৭ সংখ্যার NID নম্বর">
+                                        <input type="text" class="form-control" id="nidInput" placeholder="১০, ১৩ বা ১৭ সংখ্যার NID নম্বর" inputmode="numeric" maxlength="17" aria-describedby="nidInputError">
                                     </div>
-                                    <button class="btn btn-primary w-100 btn-verify">
+                                    <div class="field-error" id="nidInputError" role="alert"></div>
+                                    <div class="form-hint">শুধু সংখ্যা লিখুন, কোনো স্পেস বা ড্যাশ ছাড়া</div>
+                                    <button type="submit" class="btn btn-primary w-100 btn-verify mt-3" id="btnVerifyNid">
                                         <i class="fa-solid fa-magnifying-glass me-2"></i> যাচাই করুন
                                     </button>
-                                </div>
+                                </form>
 
                                 <!-- Tab 3: QR -->
-                                <div class="vm-tab-pane text-center" id="byQr">
-                                    <div class="qr-scanner-box mb-3">
-                                        <i class="fa-solid fa-qrcode"></i>
-                                        <p>ক্যামেরা চালু করে QR কোড স্ক্যান করুন</p>
+                                <div class="vm-tab-pane" id="byQr" role="tabpanel">
+                                    <div class="qr-viewfinder" id="qrFinder">
+                                        <video id="qrVideo" playsinline muted></video>
+                                        <div class="qr-idle">
+                                            <i class="fa-solid fa-qrcode"></i>
+                                            <p>পরিচয়পত্রের QR কোড<br>ফ্রেমের ভেতরে রাখুন</p>
+                                        </div>
+                                        <div class="qr-frame"><span></span><span></span><span></span><span></span></div>
+                                        <div class="qr-line"></div>
                                     </div>
-                                    <button class="btn btn-outline-primary w-100">
-                                        <i class="fa-solid fa-camera me-2"></i> QR ছবি আপলোড করুন
-                                    </button>
+                                    <div class="qr-status" id="qrStatus" role="status">ক্যামেরা বন্ধ আছে</div>
+                                    <div class="qr-actions">
+                                        <button type="button" class="btn btn-primary btn-verify" id="btnQrStart">
+                                            <i class="fa-solid fa-camera me-2"></i><span>ক্যামেরা চালু করুন</span>
+                                        </button>
+                                        <label class="btn btn-outline-primary" for="qrFileInput">
+                                            <i class="fa-regular fa-image me-2"></i> ছবি আপলোড করুন
+                                        </label>
+                                        <input type="file" id="qrFileInput" accept="image/*" hidden>
+                                    </div>
                                 </div>
+
                             </div>
 
                             <!-- Tips -->
@@ -267,115 +285,156 @@
                     </div>
 
                     <!-- Right Column: Verification Result -->
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="vm-card result-card" id="resultCard">
-                            <div class="card-header-title d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="fa-solid fa-shield-check text-success"></i> সদস্যের তথ্য (যাচাই সফল)
-                                </div>
-                                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> বৈধ ও অনুমোদিত সদস্য</span>
-                            </div>
-
-                            <div class="result-content" id="verificationResult" style="display: none;">
-                                <!-- Photo & QR Section -->
-                                <div class="result-left">
-                                    <div class="member-photo">
-                                        <img src="https://via.placeholder.com/150x180" alt="Member Photo" id="resPhoto">
-                                    </div>
-                                    <div class="member-status-badge">
-                                        <i class="fa-solid fa-circle-check"></i> অনুমোদিত সদস্য
-                                    </div>
-                                    <div class="member-qr-box">
-                                        <i class="fa-solid fa-qrcode"></i>
-                                        <small>QR কোড স্ক্যান করুন</small>
-                                    </div>
-                                </div>
-
-                                <!-- Info Section -->
-                                <div class="result-right">
-                                    <div class="org-header">
-                                        <div class="org-logo">
-                                            <i class="fa-solid fa-book-open text-success"></i>
-                                        </div>
-                                        <div>
-                                            <h5>বাংলাদেশ কলেজ শিক্ষক সমিতি (BCTA)</h5>
-                                            <p>শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর সহযোগী সংগঠন</p>
-                                        </div>
-                                    </div>
-
-                                    <table class="info-table">
-                                        <tr>
-                                            <td><i class="fa-regular fa-user"></i> নাম</td>
-                                            <td>: <span class="fw-bold" id="resName">মো: কামরুল ইসলাম</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-user-tie"></i> পিতার নাম</td>
-                                            <td>: <span id="resFather">মো: রফিকুল ইসলাম</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-user-tie"></i> মাতার নাম</td>
-                                            <td>: <span id="resMother">মোছা: জাহানারা বেগম</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-school"></i> শিক্ষা প্রতিষ্ঠান</td>
-                                            <td>: <span id="resSchool">চাঁদা সরকারি কলেজ, চাঁদা</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-briefcase"></i> পদবী</td>
-                                            <td>: <span id="resDesignation">অধ্যাপক</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-hashtag"></i> ইনডেক্স নম্বর</td>
-                                            <td>: <span id="resIndex">১২৩৪৫</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-sitemap"></i> সাংগঠনিক পদবী</td>
-                                            <td>: <span id="resOrgPos">জেলা সাধারণ সম্পাদক</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-regular fa-id-badge"></i> সদস্য নম্বর</td>
-                                            <td>: <span class="fw-bold" id="resMemberId">SKO-BCTA-254001</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-regular fa-calendar"></i> সদস্যপদের মেয়াদ</td>
-                                            <td>: <span id="resValidity">২০২৫ - ২০২৬</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa-solid fa-circle-check text-success"></i> সদস্যের অবস্থা</td>
-                                            <td>: <span class="badge bg-success">সক্রিয় (Active)</span></td>
-                                        </tr>
-                                    </table>
-                                </div>
-
-                                <!-- Watermark / Seal -->
-                                <div class="result-watermark">
-                                    <i class="fa-solid fa-book-open"></i>
-                                    <span>SKO</span>
-                                </div>
-                                <div class="result-seal">
-                                    <i class="fa-solid fa-stamp"></i>
-                                    <span>কেন্দ্রীয় সংগঠন</span>
-                                </div>
-                            </div>
-
-                            <!-- Action Buttons -->
-                            <div class="result-actions" id="resultActions" style="display: none;">
-                                <button class="btn btn-outline-primary">
-                                    <i class="fa-solid fa-print me-2"></i> পরিচয়পত্র প্রিন্ট
-                                </button>
-                                <button class="btn btn-outline-primary">
-                                    <i class="fa-solid fa-download me-2"></i> পরিচয়পত্র ডাউনলোড (PDF)
-                                </button>
-                                <a href="member-services.html" class="btn btn-outline-primary">
-                                    <i class="fa-regular fa-user me-2"></i> সম্পূর্ণ প্রোফাইল দেখুন
-                                </a>
-                            </div>
+                    <div class="col-xl-8 col-lg-7 result-col">
+                        <div class="vm-card result-card" id="resultCard" data-state="active" tabindex="-1" aria-live="polite">
 
                             <!-- Initial Empty State -->
                             <div class="result-empty" id="resultEmpty">
-                                <i class="fa-solid fa-shield-halved"></i>
+                                <div class="empty-art"><i class="fa-solid fa-shield-halved"></i></div>
                                 <h4>যাচাইয়ের জন্য অপেক্ষা করা হচ্ছে</h4>
-                                <p>সদস্য নম্বর বা QR কোড প্রদান করে যাচাই করুন। সঠিক তথ্য প্রদান করা হলে এখানে সদস্যের বিস্তারিত তথ্য দেখা যাবে।</p>
+                                <p>সদস্য নম্বর, NID বা QR কোড দিয়ে যাচাই করুন। সঠিক তথ্য দিলে এখানে সদস্যের বিস্তারিত তথ্য দেখা যাবে।</p>
+                                <ul class="empty-steps">
+                                    <li><span>১</span> যাচাইয়ের পদ্ধতি বেছে নিন</li>
+                                    <li><span>২</span> সদস্য নম্বর, NID বা QR দিন</li>
+                                    <li><span>৩</span> তাৎক্ষণিক ফলাফল দেখুন</li>
+                                </ul>
+                            </div>
+
+                            <!-- Result -->
+                            <div class="result-view" id="resultView" hidden>
+
+                                <div class="rv-head">
+                                    <span class="rv-icon"><i class="fa-solid fa-circle-check" id="rvIcon"></i></span>
+                                    <div class="rv-text">
+                                        <h2 id="rvTitle">সদস্য যাচাই সফল হয়েছে</h2>
+                                        <p id="rvMsg"></p>
+                                    </div>
+                                    <span class="badge-verified" id="rvBadge"></span>
+                                </div>
+
+                                <div class="rv-body" id="rvBody">
+
+                                    <div class="id-card">
+
+                                        <img class="id-watermark" src="assets/images/logo.png" alt="" aria-hidden="true">
+
+                                        <!-- Photo & QR -->
+                                        <div class="id-side">
+                                            <div class="id-photo-box">
+                                                <div class="id-photo">
+                                                    <i class="fa-regular fa-user"></i>
+                                                    <img src="assets/images/member/ec-01.jpg" alt="সদস্যের ছবি" id="resPhoto" onerror="this.hidden=true">
+                                                </div>
+                                                <span class="id-status" id="resStatusPill">
+                                                    <i class="fa-solid fa-circle-check"></i> <span id="resStatusPillText">অনুমোদিত সদস্য</span>
+                                                </span>
+                                            </div>
+
+                                            <div class="id-qr">
+                                                <div class="id-qr-frame">
+                                                    <div class="id-qr-code" id="resQr"></div>
+                                                    <img class="id-qr-logo" src="assets/images/logo.png" alt="">
+                                                </div>
+                                                <small>স্ক্যান করে যাচাই করুন</small>
+                                            </div>
+                                        </div>
+
+                                        <!-- Info -->
+                                        <div class="id-main">
+                                            <div class="org-header">
+                                                <div class="org-logo"><img src="assets/images/logo.png" alt="SKO"></div>
+                                                <div>
+                                                    <h5 id="resOrg"></h5>
+                                                    <p>শিক্ষক কর্মচারী ঐক্য জোট (SKO)-এর সহযোগী সংগঠন</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="info-grid">
+                                                <div class="info-cell wide is-name">
+                                                    <span class="ic"><i class="fa-regular fa-user"></i></span>
+                                                    <div><small class="cell-label">নাম</small><strong id="resName"></strong></div>
+                                                </div>
+                                                <div class="info-cell">
+                                                    <span class="ic"><i class="fa-solid fa-user-tie"></i></span>
+                                                    <div><small class="cell-label">পিতার নাম</small><strong id="resFather"></strong></div>
+                                                </div>
+                                                <div class="info-cell">
+                                                    <span class="ic"><i class="fa-solid fa-person-dress"></i></span>
+                                                    <div><small class="cell-label">মাতার নাম</small><strong id="resMother"></strong></div>
+                                                </div>
+                                                <div class="info-cell wide">
+                                                    <span class="ic"><i class="fa-solid fa-school"></i></span>
+                                                    <div><small class="cell-label">শিক্ষা প্রতিষ্ঠান</small><strong id="resSchool"></strong></div>
+                                                </div>
+                                                <div class="info-cell">
+                                                    <span class="ic"><i class="fa-solid fa-briefcase"></i></span>
+                                                    <div><small class="cell-label">পদবী</small><strong id="resDesignation"></strong></div>
+                                                </div>
+                                                <div class="info-cell">
+                                                    <span class="ic"><i class="fa-solid fa-hashtag"></i></span>
+                                                    <div><small class="cell-label">ইনডেক্স নম্বর</small><strong id="resIndex"></strong></div>
+                                                </div>
+                                                <div class="info-cell wide">
+                                                    <span class="ic"><i class="fa-solid fa-sitemap"></i></span>
+                                                    <div><small class="cell-label">সাংগঠনিক পদবী</small><strong id="resOrgPos"></strong></div>
+                                                </div>
+                                                <div class="info-cell wide is-id">
+                                                    <span class="ic"><i class="fa-regular fa-id-badge"></i></span>
+                                                    <div><small class="cell-label">সদস্য নম্বর</small><strong id="resMemberId"></strong></div>
+                                                    <button type="button" class="cell-copy" id="btnCopyId" aria-label="সদস্য নম্বর কপি করুন">
+                                                        <i class="fa-regular fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="info-cell">
+                                                    <span class="ic"><i class="fa-regular fa-calendar-check"></i></span>
+                                                    <div>
+                                                        <small class="cell-label">সদস্যপদের মেয়াদ</small>
+                                                        <strong id="resValidity"></strong>
+                                                        <span class="cell-note" id="resValidityNote"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="info-cell">
+                                                    <span class="ic"><i class="fa-solid fa-circle-check"></i></span>
+                                                    <div><small class="cell-label">সদস্যের অবস্থা</small><strong class="badge-status" id="resStatus"></strong></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Footer: time + seal -->
+                                        <div class="id-footer">
+                                            <div class="id-footer-text">
+                                                <i class="fa-solid fa-shield-halved"></i>
+                                                <span>SKO ডিজিটাল ভেরিফিকেশন<br>যাচাইয়ের সময়: <strong id="resVerifiedAt"></strong></span>
+                                            </div>
+                                            <img class="id-seal" src="assets/images/seal.png" alt="SKO সিল" onerror="this.hidden=true">
+                                        </div>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="result-actions" id="resultActions">
+                                        <button type="button" class="btn btn-primary" id="btnDownload" data-show="active">
+                                            <i class="fa-solid fa-download me-2"></i> পরিচয়পত্র ডাউনলোড (PDF)
+                                        </button>
+                                        <button type="button" class="btn btn-outline-primary" id="btnPrint" data-show="active">
+                                            <i class="fa-solid fa-print me-2"></i> পরিচয়পত্র প্রিন্ট
+                                        </button>
+                                        <a href="member-services.html" class="btn btn-outline-primary" data-show="active">
+                                            <i class="fa-regular fa-user me-2"></i> সম্পূর্ণ প্রোফাইল দেখুন
+                                        </a>
+                                        <button type="button" class="btn btn-outline-primary" id="btnShare" data-show="active">
+                                            <i class="fa-solid fa-share-nodes me-2"></i> শেয়ার করুন
+                                        </button>
+                                        <a href="member-services.html#renew" class="btn btn-warning" data-show="expired" hidden>
+                                            <i class="fa-solid fa-rotate me-2"></i> সদস্যপদ নবায়ন করুন
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="result-help" id="resHelp" hidden>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>প্রদত্ত তথ্য আবার মিলিয়ে দেখুন। সমস্যা থাকলে <a href="mailto:info@sko.org.bd">info@sko.org.bd</a> ঠিকানায় যোগাযোগ করুন।</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -502,6 +561,10 @@
 
     <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- QR decoder (scan) + QR generator (member card) -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js" defer></script>
 
     <!-- NEW Verify Member JS -->
     <script src="js/verify-member.js" defer></script>

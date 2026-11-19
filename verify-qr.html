@@ -131,7 +131,7 @@
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">সাংগঠন</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="leadership.html">কেন্দ্রীয় নেতৃত্ব</a></li>
-                                <li><a class="dropdown-item" href="org-structure.html">সংগঠনের বিস্তারিত</a></li>
+                                <li><a class="dropdown-item" href="org-details.html">সংগঠনের বিস্তারিত</a></li>
                                 <li><a class="dropdown-item" href="committee-directory.html">অনুমোদিত কমিটির তালিকা</a></li>
                                 <li><a class="dropdown-item" href="former-committees.html">সাবেক ও মেয়াদোত্তীর্ণ কমিটি</a></li>
                                 <li><a class="dropdown-item" href="central-instructions.html">কেন্দ্রীয় নির্দেশনা</a></li>
@@ -172,7 +172,7 @@
         </nav>
     </header>
     <!-- ================= HEADER END ================= -->
-    <main class="vm-page">
+    <main class="vq-page">
 
         <!-- ===== Hero Section ===== -->
         <section class="about-hero">
@@ -182,170 +182,257 @@
                     <ol class="breadcrumb about-breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> হোম</a></li>
                         <li class="breadcrumb-item"><a href="#">সদস্য</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">সদস্য যাচাই</li>
+                        <li class="breadcrumb-item active" aria-current="page">QR পরিচয়পত্র যাচাই</li>
                     </ol>
                 </nav>
-                <h1 class="hero-title">সদস্য যাচাই <span>(Member Verification)</span></h1>
-                <p class="hero-subtitle">SKO এবং এর সহযোগী সংগঠনের নিবন্ধিত সদস্যদের তথ্য যাচাই করুন</p>
+                <h1 class="hero-title">QR পরিচয়পত্র যাচাই <span>(QR Card Verification)</span></h1>
+                <p class="hero-subtitle">সদস্যের ডিজিটাল পরিচয়পত্রের QR কোড স্ক্যান করে তথ্য যাচাই করুন</p>
             </div>
         </section>
         <section class="vq-main">
             <div class="container">
-                <div class="row g-4">
+                <div class="row g-4 align-items-start">
 
                     <!-- Left Column: QR Scanner -->
-                    <div class="col-xl-4 col-lg-5">
+                    <div class="col-xl-4 col-lg-5 search-col">
                         <div class="vq-card search-card">
                             <div class="card-header-title">
                                 <i class="fa-solid fa-qrcode text-primary"></i> QR পরিচয়পত্র যাচাই
                             </div>
 
                             <!-- Custom Tabs -->
-                            <div class="vq-tabs">
-                                <button class="vq-tab active">
-                                    <i class="fa-solid fa-camera"></i> QR কোড স্ক্যান করুন
+                            <div class="vq-tabs" role="tablist" aria-label="যাচাইয়ের পদ্ধতি">
+                                <button type="button" class="vq-tab active" role="tab" aria-selected="true" aria-controls="paneCam" data-target="paneCam">
+                                    <i class="fa-solid fa-camera"></i><span>ক্যামেরা স্ক্যান</span>
                                 </button>
-                                <button class="vq-tab">
-                                    <i class="fa-solid fa-upload"></i> ছবি আপলোড করে যাচাই
+                                <button type="button" class="vq-tab" role="tab" aria-selected="false" aria-controls="paneUpload" data-target="paneUpload">
+                                    <i class="fa-solid fa-image"></i><span>ছবি আপলোড</span>
                                 </button>
                             </div>
 
-                            <!-- Scanner Area -->
-                            <div class="scanner-area mb-3">
-                                <div class="scanner-box">
-                                    <div class="scanner-corners">
-                                        <span></span><span></span><span></span><span></span>
+                            <!-- Pane 1: Camera -->
+                            <div class="vq-pane active" id="paneCam" role="tabpanel">
+                                <div class="qr-viewfinder" id="qrFinder">
+                                    <video id="qrVideo" playsinline muted></video>
+                                    <div class="qr-idle">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                        <p>পরিচয়পত্রের QR কোড<br>ফ্রেমের ভেতরে রাখুন</p>
                                     </div>
-                                    <i class="fa-solid fa-qrcode"></i>
-                                    <div class="scanner-line"></div>
+                                    <div class="qr-frame"><span></span><span></span><span></span><span></span></div>
+                                    <div class="qr-line"></div>
+                                    <div class="qr-tools">
+                                        <button type="button" class="qr-tool" id="btnTorch" aria-label="ফ্ল্যাশ চালু/বন্ধ" hidden><i class="fa-solid fa-bolt"></i></button>
+                                        <button type="button" class="qr-tool" id="btnFlip" aria-label="ক্যামেরা বদলান" hidden><i class="fa-solid fa-camera-rotate"></i></button>
+                                    </div>
                                 </div>
-                                <p class="text-center text-muted small mt-3">ক্যামেরা দিয়ে QR কোড স্ক্যান করুন</p>
+                                <div class="qr-status" id="qrStatus" role="status">ক্যামেরা বন্ধ আছে</div>
+                                <button type="button" class="btn btn-primary btn-scan w-100" id="btnQrStart">
+                                    <i class="fa-solid fa-camera me-2"></i><span>ক্যামেরা চালু করুন</span>
+                                </button>
                             </div>
 
-                            <div class="text-center text-muted small mb-3">অথবা</div>
+                            <!-- Pane 2: Upload -->
+                            <div class="vq-pane" id="paneUpload" role="tabpanel">
+                                <label class="vq-drop" id="vqDrop" for="qrFileInput">
+                                    <span class="vq-drop-ic"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                                    <strong>QR কোডের ছবি আপলোড করুন</strong>
+                                    <span>ছবি টেনে এনে ছাড়ুন, ক্লিক করুন বা Ctrl+V দিয়ে পেস্ট করুন</span>
+                                    <small>JPG, PNG ফাইল (সর্বোচ্চ 5MB)</small>
+                                </label>
+                                <input type="file" id="qrFileInput" accept="image/jpeg,image/png" hidden>
 
-                            <button class="btn btn-outline-primary w-100 btn-upload">
-                                <i class="fa-solid fa-upload me-2"></i> QR কোডের ছবি আপলোড করুন
-                            </button>
-                            <p class="text-center text-muted small mt-2">JPG, PNG ফাইল (সর্বোচ্চ 5MB)</p>
+                                <div class="vq-preview" id="vqPreview" hidden>
+                                    <img id="vqPreviewImg" alt="আপলোড করা ছবি">
+                                    <div>
+                                        <strong id="vqFileName"></strong>
+                                        <small id="vqFileMeta"></small>
+                                    </div>
+                                    <button type="button" class="vq-clear" id="btnClearFile" aria-label="ছবি সরান"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Tips -->
+                            <div class="vq-tips">
+                                <h6><i class="fa-regular fa-lightbulb me-2"></i> ভালো স্ক্যানের টিপস</h6>
+                                <ul>
+                                    <li>পর্যাপ্ত আলোতে কার্ড ধরুন</li>
+                                    <li>QR কোড পুরোটা ফ্রেমের ভেতরে রাখুন</li>
+                                    <li>ক্যামেরা স্থির রেখে ৫-২০ সেমি দূরত্বে ধরুন</li>
+                                </ul>
+                            </div>
+
+                            <a class="vq-alt-link" href="verify-member.html">
+                                <i class="fa-regular fa-id-card"></i> সদস্য নম্বর বা NID দিয়ে যাচাই করুন <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Middle & Right Columns: Verification Result -->
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="vq-card result-card" id="resultCard">
-                            <div class="card-header-title d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="fa-solid fa-shield-check text-success"></i> পরিচয়পত্র যাচাইয়ের ফলাফল
-                                </div>
-                                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> বৈধ ও অনুমোদিত পরিচয়পত্র</span>
-                            </div>
-
-                            <div class="result-content" id="verificationResult" style="display: none;">
-                                <div class="row g-4">
-
-                                    <!-- Digital ID Card (Left inside result) -->
-                                    <div class="col-md-6">
-                                        <div class="digital-id-card">
-                                            <div class="id-header">
-                                                <div class="id-photo">
-                                                    <img src="https://via.placeholder.com/80" alt="Member Photo">
-                                                </div>
-                                                <div class="id-logo">
-                                                    <img src="assets/images/logo.png" alt="SKO Logo">
-                                                    <p>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</p>
-                                                    <span>বাংলাদেশ কলেজ শিক্ষক সমিতি (BCTA)</span>
-                                                </div>
-                                                <div class="id-photo">
-                                                    <img src="https://via.placeholder.com/80" alt="Member Photo">
-                                                </div>
-                                            </div>
-                                            <div class="id-title">সদস্য পরিচয়পত্র</div>
-                                            <div class="id-body">
-                                                <div class="id-info">
-                                                    <p><strong>নাম</strong> : মো: কামরুল ইসলাম</p>
-                                                    <p><strong>পদবী</strong> : অধ্যাপক</p>
-                                                    <p><strong>সাংগঠনিক পদবী</strong> : জেলা সাধারণ সম্পাদক</p>
-                                                    <p><strong>সদস্য নম্বর</strong> : SKO-BCTA-254001</p>
-                                                    <p><strong>মেয়াদ</strong> : ২০২৫ - ২০২৮</p>
-                                                </div>
-                                                <div class="id-qr">
-                                                    <i class="fa-solid fa-qrcode"></i>
-                                                </div>
-                                            </div>
-                                            <div class="id-footer">
-                                                <div class="signature">
-                                                    <span>স্বাক্ষর</span>
-                                                    <strong>চেয়ারম্যান</strong>
-                                                </div>
-                                                <div class="seal">
-                                                    <i class="fa-solid fa-stamp"></i>
-                                                </div>
-                                                <div class="signature">
-                                                    <span>স্বাক্ষর</span>
-                                                    <strong>মহাসচিব</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Member Details (Right inside result) -->
-                                    <div class="col-md-6">
-                                        <div class="member-details-box">
-                                            <h5 class="details-title"><i class="fa-solid fa-list-check"></i> সদস্যের বিস্তারিত তথ্য</h5>
-                                            <table class="info-table">
-                                                <tr>
-                                                    <td><i class="fa-regular fa-user"></i> নাম</td>
-                                                    <td>: <span class="fw-bold">মো: কামরুল ইসলাম</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa-solid fa-school"></i> শিক্ষা প্রতিষ্ঠান</td>
-                                                    <td>: ঢাকা সরকারি কলেজ, ঢাকা</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa-solid fa-briefcase"></i> পদবী</td>
-                                                    <td>: অধ্যাপক</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa-solid fa-sitemap"></i> সাংগঠনিক পদবী</td>
-                                                    <td>: জেলা সাধারণ সম্পাদক</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa-regular fa-id-badge"></i> সদস্য নম্বর</td>
-                                                    <td>: SKO-BCTA-254001</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa-regular fa-calendar"></i> সদস্যপদের মেয়াদ</td>
-                                                    <td>: ২০২৫ - ২০২৮</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa-solid fa-circle-check text-success"></i> পরিচয়পত্রের অবস্থা</td>
-                                                    <td>: <span class="badge bg-success">বৈধ ও সক্রিয় (Active)</span></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Action Buttons -->
-                            <div class="result-actions" id="resultActions" style="display: none;">
-                                <button class="btn btn-outline-primary">
-                                    <i class="fa-solid fa-print me-2"></i> পরিচয়পত্র প্রিন্ট
-                                </button>
-                                <button class="btn btn-outline-primary">
-                                    <i class="fa-solid fa-download me-2"></i> PDF ডাউনলোড
-                                </button>
-                                <button class="btn btn-outline-primary">
-                                    <i class="fa-solid fa-share-nodes me-2"></i> তথ্য শেয়ার
-                                </button>
-                            </div>
+                    <!-- Right Column: Verification Result -->
+                    <div class="col-xl-8 col-lg-7 result-col">
+                        <div class="vq-card result-card" id="resultCard" data-state="active" tabindex="-1" aria-live="polite">
 
                             <!-- Initial Empty State -->
                             <div class="result-empty" id="resultEmpty">
-                                <i class="fa-solid fa-qrcode"></i>
+                                <div class="empty-art"><i class="fa-solid fa-qrcode"></i></div>
                                 <h4>QR কোড স্ক্যান করুন</h4>
                                 <p>সদস্যের ডিজিটাল পরিচয়পত্রের QR কোড স্ক্যান করলে এখানে তার বিস্তারিত তথ্য দেখা যাবে।</p>
+                                <ul class="empty-steps">
+                                    <li><span>১</span> ক্যামেরা চালু করুন বা ছবি আপলোড করুন</li>
+                                    <li><span>২</span> পরিচয়পত্রের QR কোড ফ্রেমে রাখুন</li>
+                                    <li><span>৩</span> তাৎক্ষণিক যাচাইয়ের ফলাফল দেখুন</li>
+                                </ul>
+                            </div>
+
+                            <!-- Result -->
+                            <div class="result-view" id="resultView" hidden>
+
+                                <div class="rv-head">
+                                    <span class="rv-icon"><i class="fa-solid fa-circle-check" id="rvIcon"></i></span>
+                                    <div class="rv-text">
+                                        <h2 id="rvTitle">পরিচয়পত্র যাচাই সফল হয়েছে</h2>
+                                        <p id="rvMsg"></p>
+                                    </div>
+                                    <span class="badge-verified" id="rvBadge"></span>
+                                </div>
+
+                                <div class="rv-body" id="rvBody">
+
+                                    <!-- Security steps -->
+                                    <ul class="vq-steps" id="vqSteps">
+                                        <li><i class="fa-solid fa-circle-check"></i><span>QR কোড সঠিকভাবে পড়া হয়েছে</span></li>
+                                        <li><i class="fa-solid fa-circle-check"></i><span>SKO ডাটাবেজে সদস্য পাওয়া গেছে</span></li>
+                                        <li><i class="fa-solid fa-circle-check"></i><span>সদস্যপদ সক্রিয় ও মেয়াদ বৈধ</span></li>
+                                    </ul>
+
+                                    <div id="rvData">
+                                        <div class="vq-result-grid">
+
+                                            <!-- Digital ID Card -->
+                                            <div class="vq-idc-col">
+                                                <div class="idc-scaler" id="idcScaler">
+                                                    <article class="idc" id="idc">
+                                                        <img class="idc-wm" src="assets/images/logo.png" alt="" aria-hidden="true">
+
+                                                        <div class="idc-top">
+                                                            <div class="idc-leader">
+                                                                <span class="idc-lph"><i class="fa-regular fa-user"></i><img src="assets/images/leaders/leader-01.jpg" alt="চেয়ারম্যান" onerror="this.hidden=true"></span>
+                                                                <small>চেয়ারম্যান</small>
+                                                            </div>
+                                                            <div class="idc-brand">
+                                                                <img src="assets/images/logo.png" alt="SKO">
+                                                                <strong>শিক্ষক কর্মচারী ঐক্য জোট (SKO)</strong>
+                                                                <span id="idcOrg">বাংলাদেশ কলেজ শিক্ষক সমিতি (BCTA)</span>
+                                                            </div>
+                                                            <div class="idc-leader">
+                                                                <span class="idc-lph"><i class="fa-regular fa-user"></i><img src="assets/images/leaders/leader-02.jpg" alt="মহাসচিব" onerror="this.hidden=true"></span>
+                                                                <small>মহাসচিব</small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="idc-ribbon"><span>সদস্য পরিচয়পত্র</span></div>
+
+                                                        <div class="idc-body">
+                                                            <div class="idc-left">
+                                                                <span class="idc-photo"><i class="fa-regular fa-user"></i><img id="idcPhoto" src="assets/images/member/ec-01.jpg" alt="সদস্যের ছবি" onerror="this.hidden=true"></span>
+                                                                <div class="idc-qr" id="idcQr"></div>
+                                                            </div>
+                                                            <div class="idc-info">
+                                                                <p><b>নাম</b><span id="idcName"></span></p>
+                                                                <p><b>পদবী</b><span id="idcDesignation"></span></p>
+                                                                <p><b>সাংগঠনিক পদবী</b><span id="idcOrgPos"></span></p>
+                                                                <p><b>সদস্য নম্বর</b><span id="idcMemberId"></span></p>
+                                                                <p><b>মেয়াদ</b><span id="idcValidity"></span></p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="idc-foot">
+                                                            <div class="idc-sign"><span></span><small>চেয়ারম্যান</small></div>
+                                                            <img class="idc-seal" src="assets/images/seal.png" alt="SKO সিল" onerror="this.hidden=true">
+                                                            <div class="idc-sign"><span></span><small>মহাসচিব</small></div>
+                                                        </div>
+
+                                                        <div class="idc-wave"></div>
+                                                        <div class="idc-stamp" id="idcStamp"></div>
+                                                    </article>
+                                                </div>
+                                            </div>
+
+                                            <!-- Member details -->
+                                            <div class="vq-detail-col">
+                                                <div class="member-details-box">
+                                                    <h5 class="details-title"><i class="fa-solid fa-list-check"></i> সদস্যের বিস্তারিত তথ্য</h5>
+                                                    <ul class="detail-list">
+                                                        <li class="detail-row">
+                                                            <span class="ic"><i class="fa-regular fa-user"></i></span>
+                                                            <div><small class="row-label">নাম</small><strong id="dName"></strong></div>
+                                                        </li>
+                                                        <li class="detail-row">
+                                                            <span class="ic"><i class="fa-solid fa-school"></i></span>
+                                                            <div><small class="row-label">শিক্ষা প্রতিষ্ঠান</small><strong id="dSchool"></strong></div>
+                                                        </li>
+                                                        <li class="detail-row">
+                                                            <span class="ic"><i class="fa-solid fa-briefcase"></i></span>
+                                                            <div><small class="row-label">পদবী</small><strong id="dDesignation"></strong></div>
+                                                        </li>
+                                                        <li class="detail-row">
+                                                            <span class="ic"><i class="fa-solid fa-sitemap"></i></span>
+                                                            <div><small class="row-label">সাংগঠনিক পদবী</small><strong id="dOrgPos"></strong></div>
+                                                        </li>
+                                                        <li class="detail-row is-id">
+                                                            <span class="ic"><i class="fa-regular fa-id-badge"></i></span>
+                                                            <div><small class="row-label">সদস্য নম্বর</small><strong id="dMemberId"></strong></div>
+                                                            <button type="button" class="row-copy" id="btnCopyId" aria-label="সদস্য নম্বর কপি করুন"><i class="fa-regular fa-copy"></i></button>
+                                                        </li>
+                                                        <li class="detail-row">
+                                                            <span class="ic"><i class="fa-regular fa-calendar-check"></i></span>
+                                                            <div>
+                                                                <small class="row-label">সদস্যপদের মেয়াদ</small>
+                                                                <strong id="dValidity"></strong>
+                                                                <span class="row-note" id="dValidityNote"></span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="detail-row">
+                                                            <span class="ic"><i class="fa-solid fa-circle-check"></i></span>
+                                                            <div><small class="row-label">পরিচয়পত্রের অবস্থা</small><strong class="badge-status" id="dStatus"></strong></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="result-foot">
+                                        <span><i class="fa-solid fa-shield-halved"></i> SKO ডিজিটাল ভেরিফিকেশন</span>
+                                        <span><i class="fa-solid fa-expand"></i> পদ্ধতি: <strong id="resMethod"></strong></span>
+                                        <span><i class="fa-regular fa-clock"></i> যাচাইয়ের সময়: <strong id="resVerifiedAt"></strong></span>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="result-actions" id="resultActions">
+                                        <button type="button" class="btn btn-primary" id="btnDownload" data-show="active">
+                                            <i class="fa-solid fa-download me-2"></i> PDF ডাউনলোড
+                                        </button>
+                                        <button type="button" class="btn btn-outline-primary" id="btnPrint" data-show="active">
+                                            <i class="fa-solid fa-print me-2"></i> পরিচয়পত্র প্রিন্ট
+                                        </button>
+                                        <button type="button" class="btn btn-outline-primary" id="btnShare" data-show="active">
+                                            <i class="fa-solid fa-share-nodes me-2"></i> তথ্য শেয়ার
+                                        </button>
+                                        <a href="member-services.html#renew" class="btn btn-warning" data-show="expired" hidden>
+                                            <i class="fa-solid fa-rotate me-2"></i> সদস্যপদ নবায়ন করুন
+                                        </a>
+                                        <button type="button" class="btn btn-outline-primary" id="btnRescan" data-show="all">
+                                            <i class="fa-solid fa-qrcode me-2"></i> আবার স্ক্যান করুন
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="result-help" id="resHelp" hidden>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>সমস্যা থাকলে <a href="member-services.html">সদস্য সেবা</a> বা <a href="mailto:info@sko.org.bd">info@sko.org.bd</a> ঠিকানায় যোগাযোগ করুন।</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -476,6 +563,10 @@
 
     <!-- Your existing JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- QR decoder (scan) + QR generator (member card) -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js" defer></script>
 
     <!-- NEW Verify QR JS -->
     <script src="js/verify-qr.js" defer></script>
